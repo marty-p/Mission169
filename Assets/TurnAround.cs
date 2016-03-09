@@ -2,7 +2,7 @@
 using System;
 using EnemyUtils;
 
-public class TurnAround : MonoBehaviour, IEnemyBehavior, ISight {
+public class TurnAround : MonoBehaviour, IEnemyBehavior {
 
     private Transform player;
 
@@ -12,7 +12,7 @@ public class TurnAround : MonoBehaviour, IEnemyBehavior, ISight {
     public bool inProgress = false;
 
     public int priority = 2;
-    public float behaviorLikelihood =  0.5f;
+    public float behaviorLikelihood =  0.9f;
     public float turnAroundDist = 1;
     private float distanceMaxAwayFromPlayer = 2;
 
@@ -23,6 +23,27 @@ public class TurnAround : MonoBehaviour, IEnemyBehavior, ISight {
     private float hasRestedFor = 0;
 
     private System.Random random;
+
+    void Start() {
+        animator = GetComponent<Animator>();
+        random = new System.Random();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void Update () {
+	    if (player != null) {
+            distanceFromPlayer = transform.position.x - player.position.x;
+        }
+
+        if (resting) {
+            hasRestedFor =  hasRestedFor + Time.deltaTime;
+            if (hasRestedFor >= restingTime) {
+                hasRestedFor = 0;
+                resting = false;
+            }
+        }
+	}
+
 
     public bool CanBeInterrupted() {
         return false;
@@ -64,34 +85,10 @@ public class TurnAround : MonoBehaviour, IEnemyBehavior, ISight {
         }
     }
 
-    void Start () {
-        animator = GetComponent<Animator>();
-        random = new System.Random();
-	}
-
-    void Update () {
-	    if (player != null) {
-            distanceFromPlayer = transform.position.x - player.position.x;
-        }
-
-        if (resting) {
-            hasRestedFor =  hasRestedFor + Time.deltaTime;
-            if (hasRestedFor >= restingTime) {
-                hasRestedFor = 0;
-                resting = false;
-            }
-        }
-	}
 
     public void OnTurningAroundDone () {
         EnemyMovement.TurnAround(transform);
         inProgress = false;
         resting = true;
-    }
-
-    public void OnPlayerSpotted(Transform playerTransform) {
-        if (player==null) {
-            player = playerTransform;
-        }
     }
 }

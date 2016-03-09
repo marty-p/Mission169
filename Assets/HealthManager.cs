@@ -11,10 +11,6 @@ public class HealthManager : MonoBehaviour, IHitByProjectile {
     private Rigidbody2D rigidBody;
     private EnemyBehaviorManager enemyBehaviorManager;
 
-	void Update () {
-	
-	}
-
     public void OnHitByProjectile(int damageReceived, int projectileDirX) {
         currentHP -= damageReceived;
         PickVisualFeedback(projectileDirX);

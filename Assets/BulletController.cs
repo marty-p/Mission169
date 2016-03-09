@@ -25,11 +25,10 @@ public class BulletController : MonoBehaviour {
     private Vector3 upOrientation = new Vector3(0, 0, 90);
     private Vector3 downOrientation = new Vector3(0, 0, -90);
    
-    void OnTriggerEnter2D(Collider2D col)
-    {
+    void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "enemy") {
             Desactivate();
-            IHitByProjectile[] components = col.GetComponents<IHitByProjectile>();
+            IHitByProjectile[] components = col.GetComponentsInChildren<IHitByProjectile>();
             foreach (IHitByProjectile component in components) {
                 component.OnHitByProjectile(bulletProperties.strength, (int)transform.right.x);
             }

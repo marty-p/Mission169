@@ -15,11 +15,8 @@ public class FollowTarget : MonoBehaviour {
 	void Update () {
         Vector3 targetViewPortPos = camera.WorldToViewportPoint(target.position);
         if (targetViewPortPos.x > 0.3F) {
-            Vector3 tempVec = transform.position;
-            //tempVec.x = Mathf.MoveTowards(tempVec.x, target.transform.position.x + 1, Time.deltaTime);
             Vector3 dest = new Vector3(target.transform.position.x + 0.8f, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, dest, 3 * Time.deltaTime);
-            //transform.position = tempVec;
         }
             
     }

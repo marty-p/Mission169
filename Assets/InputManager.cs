@@ -3,7 +3,7 @@
 public class InputManager : MonoBehaviour {
 
     private IObserver[] observers;
-    public PhysicsController physicsController;
+    private PhysicsSlugEngine physics;
     private bool fireKeyLocked = false;
     private bool jumpKeyLocked = false;
 
@@ -12,48 +12,45 @@ public class InputManager : MonoBehaviour {
 
     void Start() {
         observers = GetComponentsInChildren<IObserver>();
+        physics = GetComponent<PhysicsSlugEngine>();
     }
 
     void FixedUpdate () {
-        int right_key = 0;
-        int jump = 0;
+        int horizontalKey = 0;
+        bool jump;
         int downKey = 0;
-        int fireKey = 0;
+        bool fireKey;
 
-        jump = (int)Input.GetAxisRaw("Jump");
-        right_key = (int) Input.GetAxisRaw("Horizontal");
+        jump = Input.GetButtonDown("Jump");
+        horizontalKey = (int) Input.GetAxisRaw("Horizontal");
         downKey = (int)Input.GetAxisRaw("Vertical");
-        fireKey = (int)(Input.GetAxisRaw("Fire1"));
-       
-        if (jump == 1 && !jumpKeyLocked) {
-            physicsController.Jump();
-            jumpKeyLocked = true;
-        } else if (jump == 0) {
-            jumpKeyLocked = false;
+        fireKey = Input.GetButtonDown("Fire1");
+
+        if (jump) {
+            physics.Jump();
         }
 
-        if (fireKey == 1 && !fireKeyLocked) {
+        if (fireKey) {
             NotifyObservers(SlugEvents.Attack);
-            fireKeyLocked = true;
-        }  else if (fireKey == 0) {
-            fireKeyLocked = false;
         }
 
-        if (right_key == 1) {
-            if ( transform.right == Vector3.left && !physicsController.InTheAir && downKey == 0 ) {
+        if (horizontalKey == 1) {
+            if (transform.right == Vector3.left && !physics.InTheAir && downKey == 0 ) {
                 NotifyObservers(SlugEvents.Turn);
             }
-            NotifyObservers(SlugEvents.IsMoving);
-            transform.eulerAngles = faceRight;
-            physicsController.MoveRight();
-        } else if (right_key == -1) {
-            if ( transform.right == Vector3.right && !physicsController.InTheAir && downKey == 0) {
+            physics.changeDirection(Vector2.right);
+            physics.MoveForward();
+            NotifyObservers(SlugEvents.GoingRight);
+            NotifyObservers(SlugEvents.StartMoving);
+        } else if (horizontalKey == -1) {
+            if (transform.right == Vector3.right && !physics.InTheAir && downKey == 0) {
                 NotifyObservers(SlugEvents.Turn);
             }
-            NotifyObservers(SlugEvents.IsMoving);
-            transform.eulerAngles = faceLeft;
-            physicsController.MoveLeft();
-        } else if (right_key == 0) {
+            physics.changeDirection(Vector2.left);
+            physics.MoveForward();
+            NotifyObservers(SlugEvents.GoingLeft);
+            NotifyObservers(SlugEvents.StartMoving);
+        } else if (horizontalKey == 0) {
             NotifyObservers(SlugEvents.StopMoving);
         }
 

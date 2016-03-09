@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class PhysicsController : MonoBehaviour {
+public class PhysicsSlugEngine : MonoBehaviour {
 
     private BoxCollider2D boxCollider;
     private IObserver[] observers;
 
-    public float initialJumpVelocity = 5f;
-    private float currentVerticalVelocity = 0;
+    public float initialJumpVelocity = 3f;
     public float maxVerticalVelocity = -3;
-    public float verticalDrag = 8f;
-    public float fact = 1.5f;
+    public float verticalDrag = 7f;
+    private float currentVerticalVelocity = 0;
 
-    private const float groundMovementFactor = 1f;
-    private const float airLowVelocityMovementFactor = 1.25f;
-    private const float airHighVelocityMovementFactor = 1.5f;
+    private const float groundMovementFactor = 0.8f;
+    private const float airLowVelocityMovementFactor = 1.1f;
+    private const float airHighVelocityMovementFactor = 1.25f;
+    private const float rayCastRestLength = 0.02f;
     private float movementFactor;
     
     private Vector2 absoluteVelocity;
@@ -23,11 +22,12 @@ public class PhysicsController : MonoBehaviour {
     private bool inTheAir = false;
     public bool InTheAir { get { return inTheAir;} }
     private float yCandidate;
-    private Vector2 rayCastStart;
+    private Vector2 groundSlope;
+    private Vector2 rayCastStartPoint;
 
     void Start () {
         boxCollider = GetComponent<BoxCollider2D>();
-        rayCastStart = new Vector2();
+        rayCastStartPoint = new Vector2();
         observers = GetComponents<IObserver>();
         yCandidate = transform.position.y;
         absoluteVelocity = new Vector2();
@@ -40,13 +40,13 @@ public class PhysicsController : MonoBehaviour {
     {
         RaycastHit2D hit = WhatIsUnderMyFeet();
         bool justFellFromPlatform = hit.collider == null && !inTheAir;
-        bool landing = hit.collider != null && hit.collider != boxCollider;
+        bool justLanding = hit.collider != null;
         if ( justFellFromPlatform ) {
             StartFalling();
-        } else if ( landing ) {
+        } else if (justLanding) {
             StopFalling();
             yCandidate = FixYPosition(hit);
-        } else if ( inTheAir ) {
+        } else if (inTheAir) {
             yCandidate += currentVerticalVelocity * Time.fixedDeltaTime;
         } else {
             yCandidate = transform.position.y;
@@ -56,14 +56,15 @@ public class PhysicsController : MonoBehaviour {
 
         UpdateVerticalVelocity();
         CalculateVelocity(Time.fixedDeltaTime);
+        UpdateGroundSlope(hit);
 
-        //Debug.DrawLine(rayCastStart, 
-        //        new Vector2( boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
-        //        boxCollider.bounds.min.y + currentVerticalVelocity * Time.fixedDeltaTime - 0.005f )  );
+        Debug.DrawLine(rayCastStartPoint, 
+                new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
+                boxCollider.bounds.min.y + currentVerticalVelocity * Time.fixedDeltaTime - rayCastRestLength));
     }
 
     RaycastHit2D WhatIsUnderMyFeet() {
-        rayCastStart = new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
+        rayCastStartPoint = new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
                 boxCollider.bounds.min.y - 0.0005f);
         Vector2 dir;
         if (currentVerticalVelocity > 0) {
@@ -71,20 +72,41 @@ public class PhysicsController : MonoBehaviour {
         } else {
             dir = Vector2.down;
         }
-        return Physics2D.Raycast(rayCastStart, dir, 0.002f + Mathf.Abs(currentVerticalVelocity * Time.fixedDeltaTime));
+
+        int layerMask = 1 << LayerMask.NameToLayer("World");
+
+        return Physics2D.Raycast(rayCastStartPoint, dir,
+                rayCastRestLength + Mathf.Abs(currentVerticalVelocity * Time.fixedDeltaTime), 
+                layerMask);
     }
 
 
     float FixYPosition(RaycastHit2D hit) {
-        return hit.collider.bounds.max.y + boxCollider.bounds.size.y / 2 - boxCollider.offset.y + 0.002f;
+        return hit.point.y + boxCollider.bounds.size.y / 2 - boxCollider.offset.y + 0.01f;
+    }
+
+    void UpdateGroundSlope(RaycastHit2D hit) {
+        if (inTheAir) {
+            groundSlope.x = 1;
+            groundSlope.y = 1;
+            return;
+        }
+
+        Quaternion rotate = Quaternion.Euler(0, 0, -90 * transform.right.x);
+        groundSlope = rotate * hit.normal;
+        groundSlope.x = Mathf.Abs(groundSlope.x);
+
+        groundSlope.Normalize();
+
+        Debug.DrawLine(hit.point,
+                new Vector2(hit.point.x + groundSlope.x,  hit.point.y + groundSlope.y), Color.cyan);
     }
 
     void UpdateVerticalVelocity() {
         if (inTheAir) {
-            currentVerticalVelocity -= (verticalDrag*Time.fixedDeltaTime)*fact;
+            currentVerticalVelocity -= (verticalDrag*Time.fixedDeltaTime);
             Mathf.Clamp(currentVerticalVelocity, maxVerticalVelocity, initialJumpVelocity/3);
         } 
-
     }
 
     void StopFalling() {
@@ -99,12 +121,6 @@ public class PhysicsController : MonoBehaviour {
         movementFactor = airLowVelocityMovementFactor;
         currentVerticalVelocity = 0;
         NotifyObservers(SlugEvents.Fall);
-    }
-
-    void NotifyObservers(SlugEvents ev) {
-        foreach(IObserver obs in observers) {
-            obs.Observe(ev);
-        }
     }
 
     void CalculateVelocity(float dt) {
@@ -130,15 +146,19 @@ public class PhysicsController : MonoBehaviour {
         currentVerticalVelocity = initialJumpVelocity;
     }
 
-    //TODO these 2 functions do the same thing
-    public void MoveRight() {
-        transform.Translate(Vector3.right * movementFactor * Time.fixedDeltaTime);
-        NotifyObservers(SlugEvents.StartMoving);
+    public void changeDirection(Vector2 newDir) {
+        transform.right = newDir;
+
     }
 
-    public void MoveLeft() {
-        transform.Translate(Vector3.right * movementFactor * Time.fixedDeltaTime);
-        NotifyObservers(SlugEvents.StartMoving);
+    public void MoveForward() {
+        transform.Translate(groundSlope * movementFactor * Time.fixedDeltaTime);
+        print(movementFactor);
     }
 
+    void NotifyObservers(SlugEvents ev) {
+        foreach(IObserver obs in observers) {
+            obs.Observe(ev);
+        }
+    }
 }

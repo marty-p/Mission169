@@ -7,8 +7,7 @@ public class AnimationManager : MonoBehaviour, IObserver {
     public Animator topAnimator;
     public Animator bottomAnimator;
 
-    void Update() {
-        topAnimator.ResetTrigger("turn");
+    void LateUpdate() {
     }
 
     public void Observe(SlugEvents ev) {
@@ -40,15 +39,14 @@ public class AnimationManager : MonoBehaviour, IObserver {
             topAnimator.SetBool("sat", false);
             topAnimator.SetBool("look_up", false);
         } else if (ev == SlugEvents.LookUp) {
-        //    if (!topAnimator.GetBool("jump_fall")  && !topAnimator.GetBool("look_up") ) {
+            if (!topAnimator.GetBool("look_up") ) {
                 topAnimator.SetBool("look_up", true);
-        //    }
+            }
         }
     }
 
 
 
-    // look up si !jump
-    // look up si
+
 
 }

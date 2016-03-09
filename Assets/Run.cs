@@ -1,25 +1,23 @@
 ﻿using UnityEngine;
 using EnemyUtils;
 
-public class Run : MonoBehaviour, IEnemyBehavior, ISight {
+public class Run : MonoBehaviour, IEnemyBehavior {
 
     private Transform player;
-    private bool inProgress;
+    public bool inProgress;
     public int priority = 1;
     public bool interruptible = true;
     private float distanceFromPlayer = 10000;
     public Animator animator;
-    public Rigidbody2D rigidBody;
+    public PhysicsSlugEngine physicsController;
 
-    void Update () {
-        if (player != null) {
-            distanceFromPlayer = transform.position.x - player.position.x;
-        }
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void OnPlayerSpotted(Transform transform) {
-        if (player==null) {
-            player = transform;
+    void Update() {
+        if (player != null) {
+            distanceFromPlayer = transform.position.x - player.position.x;
         }
     }
 
@@ -48,10 +46,12 @@ public class Run : MonoBehaviour, IEnemyBehavior, ISight {
         if (distanceFromPlayer < 0.1f && distanceFromPlayer > -0.1f) {
             animator.SetBool("walking", false);
             inProgress = false;
-        } else {
-            EnemyMovement.WalkAhead(transform, rigidBody);
+        } else if (distanceFromPlayer < 0) {
+           // physicsController.MoveLeft();
+        } else if (distanceFromPlayer > 0) {
+            //physicsController.changeDirection()
         }
-
+        physicsController.MoveForward();
         return true;
     }
 
