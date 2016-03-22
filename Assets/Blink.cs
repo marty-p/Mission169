@@ -8,6 +8,9 @@ public class Blink : MonoBehaviour {
     private float elapsedTime = 0;
     private float elapsedSwitch = 0;
     private SpriteRenderer spriteRenderer;
+    public delegate void EndCB();
+    private EndCB endCB;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,10 @@ public class Blink : MonoBehaviour {
         elapsedTime = 0;
         elapsedSwitch = 0;
         StartCoroutine("BlinkCoroutine");
+    }
+
+    public void SetEndCB (EndCB cb) {
+        endCB = cb;
     }
 
     private IEnumerator BlinkCoroutine() {
@@ -32,5 +39,7 @@ public class Blink : MonoBehaviour {
             yield return null;
         }
         spriteRenderer.enabled = false;
+        endCB();
+
     }
 }

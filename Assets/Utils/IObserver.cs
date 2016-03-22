@@ -1,19 +1,21 @@
 ﻿
 public enum SlugEvents {
         Fall,
+        Jump,
         JumpLowSpeed,
         JumpHighSpeed,
         HitGround,
-        StartMoving,
-        GoingRight,
-        GoingLeft,
+        MovingRight,
+        MovingLeft,
         StopMoving,
         Turn,
         Sit,
         Stand,
         LookUp,
         Shoot,
-        Attack};
+        Attack,
+        Grenade
+};
 
 public interface IObserver {
 

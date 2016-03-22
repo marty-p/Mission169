@@ -23,16 +23,23 @@ public class AnimationManager : MonoBehaviour, IObserver {
             topAnimator.SetBool("jump_high_speed", false);
             bottomAnimator.SetBool("jump_high_speed", false);
         } else if (ev == SlugEvents.Turn) {
-            topAnimator.SetTrigger("turn");
-        } else if (ev == SlugEvents.StartMoving) {
+            if (!topAnimator.GetBool("jump_fall") && 
+                    !topAnimator.GetBool("jump_high_speed") &&
+                    !topAnimator.GetBool("sat")) {
+                topAnimator.SetTrigger("turn");
+            }
+        } else if (ev == SlugEvents.MovingRight || ev == SlugEvents.MovingLeft) {
             topAnimator.SetBool("walking", true);
-            bottomAnimator.SetBool("walking", true);
+            if (!topAnimator.GetBool("sat")) {
+                bottomAnimator.SetBool("walking", true);
+            }
         } else if (ev == SlugEvents.StopMoving) {
             topAnimator.SetBool("walking", false);
             bottomAnimator.SetBool("walking", false);
         } else if (ev == SlugEvents.Sit) {
             if (!topAnimator.GetBool("sat")) {
                 topAnimator.SetTrigger("sit");
+                bottomAnimator.SetBool("walking", false);
             }
             topAnimator.SetBool("sat", true);
         } else if (ev == SlugEvents.Stand) {

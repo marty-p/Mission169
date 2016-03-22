@@ -2,18 +2,36 @@
 using System.Collections;
 using System;
 
-public class HealthManager : MonoBehaviour, IHitByProjectile {
+
+public class HealthManager : MonoBehaviour, IHitByProjectile, IObserver {
 
     public int maxHP = 1;
     private int currentHP = 1;
 
     private Animator anim;
-    private Rigidbody2D rigidBody;
     private EnemyBehaviorManager enemyBehaviorManager;
+    private PhysicsSlugEngine physics;
 
     public void OnHitByProjectile(int damageReceived, int projectileDirX) {
         currentHP -= damageReceived;
         PickVisualFeedback(projectileDirX);
+    }
+
+    public void HitByProjectile () {
+        // combien de degats?
+        // suis-je mort?
+        PickVisualFeedback(1);
+    }
+
+    public void OnSlashed() {
+        anim.SetTrigger("slashed");
+        Death();
+    }
+
+    public void OnHitByGrenade() {
+        anim.SetBool("hit_by_grenade", true);
+        physics.Jump();
+        Death();
     }
 
     public void PickVisualFeedback(int projectileDirX) {
@@ -35,8 +53,16 @@ public class HealthManager : MonoBehaviour, IHitByProjectile {
 
     void Start () {
         anim = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
         enemyBehaviorManager = GetComponent<EnemyBehaviorManager>();
+        physics = GetComponent<PhysicsSlugEngine>();
 	}
 
+    public void Observe(SlugEvents ev) {
+        if (ev == SlugEvents.HitGround) {
+            if (anim.GetBool("hit_by_grenade")) {
+                anim.SetBool("hit_by_grenade", false);
+                anim.SetTrigger("hit_ground");
+            }
+        }
+    }
 }

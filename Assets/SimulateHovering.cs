@@ -42,12 +42,13 @@ public class SimulateHovering : MonoBehaviour {
         groundOffset = boxCollider.offset;
         childs = GetComponentsInChildren<Transform>();
         int i = 0;
-        childsBasePos = new Vector3[4];
+        childsBasePos = new Vector3[10];
         foreach(Transform t in childs) {
             if (i == 0) {
                 i++;
                 continue;
             }
+            print(i);
             childsBasePos[i] = t.localPosition;
             i++;
         }
@@ -55,11 +56,9 @@ public class SimulateHovering : MonoBehaviour {
 	
     public void HideBottom() {
         bottomSpriteRenderer.enabled = false;
-        print("hidden");
     }
 
     public void ShowBottom() {
         bottomSpriteRenderer.enabled = true;
-        print("shown");
     }
 }

@@ -13,13 +13,11 @@ public class BulletProperties
 public class BulletController : MonoBehaviour {
 
     public BulletProperties bulletProperties;
-    public Rigidbody2D rigidBody;
-    public BoxCollider2D boxCollider;
     public SpriteRenderer spriteRenderer;
-    public float onScreenFor = 0;
-    private int vel;
+    public AnimationClip bulletImpactClip;
+    private float onScreenFor = 0;
 
-    // Works for something that is symetric of course
+    // Works for something that is fully symetric of course
     private Vector3 rightOrientation = new Vector3(0, 0, 0);
     private Vector3 leftOrientation = new Vector3(0, 0, 180);
     private Vector3 upOrientation = new Vector3(0, 0, 90);
@@ -27,11 +25,10 @@ public class BulletController : MonoBehaviour {
    
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "enemy") {
-            Desactivate();
-            IHitByProjectile[] components = col.GetComponentsInChildren<IHitByProjectile>();
-            foreach (IHitByProjectile component in components) {
-                component.OnHitByProjectile(bulletProperties.strength, (int)transform.right.x);
-            }
+            Impact();
+            IHitByProjectile component = col.GetComponentInChildren<IHitByProjectile>();
+            component.OnHitByProjectile(bulletProperties.strength, (int)transform.right.x);
+            gameObject.SetActive(false);
         }
     }
 
@@ -42,20 +39,20 @@ public class BulletController : MonoBehaviour {
         }
     }
 
+    void Impact() {
+  //      SimpleAnimationController animController =
+   //             SimpleAnimPool.GetPooledSimpleAnimController();
+   //     animController.SetAnimationClip(bulletImpactClip);
+   //     animController.transform.position = transform.position;
+    }
+
     void FixedUpdate() {
         UpdatePosition(Time.fixedDeltaTime);
     }
 
-    void OnBecameInvisible()
-    {
-        Desactivate();
-    }
-
-    private void Desactivate()
-    {
+    void OnBecameInvisible() {
         gameObject.SetActive(false);
     }
-
 
     public void InitPosition(Vector2 pos)
     {
@@ -87,17 +84,8 @@ public class BulletController : MonoBehaviour {
         }
     }
 
-    public void UpdatePosition(float dt) {
+    void UpdatePosition(float dt) {
         transform.Translate( Vector3.right * 5 * dt);
-    }
-
-    public void StopMovement()
-    {
-    }
-
-    public void EnableCollision(bool enabled)
-    {
-        boxCollider.enabled = enabled;
     }
 
 }

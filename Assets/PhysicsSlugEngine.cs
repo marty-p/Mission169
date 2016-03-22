@@ -8,16 +8,18 @@ public class PhysicsSlugEngine : MonoBehaviour {
     public float initialJumpVelocity = 3f;
     public float maxVerticalVelocity = -3;
     public float verticalDrag = 7f;
-    private float currentVerticalVelocity = 0;
+    public float bounceFactor = 0;
 
     private const float groundMovementFactor = 0.8f;
     private const float airLowVelocityMovementFactor = 1.1f;
-    private const float airHighVelocityMovementFactor = 1.25f;
-    private const float rayCastRestLength = 0.02f;
+    private const float airHighVelocityMovementFactor = 1.22f;
+    private const float rayCastRestLength = 0.03f;
     private float movementFactor;
     
     private Vector2 absoluteVelocity;
     private Vector2 previousPos;
+
+    private RaycastHit2D underMyFeetHit;
 
     private bool inTheAir = false;
     public bool InTheAir { get { return inTheAir;} }
@@ -25,7 +27,7 @@ public class PhysicsSlugEngine : MonoBehaviour {
     private Vector2 groundSlope;
     private Vector2 rayCastStartPoint;
 
-    void Start () {
+    void Awake () {
         boxCollider = GetComponent<BoxCollider2D>();
         rayCastStartPoint = new Vector2();
         observers = GetComponents<IObserver>();
@@ -34,40 +36,56 @@ public class PhysicsSlugEngine : MonoBehaviour {
         previousPos = new Vector2(transform.position.x, transform.position.y);
     }
 
-
-
     void FixedUpdate () 
     {
-        RaycastHit2D hit = WhatIsUnderMyFeet();
-        bool justFellFromPlatform = hit.collider == null && !inTheAir;
-        bool justLanding = hit.collider != null;
-        if ( justFellFromPlatform ) {
-            StartFalling();
-        } else if (justLanding) {
-            StopFalling();
-            yCandidate = FixYPosition(hit);
-        } else if (inTheAir) {
-            yCandidate += currentVerticalVelocity * Time.fixedDeltaTime;
-        } else {
-            yCandidate = transform.position.y;
-        }
+        WhatIsUnderMyFeet();
+        UpdateGroundSlope();
 
-        transform.position = new Vector3(transform.position.x, yCandidate);
+        UpdateFallingSpeed();
 
-        UpdateVerticalVelocity();
-        CalculateVelocity(Time.fixedDeltaTime);
-        UpdateGroundSlope(hit);
+        float transX = calculateXTranslation();
+        float transY = calculateYTranslation();
+        transform.Translate(transX, transY, 0, Space.World);
 
+        CalculateVelocity();
+/*
         Debug.DrawLine(rayCastStartPoint, 
                 new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
                 boxCollider.bounds.min.y + currentVerticalVelocity * Time.fixedDeltaTime - rayCastRestLength));
+*/
     }
 
-    RaycastHit2D WhatIsUnderMyFeet() {
+    float calculateXTranslation() {
+        return groundSlope.x * absoluteVelocity.x * movementFactor * Time.fixedDeltaTime;
+    }
+
+    float calculateYTranslation() {
+        float yTranslation = 0;
+        bool justFellFromPlatform = underMyFeetHit.collider == null && !inTheAir;
+        bool justLanding = underMyFeetHit.collider != null;
+        bool justBouncing = justLanding && bounceFactor > 0;
+        if (justFellFromPlatform) {
+            StartFalling();
+        } else if (justBouncing) {
+            yTranslation = 0;
+            absoluteVelocity.y = initialJumpVelocity * bounceFactor;
+            NotifyObservers(SlugEvents.HitGround);
+        } else if (justLanding) {
+            StopFalling();
+            yTranslation = FixYPosition(underMyFeetHit) - transform.position.y;
+        } else if (inTheAir) {
+            yTranslation = absoluteVelocity.y * Time.fixedDeltaTime;
+        } else {
+            yTranslation = 0;
+        }
+        return yTranslation;
+    }
+
+    void WhatIsUnderMyFeet() {
         rayCastStartPoint = new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
-                boxCollider.bounds.min.y - 0.0005f);
+                boxCollider.bounds.min.y - 0.00005f);
         Vector2 dir;
-        if (currentVerticalVelocity > 0) {
+        if (absoluteVelocity.y > 0) {
             dir = Vector2.up;
         } else {
             dir = Vector2.down;
@@ -75,59 +93,62 @@ public class PhysicsSlugEngine : MonoBehaviour {
 
         int layerMask = 1 << LayerMask.NameToLayer("World");
 
-        return Physics2D.Raycast(rayCastStartPoint, dir,
-                rayCastRestLength + Mathf.Abs(currentVerticalVelocity * Time.fixedDeltaTime), 
+        underMyFeetHit = Physics2D.Raycast(rayCastStartPoint, dir,
+                rayCastRestLength + Mathf.Abs(absoluteVelocity.y * Time.fixedDeltaTime), 
                 layerMask);
     }
-
 
     float FixYPosition(RaycastHit2D hit) {
         return hit.point.y + boxCollider.bounds.size.y / 2 - boxCollider.offset.y + 0.01f;
     }
 
-    void UpdateGroundSlope(RaycastHit2D hit) {
+    void UpdateGroundSlope() {
         if (inTheAir) {
             groundSlope.x = 1;
-            groundSlope.y = 1;
+            groundSlope.y = 0;
             return;
         }
 
         Quaternion rotate = Quaternion.Euler(0, 0, -90 * transform.right.x);
-        groundSlope = rotate * hit.normal;
+        groundSlope = rotate * underMyFeetHit.normal;
         groundSlope.x = Mathf.Abs(groundSlope.x);
 
         groundSlope.Normalize();
-
-        Debug.DrawLine(hit.point,
-                new Vector2(hit.point.x + groundSlope.x,  hit.point.y + groundSlope.y), Color.cyan);
+/*
+        Debug.DrawLine(underMyFeetHit.point,
+                new Vector2(underMyFeetHit.point.x + groundSlope.x,  underMyFeetHit.point.y + groundSlope.y),
+                Color.cyan);
+*/
     }
 
-    void UpdateVerticalVelocity() {
+    void UpdateFallingSpeed() {
         if (inTheAir) {
-            currentVerticalVelocity -= (verticalDrag*Time.fixedDeltaTime);
-            Mathf.Clamp(currentVerticalVelocity, maxVerticalVelocity, initialJumpVelocity/3);
-        } 
+            absoluteVelocity.y -= (verticalDrag*Time.fixedDeltaTime);
+            Mathf.Clamp(absoluteVelocity.y, maxVerticalVelocity, initialJumpVelocity/3);
+        }
     }
 
     void StopFalling() {
         inTheAir = false;
         movementFactor = groundMovementFactor;
-        currentVerticalVelocity = 0;
+        absoluteVelocity.y = 0;
         NotifyObservers(SlugEvents.HitGround);
     }
 
     void StartFalling() {
         inTheAir = true;
         movementFactor = airLowVelocityMovementFactor;
-        currentVerticalVelocity = 0;
         NotifyObservers(SlugEvents.Fall);
     }
 
-    void CalculateVelocity(float dt) {
-        absoluteVelocity.y = Mathf.Abs(transform.position.y - previousPos.y) / dt;
-        absoluteVelocity.x = Mathf.Abs(transform.position.x - previousPos.x) / dt;
-        previousPos.x = transform.position.x;
-        previousPos.y = transform.position.y;
+
+
+    void CalculateVelocity() {
+        if (inTheAir) {
+            absoluteVelocity.x *= 0.999f;
+        } else {
+            absoluteVelocity.x = 0;
+        }
     }
 
     public void Jump() {
@@ -143,20 +164,40 @@ public class PhysicsSlugEngine : MonoBehaviour {
             movementFactor = airLowVelocityMovementFactor;
             NotifyObservers(SlugEvents.JumpLowSpeed);
         }
-        currentVerticalVelocity = initialJumpVelocity;
+        absoluteVelocity.y = initialJumpVelocity;
     }
 
-    public void changeDirection(Vector2 newDir) {
-        transform.right = newDir;
+    public void SetVelocity(float velX) {
+        Jump();
+        absoluteVelocity.x = velX * transform.right.x;
+    }
 
+    public void changeDirection(Vector3 newDir) {
+        if (transform.right != newDir) {
+            transform.right = newDir;
+            NotifyObservers(SlugEvents.Turn);
+        }
     }
 
     public void MoveForward() {
-        transform.Translate(groundSlope * movementFactor * Time.fixedDeltaTime);
-        print(movementFactor);
+        if (!inTheAir) {
+            absoluteVelocity.x = transform.right.x;
+        }
+    }
+
+    public void SetMovementFactor(float movementFactor) {
+        this.movementFactor = movementFactor;
+    }
+
+    public void Reset() {
+        inTheAir = false;
+        absoluteVelocity = Vector2.zero;
     }
 
     void NotifyObservers(SlugEvents ev) {
+        if (observers == null) {
+            return;
+        }
         foreach(IObserver obs in observers) {
             obs.Observe(ev);
         }
