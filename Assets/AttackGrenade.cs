@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 
 public class AttackGrenade : MonoBehaviour, IObserver {
 
@@ -17,10 +15,10 @@ public class AttackGrenade : MonoBehaviour, IObserver {
     private void GrenadeAttack() {
         animator.SetTrigger("grenade");
         GameObject grenadeGameObject = grenadePool.GetPooledObject();
-        GrenadeController grenade  = grenadeGameObject.GetComponent<GrenadeController>();
-        grenade.transform.position = initialPosition.position;
-        grenade.Init();
-        grenade.Throw(transform.right);
+        GrenadeController grenadeSpecific = grenadeGameObject.GetComponent<GrenadeController>();
+        grenadeSpecific.transform.position = initialPosition.position;
+        grenadeSpecific.Init();
+        grenadeSpecific.Throw(transform.right);
     }	
 
 }

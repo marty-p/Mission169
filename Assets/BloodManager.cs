@@ -16,7 +16,7 @@ public class BloodManager : MonoBehaviour, IHitByProjectile {
         //anim.SetTrigger("blood1");
     }
 
-    public void OnHitByProjectile(int damageReceived, int bulletDirX) {
+    public void OnHitByProjectile(int damageReceived, BulletType bulletType, int bulletDirX) {
         StartBloodAnim();
     }
 }

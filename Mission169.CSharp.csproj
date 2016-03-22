@@ -83,7 +83,7 @@
     <Compile Include="Assets\Blink.cs" />
     <Compile Include="Assets\BlinkAtTheEnd.cs" />
     <Compile Include="Assets\BloodManager.cs" />
-    <Compile Include="Assets\BulletController.cs" />
+    <Compile Include="Assets\ProjectileController.cs" />
     <Compile Include="Assets\ColliderManager.cs" />
     <Compile Include="Assets\DesactivateGameObject.cs" />
     <Compile Include="Assets\EnemyBehaviorManager.cs" />

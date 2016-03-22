@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-
 
 public class HealthManager : MonoBehaviour, IHitByProjectile, IObserver {
 
@@ -12,40 +9,45 @@ public class HealthManager : MonoBehaviour, IHitByProjectile, IObserver {
     private EnemyBehaviorManager enemyBehaviorManager;
     private PhysicsSlugEngine physics;
 
-    public void OnHitByProjectile(int damageReceived, int projectileDirX) {
+    public void OnHitByProjectile(int damageReceived, BulletType bulletType, int projectileDirX) {
         currentHP -= damageReceived;
-        PickVisualFeedback(projectileDirX);
+        PickVisualFeedback(projectileDirX, bulletType);
     }
 
-    public void HitByProjectile () {
-        // combien de degats?
-        // suis-je mort?
-        PickVisualFeedback(1);
-    }
-
-    public void OnSlashed() {
-        anim.SetTrigger("slashed");
-        Death();
-    }
-
-    public void OnHitByGrenade() {
-        anim.SetBool("hit_by_grenade", true);
-        physics.Jump();
-        Death();
-    }
-
-    public void PickVisualFeedback(int projectileDirX) {
+    public void PickVisualFeedback(int projectileDirX, BulletType bulletType) {
         if (currentHP < 1) {
-            if (projectileDirX == transform.right.x) {
-                anim.SetTrigger("hit_by_bullet2");
-            } else {
-                anim.SetTrigger("hit_by_bullet");
+            if (bulletType == BulletType.Bullet) {
+                HitByBullet(projectileDirX);
+            } else if (bulletType == BulletType.Grenade) {
+                HitByGrenade();
+            } else if (bulletType == BulletType.Knife) {
+                Slashed();
             }
-            Death();
         } else {
             // Flash redscale for a frame.
         }
     }
+
+    public void Slashed() {
+        anim.SetTrigger("slashed");
+        Death();
+    }
+
+    public void HitByGrenade() {
+        anim.SetBool("hit_by_grenade", true);
+        physics.SetVelocity(1);
+        Death();
+    }
+
+    public void HitByBullet(int projectileDirX) {
+        if (projectileDirX == transform.right.x) {
+            anim.SetTrigger("hit_by_bullet2");
+        } else {
+            anim.SetTrigger("hit_by_bullet");
+        }
+        Death();
+    }
+
 
     void Death() {
         enemyBehaviorManager.enabled = false;
