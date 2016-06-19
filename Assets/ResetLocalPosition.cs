@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class ResetLocalPosition : StateMachineBehaviour {
+
+	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        animator.transform.localPosition = Vector3.zero;
+    }
+
+}

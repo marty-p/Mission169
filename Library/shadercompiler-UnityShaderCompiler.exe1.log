@@ -1,62 +1,24 @@
-Base path: D:/Unity/Editor/Data
+Base path: E:/Unity3D/Editor/Data
 Cmd: getPlatforms
-Cmd: disassembleShader
-  api=15 insize=489 outsize=1133 ok=1
-Cmd: disassembleShader
-  api=15 insize=489 outsize=1133 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=796 outsize=561 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=8 type=0 insize=1506 outsize=829 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
-  api=15 insize=561 outsize=1279 ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=796 outsize=365 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=13 insize=829 outsize=2245 ok=1
 Cmd: disassembleShader
-  api=17 insize=365 outsize=980 ok=1
+  api=13 insize=829 outsize=2245 ok=1
 Cmd: disassembleShader
-  api=15 insize=561 outsize=1279 ok=1
-Cmd: disassembleShader
-  api=17 insize=365 outsize=980 ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=801 outsize=797 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=13 insize=797 outsize=2204 ok=1
-Cmd: compileSnippet
-  error: 2 plat 4 at (31): invalid subscript 'color'\nCompiling Vertex program
-Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=4 type=0 insize=890 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
-Cmd: compileSnippet
-  error: 2 plat 8 at (31): invalid subscript 'color'\nCompiling Vertex program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=0 insize=881 outsize=0 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=0
-Cmd: compileSnippet
-  error: 2 plat 8 at (38): invalid subscript 'uv'\nCompiling Fragment program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=1 insize=1010 outsize=0 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=0
-Cmd: compileSnippet
-  api=4 type=0 insize=1016 outsize=589 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=14 insize=1325 outsize=2876 ok=1
 Cmd: disassembleShader
   api=15 insize=589 outsize=1349 ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1016 outsize=421 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: disassembleShader
-  api=17 insize=421 outsize=1082 ok=1
+  api=13 insize=829 outsize=2245 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=1018 outsize=617 kw=DUMMY pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=8 type=0 insize=1506 outsize=829 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
-  api=15 insize=617 outsize=1412 ok=1
+  api=13 insize=829 outsize=2245 ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=1018 outsize=1281 kw=PIXELSNAP_ON pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
+  api=8 type=1 insize=1506 outsize=1325 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
-  api=13 insize=1281 outsize=3102 ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=1018 outsize=248 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: disassembleShader
-  api=11 insize=248 outsize=441 ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1018 outsize=421 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: disassembleShader
-  api=17 insize=421 outsize=1082 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1005 outsize=589 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=14 insize=1325 outsize=2876 ok=1
 Cmd: disassembleShader
   api=15 insize=589 outsize=1349 ok=1

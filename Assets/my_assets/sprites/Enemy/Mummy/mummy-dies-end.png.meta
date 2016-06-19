@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: ada4adf426bc6de45baa0b60798ad294
+timeCreated: 1465292391
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mummy-dies-end_0
+    21300002: mummy-dies-end_1
+    21300004: mummy-dies-end_2
+    21300006: mummy-dies-end_3
+    21300008: mummy-dies-end_4
+    21300010: mummy-dies-end_5
+    21300012: mummy-dies-end_6
+    21300014: mummy-dies-end_7
+    21300016: mummy-dies-end_8
+    21300018: mummy-dies-end_9
+    21300020: mummy-dies-end_10
+    21300022: mummy-dies-end_11
+    21300024: mummy-dies-end_12
+    21300026: mummy-dies-end_13
+    21300028: mummy-dies-end_14
+    21300030: mummy-dies-end_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mummy-dies-end_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 29
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 29
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 29
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 29
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 29
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_5
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 21
+        width: 26
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_6
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 23
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 18
+        width: 17
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 15
+        width: 17
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 30
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_10
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 0
+        width: 30
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_11
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 0
+        width: 223
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -111.5, y: 31}
+        - {x: -111.5, y: 0}
+        - {x: -95.5, y: 0}
+        - {x: -95.5, y: 25}
+        - {x: -105.5, y: 31}
+      - - {x: -111.5, y: 57}
+        - {x: -111.5, y: 32}
+        - {x: -100.5, y: 0}
+        - {x: 111.5, y: 0}
+        - {x: 111.5, y: 57}
+    - name: mummy-dies-end_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 27
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_13
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 29
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 30
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-dies-end_15
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 0
+        width: 30
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

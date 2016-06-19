@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5dded0d1c073a93459d2be8ac9288290
-timeCreated: 1457904872
+timeCreated: 1462432695
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -65,7 +65,7 @@ TextureImporter:
         width: 34
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_1
@@ -76,7 +76,7 @@ TextureImporter:
         width: 34
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_2
@@ -87,7 +87,7 @@ TextureImporter:
         width: 34
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_3
@@ -98,7 +98,7 @@ TextureImporter:
         width: 34
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_4
@@ -109,7 +109,7 @@ TextureImporter:
         width: 35
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_5
@@ -120,7 +120,7 @@ TextureImporter:
         width: 35
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_walk_6
@@ -131,7 +131,7 @@ TextureImporter:
         width: 35
         height: 27
       alignment: 9
-      pivot: {x: 0.1, y: 1.4}
+      pivot: {x: 0.1, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 924ff696f8cb73d41ae5b5fb403da47f
-timeCreated: 1457943958
+timeCreated: 1462432398
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,9 +60,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 31
-        height: 29
+        height: 27
       alignment: 9
-      pivot: {x: 0.102, y: 1.305}
+      pivot: {x: 0.102, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_after_shoot_1
@@ -71,9 +71,9 @@ TextureImporter:
         x: 34
         y: 0
         width: 31
-        height: 29
+        height: 27
       alignment: 9
-      pivot: {x: 0.102, y: 1.305}
+      pivot: {x: 0.102, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_after_shoot_2
@@ -82,9 +82,9 @@ TextureImporter:
         x: 68
         y: 0
         width: 31
-        height: 29
+        height: 27
       alignment: 9
-      pivot: {x: 0.102, y: 1.305}
+      pivot: {x: 0.102, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_after_shoot_3
@@ -93,9 +93,9 @@ TextureImporter:
         x: 102
         y: 0
         width: 31
-        height: 29
+        height: 27
       alignment: 9
-      pivot: {x: 0.102, y: 1.305}
+      pivot: {x: 0.102, y: 1.374}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

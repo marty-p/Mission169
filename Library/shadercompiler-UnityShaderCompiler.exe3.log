@@ -1,82 +1,18 @@
-Base path: D:/Unity/Editor/Data
+Base path: E:/Unity3D/Editor/Data
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=8 type=1 insize=1506 outsize=1325 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
-  api=14 insize=757 outsize=2214 ok=1
+  api=14 insize=1325 outsize=2876 ok=1
 Cmd: disassembleShader
-  api=14 insize=501 outsize=1439 ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=796 outsize=517 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=14 insize=517 outsize=1483 ok=1
-Cmd: disassembleShader
-  api=14 insize=517 outsize=1483 ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=801 outsize=409 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=14 insize=409 outsize=1290 ok=1
-Cmd: compileSnippet
-  error: 2 plat 8 at (31): invalid subscript 'color'\nCompiling Vertex program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=0 insize=890 outsize=0 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=0
-Cmd: compileSnippet
-  error: 2 plat 8 at (31): invalid subscript 'color'\nCompiling Fragment program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=1 insize=890 outsize=0 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=0
-Cmd: compileSnippet
-  error: 2 plat 4 at (31): invalid subscript 'color'\nCompiling Vertex program
-Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=4 type=0 insize=881 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
-Cmd: compileSnippet
-  error: 2 plat 8 at (31): invalid subscript 'color'\nCompiling Fragment program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=1 insize=881 outsize=0 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=0
-Cmd: compileSnippet
-  error: 2 plat 4 at (38): invalid subscript 'uv'\nCompiling Vertex program
-Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=4 type=0 insize=1010 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
-Cmd: compileSnippet
-  error: 2 plat 4 at (38): invalid subscript 'uv'\nCompiling Fragment program
-Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=4 type=1 insize=1010 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
-Cmd: compileSnippet
-  api=8 type=0 insize=1016 outsize=829 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=13 insize=829 outsize=2245 ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=1018 outsize=596 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: disassembleShader
-  api=9 insize=596 outsize=947 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1018 outsize=829 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
-Cmd: disassembleShader
-  api=15 insize=829 outsize=1725 ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=1018 outsize=577 kw=DUMMY pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=14 insize=577 outsize=1583 ok=1
-Cmd: compileSnippet
-  error: 1 plat 8 at (33): 'vert': Top-level return value is not completely initialized; Output value 'vert' is not completely initialized\nCompiling Vertex program
-Platform defines: UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3
-  api=8 type=0 insize=1018 outsize=761 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=13 insize=761 outsize=2120 ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=1018 outsize=509 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
-Cmd: disassembleShader
-  api=14 insize=509 outsize=1468 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1007 outsize=589 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+  api=17 insize=757 outsize=1522 ok=1
 Cmd: disassembleShader
   api=15 insize=589 outsize=1349 ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=1007 outsize=509 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
-  api=14 insize=509 outsize=1468 ok=1
+  api=14 insize=1325 outsize=2876 ok=1
 Cmd: compileSnippet
-  api=8 type=0 insize=1005 outsize=829 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
+  api=8 type=0 insize=1514 outsize=829 kw= pd=UNITY_NO_LINEAR_COLORSPACE UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF3 ok=1
 Cmd: disassembleShader
   api=13 insize=829 outsize=2245 ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1005 outsize=421 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: disassembleShader
-  api=17 insize=421 outsize=1079 ok=1
+  api=17 insize=381 outsize=1012 ok=1
