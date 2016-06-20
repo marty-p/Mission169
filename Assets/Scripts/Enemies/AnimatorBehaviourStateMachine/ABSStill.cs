@@ -4,9 +4,6 @@ using Slug.StateMachine;
 public class ABSStill : Room {
 
     public override void Init(Animator anim) {
-
-        print(" RUUUUUUUUUUUUUUUUUUUUUUNED!!1");
-
         Door toGrenade = new Door(()=>anim.SetTrigger("grenade_standing"), brain.ShouldIGrenade, 3);
         AddExitDoor(toGrenade);
 

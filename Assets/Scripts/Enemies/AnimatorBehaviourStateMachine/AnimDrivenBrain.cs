@@ -26,7 +26,6 @@ public class AnimDrivenBrain : MonoBehaviour {
     private void UpdateDistanceToTarget() {
         distanceToTarget = transform.position.x - target.position.x;
         absDistanceToTarget = Mathf.Abs(distanceToTarget);
-        print(absDistanceToTarget);
     }
 
     public bool ShouldIWalk() {
@@ -72,7 +71,6 @@ public class AnimDrivenBrain : MonoBehaviour {
             return false;
         }
     }
-
 
     public bool WalkAwayFromTarget(float stopDistance) {
         if (FacingTarget()) {

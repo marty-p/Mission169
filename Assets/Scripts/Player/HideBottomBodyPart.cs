@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using AnimatorStateMachineUtil;
 
 public class HideBottomBodyPart : MonoBehaviour {
 

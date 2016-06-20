@@ -112,7 +112,7 @@ public class MovementManager : MonoBehaviour, IObserver {
     }
 
     void Awake () {
-        physics = gameObject.AddComponent<PhysicsSlugEngine>();
+        physics = gameObject.GetComponent<PhysicsSlugEngine>();
         animManager = GetComponent<AnimationManager>();
 	}
 
