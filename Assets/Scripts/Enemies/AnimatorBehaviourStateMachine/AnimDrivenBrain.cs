@@ -51,6 +51,7 @@ public class AnimDrivenBrain : MonoBehaviour {
 
     public bool WalkToTarget(float stopDistance, int walkingSpeed) {
         if (absDistanceToTarget < stopDistance) {
+            print(" problem here");
             return true;
         } else if (!FacingTarget()) {
             anim.SetTrigger("turn_around");

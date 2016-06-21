@@ -1,24 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
+using Slug.StateMachine;
 
-public class mummyStillBehaviour : StateMachineBehaviour {
+public class mummyStillBehaviour : Room {
 
-    private AnimDrivenBrain brain;
-
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	    if (brain == null) {
-            brain = animator.GetComponent<AnimDrivenBrain>();
-        }
-	}
-
-	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	    //if (brain.ShouldIWalk()) { 
-            animator.SetBool("walking", true);
-        //} else if (brain.ShouldIAttack()) {
-            animator.SetTrigger("attack");
-
-        //}
-	}
-
+    public override void Init() {
+        Door toWalking = new Door(
+                () => animator.SetBool("walking", true),
+                () => brain.TargetDistMoreThan(0.5f)
+        );
+        AddExitDoor(toWalking);
+    }
 
 }

@@ -26,7 +26,7 @@ public class ABSStill : Room {
         if (distanceToStop == 0) {
             distanceToStop = UnityEngine.Random.Range(1, 1.9f);
         }
-        animator.SetTrigger("walking");
+        animator.SetBool("walking", true);
         brain.distanceStopWalking = distanceToStop;
     }
 
