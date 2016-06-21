@@ -17,8 +17,8 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
         animManager = GetComponent<HippieAnimationManager>();
         physic = GetComponent<PhysicsSlugEngine>();
         HippiesBrain = HippieTiedUp;
-        hippieSpeedWalkingFactor = 0.5f;
-        hippieSpeedRunningFactor = 2;
+        hippieSpeedWalkingFactor = 10;
+        hippieSpeedRunningFactor = 60;
 	}
 	
     void Update() {
@@ -38,7 +38,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     }
 
     private void HippieWalkAround() {
-        physic.MoveForward(transform.right.x * hippieSpeedWalkingFactor);
+        physic.MoveForward(hippieSpeedWalkingFactor);
     }
     private void EndOfHippieWalkAnim() {
         transform.right = -transform.right;
@@ -61,7 +61,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
         if (!runAwayStarted) {
             runAwayStarted = true;
         }
-        physic.MoveForward(transform.right.x * hippieSpeedRunningFactor);
+        physic.MoveForward(hippieSpeedRunningFactor);
     }
 
     void OnBecameInvisible() {
