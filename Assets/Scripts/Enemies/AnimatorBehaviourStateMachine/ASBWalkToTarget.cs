@@ -8,7 +8,7 @@ public class ASBWalkToTarget : Room {
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        distanceToStop = UnityEngine.Random.Range(0.6f, 1.9f);
+        distanceToStop = UnityEngine.Random.Range(1, 1.9f);
     }
 
     public override void Init(Animator anim) {

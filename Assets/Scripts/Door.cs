@@ -8,7 +8,7 @@
         public RetVoidTakeVoid destination;
         public RetBoolTakeVoid openCondition;
 
-        public float lastExitTimeStamp = Time.time;
+        public float lastExitTimeStamp;
         public float lockoutDuration;
 
         public Door (RetVoidTakeVoid destination, RetBoolTakeVoid openCondition, float lockoutDuration=0) {

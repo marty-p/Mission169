@@ -21,6 +21,13 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         });
     }
 
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "Player") {
+            anim.SetTrigger("knife");
+        }
+    }
+
+
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
             return;
