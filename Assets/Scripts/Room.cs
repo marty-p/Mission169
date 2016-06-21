@@ -8,11 +8,13 @@
         protected List<Door> exitDoors = new List<Door>();
         protected AnimDrivenBrain brain;
         private Door lastDoorUsed;
+        protected Animator animator;
 
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
             if (brain == null) {
                 brain = animator.GetComponent<AnimDrivenBrain>();
                 Init(animator);
+                this.animator = animator;
             }
             if (lastDoorUsed != null) {
                 lastDoorUsed.TimeLock();

@@ -12,12 +12,12 @@ public class mummyStillBehaviour : StateMachineBehaviour {
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	    if (brain.ShouldIWalk()) { 
+	    //if (brain.ShouldIWalk()) { 
             animator.SetBool("walking", true);
-        } else if (brain.ShouldIAttack()) {
+        //} else if (brain.ShouldIAttack()) {
             animator.SetTrigger("attack");
 
-        }
+        //}
 	}
 
 

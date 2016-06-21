@@ -13,6 +13,8 @@ public class AnimDrivenBrain : MonoBehaviour {
 
     public float getScaredFactor = 0.5f;
 
+    public float distanceStopWalking;
+
     void Awake () {
         anim = GetComponent<Animator>();
         physic = GetComponent<PhysicsSlugEngine>();
@@ -28,22 +30,21 @@ public class AnimDrivenBrain : MonoBehaviour {
         absDistanceToTarget = Mathf.Abs(distanceToTarget);
     }
 
-    public bool ShouldIWalk() {
-        return absDistanceToTarget > 2;
+    public bool TargetDistBetween(float distMin, float distMax) {
+        if(distMin > distMax) {
+            throw new ArgumentException();
+        }
+        return absDistanceToTarget > distMin && absDistanceToTarget < distMax;
     }
-    public bool ShouldIGrenade() {
-        return absDistanceToTarget < 2 && absDistanceToTarget > 0.6f;
-    }
-    public bool ShouldIAttack() {
-        return absDistanceToTarget < 0.5f;
-    }
-    public bool ShouldIWalkBack() {
-        return absDistanceToTarget > 0.30f && absDistanceToTarget < 0.55f;
-    }
-    public bool ShouldISlice() {
-        float distanceFromPlayer = transform.position.x - target.position.x;
-        return Math.Abs(distanceFromPlayer) < 0.4f;
-    }
+
+    public bool TargetDistMoreThan(float dist) {
+        return absDistanceToTarget > dist;
+    }   
+
+    public bool TargetDistLessThan(float dist) {
+        return absDistanceToTarget < dist;
+    }    
+
     public float GetAbsTargetDistance() {
         return absDistanceToTarget;
     }
@@ -102,12 +103,6 @@ public class AnimDrivenBrain : MonoBehaviour {
     public void Walk(int speed=0) {
         physic.MoveForward(speed);
     }
-}
-
-public struct AnimatorStateCBs {
-    public RetVoidTakeVoid Start;
-    public RetVoidTakeVoid Update;
-    public RetVoidTakeVoid End;
 }
 
 public class CoolDown {
