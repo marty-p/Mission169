@@ -6,10 +6,6 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
     public Animator anim;
     public ObjectPoolScript bullettPool;
 
-    public bool AttackInProgress() {
-        throw new NotImplementedException();
-    }
-
     public void Execute(string victimTag, Vector3 dir , Vector3 ProjectileInitalPos) {
         anim.SetTrigger("fire");
 
@@ -21,8 +17,4 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
         bullet.Launch(victimTag);
     }
 
-    public bool IsReady()
-    {
-        return true;
-    }
 }

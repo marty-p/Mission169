@@ -35,7 +35,6 @@ public class InputManager : MonoBehaviour {
         fireKey = Input.GetButtonDown("Fire1");
         grenadeKey = Input.GetButtonDown("Fire2");
 
-
         leftKeyDown = Input.GetKeyDown("left");
         leftKeyUp = Input.GetKeyUp("left");
         rightKeyDown = Input.GetKeyDown("right");

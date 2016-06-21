@@ -7,7 +7,6 @@ public class MarcoAttackGrenade : MonoBehaviour, IAttack {
     public AnimationManager animManager;
     private Vector3 initialPosition;
     public string victimTag = "untagged";
-    private bool inProgress;
 
     public void Execute(string victimTag, Vector3 dirUnused, Vector3 projInitialPos) {
         animManager.StartGrenadeAnim(ThrowItAway);
@@ -23,9 +22,4 @@ public class MarcoAttackGrenade : MonoBehaviour, IAttack {
         grenade.Launch(this.victimTag);
     }
 
-
-    public bool IsReady()
-    {
-        return true;
-    }
 }

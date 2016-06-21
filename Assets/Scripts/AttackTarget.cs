@@ -7,7 +7,6 @@ public class AttackTarget : MonoBehaviour, IAttack {
     public string victimsTag = "Player";
     private Animator animator;
     private Transform target;
-    public float CoolDown = 3;
 
     void Awake () {
         animator = GetComponent<Animator>();
