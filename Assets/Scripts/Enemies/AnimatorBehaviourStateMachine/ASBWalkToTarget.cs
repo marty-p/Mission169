@@ -6,8 +6,8 @@ public class ASBWalkToTarget : Room {
     private float distanceToStop;
     public int walkingSpeed = 20;
 
-    public override void Init(Animator anim) {
-        Door toStill = new Door(() => anim.SetBool("walking", false),
+    public override void Init() {
+        Door toStill = new Door(() => animator.SetBool("walking", false),
                                 () => brain.GetAbsTargetDistance() < distanceToStop);
         AddExitDoor(toStill);
     }   
@@ -17,7 +17,7 @@ public class ASBWalkToTarget : Room {
         distanceToStop = brain.distanceStopWalking;
     }
 
-    public override void Update(Animator anim) {
+    public override void Update() {
         brain.WalkToTarget(walkingSpeed);
     }
 }

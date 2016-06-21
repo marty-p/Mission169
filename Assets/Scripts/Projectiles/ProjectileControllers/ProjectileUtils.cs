@@ -36,7 +36,6 @@ public class ProjectileUtils {
     public static void ImpactAnimation(Transform proj, Collider2D col, ProjectileProperties projProp) {
         Animator anim = SimpleAnimatorPool.GetPooledAnimator();
         anim.runtimeAnimatorController = projProp.explosionAnimator;
-        Vector2 colPoint = new Vector2(col.transform.position.x, proj.transform.position.y);
         anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.055f;
     }
 

@@ -13,13 +13,13 @@
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
             if (brain == null) {
                 brain = animator.GetComponent<AnimDrivenBrain>();
-                Init(animator);
+                Init();
                 this.animator = animator;
             }
             if (lastDoorUsed != null) {
                 lastDoorUsed.TimeLock();
             }
-            Enter(animator);
+            Enter();
         }
 
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -30,11 +30,11 @@
                     lastDoorUsed = exitDoors[i];
                 }
             }
-            Update(animator);
+            Update();
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-            Exit(animator);
+            Exit();
         }
 
         public void AddExitDoor(Door door) {
@@ -43,10 +43,10 @@
 
         // don't want to force to override and ...
         // don't want to forget to add base.OnStateEnter so doing that
-        virtual public void Init(Animator anim) { }
-        virtual public void Enter(Animator anim) { }
-        virtual public void Update(Animator anim) { }
-        virtual public void Exit(Animator anim) { }
+        virtual public void Init() { }
+        virtual public void Enter() { }
+        virtual public void Update() { }
+        virtual public void Exit() { }
 
         public void print(string str) {
             Debug.Log(str);

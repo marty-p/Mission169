@@ -8,7 +8,7 @@ public class SoldierRunAwayBehaviour : Room {
         brain.TurnBackToTarget();
     }
 
-	override public void Update(Animator animator) {
+	override public void Update() {
         brain.Walk(50);
 	}
 

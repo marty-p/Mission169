@@ -3,19 +3,19 @@ using Slug.StateMachine;
 
 public class ABSStill : Room {
 
-    public override void Init(Animator anim) {
-        Door toGrenade = new Door(()=>anim.SetTrigger("grenade_standing"),
+    public override void Init() {
+        Door toGrenade = new Door(()=>animator.SetTrigger("grenade_standing"),
                 ()=> brain.TargetDistBetween(0.6f, 2), 3);
         AddExitDoor(toGrenade);
 
         Door toWalk = new Door(()=>OnGoingToWalk(), ()=>brain.TargetDistMoreThan(2), 0);
         AddExitDoor(toWalk);
 
-        Door toWalkBack = new Door(()=>anim.SetBool("walking_away_from_target", true), 
+        Door toWalkBack = new Door(()=>animator.SetBool("walking_away_from_target", true), 
                 ()=> brain.TargetDistBetween(0.3f, 0.8f), 5) ;
         AddExitDoor(toWalkBack);
 
-        Door toKnife = new Door(()=>anim.SetTrigger("knife"), ()=>brain.TargetDistLessThan(0.4f), 2.5f);
+        Door toKnife = new Door(()=>animator.SetTrigger("knife"), ()=>brain.TargetDistLessThan(0.4f), 2.5f);
         AddExitDoor(toKnife);
 
         Door toBodyContact = new Door(()=>OnGoingToWalk(0.3f), ()=>brain.TargetDistLessThan(1.5f), 1);

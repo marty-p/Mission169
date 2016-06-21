@@ -4,7 +4,6 @@ public class MarcoAttackManager : MonoBehaviour {
     private IAttack MeleeAttack;
     private IAttack FireArmAttack;
     private IAttack grenadeAttack;
-    private PhysicsSlugEngine physics;
 
     public string victimsTag = "enemy";
     public Animator anim;
@@ -27,7 +26,6 @@ public class MarcoAttackManager : MonoBehaviour {
         MeleeAttack = (IAttack)GetComponent("AttackKnife");
         FireArmAttack = (IAttack)GetComponent("BasicGunAttack");
         grenadeAttack = GetComponent<MarcoAttackGrenade>();
-        physics = GetComponentInParent<PhysicsSlugEngine>();
         movementManager = GetComponentInParent<MovementManager>();
     }
 

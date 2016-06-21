@@ -6,9 +6,7 @@ public class AttackTarget : MonoBehaviour, IAttack {
     public ObjectPoolScript grenadePool;
     public string victimsTag = "Player";
     private Animator animator;
-    private bool inProgress = false;
     private Transform target;
-    private float lastAttackTimeStamp;
     public float CoolDown = 3;
 
     void Awake () {
@@ -27,11 +25,5 @@ public class AttackTarget : MonoBehaviour, IAttack {
         grenadeGameObject.transform.position = transform.position + new Vector3(0,0.2f);
         grenadeGameObject.transform.right = transform.right;
         grenade.Launch(victimsTag, projectileDestination);
-        lastAttackTimeStamp = Time.time;
-    }
-
-    public bool IsReady()
-    {
-        return (Time.time - lastAttackTimeStamp) > CoolDown;
     }
 }

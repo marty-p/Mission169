@@ -8,12 +8,10 @@ public class AnimationManager : MonoBehaviour, IObserver {
 
     private RetVoidTakeVoid EndOfDeathCB;
     private bool inExplosiveDeathAnim;
-    private PhysicsSlugEngine physics;
 
     public RetVoidTakeVoid grenadeCB;
 
     public void Awake() {
-        physics = GetComponent<PhysicsSlugEngine>();
         /*
         AnimationClip[] animClip = topAnimator.runtimeAnimatorController.animationClips;
         AnimationEvent[] animEvents = new AnimationEvent[1];

@@ -29,7 +29,6 @@ public class InputManager : MonoBehaviour {
         bool downKeyDown;
         bool downKeyUp;
 
-        int verticalKey = 0;
         int horizontalKey = 0;
 
         jump = Input.GetButtonDown("Jump");
@@ -47,7 +46,6 @@ public class InputManager : MonoBehaviour {
         downKeyUp = Input.GetKeyUp("down");
 
         horizontalKey = (int) Input.GetAxisRaw("Horizontal");
-        verticalKey = (int)Input.GetAxisRaw("Vertical");
 
         if (fireKey) {
             attackManager.PrimaryAttack();
@@ -57,11 +55,11 @@ public class InputManager : MonoBehaviour {
 
         if (leftKeyDown) {
             movementManager.HorizontalMovement(Vector3.left);
-        } else if (leftKeyUp  && horizontalKey == 0) {
+        } else if (leftKeyUp  && horizontalKey == 0) { //fix problem when changing direction (press right before releasing left)
             movementManager.StopMoving();
         } else if (rightKeyDown) {
             movementManager.HorizontalMovement(Vector3.right);
-        } else if(rightKeyUp && horizontalKey ==0) {
+        } else if(rightKeyUp && horizontalKey == 0) {
             movementManager.StopMoving();
         }
 

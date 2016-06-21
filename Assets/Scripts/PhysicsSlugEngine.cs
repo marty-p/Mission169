@@ -20,14 +20,12 @@ public class PhysicsSlugEngine : MonoBehaviour {
     private float movementFactor = 1.1f; // TODO movementFactor at init is the same as groundMovementFactor
 
     private Vector2 absoluteVelocity;
-    private Vector2 previousPos;
     private float pastHorizontalVelocity;
 
     private RaycastHit2D underMyFeetHit;
 
     private bool inTheAir = false;
     public bool InTheAir { get { return inTheAir; } }
-    private float yCandidate;
     private Vector2 groundSlope;
     private Vector2 rayCastStartPoint;
     private float forceX;
@@ -36,9 +34,7 @@ public class PhysicsSlugEngine : MonoBehaviour {
         boxCollider = GetComponent<BoxCollider2D>();
         rayCastStartPoint = new Vector2();
         observers = GetComponents<IObserver>();
-        yCandidate = transform.position.y;
         absoluteVelocity = new Vector2();
-        previousPos = new Vector2(transform.position.x, transform.position.y);
     }
 
 

@@ -5,7 +5,6 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
     private InputManager inputManager;
     private AnimationManager animManager;
     private PhysicsSlugEngine physic;
-    private BoxCollider2D boxCollider;
     private MovementManager movementManager;
     private Blink blink;
     private HealthManager health;
@@ -19,7 +18,6 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
     void Awake() {
         inputManager = GetComponent<InputManager>();
         animManager = GetComponent<AnimationManager>();
-        boxCollider = GetComponent<BoxCollider2D>();
         blink = GetComponent<Blink>();
         physic = GetComponent<PhysicsSlugEngine>();
         movementManager = GetComponent<MovementManager>();

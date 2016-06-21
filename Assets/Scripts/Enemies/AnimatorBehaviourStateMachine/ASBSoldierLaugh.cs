@@ -5,12 +5,12 @@ public class ASBSoldierLaugh : Room {
 
     private float laughingVal;
 
-    public override void Init(Animator anim) {
-        Door toOtherLaugh = new Door( ()=> anim.SetTrigger("laugh_change"), ()=> laughingVal > 0.6f, 1f);
+    public override void Init() {
+        Door toOtherLaugh = new Door( ()=> animator.SetTrigger("laugh_change"), ()=> laughingVal > 0.6f, 1f);
         AddExitDoor(toOtherLaugh);
     }
 
-    public override void Update(Animator anim) {
+    public override void Update() {
         laughingVal = UnityEngine.Random.value;
     }
 
