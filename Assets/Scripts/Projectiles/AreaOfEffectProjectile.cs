@@ -22,7 +22,11 @@ public class AreaOfEffectProjectile : MonoBehaviour{
         for (int i=0; i<hits.Length; i++) {
             if (hits[i].collider.tag == victimsTag) {
                 HealthManager healthManager = hits[i].collider.GetComponentInChildren<HealthManager>();
-                healthManager.OnHitByProjectile(projectileProp);
+                if (healthManager == null) {
+                    print("victim " + victimsTag + " does not have a healthManager");
+                } else {
+                    healthManager.OnHitByProjectile(projectileProp);
+                }
             }
         }
     }

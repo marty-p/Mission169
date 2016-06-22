@@ -10,8 +10,15 @@ public class BlinkAtTheEnd : StateMachineBehaviour {
         }
 
         if (stateInfo.normalizedTime > stateInfo.length) {
-            blink.BlinkPlease(() => animator.transform.parent.gameObject.SetActive(false));
+            blink.BlinkPlease(() => {
+                Transform t = animator.transform;
+                while (t.parent != null && t.parent.tag == "enemy") {
+                    t = t.parent;
+                }
+                t.gameObject.SetActive(false);
+            });
         }
+
 	}
 
 }
