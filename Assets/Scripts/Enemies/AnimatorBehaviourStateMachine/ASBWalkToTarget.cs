@@ -10,6 +10,7 @@ public class ASBWalkToTarget : Room {
         Door toStill = new Door(() => animator.SetBool("walking", false),
                                 () => brain.GetAbsTargetDistance() < distanceToStop);
         AddExitDoor(toStill);
+        brain.distanceStopWalking = 0.5f;
     }   
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

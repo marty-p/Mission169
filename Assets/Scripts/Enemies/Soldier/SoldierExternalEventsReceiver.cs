@@ -27,7 +27,6 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         }
     }
 
-
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
             return;

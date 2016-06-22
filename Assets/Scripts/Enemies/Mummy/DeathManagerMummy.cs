@@ -21,7 +21,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     private void Die(ProjectileProperties projProp) {
         animator.SetTrigger("death");
-      //  transform.gameObject.SetActive(false);
-      //  transform.localPosition = Vector3.zero;
+        gameObject.layer = 2;
+
     }
 }

@@ -9,6 +9,13 @@ public class mummyStillBehaviour : Room {
                 () => brain.TargetDistMoreThan(0.5f)
         );
         AddExitDoor(toWalking);
+
+        Door toAttack = new Door(
+                () => animator.SetTrigger("attack"),
+                () => brain.TargetDistLessThan(0.51f),
+                0.5f
+        );
+        AddExitDoor(toAttack);
     }
 
 }
