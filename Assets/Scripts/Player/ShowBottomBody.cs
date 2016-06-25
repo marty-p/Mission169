@@ -3,20 +3,12 @@ using System.Collections;
 
 public class ShowBottomBody : StateMachineBehaviour {
 
-    private SpriteRenderer sr;
-    private SimulateHovering utils;
+    private HideBottomBodyPart hideBottomScript;
 
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (utils == null) {
-            utils = animator.transform.GetComponentInParent<SimulateHovering>();
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (hideBottomScript == null) {
+            hideBottomScript = animator.GetComponent<HideBottomBodyPart>();	
         }
-        utils.HideBottom();
+        hideBottomScript.ShowBottomBody();
 	}
-
-	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (utils == null) {
-            utils = animator.transform.GetComponentInParent<SimulateHovering>();
-        }
-        utils.ShowBottom();
-    }
 }

@@ -2,18 +2,14 @@
 
 public class MummyAnimationEvents : MonoBehaviour {
 
-    private string victimsTag = "Player";
-    private AreaOfEffectProjectile badBreath;
+    public string victimsTag = "Player";
     private MummyBreath mummyBreath;
 
-	// Use this for initialization
 	void Awake () {
-        badBreath = GetComponent<AreaOfEffectProjectile>();
-        mummyBreath = GetComponentInChildren<MummyBreath>();
+        mummyBreath = GetComponentInChildren<MummyBreath>(true);
 	}
 	
     public void AECastBadBreath() {
-        badBreath.CastAOE(victimsTag, transform.position);
         mummyBreath.ThrowBreath();
     }
 

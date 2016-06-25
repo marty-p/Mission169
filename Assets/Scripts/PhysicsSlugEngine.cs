@@ -20,9 +20,9 @@ public class PhysicsSlugEngine : MonoBehaviour {
     private float movementFactor = 1.1f; // TODO movementFactor at init is the same as groundMovementFactor
 
     private Vector2 absoluteVelocity;
-    private float pastHorizontalVelocity;
 
     private RaycastHit2D underMyFeetHit;
+    private RaycastHit2D inFrontOfMe;
 
     private bool inTheAir = false;
     public bool InTheAir { get { return inTheAir; } }
@@ -39,12 +39,6 @@ public class PhysicsSlugEngine : MonoBehaviour {
 
 
     void FixedUpdate() {
-        if (Mathf.Approximately(pastHorizontalVelocity, 0) && absoluteVelocity.x != 0) {
-            NotifyObservers(SlugEvents.StartMoving);
-        } else if (pastHorizontalVelocity != 0 && Mathf.Approximately(absoluteVelocity.x, 0)) {
-            NotifyObservers(SlugEvents.StopMoving);
-        }
-
         WhatIsUnderMyFeet();
         UpdateGroundSlope();
 
@@ -54,22 +48,24 @@ public class PhysicsSlugEngine : MonoBehaviour {
         float transY = calculateYTranslation();
         transform.Translate(transX, transY, 0, Space.World);
 
-
-        pastHorizontalVelocity = absoluteVelocity.x;
         CalculateVelocity();
         /*
                 Debug.DrawLine(rayCastStartPoint, 
                         new Vector2(boxCollider.bounds.min.x + boxCollider.bounds.size.x/2,
                         boxCollider.bounds.min.y + absoluteVelocity.y * Time.fixedDeltaTime - rayCastRestLength));
         */
+
     }
 
     float calculateXTranslation() {
-        //print(groundSlope.x);
-       // print(absoluteVelocity.x);
-        //print(movementFactor);
-       // print("");
-        return groundSlope.x * absoluteVelocity.x * movementFactor * Time.fixedDeltaTime;
+        float xTranslation = groundSlope.x * absoluteVelocity.x * movementFactor * Time.fixedDeltaTime;
+
+        WhatIsInFrontOfMe(xTranslation);
+        if (inFrontOfMe.collider != null) {
+            xTranslation = inFrontOfMe.distance;
+        }
+
+        return xTranslation;
     }
 
     float calculateYTranslation() {
@@ -107,11 +103,27 @@ public class PhysicsSlugEngine : MonoBehaviour {
         }
 
         int layerMask = 1 << LayerMask.NameToLayer("World");
-
         underMyFeetHit = Physics2D.Raycast(rayCastStartPoint, dir,
                 rayCastRestLength + Mathf.Abs(absoluteVelocity.y * Time.fixedDeltaTime),
                 layerMask);
     }
+
+    void WhatIsInFrontOfMe(float translationPlanned) {
+        float startX;
+        if ((Vector2)transform.right == Vector2.right) {
+            startX = boxCollider.bounds.max.x + 0.00005f;
+        } else {
+            startX = boxCollider.bounds.min.x - 0.00005f;
+        }
+        
+        Vector2 startPoint = new Vector2(startX, boxCollider.bounds.max.y);
+        Vector2 endPoint = startPoint + new Vector2 (translationPlanned, 0);
+
+        int layerMask = 1 << LayerMask.NameToLayer("EnemySolid") | 1 << LayerMask.NameToLayer("World");
+        inFrontOfMe = Physics2D.Linecast(startPoint, endPoint, layerMask);
+        Debug.DrawLine(startPoint, endPoint, Color.red);
+    }
+
 
     float FixYPosition(RaycastHit2D hit) {
         return hit.point.y + boxCollider.bounds.size.y / 2 - boxCollider.offset.y + 0.01f;
@@ -155,8 +167,6 @@ public class PhysicsSlugEngine : MonoBehaviour {
         movementFactor = airLowVelocityMovementFactor;
         NotifyObservers(SlugEvents.Fall);
     }
-
-
 
     void CalculateVelocity() {
         if (inTheAir) {

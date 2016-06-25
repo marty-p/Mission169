@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player") {
             InitSoldier();
-        //    collider.enabled = false;
+            collider.enabled = false;
         }
     }
 

@@ -26,6 +26,8 @@ public class ProjectileUtils {
         HealthManager healthManager = col.GetComponentInChildren<HealthManager>();
         if ( healthManager != null) {
             healthManager.OnHitByProjectile(projProp);
+        } else {
+            Debug.Log("Collider " + col.tag + " does not have a HealthManager");
         }
     }
 

@@ -63,7 +63,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
         health.IgnoreDamages = true;
         playerIndicator.SetVisible(true);
         flashBright.FlashForXSecs(ignoreDamagesDuration);
-        timeUtils.Delay(ignoreDamagesDuration,() => 
+        timeUtils.TimeDelay(ignoreDamagesDuration,() => 
         {       health.IgnoreDamages = false;
                 playerIndicator.SetVisible(false);
         });

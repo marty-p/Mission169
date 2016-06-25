@@ -5,8 +5,10 @@
 [Oo]bj/
 [Bb]uild
 [Ll]ibrary/
+Library
 sysinfo.txt
 *.stackdump
+test.txt
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System;
 
 public class BasicProjectile : MonoBehaviour, IProjectile {
 
@@ -7,7 +6,7 @@ public class BasicProjectile : MonoBehaviour, IProjectile {
     private bool launched;
 
     public void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == properties.victimTag) {
+        if (col.tag == properties.victimTag || col.tag == "World") {
             ProjectileUtils.ImpactAnimation(transform, col, properties);
             ProjectileUtils.NotifyCollider(col, properties);
             gameObject.SetActive(false);

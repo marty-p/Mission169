@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         timeUtils = GetComponent<TimeUtils>();
         EventManager.StartListening("player_death",
-                    ()=> timeUtils.Delay(waitTimeBeforeSpawn, OnplayerDeath));
+                    ()=> timeUtils.TimeDelay(waitTimeBeforeSpawn, OnplayerDeath));
 	}
 	
     private void OnplayerDeath() {

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using Slug;
 
 public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
@@ -21,7 +21,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     private void Die(ProjectileProperties projProp) {
         animator.SetTrigger("death");
-        gameObject.layer = 2;
+        gameObject.layer =(int) SlugLayers.Default;
 
     }
 }

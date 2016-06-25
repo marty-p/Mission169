@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3d05f0b77bf8362458f23e5a3cc64031
-timeCreated: 1462432622
+timeCreated: 1466827439
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -157,7 +157,7 @@ TextureImporter:
         width: 34
         height: 29
       alignment: 9
-      pivot: {x: 0.06, y: 1.279}
+      pivot: {x: 0.067, y: 1.279}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_shoot_10
@@ -168,7 +168,7 @@ TextureImporter:
         width: 33
         height: 29
       alignment: 9
-      pivot: {x: 0.06, y: 1.279}
+      pivot: {x: 0.069, y: 1.279}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: marco-sit_shoot_11
@@ -179,7 +179,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 9
-      pivot: {x: 0.06, y: 1.279}
+      pivot: {x: 0.07, y: 1.279}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

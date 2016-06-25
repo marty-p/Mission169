@@ -19,6 +19,7 @@ public class AnimDrivenBrain : MonoBehaviour {
         anim = GetComponent<Animator>();
         physic = GetComponent<PhysicsSlugEngine>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        print(target);
     }
 	
 	void Update () {

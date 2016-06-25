@@ -30,9 +30,8 @@ public class MarcoAttackManager : MonoBehaviour {
     }
 
     public void PrimaryAttack() {
-        if (inRangeForKnife) {
+        if (InRangeForKnife()) {
             MeleeAttack.Execute(victimsTag);
-            inRangeForKnife = false;
         } else {
             Vector3 projInitPos = GetProjPosInit();
             FireArmAttack.Execute(victimsTag, movementManager.lookingDirection, projInitPos);
@@ -63,16 +62,20 @@ public class MarcoAttackManager : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "enemy") {
-            inRangeForKnife = true;
-        }
-    }
+    private bool InRangeForKnife() {
+        RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position,
+                new Vector2(transform.position.x + transform.right.x*0.35f, transform.position.y));
 
-    void OnTriggerExit2D(Collider2D col) {
-        if (col.tag == "enemy") {
-            inRangeForKnife = false;
+        Debug.DrawLine(transform.position,
+                        new Vector2(transform.position.x + transform.right.x*0.35f, transform.position.y),
+                        Color.cyan);
+        
+        for (int i = 0; i < hits.Length; i++) {
+            if (hits[i].collider.tag == victimsTag) {
+                return true;
+            }
         }
+        return false;
     }
 
 }

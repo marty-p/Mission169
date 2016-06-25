@@ -8,6 +8,7 @@ public class MovementManager : MonoBehaviour, IObserver {
 
     public Vector2 lookingDirection;
     public BodyPosture body;
+    private TimeUtils timeUtils;
 
     private PhysicsSlugEngine physics;
     private AnimationManager animManager;
@@ -26,7 +27,7 @@ public class MovementManager : MonoBehaviour, IObserver {
     private void TurnAround() {
          physics.ChangeDirection(-transform.right);
         if (lookingDirection != Vector2.up && lookingDirection != Vector2.down) {
-            animManager.StartTurnAnim();
+            timeUtils.FixedUpdateDelay(()=>animManager.StartTurnAnim());
             lookingDirection = transform.right;
         }
     }
@@ -39,12 +40,12 @@ public class MovementManager : MonoBehaviour, IObserver {
             physics.SetVelocityX(dir.x);
         }
         physics.SetForceX(dir.x);
-        animManager.StartRunningAnim();
+        timeUtils.FixedUpdateDelay(()=>animManager.StartRunningAnim());
     }
 
     public void StopMoving() {
         physics.SetForceX(0);
-        animManager.StopRunningAnim();
+        timeUtils.FixedUpdateDelay(()=>animManager.StopRunningAnim());
     }
 
     public void Jump() {
@@ -54,11 +55,11 @@ public class MovementManager : MonoBehaviour, IObserver {
         body = BodyPosture.Stand;
         if (Mathf.Abs(physics.GetVelocityX()) > 0) {
             if (physics.JumpHighVel()) {
-                animManager.StartHighVelJumpAnim();
+                timeUtils.FixedUpdateDelay(()=>animManager.StartHighVelJumpAnim());
             }
         } else {
             if(physics.JumpLowVel()) {
-                animManager.StartLowVelJumpAnim();
+                timeUtils.FixedUpdateDelay(()=>animManager.StartLowVelJumpAnim());
             }
         }
     }
@@ -114,6 +115,7 @@ public class MovementManager : MonoBehaviour, IObserver {
     void Awake () {
         physics = gameObject.GetComponent<PhysicsSlugEngine>();
         animManager = GetComponent<AnimationManager>();
+        timeUtils = GetComponent<TimeUtils>();
 	}
 
     void NotifyObservers(SlugEvents ev) {
