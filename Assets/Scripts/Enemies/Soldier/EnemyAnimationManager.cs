@@ -5,6 +5,7 @@ using Utils;
 public class EnemyAnimationManager : MonoBehaviour, IObserver {
 
     private Animator anim;
+    public Animator blood;
     private RetVoidTakeVoid grenadeCB;
     private RetVoidTakeVoid grenadeEndCB;
     private string[] deathTriggers;  
@@ -32,6 +33,7 @@ public class EnemyAnimationManager : MonoBehaviour, IObserver {
         if (bulletType == ProjectileType.Bullet) {
             string deathTrigger = GetRandomDeathTrigger();
             anim.SetTrigger(deathTrigger);
+            blood.Play("1");
         } else if (bulletType == ProjectileType.Grenade) {
             anim.SetBool("hit_by_grenade", true);
         } else if (bulletType == ProjectileType.Knife) {

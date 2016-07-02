@@ -4,7 +4,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
 
     private InputManager inputManager;
     private AnimationManager animManager;
-    private PhysicsSlugEngine physic;
+    private SlugPhysics physic;
     private MovementManager movementManager;
     private Blink blink;
     private HealthManager health;
@@ -19,7 +19,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
         inputManager = GetComponent<InputManager>();
         animManager = GetComponent<AnimationManager>();
         blink = GetComponent<Blink>();
-        physic = GetComponent<PhysicsSlugEngine>();
+        physic = GetComponent<SlugPhysics>();
         movementManager = GetComponent<MovementManager>();
         health = GetComponent<HealthManager>();
         timeUtils = GetComponent<TimeUtils>();

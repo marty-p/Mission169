@@ -3,11 +3,11 @@
 public class DeathManager : MonoBehaviour, IReceiveDamage {
 
     private EnemyAnimationManager animManager;
-    private PhysicsSlugEngine physics;
+    private SlugPhysics physics;
 
     void Start() {
         animManager = GetComponent<EnemyAnimationManager>();
-        physics = GetComponent<PhysicsSlugEngine>();
+        physics = GetComponent<SlugPhysics>();
     }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {

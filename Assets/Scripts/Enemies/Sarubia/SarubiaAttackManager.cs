@@ -19,7 +19,7 @@ public class SarubiaAttackManager : MonoBehaviour {
     private void  BadaBoom() {
         GameObject projectileGameObject = projectilePool.GetPooledObject();
         IProjectile projectile = projectileGameObject.GetComponent<IProjectile>();
-        PhysicsSlugEngine projPhysic = projectileGameObject.GetComponent<PhysicsSlugEngine>();
+        SlugPhysics projPhysic = projectileGameObject.GetComponent<SlugPhysics>();
         projectileGameObject.transform.position = projectileInitialPos.position;
         projectile.Launch("Player");
         projPhysic.SetVelocityX(1);

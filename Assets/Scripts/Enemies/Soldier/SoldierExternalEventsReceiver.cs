@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Slug;
 
 public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
 
@@ -31,8 +32,8 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         if (newHP > 0) {
             return;
         } else {
-            //To ignore collision with projectiles during death anim
-            gameObject.layer = 2; //TODO have an enum with the layer
+            //To ignore collision with projectiles during death anim but still be 'physic'
+            gameObject.layer = 2;
             animManager.PlayDeathAnimation(projectileProp);
         }
     }

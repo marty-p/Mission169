@@ -23,7 +23,7 @@ public class FollowTarget : MonoBehaviour {
         if (followActive) {
             Follow();
         }
-        KeepTargetInSight();
+    //    KeepTargetInSight();
     }
 
     void Follow() {

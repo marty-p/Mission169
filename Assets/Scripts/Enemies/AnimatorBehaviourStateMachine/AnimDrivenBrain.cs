@@ -8,7 +8,7 @@ public class AnimDrivenBrain : MonoBehaviour {
     private Animator anim;
     private Transform target;
     private float distanceToTarget;
-    private PhysicsSlugEngine physic;
+    private SlugPhysics physic;
     private float absDistanceToTarget;
 
     public float getScaredFactor = 0.5f;
@@ -17,7 +17,7 @@ public class AnimDrivenBrain : MonoBehaviour {
 
     void Awake () {
         anim = GetComponent<Animator>();
-        physic = GetComponent<PhysicsSlugEngine>();
+        physic = GetComponent<SlugPhysics>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         print(target);
     }

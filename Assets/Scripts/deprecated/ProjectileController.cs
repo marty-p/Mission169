@@ -13,7 +13,7 @@ public class ProjectileController : MonoBehaviour {
 
    
     void Awake() {
-        projectileIsPhysic = GetComponent<PhysicsSlugEngine>() != null;
+        projectileIsPhysic = GetComponent<SlugPhysics>() != null;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D col) {

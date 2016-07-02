@@ -21,7 +21,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     private void Die(ProjectileProperties projProp) {
         animator.SetTrigger("death");
-        gameObject.layer =(int) SlugLayers.Default;
+        gameObject.layer =(int) SlugLayers.IgnoreRaycast;
 
     }
 }

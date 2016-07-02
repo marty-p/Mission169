@@ -4,7 +4,7 @@ using System;
 
 public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
 
-    private PhysicsSlugEngine physic;
+    private SlugPhysics physic;
     private HippieAnimationManager animManager;
 
     private delegate void VoidNullFunction();
@@ -15,7 +15,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
  
     void Awake () {
         animManager = GetComponent<HippieAnimationManager>();
-        physic = GetComponent<PhysicsSlugEngine>();
+        physic = GetComponent<SlugPhysics>();
         HippiesBrain = HippieTiedUp;
         hippieSpeedWalkingFactor = 10;
         hippieSpeedRunningFactor = 60;

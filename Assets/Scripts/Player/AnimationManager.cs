@@ -5,26 +5,12 @@ public class AnimationManager : MonoBehaviour, IObserver {
 
     public Animator topAnimator;
     public Animator bottomAnimator;
+    public Animator blood;
 
     private RetVoidTakeVoid EndOfDeathCB;
     private bool inExplosiveDeathAnim;
 
     public RetVoidTakeVoid grenadeCB;
-
-    public void Awake() {
-        /*
-        AnimationClip[] animClip = topAnimator.runtimeAnimatorController.animationClips;
-        AnimationEvent[] animEvents = new AnimationEvent[1];
-        for (int i=0; i<animClip.Length; i++) {
-            if (animClip[i].name == "top_still") {
-                animEvents[0] = new AnimationEvent();
-                animEvents[0].time = 0.25f;
-                animEvents[0].functionName = "TT";
-                animClip[i].events = animEvents;
-            }
-        }
-        */
-    }
 
     public void StartRunningAnim() {
         topAnimator.SetBool("horizontal_pressed", true);
@@ -122,6 +108,7 @@ public class AnimationManager : MonoBehaviour, IObserver {
             inExplosiveDeathAnim = true;
         } else if (proj.type == ProjectileType.Knife) {
             trigger = "slashed";
+            blood.Play("1");
         } else {
             trigger = "slashed";
         }

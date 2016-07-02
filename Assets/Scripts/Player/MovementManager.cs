@@ -10,7 +10,7 @@ public class MovementManager : MonoBehaviour, IObserver {
     public BodyPosture body;
     private TimeUtils timeUtils;
 
-    private PhysicsSlugEngine physics;
+    private SlugPhysics physics;
     private AnimationManager animManager;
     private IObserver[] observers;
 
@@ -40,7 +40,7 @@ public class MovementManager : MonoBehaviour, IObserver {
             physics.SetVelocityX(dir.x);
         }
         physics.SetForceX(dir.x);
-        timeUtils.FixedUpdateDelay(()=>animManager.StartRunningAnim());
+        animManager.StartRunningAnim();
     }
 
     public void StopMoving() {
@@ -113,7 +113,7 @@ public class MovementManager : MonoBehaviour, IObserver {
     }
 
     void Awake () {
-        physics = gameObject.GetComponent<PhysicsSlugEngine>();
+        physics = gameObject.GetComponent<SlugPhysics>();
         animManager = GetComponent<AnimationManager>();
         timeUtils = GetComponent<TimeUtils>();
 	}

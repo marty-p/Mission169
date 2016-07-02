@@ -39,6 +39,7 @@ public class ProjectileUtils {
         Animator anim = SimpleAnimatorPool.GetPooledAnimator();
         anim.runtimeAnimatorController = projProp.explosionAnimator;
         anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.055f;
+        anim.Play("1");
     }
 
     public static void ImpactAnimation(Transform proj, ProjectileProperties projProp) {
