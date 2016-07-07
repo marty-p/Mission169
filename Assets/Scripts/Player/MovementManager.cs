@@ -45,7 +45,8 @@ public class MovementManager : MonoBehaviour, IObserver {
 
     public void StopMoving() {
         physics.SetForceX(0);
-        timeUtils.FixedUpdateDelay(()=>animManager.StopRunningAnim());
+        print("stop FORCE!!!");
+        animManager.StopRunningAnim();
     }
 
     public void Jump() {

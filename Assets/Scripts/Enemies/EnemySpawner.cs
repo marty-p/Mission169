@@ -4,7 +4,11 @@ public class EnemySpawner : MonoBehaviour {
 
     public ObjectPoolScript enemyPool;
     private new BoxCollider2D collider;
+    private GameObject enemy;
 
+    public bool EnemyAlive() {
+        return enemy.active;
+    }
 
     void Start () {
         collider = GetComponent<BoxCollider2D>();
@@ -17,9 +21,14 @@ public class EnemySpawner : MonoBehaviour {
         }
     }
 
-    void InitSoldier() {
-        GameObject soldier = enemyPool.GetPooledObject();
-        soldier.transform.position = transform.position;
+    void OnEnable() {
+        InitSoldier();
     }
 
+    void InitSoldier() {
+        enemy = enemyPool.GetPooledObject();
+        enemy.transform.position = transform.position;
+    }
 }
+
+

@@ -2,7 +2,7 @@
 
 public class SlugPhysics : MonoBehaviour {
 
-    private Collider2D boxCollider;
+    private Collider2D collider;
     private IObserver[] observers;
 
     public float groundDrag = 0;
@@ -40,7 +40,7 @@ public class SlugPhysics : MonoBehaviour {
     public LayerMask linecastLayerMask;
 
     void Awake() {
-        boxCollider = GetComponent<Collider2D>();
+        collider = GetComponent<Collider2D>();
         rayCastStartPoint = new Vector2();
         observers = GetComponents<IObserver>();
         absoluteVelocity = new Vector2();
@@ -52,7 +52,8 @@ public class SlugPhysics : MonoBehaviour {
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() {;
+        
         // 1 - Update velocities
         CalculateVelocity();
         
@@ -64,7 +65,6 @@ public class SlugPhysics : MonoBehaviour {
             groundSlope = Vector2.zero;
         }
         Vector2 transCandidate = CalculateTranslation(groundSlope);
-        //Vector2 end = new Vector2(boxCollider.bounds.center.x, boxCollider.bounds.min.y);
 
         // 3 - Adjust translations if collisions next frame
         // 3.1 - Adjust x
@@ -117,8 +117,8 @@ public class SlugPhysics : MonoBehaviour {
 
 
     int WhatIsUnderMyFeet(Vector2 trans) {
-        Vector2 endPoint = new Vector2(boxCollider.bounds.center.x + trans.x, boxCollider.bounds.min.y + trans.y - 0.006f);
-        Vector2 startPoint = new Vector2(endPoint.x, boxCollider.bounds.min.y + 0.05f);
+        Vector2 endPoint = new Vector2(collider.bounds.center.x + trans.x, collider.bounds.min.y + trans.y - 0.03f);
+        Vector2 startPoint = new Vector2(endPoint.x, collider.bounds.min.y + 0.03f);
         //Only supporting one hit per cast, no need for more for now
         int hitCount = Physics2D.LinecastNonAlloc(startPoint, endPoint, rayCastHit, linecastLayerMask);
         //Debug.DrawLine(startPoint, endPoint);
@@ -126,7 +126,7 @@ public class SlugPhysics : MonoBehaviour {
     }
 
     int WhatIsInFrontOfMe(Vector2 trans) {
-        Bounds bounds = boxCollider.bounds;
+        Bounds bounds = collider.bounds;
         float startX = bounds.center.x;
 
         Vector2 startPoint = new Vector2(startX, bounds.min.y);
@@ -144,14 +144,14 @@ public class SlugPhysics : MonoBehaviour {
 
     float FixXTrans(RaycastHit2D hit) {
         if (transform.right == Vector3.left) {
-            return rayCastHit[0].point.x - boxCollider.bounds.center.x + 0.03f;
+            return rayCastHit[0].point.x - collider.bounds.center.x + 0.03f;
         } else {
-            return rayCastHit[0].point.x - boxCollider.bounds.center.x - 0.03f;
+            return rayCastHit[0].point.x - collider.bounds.center.x - 0.03f;
         }
     }
 
     float FixYTrans(RaycastHit2D hit) {
-        return hit.point.y - boxCollider.bounds.min.y + 0.005f;
+        return hit.point.y - collider.bounds.min.y + 0.005f;
     }
 
     Vector2 GetSlopeFromRayCastHid2D(RaycastHit2D hit) {
@@ -229,8 +229,6 @@ public class SlugPhysics : MonoBehaviour {
     public void ChangeDirection(Vector3 newDir) {
         if (transform.right != newDir) {
             transform.right = newDir;
-            //groundSlope = Vector2.zero;
-           // UpdateGroundSlope();
         }
     }
 
@@ -240,11 +238,6 @@ public class SlugPhysics : MonoBehaviour {
 
     public void SetMovementFactor(float movementFactor) {
         this.movementFactor = movementFactor;
-    }
-
-    public void Reset() {
-        inTheAir = false;
-        absoluteVelocity = Vector2.zero;
     }
 
     void NotifyObservers(SlugEvents ev) {
