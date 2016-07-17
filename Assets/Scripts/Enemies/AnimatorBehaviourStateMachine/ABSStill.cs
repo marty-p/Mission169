@@ -5,7 +5,7 @@ public class ABSStill : Room {
 
     public override void Init() {
         Door toGrenade = new Door(()=>animator.SetTrigger("grenade_standing"),
-                ()=> brain.TargetDistBetween(0.6f, 2), 3);
+                ()=> brain.TargetDistBetween(0.6f, 2), 0.1f);
         AddExitDoor(toGrenade);
 
         Door toWalk = new Door(()=>OnGoingToWalk(), ()=>brain.TargetDistMoreThan(2), 0);

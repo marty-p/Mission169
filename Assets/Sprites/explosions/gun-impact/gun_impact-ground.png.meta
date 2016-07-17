@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b5963ca3b0cf5854bae73e3c0386e431
-timeCreated: 1467505911
+timeCreated: 1468023028
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -64,122 +64,111 @@ TextureImporter:
     - name: gun_impact-ground2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
-        width: 13
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: gun_impact-ground_1
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 5
-        width: 9
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5
+        y: 33
+        width: 27
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 12
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5
+        y: 49
+        width: 27
+        height: 12
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 0
-        width: 13
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 8
+        y: 65
+        width: 24
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 0
-        width: 16
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 6
+        y: 81
+        width: 26
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground6
       rect:
         serializedVersion: 2
-        x: 101
-        y: 0
-        width: 16
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3
+        y: 101
+        width: 29
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 20
         y: 0
         width: 12
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground1
       rect:
         serializedVersion: 2
         x: 17
-        y: 0
-        width: 14
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 17
+        width: 15
+        height: 14
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground7
       rect:
         serializedVersion: 2
-        x: 121
-        y: 0
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 121
+        width: 32
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground8
       rect:
         serializedVersion: 2
-        x: 141
-        y: 0
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 141
+        width: 32
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: gun_impact-ground9
       rect:
         serializedVersion: 2
-        x: 165
-        y: 0
-        width: 15
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 165
+        width: 32
+        height: 15
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

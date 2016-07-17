@@ -37,15 +37,18 @@ public class ProjectileUtils {
 
     public static void ImpactAnimation(Transform proj, Collider2D col, ProjectileProperties projProp) {
         Animator anim = SimpleAnimatorPool.GetPooledAnimator();
+        anim.transform.right = Vector2.right;
         anim.runtimeAnimatorController = projProp.explosionAnimator;
-        anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.055f;
+        anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.05f;
         anim.Play("1");
     }
 
-    public static void ImpactAnimation(Transform proj, ProjectileProperties projProp) {
+    public static Animator GetImpactAnimator(Transform proj, ProjectileProperties projProp) {
         Animator anim = SimpleAnimatorPool.GetPooledAnimator();
+        anim.transform.right = Vector2.right;
         anim.runtimeAnimatorController = projProp.explosionAnimator;
-        anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.055f;
+        anim.transform.position = (Vector2) proj.transform.position + UnityEngine.Random.insideUnitCircle * 0.05f;
+        return anim;
     }
 
 }

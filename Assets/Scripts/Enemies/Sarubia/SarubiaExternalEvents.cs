@@ -16,6 +16,7 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
             return;
         } else if (!dead) {
             dead = true;
+            gameObject.tag = "World";
             animator.SetTrigger("explode");
             float startTime = Time.time;
             float duration = 0.7f;

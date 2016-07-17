@@ -7,8 +7,16 @@ public class BasicProjectile : MonoBehaviour, IProjectile {
 
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == properties.victimTag || col.tag == "World") {
-            ProjectileUtils.ImpactAnimation(transform, col, properties);
-            ProjectileUtils.NotifyCollider(col, properties);
+            Animator impactAnimator = ProjectileUtils.GetImpactAnimator(transform, properties);
+
+            if (col.tag == "World") {
+                impactAnimator.transform.right = transform.right;
+                impactAnimator.Play("2");
+            } else {
+                impactAnimator.Play("1");
+                ProjectileUtils.NotifyCollider(col, properties);
+            }
+
             gameObject.SetActive(false);
         }
     }

@@ -9,7 +9,9 @@ public class ASBGrenadeDeath : StateMachineBehaviour {
         if (physics == null) {
             physics = animator.GetComponent<SlugPhysics>();
         }
-        physics.SetVelocity(0.2f, 3.5f);
+        physics.SetVelocity(0.5f, 10.5f);
+        physics.JumpHighVel();
+        Debug.Log("CALLED!!!!!");
 	}
 
 }
