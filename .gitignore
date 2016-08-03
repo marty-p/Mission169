@@ -5,7 +5,8 @@
 [Oo]bj/
 [Bb]uild
 [Ll]ibrary/
-Library
+Library/
+library/
 sysinfo.txt
 *.stackdump
 test.txt
