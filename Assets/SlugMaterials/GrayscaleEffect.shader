@@ -1,4 +1,4 @@
-Shader "Unlit/Grayscale Effect 2"
+Shader "Unlit/Grayscale Effect"
 {
 	Properties{
 		_MainTex("Texture", 2D) = "white" { }
