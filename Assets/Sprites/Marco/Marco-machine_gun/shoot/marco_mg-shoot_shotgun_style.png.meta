@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: 7e378a39e38a0034e9c566ce2cee204c
+timeCreated: 1468117745
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: marco_mg-shoot_shotgun_style_0
+    21300002: marco_mg-shoot_shotgun_style_1
+    21300004: marco_mg-shoot_shotgun_style_2
+    21300006: marco_mg-shoot_shotgun_style_3
+    21300008: marco_mg-shoot_shotgun_style_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 1
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: marco_mg-shoot_shotgun_style_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 35
+        height: 31
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-shoot_shotgun_style_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1
+        width: 27
+        height: 31
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-shoot_shotgun_style_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 30
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-shoot_shotgun_style_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1
+        width: 31
+        height: 31
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-shoot_shotgun_style_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 4
+        width: 36
+        height: 28
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

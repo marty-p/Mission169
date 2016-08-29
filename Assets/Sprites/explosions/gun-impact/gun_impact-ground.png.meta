@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: b5963ca3b0cf5854bae73e3c0386e431
+timeCreated: 1468023028
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: gun_impact-ground2
+    21300002: gun_impact-ground_1
+    21300004: gun_impact-ground3
+    21300006: gun_impact-ground4
+    21300008: gun_impact-ground5
+    21300010: gun_impact-ground6
+    21300012: gun_impact-ground0
+    21300014: gun_impact-ground1
+    21300016: gun_impact-ground7
+    21300018: gun_impact-ground8
+    21300020: gun_impact-ground9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: gun_impact-ground2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 33
+        width: 27
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 49
+        width: 27
+        height: 12
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 65
+        width: 24
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 81
+        width: 26
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 101
+        width: 29
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 12
+        height: 13
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 15
+        height: 14
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 121
+        width: 32
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 32
+        height: 16
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: gun_impact-ground9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 32
+        height: 15
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

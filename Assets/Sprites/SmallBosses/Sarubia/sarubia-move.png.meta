@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: d64e2b6930827a243b277c5a1241f940
+timeCreated: 1467531498
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sarubia-move_0
+    21300002: sarubia-move_1
+    21300004: sarubia-move_2
+    21300006: sarubia-move_3
+    21300008: sarubia-move_4
+    21300010: sarubia-move_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sarubia-move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 96
+      alignment: 9
+      pivot: {x: 0.4921033, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.43144, y: 96}
+        - {x: -35.43144, y: 1}
+        - {x: -32.43144, y: 0}
+        - {x: 36.56856, y: 0}
+        - {x: 36.56856, y: 78}
+        - {x: 31.568562, y: 96}
+    - name: sarubia-move_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 72
+        height: 96
+      alignment: 9
+      pivot: {x: 0.506, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.432, y: 96}
+        - {x: -36.432, y: 84}
+        - {x: -36.432, y: 0}
+        - {x: 35.568, y: 0}
+        - {x: 35.568, y: 78}
+        - {x: 29.568, y: 96}
+    - name: sarubia-move_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 71
+        height: 96
+      alignment: 9
+      pivot: {x: 0.499, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.429, y: 96}
+        - {x: -35.429, y: 73}
+        - {x: -35.429, y: 5}
+        - {x: -33.429, y: 0}
+        - {x: 31.571, y: 0}
+        - {x: 35.571, y: 7}
+        - {x: 35.571, y: 66}
+        - {x: 23.571, y: 96}
+    - name: sarubia-move_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 72
+        height: 96
+      alignment: 9
+      pivot: {x: 0.506, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.432007, y: 96}
+        - {x: -36.432007, y: 0}
+        - {x: 31.567993, y: 0}
+        - {x: 35.567993, y: 3}
+        - {x: 35.567993, y: 90}
+        - {x: 18.567993, y: 96}
+    - name: sarubia-move_4
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 72
+        height: 96
+      alignment: 9
+      pivot: {x: 0.492, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.5759888, y: 96}
+        - {x: -26.424011, y: 96}
+        - {x: -35.42401, y: 86}
+        - {x: -35.42401, y: 0}
+        - {x: 36.57599, y: 0}
+        - {x: 36.57599, y: 70}
+        - {x: 13.575989, y: 88}
+    - name: sarubia-move_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 74
+        height: 96
+      alignment: 9
+      pivot: {x: 0.4925, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.445007, y: 96}
+        - {x: -24.445007, y: 92}
+        - {x: -36.445007, y: 75}
+        - {x: -36.445007, y: 1}
+        - {x: -35.445007, y: 0}
+        - {x: 32.554993, y: 0}
+        - {x: 37.554993, y: 12}
+        - {x: 37.554993, y: 65}
+        - {x: 7.5549927, y: 96}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

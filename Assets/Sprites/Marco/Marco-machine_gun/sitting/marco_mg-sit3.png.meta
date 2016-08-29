@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: e2fbdf60f016de344b03e418eaa57360
+timeCreated: 1468835534
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: marco_mg-sit3_0
+    21300002: marco_mg-sit3_1
+    21300004: marco_mg-sit3_2
+    21300006: marco_mg-sit3_3
+    21300008: marco_mg-sit3_4
+    21300010: marco_mg-sit3_5
+    21300012: marco_mg-sit3_6
+    21300014: marco_mg-sit3_7
+    21300016: marco_mg-sit3_8
+    21300018: marco_mg-sit3_9
+    21300020: marco_mg-sit3_10
+    21300022: marco_mg-sit3_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: marco_mg-sit3_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 34
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1
+        width: 34
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 34
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1
+        width: 34
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1
+        width: 32
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 31
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1
+        width: 31
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_7
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1
+        width: 31
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_8
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1
+        width: 39
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_9
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1
+        width: 42
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_10
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1
+        width: 42
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: marco_mg-sit3_11
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1
+        width: 37
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

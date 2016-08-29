@@ -1,0 +1,249 @@
+fileFormatVersion: 2
+guid: 3b445cea04bca9743b8a0bfe38374beb
+timeCreated: 1466633845
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mummy-breath_0
+    21300002: mummy-breath_1
+    21300004: mummy-breath_2
+    21300006: mummy-breath_3
+    21300008: mummy-breath_4
+    21300010: mummy-breath_5
+    21300012: mummy-breath_6
+    21300014: mummy-breath_7
+    21300016: mummy-breath_8
+    21300018: mummy-breath_9
+    21300020: mummy-breath_10
+    21300022: mummy-breath_11
+    21300024: mummy-breath_12
+    21300026: mummy-breath_13
+    21300028: mummy-breath_14
+    21300030: mummy-breath_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mummy-breath_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 21
+        height: 14
+      alignment: 9
+      pivot: {x: 0.98356056, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 29
+        height: 18
+      alignment: 9
+      pivot: {x: 0.98298556, y: 0.363825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 33
+        height: 18
+      alignment: 9
+      pivot: {x: 0.9845708, y: 0.37030953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1
+        width: 40
+        height: 19
+      alignment: 9
+      pivot: {x: 0.98731196, y: 0.23584113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1
+        width: 46
+        height: 21
+      alignment: 9
+      pivot: {x: 0.984648, y: 0.22209184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_5
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1
+        width: 47
+        height: 22
+      alignment: 9
+      pivot: {x: 0.98675406, y: 0.20819668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_6
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 3
+        width: 48
+        height: 22
+      alignment: 9
+      pivot: {x: 0.98877144, y: 0.11269708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1
+        width: 47
+        height: 24
+      alignment: 9
+      pivot: {x: 0.98178685, y: 0.18874298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_8
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1
+        width: 49
+        height: 23
+      alignment: 9
+      pivot: {x: 0.9883248, y: 0.20565918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_9
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 4
+        width: 51
+        height: 21
+      alignment: 9
+      pivot: {x: 0.9874842, y: 0.07202135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_10
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 4
+        width: 52
+        height: 22
+      alignment: 9
+      pivot: {x: 0.9848433, y: 0.07555864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_11
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 2
+        width: 54
+        height: 22
+      alignment: 9
+      pivot: {x: 0.9841783, y: 0.1657524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 4
+        width: 52
+        height: 20
+      alignment: 9
+      pivot: {x: 0.9848433, y: 0.07980285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_13
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 4
+        width: 51
+        height: 20
+      alignment: 9
+      pivot: {x: 0.985196, y: 0.07980285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_14
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 5
+        width: 54
+        height: 19
+      alignment: 9
+      pivot: {x: 0.99066275, y: 0.045400668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mummy-breath_15
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 4
+        width: 50
+        height: 20
+      alignment: 9
+      pivot: {x: 0.99023193, y: 0.073966786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

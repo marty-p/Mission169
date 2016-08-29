@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: c6ff11d9ba4c36f4f957d7acd1082591
+timeCreated: 1457037725
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: top-jump_high_vel_0
+    21300002: top-jump_high_vel_1
+    21300004: top-jump_high_vel_2
+    21300006: top-jump_high_vel_3
+    21300008: top-jump_high_vel_4
+    21300010: top-jump_high_vel_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: top-jump_high_vel_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 23
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: top-jump_high_vel_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 2
+        width: 27
+        height: 33
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: top-jump_high_vel_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.127, y: 0.99615514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.936001, y: 0.12303543}
+        - {x: -4.063999, y: -6.8769646}
+        - {x: -4.063999, y: -31.876965}
+        - {x: 6.936001, y: -31.876965}
+        - {x: 27.936, y: -16.876965}
+        - {x: 27.936, y: -1.8769646}
+        - {x: 26.936, y: 0.12303543}
+    - name: top-jump_high_vel_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 27
+        height: 35
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: top-jump_high_vel_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 3
+        width: 23
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: top-jump_high_vel_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 6
+        width: 20
+        height: 29
+      alignment: 9
+      pivot: {x: -0.05, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

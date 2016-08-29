@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 9ea27e086206b4b429bd90a848297d2b
+timeCreated: 1467530817
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sarubia-stop_0
+    21300002: sarubia-stop_1
+    21300004: sarubia-stop_2
+    21300006: sarubia-stop_3
+    21300008: sarubia-stop_4
+    21300010: sarubia-stop_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sarubia-stop_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 95}
+        - {x: -36, y: 90}
+        - {x: -36, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 69}
+        - {x: 9, y: 95}
+    - name: sarubia-stop_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 95}
+        - {x: -36, y: 95}
+        - {x: -36, y: 3}
+        - {x: -34, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 63}
+        - {x: 33, y: 65}
+    - name: sarubia-stop_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 95}
+        - {x: -36, y: 95}
+        - {x: -36, y: 2}
+        - {x: -34, y: 0}
+        - {x: 32, y: 0}
+        - {x: 36, y: 6}
+        - {x: 36, y: 67}
+        - {x: 35, y: 70}
+    - name: sarubia-stop_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 95}
+        - {x: -36, y: 90}
+        - {x: -36, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 71}
+        - {x: 6, y: 95}
+    - name: sarubia-stop_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 95}
+        - {x: -36, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 85}
+        - {x: 24, y: 95}
+    - name: sarubia-stop_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 72
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 95}
+        - {x: -36, y: 84}
+        - {x: -36, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 68}
+        - {x: 6, y: 95}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
