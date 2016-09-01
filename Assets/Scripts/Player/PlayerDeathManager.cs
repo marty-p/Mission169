@@ -13,6 +13,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
     private FlashUsingMaterial flashBright;
     private FlipPlayerIndicator playerIndicator;
 
+    public SlugAudioManager audioManager;
     public int ignoreDamagesDuration = 3;
 
     void Awake() {
@@ -41,6 +42,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
                 physic.JumpHighVel();
                 physic.SetVelocityX(-transform.right.x/3);
             }
+            audioManager.PlaySound(2);
         }
     }
 

@@ -7,6 +7,7 @@ public class MgAttack : MonoBehaviour, IAttack {
     public RuntimeAnimatorController mgAnimatorController;
     public ObjectPoolScript bullettPool;
     public MarcoAttackManager attackManager;
+    public SlugAudioManager audioManager;
     private TimeUtils timeUtils;
 
     public MachineGunAnimationEvents mgAE;
@@ -56,6 +57,8 @@ public class MgAttack : MonoBehaviour, IAttack {
 
         anim.runtimeAnimatorController = mgAnimatorController;
         anim.SetBool("machineGunning", true);
+
+        audioManager.PlaySoundSameSource(3);
     }
 
 

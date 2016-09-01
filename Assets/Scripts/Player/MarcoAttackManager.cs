@@ -17,6 +17,7 @@ public class MarcoAttackManager : MonoBehaviour {
 
     public Transform grenadeInitialPositionStand;
     public Transform grenadeInitialPositionCrouch;
+    public SlugAudioManager audioManager;
 
     private Vector3 projInitialPosition;
     private Vector3 dir;
@@ -67,7 +68,10 @@ public class MarcoAttackManager : MonoBehaviour {
             currentAttackID = def.attackID;
             bulletCount = def.bulletCount;
             flashBlue.FlashForXSecs(0.16f);
+            // Play voice sound
+            audioManager.PlaySound(def.weaponNameAudio);
         }
+
     }
 
     private bool InRangeForKnife() {
