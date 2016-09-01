@@ -8,6 +8,7 @@ public class CollectibleDef : MonoBehaviour {
     public int bulletCount;
     public int attackID;
     public int points;
+    public AudioClip weaponNameAudio;
 
     void Awake() {
         flash = GetComponent<FlashUsingMaterial>();
