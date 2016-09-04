@@ -79,6 +79,8 @@
     <Compile Include="Assets\CNControls\Scripts\Controllers\Touchpad.cs" />
     <Compile Include="Assets\CollectibleDef.cs" />
     <Compile Include="Assets\EnemyWaveController.cs" />
+    <Compile Include="Assets\GoRight.cs" />
+    <Compile Include="Assets\KnifeAnimationEvent.cs" />
     <Compile Include="Assets\MachineGunAnimationEvents.cs" />
     <Compile Include="Assets\MgAttack.cs" />
     <Compile Include="Assets\MummyAnimationEvents.cs" />
@@ -161,6 +163,8 @@
     <Compile Include="Assets\Scripts\deprecated\EnemyBehaviorManager.cs" />
     <Compile Include="Assets\Scripts\deprecated\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\deprecated\SlugStateMachine.cs" />
+    <Compile Include="Assets\SlugAudio.cs" />
+    <Compile Include="Assets\SlugAudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SlugMaterials\BlueScale.shader" />

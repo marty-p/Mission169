@@ -18,7 +18,7 @@ public class SlugAudioManager : MonoBehaviour {
         audioSource.Play();
     }
 
-    public void PlaySound(AudioClip clip) {
+    public void PlaySoundByClip(AudioClip clip) {
         GameObject audioGameObject = audioSourcePool.GetPooledObject();
         AudioSource audioSource = audioGameObject.GetComponent<AudioSource>();
         audioSource.clip = clip;
