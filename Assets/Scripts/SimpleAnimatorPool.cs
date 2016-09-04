@@ -9,12 +9,8 @@ public class SimpleAnimatorPool : MonoBehaviour {
         objectPool = GetComponent<ObjectPoolScript>();
 	}
 	
-    public static GameObject GetPooledObject() {
-        return objectPool.GetPooledObject();
-    }
-
     public static Animator GetPooledAnimator (RuntimeAnimatorController animatorController = null) {
-        GameObject gameObject = GetPooledObject();
+        GameObject gameObject = objectPool.GetPooledObject();
         Animator animator = gameObject.GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorController;
         return animator;

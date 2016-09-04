@@ -56,7 +56,7 @@ public class GrenadeParabola : MonoBehaviour, IProjectile {
     }
 
     private void Explode(Collider2D col) {
-        ProjectileUtils.ImpactAnimation(transform, col, properties);
+        ProjectileUtils.ImpactAnimationAndSound(transform, col, properties);
         ProjectileUtils.NotifyCollider(col, properties);
         gameObject.SetActive(false);
     }

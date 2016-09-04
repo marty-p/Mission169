@@ -45,6 +45,7 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         }
     }
 
+    // Animation Event
     public void OnEndOfDeathAnim() {
         timeUtils.TimeDelay(0.2f, () => {
             blink.BlinkPlease(() => {
@@ -56,4 +57,5 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
             });
         });
     }
+
 }
