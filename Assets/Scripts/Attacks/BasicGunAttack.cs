@@ -6,6 +6,7 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
     public RuntimeAnimatorController attackAnimatorController;
     public ObjectPoolScript bullettPool;
     public MovementManager movementManager;
+    public SlugAudioManager audioManager;
 
     public Transform bulletInitialPosition;
     public Transform bulletInitialPositionSitting;
@@ -21,6 +22,7 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
         bulletGameObject.transform.right = movementManager.lookingDirection;
         IProjectile bullet = bulletGameObject.GetComponent<IProjectile>();
         bullet.Launch(victimTag);
+        audioManager.PlaySound(0);
     }
 
    private Vector3 GetProjPosInit() {

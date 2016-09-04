@@ -7,7 +7,7 @@ public class SarubiaProjectile : MonoBehaviour, IProjectile {
 
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == properties.victimTag) {
-            ProjectileUtils.ImpactAnimation(transform, col, properties);
+            ProjectileUtils.ImpactAnimationAndSound(transform, col, properties);
             ProjectileUtils.NotifyCollider(col, properties);
             gameObject.SetActive(false);
         }
