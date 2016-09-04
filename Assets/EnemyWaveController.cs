@@ -51,8 +51,7 @@ public class EnemyWaveController : MonoBehaviour {
 
                 if (currentWaveOver) {
                     if (currentWaveIndex == waves.Count - 1) {
-                        cam.followActive = true;
-                        this.enabled = false;
+                        AllWavesOver();
                     } else {
                         currentWaveIndex++;
                         currentWaveGameObject = waves[currentWaveIndex].gameObject;
@@ -63,4 +62,11 @@ public class EnemyWaveController : MonoBehaviour {
             yield return new WaitForSeconds(updatePeriod);
         }
     }
+
+    private void AllWavesOver() {
+        cam.followActive = true;
+        gameObject.SetActive(false);
+        EventManager.TriggerEvent("all_waves_over");
+    }
+
 }

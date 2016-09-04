@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     public PlayerDeathManager player; // TODO the gameManager should instantiate the player
     // Keep it like it for now in order to always have a Player in the hierarchy even when not running
     private TimeUtils timeUtils;
-    private float waitTimeBeforeSpawn = 2.5f;
+    private float waitTimeBeforeSpawn = 1.5f;
 
 
 	void Start () {
