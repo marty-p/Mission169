@@ -4,7 +4,7 @@ using Slug;
 public class MarcoAttackManager : MonoBehaviour {
 
     private IAttack[] FireArmAttacks;
-    private IAttack MeleeAttack;
+    private AttackKnife MeleeAttack;
     private IAttack grenadeAttack;
     // TODO currentAttackID ...
     private int currentAttackID = 2;
@@ -35,7 +35,9 @@ public class MarcoAttackManager : MonoBehaviour {
     public void PrimaryAttack() {
         Vector3 unUsed = Vector3.zero;
         if (InRangeForKnife()) {
-            MeleeAttack.Execute(victimsTag);
+            if (!MeleeAttack.InProgress()) {
+                MeleeAttack.Execute(victimsTag, Vector3.zero, Vector3.zero);
+            }
         } else if (bulletCount > 0) {
             //TODO remove this projectileInitialPos parameter from Execute
             FireArmAttacks[currentAttackID].Execute(victimsTag, unUsed, unUsed);
@@ -69,7 +71,7 @@ public class MarcoAttackManager : MonoBehaviour {
             bulletCount = def.bulletCount;
             flashBlue.FlashForXSecs(0.16f);
             // Play voice sound
-            audioManager.PlaySound(def.weaponNameAudio);
+            audioManager.PlaySoundByClip(def.weaponNameAudio);
         }
 
     }
