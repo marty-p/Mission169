@@ -11,7 +11,6 @@ public class PreventMovement : StateMachineBehaviour {
            moveManager = animator.GetComponentInParent<MovementManager>();
         }
         moveManager.BlockMovement();
-        Debug.Log(this + " enter");
 	}
 
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -19,8 +18,6 @@ public class PreventMovement : StateMachineBehaviour {
            moveManager = animator.GetComponentInParent<MovementManager>();
         }
         moveManager.AllowMovement();
-
-        Debug.Log(this + " exit");
 	}
 
 }

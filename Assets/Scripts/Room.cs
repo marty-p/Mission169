@@ -18,7 +18,6 @@
             }
             if (lastDoorUsed != null) {
                 lastDoorUsed.TimeLock();
-                print("timelocking! " + lastDoorUsed.ToString());
             }
             Enter();
         }
@@ -30,7 +29,6 @@
                     exitDoors[i].Open();
                     lastDoorUsed = exitDoors[i];
                     break;
-                    print("door " + i.ToString() + " is opened");
                 }
             }
             Update();
