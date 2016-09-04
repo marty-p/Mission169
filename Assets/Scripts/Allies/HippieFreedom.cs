@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System;
+using Slug;
 
 
 public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
@@ -13,6 +13,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     private VoidNullFunction HippiesBrainBackup;
     private float hippieSpeedWalkingFactor;
     private float hippieSpeedRunningFactor;
+    public SlugAudioManager audioManager;
  
     void Awake () {
         giftToPlayer = GetComponentInChildren<CollectibleDef>(true);
@@ -32,6 +33,8 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     }
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         animManager.PlayFreeAnim(EndOfHippieFreedAnim);
+        gameObject.layer = (int) SlugLayers.FreeMan;
+        audioManager.PlaySound(0);
     }
 
     private void EndOfHippieFreedAnim() {

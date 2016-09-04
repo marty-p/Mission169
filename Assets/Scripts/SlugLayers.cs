@@ -12,6 +12,7 @@
         Player,
         World,
         Enemy,
-        EnemySolid
+        EnemySolid, 
+        FreeMan
     }
 }
