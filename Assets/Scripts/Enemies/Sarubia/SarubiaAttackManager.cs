@@ -5,11 +5,13 @@ public class SarubiaAttackManager : MonoBehaviour {
 
     private SarubiaAnimationManager animManager;
     private ObjectPoolScript projectilePool;
+    private SlugAudioManager audioManager;
     public Transform projectileInitialPos;
 
     void Awake() {
         animManager = GetComponent<SarubiaAnimationManager>();
         projectilePool = GetComponent<ObjectPoolScript>();
+        audioManager = GetComponentInChildren<SlugAudioManager>();
     }
 
     void OnBecameVisible() {
@@ -35,6 +37,7 @@ public class SarubiaAttackManager : MonoBehaviour {
         projectileGameObject.transform.position = projectileInitialPos.position;
         projectile.Launch("Player");
         projPhysic.SetVelocityX(transform.right.x * 0.4f);
+        audioManager.PlaySound(2);
     }
 
 }

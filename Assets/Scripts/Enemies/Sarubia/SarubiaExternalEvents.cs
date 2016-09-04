@@ -9,22 +9,27 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
     public RuntimeAnimatorController explosion;
     private BoxCollider2D collider;
     private bool dead;
+    private SlugAudioManager audioManager;
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
             flashRed.FlashOnce();
+            audioManager.PlaySound(0);
             return;
         } else if (!dead) {
             dead = true;
             gameObject.tag = "World";
             animator.SetTrigger("explode");
             float startTime = Time.time;
-            float duration = 0.7f;
+            float duration = 0.6f;
             Bounds boundsForExplosions = collider.bounds;
-            timeUtils.RepeatEvery(0.075f, () => {
+            timeUtils.RepeatEvery(0.085f, () => {
+                // Visual 
                 Animator anim = SimpleAnimatorPool.GetPooledAnimator(explosion);
                 anim.transform.position = RandomPosWithin(boundsForExplosions);
                 anim.Play("1");
+                // Audio
+                audioManager.PlaySound(1);
                 if (Time.time > startTime + duration) {
                     return false;
                 } else {
@@ -50,5 +55,6 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
         animator = GetComponent<Animator>();
         timeUtils = GetComponent<TimeUtils>();
         collider = GetComponent<BoxCollider2D>();
+        audioManager = GetComponentInChildren<SlugAudioManager>();
     }
 }
