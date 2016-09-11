@@ -5,10 +5,12 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     private FlashUsingMaterial flashRed;
     private Animator animator;
+    private SlugAudioManager audioManager;
 
-	void Start () {
+	void Awake () {
         flashRed = GetComponent<FlashUsingMaterial>();
         animator = GetComponent<Animator>();
+        audioManager = GetComponent<SlugAudioManager>();
 	}
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
@@ -22,6 +24,6 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
     private void Die(ProjectileProperties projProp) {
         animator.SetTrigger("death");
         gameObject.layer =(int) SlugLayers.IgnoreRaycast;
-
+        audioManager.PlaySound(0);
     }
 }

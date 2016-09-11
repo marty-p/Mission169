@@ -24,7 +24,7 @@ public class MummyBreath : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player") {
             if (properties.explosionAnimator != null) {
-                ProjectileUtils.ImpactAnimation(transform, col, properties);
+                ProjectileUtils.ImpactAnimationAndSound(transform, col, properties);
             }
             ProjectileUtils.NotifyCollider(col, properties);
             // NO WE DONT DO THAT FOR BREATH OR ANY AOE PROJ  gameObject.SetActive(false);
