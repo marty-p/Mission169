@@ -2,11 +2,14 @@
 using Slug;
 
 
+//TODO this whole class could be rewritten ...
+
 public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
 
     private SlugPhysics physic;
     private HippieAnimationManager animManager;
     private CollectibleDef giftToPlayer;
+    private bool itemOffered;
 
     private delegate void VoidNullFunction();
     private VoidNullFunction HippiesBrain;
@@ -34,7 +37,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         animManager.PlayFreeAnim(EndOfHippieFreedAnim);
         gameObject.layer = (int) SlugLayers.FreeMan;
-        audioManager.PlaySound(0);
+        EventManager.TriggerEvent("add_points", 100);
     }
 
     private void EndOfHippieFreedAnim() {
@@ -55,7 +58,11 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     }
    
     private void HippieOfferItem() {
-        animManager.PlayGiftAnim(EndOfHippieSalutAnim);
+        if (!itemOffered) {
+            animManager.PlayGiftAnim(EndOfHippieSalutAnim);
+            audioManager.PlaySound(0);
+        }
+        itemOffered = true;
     }
     public void HippieOfferItemAnimEvent() {
         giftToPlayer.gameObject.SetActive(true);
