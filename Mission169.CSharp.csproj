@@ -165,6 +165,7 @@
     <Compile Include="Assets\Scripts\deprecated\SlugStateMachine.cs" />
     <Compile Include="Assets\SlugAudio.cs" />
     <Compile Include="Assets\SlugAudioManager.cs" />
+    <Compile Include="Assets\TriggerEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SlugMaterials\BlueScale.shader" />

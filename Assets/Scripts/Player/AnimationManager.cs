@@ -122,6 +122,10 @@ public class AnimationManager : MonoBehaviour, IObserver {
         }
     }
 
+    public void MissionCompleteAnim() {
+        topAnimator.SetTrigger("mission_complete");
+    }
+
     public void ResetTopAnimator() {
         topAnimator.Play("just_chillin");
         inExplosiveDeathAnim = false;

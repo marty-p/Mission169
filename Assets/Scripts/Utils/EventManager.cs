@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
-
+using System;
 
 [System.Serializable]
 public class TransformEvent : UnityEvent<Transform>{}
+[System.Serializable]
+public class FloatEvent : UnityEvent<float>{}
 
 
 public class EventManager : MonoBehaviour
@@ -12,6 +14,7 @@ public class EventManager : MonoBehaviour
 
     private Dictionary<string, UnityEvent> eventDictionary;
     private Dictionary<string, TransformEvent> transformEventDictionary;
+    private Dictionary<string, FloatEvent> floatEventDictionary;
 
     private static EventManager eventManager;
 
@@ -43,6 +46,7 @@ public class EventManager : MonoBehaviour
         {
             eventDictionary = new Dictionary<string, UnityEvent>();
             transformEventDictionary = new Dictionary<string, TransformEvent>();
+            floatEventDictionary = new Dictionary<string, FloatEvent>();
         }
     }
 
@@ -61,7 +65,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
- public static void StartListening(string eventName, UnityAction<Transform> listener)
+    public static void StartListening(string eventName, UnityAction<Transform> listener)
     {
         TransformEvent thisEvent = null;
         if (instance.transformEventDictionary.TryGetValue(eventName, out thisEvent))
@@ -76,6 +80,20 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    public static void StartListening(string eventName, UnityAction<float> listener)
+    {
+        FloatEvent thisEvent = null;
+        if (instance.floatEventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            thisEvent.AddListener(listener);
+        }
+        else
+        {
+            thisEvent = new FloatEvent();
+            thisEvent.AddListener(listener);
+            instance.floatEventDictionary.Add(eventName, thisEvent);
+        }
+    }
 
     public static void StopListening(string eventName, UnityAction listener)
     {
@@ -102,6 +120,15 @@ public class EventManager : MonoBehaviour
         if (instance.transformEventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent.Invoke(transform);
+        }
+    }
+
+   public static void TriggerEvent(string eventName, float val)
+   {
+        FloatEvent thisEvent = null;
+        if (instance.floatEventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            thisEvent.Invoke(val);
         }
     }
 }

@@ -21,7 +21,7 @@ public class SarubiaAttackManager : MonoBehaviour {
     private IEnumerator WaveUpdate() {
         while (true) {
             PrimaryAttack();
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(4);
         }
     }
 

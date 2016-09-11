@@ -85,6 +85,9 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.LinuxStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
     </Reference>
