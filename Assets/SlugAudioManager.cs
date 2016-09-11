@@ -11,11 +11,12 @@ public class SlugAudioManager : MonoBehaviour {
         audioSourcePool = GetComponent<ObjectPoolScript>();
     }
 
-    public void PlaySound(int soundIndex) {
+    public AudioSource PlaySound(int soundIndex) {
         GameObject audioGameObject = audioSourcePool.GetPooledObject();
         AudioSource audioSource = audioGameObject.GetComponent<AudioSource>();
         audioSource.clip = audioClips[soundIndex];
         audioSource.Play();
+        return audioSource;
     }
 
     public void PlaySoundByClip(AudioClip clip) {
