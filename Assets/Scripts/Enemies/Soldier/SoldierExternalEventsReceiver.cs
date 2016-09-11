@@ -42,6 +42,7 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
             //To ignore collision with projectiles during death anim but still be 'physic'
             gameObject.layer = 2;
             animManager.PlayDeathAnimation(projectileProp);
+            EventManager.TriggerEvent("add_points", 100);
         }
     }
 
