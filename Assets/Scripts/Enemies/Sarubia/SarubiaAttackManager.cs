@@ -7,6 +7,7 @@ public class SarubiaAttackManager : MonoBehaviour {
     private ObjectPoolScript projectilePool;
     private SlugAudioManager audioManager;
     public Transform projectileInitialPos;
+    public Animator explosionAnim;
 
     void Awake() {
         animManager = GetComponent<SarubiaAnimationManager>();
@@ -28,6 +29,10 @@ public class SarubiaAttackManager : MonoBehaviour {
 
     public void PrimaryAttack() {
         animManager.StartShootAnim(BadaBoom);
+    }
+
+    public void AEexplosion() {
+        explosionAnim.Play("explosion");
     }
 
     private void BadaBoom() {
