@@ -214,6 +214,12 @@ public class SlugPhysics : MonoBehaviour {
         absoluteVelocity.x = velX;
     }
 
+    public void SetVelocityY(float velY) {
+        absoluteVelocity.y = velY;
+        //FIXME
+        inTheAir = true;
+    }
+
     public float GetVelocityX() {
         return absoluteVelocity.x;
     }

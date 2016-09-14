@@ -39,7 +39,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
             inputManager.enabled = false;
             gameObject.layer = 2;
             if (projectileProp.type == ProjectileType.Grenade) {
-                physic.JumpHighVel();
+                physic.SetVelocityY(3);
                 physic.SetVelocityX(-transform.right.x/3);
             }
             audioManager.PlaySound(2);
