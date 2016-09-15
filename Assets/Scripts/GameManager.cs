@@ -6,12 +6,11 @@ public class GameManager : MonoBehaviour {
 
     public int playerLifeCount = 2;
     public int playerScore = 0;
-    public int playerBulletCount = 0;
 
     public Text scoreGUI;
-    public Text bulletGUI;
-    private int score;
-
+    public Text bulletCountGUI;
+    public Text grenadeCountGUI;
+    public Text lifeCountGUI;
 
     public PlayerDeathManager player; // TODO the gameManager should instantiate the player
     // Keep it like it for now in order to always have a Player in the hierarchy even when not running
@@ -29,18 +28,14 @@ public class GameManager : MonoBehaviour {
 
     void Awake() {
         timeUtils = GetComponent<TimeUtils>();
-        EventManager.StartListening("player_death",
-                    ()=> timeUtils.TimeDelay(waitTimeBeforeSpawn, OnplayerDeath));
-
-        EventManager.StartListening("mission_end",
-                    OnMissionEnd);
-
+        EventManager.StartListening("player_death", OnplayerDeath);
+        EventManager.StartListening("mission_end", OnMissionEnd);
         EventManager.StartListening("add_points", UpdatePlayerPoints);
         EventManager.StartListening("bullet_shot", UpdatePlayerBulletCount);
+        EventManager.StartListening("grenade_thrown", UpdatePlayerGrenadeCountUI);
 
         soundManager = GetComponentInChildren<SlugAudioManager>();
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
-
     }
 
 	void Start () {
@@ -60,9 +55,12 @@ public class GameManager : MonoBehaviour {
 
     private void OnplayerDeath() {
         playerLifeCount--;
+        lifeCountGUI.text = playerLifeCount.ToString();
         if (playerLifeCount >= 0) {
-            player.SpawnPlayer();
-            EventManager.TriggerEvent("player_back_alive");
+            timeUtils.TimeDelay(waitTimeBeforeSpawn, () => {
+                player.SpawnPlayer();
+                EventManager.TriggerEvent("player_back_alive");
+            });
         } else {
             GameOver();
         }
@@ -91,7 +89,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver() {
-
+        bgMusic.Stop();
     }
 
     private void UpdatePlayerPoints(float pts) {
@@ -101,10 +99,14 @@ public class GameManager : MonoBehaviour {
 
     private void UpdatePlayerBulletCount(float bullet) {
         if ( bullet > 0 ) {
-            bulletGUI.text = bullet.ToString();
+            bulletCountGUI.text = bullet.ToString();
         } else {
-            bulletGUI.text = "∞";
+            bulletCountGUI.text = "∞";
         }
+    }
+
+    private void UpdatePlayerGrenadeCountUI(float grenadeCount) {
+        grenadeCountGUI.text = grenadeCount.ToString();
     }
 
 }
