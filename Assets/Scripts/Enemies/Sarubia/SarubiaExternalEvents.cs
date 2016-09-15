@@ -13,7 +13,7 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
-            flashRed.FlashOnce();
+            flashRed.FlashSlugStyle();
             audioManager.PlaySound(0);
             return;
         } else if (!dead) {

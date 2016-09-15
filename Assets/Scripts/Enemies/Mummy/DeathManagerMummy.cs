@@ -15,7 +15,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
-            flashRed.FlashOnce();
+            flashRed.FlashSlugStyle();
         } else {
             Die(projectileProp);
         }

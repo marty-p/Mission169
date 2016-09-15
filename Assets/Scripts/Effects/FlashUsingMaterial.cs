@@ -7,13 +7,13 @@ public class FlashUsingMaterial : MonoBehaviour {
     public SpriteRenderer[] spriteRenderers;
     private Material baseMaterial; // Assuming all sprite renderers use the same Material
     public Material material;
-    public float flashDuration = 1/25f;
+    public float flashDuration = 1/24f;
 
 	void Start () {
         baseMaterial = spriteRenderers[0].material;
 	}
 
-    public void FlashOnce(RetVoidTakeVoid cb = null) {
+    public void FlashSlugStyle(RetVoidTakeVoid cb = null) {
         // TODO ...
         if (cb == null) {
             cb = () => { };
@@ -44,13 +44,20 @@ public class FlashUsingMaterial : MonoBehaviour {
     }
 
     private IEnumerator FlashCoroutine(RetVoidTakeVoid cb = null) {
-        for (int i = 0; i < spriteRenderers.Length; i++) {
-            spriteRenderers[i].material = material;
-        }
-        yield return new WaitForSeconds(flashDuration);
+        int numberOfFlashes = 3;
+        int flashCount = 0;
+        while (flashCount < numberOfFlashes) {
+            for (int i = 0; i < spriteRenderers.Length; i++) {
+                spriteRenderers[i].material = material;
+            }
+            yield return new WaitForSeconds(flashDuration);
 
-        for (int i = 0; i < spriteRenderers.Length; i++) {
-            spriteRenderers[i].material = baseMaterial;
+            for (int i = 0; i < spriteRenderers.Length; i++) {
+                spriteRenderers[i].material = baseMaterial;
+            }
+
+            yield return new WaitForSeconds(flashDuration);
+            flashCount++;
         }
         if (cb != null) {
             cb();
