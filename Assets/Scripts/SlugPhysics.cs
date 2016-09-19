@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using Utils;
 
 public class SlugPhysics : MonoBehaviour {
 
@@ -206,18 +208,24 @@ public class SlugPhysics : MonoBehaviour {
     }
 
     public void SetVelocity(float velX, float velY) {
-        absoluteVelocity.x = velX * transform.right.x;
-        absoluteVelocity.y = velY * transform.up.y;
+        StartCoroutine(WaitForPhysUpdate( ()=> {
+            absoluteVelocity.x = velX * transform.right.x;
+            absoluteVelocity.y = velY * transform.up.y;
+        }));
     }
 
     public void SetVelocityX(float velX) {
-        absoluteVelocity.x = velX;
+        StartCoroutine(WaitForPhysUpdate( ()=> {
+            absoluteVelocity.x = velX;
+        }));
     }
 
     public void SetVelocityY(float velY) {
-        absoluteVelocity.y = velY;
-        //FIXME
-        inTheAir = true;
+        StartCoroutine(WaitForPhysUpdate( ()=> {
+            absoluteVelocity.y = velY;
+            //FIXME
+            inTheAir = true;
+        }));
     }
 
     public float GetVelocityX() {
@@ -254,4 +262,10 @@ public class SlugPhysics : MonoBehaviour {
             obs.Observe(ev);
         }
     }
+
+    private IEnumerator WaitForPhysUpdate(RetVoidTakeVoid cb) {
+        yield return new WaitForFixedUpdate();
+        cb();
+    }
+
 }
