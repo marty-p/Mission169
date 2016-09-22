@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9fead52e43c94604faceeec5b67a5311
-timeCreated: 1468969995
+timeCreated: 1474534671
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -87,12 +87,12 @@ TextureImporter:
         x: 7
         y: 0
         width: 24
-        height: 26
+        height: 39
       alignment: 9
-      pivot: {x: 0, y: 1.427}
+      pivot: {x: 0.083333336, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_1
       rect:
@@ -100,25 +100,25 @@ TextureImporter:
         x: 41
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.12195122, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_2
       rect:
         serializedVersion: 2
         x: 85
         y: 0
-        width: 41
-        height: 24
+        width: 40
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.125, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_3
       rect:
@@ -126,12 +126,12 @@ TextureImporter:
         x: 129
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.12195122, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_4
       rect:
@@ -139,12 +139,12 @@ TextureImporter:
         x: 173
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.12195122, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_5
       rect:
@@ -152,12 +152,12 @@ TextureImporter:
         x: 217
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_6
       rect:
@@ -165,12 +165,12 @@ TextureImporter:
         x: 261
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_7
       rect:
@@ -178,12 +178,12 @@ TextureImporter:
         x: 305
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_8
       rect:
@@ -191,12 +191,12 @@ TextureImporter:
         x: 349
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_9
       rect:
@@ -204,12 +204,12 @@ TextureImporter:
         x: 393
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_10
       rect:
@@ -217,12 +217,12 @@ TextureImporter:
         x: 437
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_11
       rect:
@@ -230,12 +230,12 @@ TextureImporter:
         x: 481
         y: 0
         width: 41
-        height: 24
+        height: 39
       alignment: 9
-      pivot: {x: 0.12, y: 1.545}
+      pivot: {x: 0.14634146, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_12
       rect:
@@ -243,12 +243,12 @@ TextureImporter:
         x: 530
         y: 0
         width: 67
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.055, y: 1.325}
+      pivot: {x: 0.05970149, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_13
       rect:
@@ -256,12 +256,12 @@ TextureImporter:
         x: 601
         y: 0
         width: 67
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.07, y: 1.325}
+      pivot: {x: 0.07462686, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_15
       rect:
@@ -269,12 +269,12 @@ TextureImporter:
         x: 671
         y: 0
         width: 67
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.07, y: 1.325}
+      pivot: {x: 0.07462686, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_16
       rect:
@@ -282,12 +282,12 @@ TextureImporter:
         x: 742
         y: 0
         width: 67
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.07, y: 1.325}
+      pivot: {x: 0.07462686, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_18
       rect:
@@ -295,12 +295,12 @@ TextureImporter:
         x: 813
         y: 0
         width: 44
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.061, y: 1.325}
+      pivot: {x: 0.06818182, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_19
       rect:
@@ -308,12 +308,12 @@ TextureImporter:
         x: 860
         y: 0
         width: 44
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.061, y: 1.325}
+      pivot: {x: 0.06818182, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_20
       rect:
@@ -321,12 +321,12 @@ TextureImporter:
         x: 907
         y: 0
         width: 44
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.061, y: 1.325}
+      pivot: {x: 0.06818182, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_21
       rect:
@@ -334,12 +334,12 @@ TextureImporter:
         x: 954
         y: 0
         width: 44
-        height: 28
+        height: 39
       alignment: 9
-      pivot: {x: 0.061, y: 1.325}
+      pivot: {x: 0.06818182, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_22
       rect:
@@ -347,12 +347,12 @@ TextureImporter:
         x: 1001
         y: 0
         width: 43
-        height: 28
+        height: 39
       alignment: 9
       pivot: {x: 0.061, y: 1.325}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_23
       rect:
@@ -360,12 +360,12 @@ TextureImporter:
         x: 1055
         y: 0
         width: 44
-        height: 36
+        height: 39
       alignment: 9
-      pivot: {x: 0.1977, y: 1.03}
+      pivot: {x: 0.20454545, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_24
       rect:
@@ -373,12 +373,12 @@ TextureImporter:
         x: 1102
         y: 0
         width: 44
-        height: 36
+        height: 39
       alignment: 9
-      pivot: {x: 0.1977, y: 1.03}
+      pivot: {x: 0.20454545, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_26
       rect:
@@ -386,12 +386,12 @@ TextureImporter:
         x: 1149
         y: 0
         width: 37
-        height: 36
+        height: 39
       alignment: 9
-      pivot: {x: 0.23507, y: 1.03}
+      pivot: {x: 0.24324325, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit2_27
       rect:
@@ -399,12 +399,12 @@ TextureImporter:
         x: 1189
         y: 0
         width: 36
-        height: 36
+        height: 39
       alignment: 9
-      pivot: {x: 0.2415, y: 1.03}
+      pivot: {x: 0.25, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 02857e4f5bf56134884f565afde62c39
-timeCreated: 1462432279
+timeCreated: 1474447817
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -50,54 +50,64 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-sit_0
+    - serializedVersion: 2
+      name: marco-sit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 34
-        height: 27
+        height: 60
       alignment: 9
-      pivot: {x: 0.1, y: 1.374}
+      pivot: {x: 0.14705883, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_1
       rect:
         serializedVersion: 2
         x: 37
         y: 0
-        width: 33
-        height: 27
+        width: 34
+        height: 60
       alignment: 9
-      pivot: {x: 0.1, y: 1.374}
+      pivot: {x: 0.14705883, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_2
       rect:
         serializedVersion: 2
         x: 73
         y: 0
         width: 33
-        height: 27
+        height: 60
       alignment: 9
-      pivot: {x: 0.1, y: 1.374}
+      pivot: {x: 0.15151516, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_3
       rect:
         serializedVersion: 2
         x: 109
         y: 0
-        width: 33
-        height: 27
+        width: 34
+        height: 60
       alignment: 9
-      pivot: {x: 0.1, y: 1.374}
+      pivot: {x: 0.14705883, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

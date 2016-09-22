@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 642cda04e2b9d834ebf3e29fe5fde8f9
-timeCreated: 1469334276
+timeCreated: 1474238960
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,12 +63,12 @@ TextureImporter:
         x: 0
         y: 0
         width: 38
-        height: 37
+        height: 39
       alignment: 9
-      pivot: {x: -0.008, y: 1.0132}
+      pivot: {x: 0, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-stopping_1
       rect:
@@ -76,12 +76,12 @@ TextureImporter:
         x: 41
         y: 0
         width: 38
-        height: 37
+        height: 39
       alignment: 9
-      pivot: {x: -0.008, y: 1.0132}
+      pivot: {x: 0, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-stopping_2
       rect:
@@ -89,12 +89,12 @@ TextureImporter:
         x: 81
         y: 0
         width: 38
-        height: 37
+        height: 39
       alignment: 9
-      pivot: {x: -0.008, y: 1.0132}
+      pivot: {x: 0, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-stopping_3
       rect:
@@ -102,12 +102,12 @@ TextureImporter:
         x: 120
         y: 0
         width: 38
-        height: 37
+        height: 39
       alignment: 9
-      pivot: {x: 0.018, y: 1.0132}
+      pivot: {x: 0.02631579, y: 0.974359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

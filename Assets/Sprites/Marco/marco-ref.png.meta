@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 048a434e061d613478eeeaa3cf22171f
-timeCreated: 1474413696
+guid: 4721f1d6ec457aa4e86b5e0250a8b85a
+timeCreated: 1474237369
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: marco_mg-sit_0
-    21300002: marco_mg-sit_1
-    21300004: marco_mg-sit_2
+    21300000: marco-ref_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,44 +54,18 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marco_mg-sit_0
+      name: marco-ref_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 39
-        height: 39
-      alignment: 9
-      pivot: {x: 0, y: 0.974359}
+        width: 29
+        height: 38
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: marco_mg-sit_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 39
-        height: 41
-      alignment: 9
-      pivot: {x: 0.025641026, y: 0.9268293}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: marco_mg-sit_2
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 0
-        width: 40
-        height: 41
-      alignment: 9
-      pivot: {x: 0, y: 0.9268293}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e2fbdf60f016de344b03e418eaa57360
-timeCreated: 1468835534
+timeCreated: 1474533877
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -71,12 +71,12 @@ TextureImporter:
         x: 8
         y: 1
         width: 34
-        height: 36
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 41
+      alignment: 9
+      pivot: {x: 0, y: 0.9756098}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_1
       rect:
@@ -84,12 +84,12 @@ TextureImporter:
         x: 45
         y: 1
         width: 34
-        height: 36
+        height: 41
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_2
       rect:
@@ -97,12 +97,12 @@ TextureImporter:
         x: 81
         y: 1
         width: 34
-        height: 36
+        height: 41
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_3
       rect:
@@ -110,12 +110,12 @@ TextureImporter:
         x: 117
         y: 1
         width: 34
-        height: 36
+        height: 41
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_4
       rect:
@@ -123,12 +123,12 @@ TextureImporter:
         x: 155
         y: 1
         width: 32
-        height: 36
+        height: 41
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_5
       rect:
@@ -136,12 +136,12 @@ TextureImporter:
         x: 192
         y: 1
         width: 31
-        height: 36
+        height: 41
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_6
       rect:
@@ -154,7 +154,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_7
       rect:
@@ -167,7 +167,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_8
       rect:
@@ -180,7 +180,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_9
       rect:
@@ -193,7 +193,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_10
       rect:
@@ -206,7 +206,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco_mg-sit3_11
       rect:
@@ -219,7 +219,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

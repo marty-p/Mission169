@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fa27b81910ff4e0498f43919d7be5c29
-timeCreated: 1472971088
+timeCreated: 1474448803
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,12 +63,12 @@ TextureImporter:
         x: 0
         y: 0
         width: 42
-        height: 27
+        height: 60
       alignment: 9
-      pivot: {x: 0.16299278, y: 0}
+      pivot: {x: 0.16666667, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco-sit_knife2_1
       rect:
@@ -76,12 +76,12 @@ TextureImporter:
         x: 45
         y: 0
         width: 42
-        height: 35
+        height: 60
       alignment: 9
-      pivot: {x: 0.1693514, y: 0}
+      pivot: {x: 0.16666667, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco-sit_knife2_3
       rect:
@@ -89,12 +89,12 @@ TextureImporter:
         x: 90
         y: 0
         width: 35
-        height: 35
+        height: 60
       alignment: 9
-      pivot: {x: 0.20623147, y: 0}
+      pivot: {x: 0.2, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     - serializedVersion: 2
       name: marco-sit_knife2_4
       rect:
@@ -102,12 +102,12 @@ TextureImporter:
         x: 128
         y: 0
         width: 34
-        height: 35
+        height: 60
       alignment: 9
-      pivot: {x: 0.20937303, y: 0}
+      pivot: {x: 0.20588236, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      tessellationDetail: 0
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

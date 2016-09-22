@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3d05f0b77bf8362458f23e5a3cc64031
-timeCreated: 1466827439
+timeCreated: 1474449325
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -57,131 +57,155 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-sit_shoot_0
+    - serializedVersion: 2
+      name: marco-sit_shoot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 38
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.085, y: 1.279}
+      pivot: {x: 0.078947365, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_1
       rect:
         serializedVersion: 2
         x: 43
         y: 0
         width: 50
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.045, y: 1.279}
+      pivot: {x: 0.04, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 51
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.043, y: 1.279}
+      pivot: {x: 0.039215688, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_3
       rect:
         serializedVersion: 2
         x: 150
         y: 0
         width: 52
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.062, y: 1.279}
+      pivot: {x: 0.057692308, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_5
       rect:
         serializedVersion: 2
         x: 205
         y: 0
         width: 37
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.088, y: 1.279}
+      pivot: {x: 0.08108108, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_6
       rect:
         serializedVersion: 2
         x: 245
         y: 0
         width: 37
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.08999, y: 1.279}
+      pivot: {x: 0.08108108, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_7
       rect:
         serializedVersion: 2
         x: 285
         y: 0
         width: 37
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.061765105, y: 1.279}
+      pivot: {x: 0.054054055, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_8
       rect:
         serializedVersion: 2
         x: 325
         y: 0
         width: 37
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.0617, y: 1.279}
+      pivot: {x: 0.054054055, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_9
       rect:
         serializedVersion: 2
         x: 365
         y: 0
         width: 34
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.067, y: 1.279}
+      pivot: {x: 0.05882353, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_10
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_10
       rect:
         serializedVersion: 2
         x: 402
         y: 0
         width: 33
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.069, y: 1.279}
+      pivot: {x: 0.060606062, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-sit_shoot_11
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-sit_shoot_11
       rect:
         serializedVersion: 2
         x: 438
         y: 0
         width: 32
-        height: 29
+        height: 60
       alignment: 9
-      pivot: {x: 0.07, y: 1.279}
+      pivot: {x: 0.0625, y: 0.6333333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
