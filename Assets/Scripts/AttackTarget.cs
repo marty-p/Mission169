@@ -20,7 +20,7 @@ public class AttackTarget : MonoBehaviour, IAttack {
     public void GrenadeAttack() {
         Vector2 projectileDestination = target.transform.position;
         GameObject grenadeGameObject = grenadePool.GetPooledObject();
-        IProjectile grenade = grenadeGameObject.GetComponent<IProjectile>();
+        IProjectile grenade = grenadeGameObject.GetComponentInChildren<IProjectile>();
         grenadeGameObject.transform.position = transform.position + new Vector3(0,0.2f);
         grenadeGameObject.transform.right = transform.right;
         grenade.Launch(victimsTag, projectileDestination);
