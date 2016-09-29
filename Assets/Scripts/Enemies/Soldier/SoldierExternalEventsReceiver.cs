@@ -48,8 +48,9 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
 
     // Animation Event
     public void OnEndOfDeathAnim() {
-        timeUtils.TimeDelay(0.2f, () => {
+        timeUtils.TimeDelay(0.25f, () => {
             blink.BlinkPlease(() => {
+                // FIXME - getting to the root Game object to set it inactive
                 Transform t = transform;
                 while (t.parent != null && t.parent.tag == "enemy") {
                     t = t.parent;
