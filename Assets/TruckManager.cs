@@ -18,6 +18,8 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
     public SpriteRenderer hideEnemy;
     public EnemySpawner enemySpawner;
     public Berserker[] berserkersOnTheRoof;
+    private HealthManager healthManager;
+    private Coroutine coroutine;
 
     void Awake() {
         animator = GetComponent<Animator>();
@@ -26,6 +28,7 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
         colliderWhenIntact = GetComponent<Collider2D>();
         colliderWhenDestroyed = GetComponent<EdgeCollider2D>();
         collectible = GetComponentInChildren<CollectibleDef>(true);
+        healthManager = GetComponent<HealthManager>();
     }
 
     public void OnBecameInvisible() {
@@ -34,7 +37,8 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
 
     void Start() {
         pastPos = transform.position;
-        StartCoroutine("CheckIfMoving");
+        coroutine = StartCoroutine("CheckIfMoving");
+        healthManager.IgnoreDamages = true;
     }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
@@ -62,9 +66,12 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
             berserkersOnTheRoof[i].SetWalkingMode();
         }
         timeUtils.TimeDelay(2, () => {
-            hideEnemy.enabled = true;
-            enemySpawner.gameObject.SetActive(true);
+            if (!dead) {
+                hideEnemy.enabled = true;
+                enemySpawner.gameObject.SetActive(true);
+            }
         });
+        StopCoroutine("CheckIfMoving");
     }
 
     private IEnumerator CheckIfMoving() {
@@ -73,10 +80,10 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
                 animator.SetBool("driving", true);
             } else {
                 animator.SetBool("driving", false);
+                healthManager.IgnoreDamages = false;
             }
             pastPos = transform.position;
-
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
