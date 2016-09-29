@@ -14,7 +14,6 @@ public class FlashUsingMaterial : MonoBehaviour {
 	}
 
     public void FlashSlugStyle(RetVoidTakeVoid cb = null) {
-        // TODO ...
         if (cb == null) {
             cb = () => { };
         }
@@ -25,9 +24,17 @@ public class FlashUsingMaterial : MonoBehaviour {
         StartCoroutine("FlashForXSecsCoroutine", duration);
     }
 
-    private IEnumerator FlashForXSecsCoroutine(float duration) {
+    public void FlashForOneFrame(RetVoidTakeVoid cb = null) {
+        if (cb == null) {
+            cb = () => { };
+        }
+        StartCoroutine("FlashForOneFrameCoroutine", cb);
+    }
+
+
+    private IEnumerator FlashForXSecsCoroutine(float u) {
         float elapsed = 0;
-        while (elapsed < duration) {
+        while (elapsed < u) {
             for (int i = 0; i < spriteRenderers.Length; i++) {
                 spriteRenderers[i].material = material;
             }
@@ -40,6 +47,20 @@ public class FlashUsingMaterial : MonoBehaviour {
             yield return new WaitForSeconds(flashDuration);
             elapsed += flashDuration;
             elapsed += flashDuration;
+        }
+    }
+
+    private IEnumerator FlashForOneFrameCoroutine(RetVoidTakeVoid cb = null) {
+        for (int i = 0; i < spriteRenderers.Length; i++) {
+            spriteRenderers[i].material = material;
+        }
+        yield return new WaitForSeconds(Time.deltaTime);
+
+        for (int i = 0; i < spriteRenderers.Length; i++) {
+            spriteRenderers[i].material = baseMaterial;
+        }
+        if (cb != null) {
+            cb();
         }
     }
 
