@@ -4,15 +4,18 @@ using Slug;
 public class MarcoAttackManager : MonoBehaviour {
 
     private IAttack[] FireArmAttacks;
+    private IAttack currentFireArmAttack;
     private AttackKnife MeleeAttack;
     private IAttack grenadeAttack;
     // TODO currentAttackID ...
-    private int currentAttackID = 2;
+    private int currentAttackID = 1;
     public int bulletCount;
+    public int grenadeCount = 10;
     private RuntimeAnimatorController gunAnimController;
     private FlashUsingMaterial flashBlue;
 
     public string victimsTag = "enemy";
+    public LayerMask enemyLayer;
     public Animator topBodyAnimator;
 
     public Transform grenadeInitialPositionStand;
@@ -30,6 +33,8 @@ public class MarcoAttackManager : MonoBehaviour {
         grenadeAttack = GetComponent<MarcoAttackGrenade>();
         movementManager = GetComponentInParent<MovementManager>();
         flashBlue = GetComponent<FlashUsingMaterial>();
+
+        currentFireArmAttack = FireArmAttacks[1];
     }
 
     public void PrimaryAttack() {
@@ -38,47 +43,53 @@ public class MarcoAttackManager : MonoBehaviour {
             if (!MeleeAttack.InProgress()) {
                 MeleeAttack.Execute(victimsTag, Vector3.zero, Vector3.zero);
             }
-        } else if (bulletCount > 0) {
-            //TODO remove this projectileInitialPos parameter from Execute
-            FireArmAttacks[currentAttackID].Execute(victimsTag, unUsed, unUsed);
         } else {
-            FireArmAttacks[1].Execute(victimsTag, unUsed, unUsed);
+            //TODO remove this projectileInitialPos parameter from Execute
+            currentFireArmAttack.Execute(victimsTag, unUsed, unUsed);
         }
     }
 
     public void SecondaryAttack() {
-        Vector3 grenadeInitialPos;
-        if (movementManager.body == BodyPosture.Crouch) {
-            grenadeInitialPos = grenadeInitialPositionCrouch.position;
+        if (grenadeCount > 0) {
+            grenadeCount--;
+            EventManager.TriggerEvent("grenade_thrown", grenadeCount);
+
+            Vector3 grenadeInitialPos;
+            if (movementManager.body == BodyPosture.Crouch) {
+                grenadeInitialPos = grenadeInitialPositionCrouch.position;
+            } else {
+                grenadeInitialPos = grenadeInitialPositionStand.position;
+            }
+            grenadeAttack.Execute(victimsTag, Vector3.zero, grenadeInitialPos);
+        }
+    }
+
+    public void UpdateBulletCount(int newBulletCount = 0) {
+        if (newBulletCount == 0) {
+            bulletCount--;
         } else {
-            grenadeInitialPos = grenadeInitialPositionStand.position;
+            bulletCount = bulletCount + newBulletCount;
         }
-        grenadeAttack.Execute(victimsTag, Vector3.zero, grenadeInitialPos);
-    }
-
-    public void UpdateBulletCount() {
-        bulletCount--;
         if (bulletCount < 1) {
-            topBodyAnimator.runtimeAnimatorController = gunAnimController;
+            SetDefaultAttack();
         }
+        // way to update the UI
+        EventManager.TriggerEvent("bullet_shot", bulletCount);
     }
 
-    public void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.tag == "Collectible") {
-            CollectibleDef def = collider.gameObject.GetComponent<CollectibleDef>();
-            topBodyAnimator.runtimeAnimatorController = def.animController;
-            currentAttackID = def.attackID;
-            bulletCount = def.bulletCount;
-            flashBlue.FlashForXSecs(0.16f);
-            // Play voice sound
-            audioManager.PlaySoundByClip(def.weaponNameAudio);
-        }
+    public void SetAttack(int attackID, RuntimeAnimatorController attackAnimController) {
+        currentFireArmAttack = FireArmAttacks[attackID];
+        topBodyAnimator.runtimeAnimatorController = attackAnimController;
+    }
 
+    public void SetDefaultAttack() {
+        currentFireArmAttack = FireArmAttacks[1];
+        topBodyAnimator.runtimeAnimatorController = gunAnimController;
     }
 
     private bool InRangeForKnife() {
         RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position,
-                new Vector2(transform.position.x + transform.right.x * 0.35f, transform.position.y));
+                new Vector2(transform.position.x + transform.right.x * 0.35f, transform.position.y), enemyLayer);
 
         Debug.DrawLine(transform.position,
                         new Vector2(transform.position.x + transform.right.x * 0.35f, transform.position.y),

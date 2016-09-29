@@ -97,7 +97,7 @@ public class MovementManager : MonoBehaviour, IObserver {
         lookingDirection = transform.right;
         animManager.StartCrouchAnim();
         physics.SetMovementFactor(crouchSpeedFactor);
-        AdaptColliderCrouching();
+        timeUtils.FixedUpdateDelay(AdaptColliderCrouching);
     }
 
     public void BlockMovement() {
@@ -143,13 +143,16 @@ public class MovementManager : MonoBehaviour, IObserver {
     }
 
     private void AdaptColliderCrouching() {
-        collider.offset = new Vector2(0, 0.013f);
-        collider.size = new Vector2(0.17f, 0.185f);
+
+        float new_size = collider.size.y/2;
+        float diff = collider.size.y - new_size;
+        collider.offset = new Vector2(collider.offset.x, collider.offset.y - diff/2);
+        collider.size = new Vector2(collider.size.x, new_size);
     }
 
     private void AdaptColliderStanding() {
-        collider.offset = new Vector2(0, 0.091f);
-        collider.size = new Vector2(0.17f, 0.35f);
+        collider.offset = new Vector2(0, 0.09f);
+        collider.size = new Vector2(0.16f, 0.357f);
     }
 
 }

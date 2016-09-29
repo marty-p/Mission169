@@ -13,6 +13,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
     private FlashUsingMaterial flashBright;
     private FlipPlayerIndicator playerIndicator;
 
+    public MarcoAttackManager attackManager;
     public SlugAudioManager audioManager;
     public int ignoreDamagesDuration = 3;
 
@@ -60,8 +61,8 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
         inputManager.enabled = true;
         gameObject.layer = 8;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        animManager.ResetTopAnimator();
-        animManager.ResetBottomAnimator();
+        animManager.ResetAnimators();
+        attackManager.SetDefaultAttack();
         animManager.PlaySpawnAnim();
         health.IgnoreDamages = true;
         playerIndicator.SetVisible(true);

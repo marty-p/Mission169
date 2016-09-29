@@ -6,6 +6,8 @@ public class AnimationManager : MonoBehaviour, IObserver {
     public Animator topAnimator;
     public Animator bottomAnimator;
     public Animator blood;
+    public RuntimeAnimatorController deathAnimController;
+    public RuntimeAnimatorController defaultAnimController;
 
     private RetVoidTakeVoid EndOfDeathCB;
     private bool inExplosiveDeathAnim;
@@ -103,14 +105,16 @@ public class AnimationManager : MonoBehaviour, IObserver {
     public void PlayDeathAnimation(ProjectileProperties proj, RetVoidTakeVoid cb) {
         string trigger;
 
+        topAnimator.runtimeAnimatorController = deathAnimController;
+
         if (proj.type == ProjectileType.Grenade) {
-            trigger = "death_explosive";
+            trigger = "explo";
             inExplosiveDeathAnim = true;
         } else if (proj.type == ProjectileType.Knife) {
-            trigger = "slashed";
+            trigger = "slash";
             blood.Play("1");
         } else {
-            trigger = "slashed";
+            trigger = "slash";
         }
         EndOfDeathCB = cb;
         topAnimator.SetTrigger(trigger);
@@ -126,13 +130,10 @@ public class AnimationManager : MonoBehaviour, IObserver {
         topAnimator.SetTrigger("mission_complete");
     }
 
-    public void ResetTopAnimator() {
-        topAnimator.Play("just_chillin");
+    public void ResetAnimators() {
+        topAnimator.runtimeAnimatorController = defaultAnimController;
+        topAnimator.Rebind();
+        bottomAnimator.Rebind();
         inExplosiveDeathAnim = false;
     }
-
-    public void ResetBottomAnimator() {
-        bottomAnimator.Play("legs_still");
-    }
-
 }
