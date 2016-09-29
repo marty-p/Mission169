@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: cfc662d295b642b468298fca5a247f77
-timeCreated: 1460980966
+timeCreated: 1475055089
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -65,11 +65,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-explosion_death_0
+    - serializedVersion: 2
+      name: marco-explosion_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -80,7 +83,9 @@ TextureImporter:
       pivot: {x: 0.18599017, y: 0.8811323}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-explosion_death_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_1
       rect:
         serializedVersion: 2
         x: 29
@@ -91,7 +96,9 @@ TextureImporter:
       pivot: {x: 0.24860775, y: 0.90291077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-explosion_death_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_2
       rect:
         serializedVersion: 2
         x: 64
@@ -101,12 +108,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.2829976, y: 0.9148258}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9.055923, y: -0.59303284}
-        - {x: -9.055923, y: -36.593033}
-        - {x: 22.944077, y: -36.593033}
-        - {x: 22.944077, y: -0.59303284}
-    - name: marco-explosion_death_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_3
       rect:
         serializedVersion: 2
         x: 99
@@ -116,18 +121,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.38922447, y: 0.9084171}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25.652573, y: -10.336685}
-        - {x: 20.652573, y: 2.6633148}
-        - {x: 8.652573, y: 2.6633148}
-        - {x: -6.3474274, y: -1.3366852}
-        - {x: -16.347427, y: -11.336685}
-        - {x: -16.347427, y: -21.336685}
-        - {x: 5.6525726, y: -36.336685}
-        - {x: 14.652573, y: -36.336685}
-        - {x: 20.652573, y: -35.336685}
-        - {x: 25.652573, y: -31.336685}
-    - name: marco-explosion_death_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_4
       rect:
         serializedVersion: 2
         x: 144
@@ -137,17 +134,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.38972732, y: 0.91183376}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3.3171844, y: 3.5266495}
-        - {x: -12.317184, y: 3.5266495}
-        - {x: -17.317184, y: -0.47335052}
-        - {x: -18.317184, y: -0.47335052}
-        - {x: -18.317184, y: -36.47335}
-        - {x: 26.682816, y: -36.47335}
-        - {x: 28.682816, y: -29.47335}
-        - {x: 28.682816, y: -15.473351}
-        - {x: 17.682816, y: -7.4733505}
-    - name: marco-explosion_death_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_5
       rect:
         serializedVersion: 2
         x: 193
@@ -157,14 +147,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.31325307, y: 0.91533643}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15.036148, y: -1.6134567}
-        - {x: -15.036148, y: -35.613457}
-        - {x: -11.036148, y: -36.613457}
-        - {x: 32.963852, y: -36.613457}
-        - {x: 32.963852, y: -9.613457}
-        - {x: 15.963852, y: -1.6134567}
-    - name: marco-explosion_death_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_6
       rect:
         serializedVersion: 2
         x: 244
@@ -174,16 +160,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.29097536, y: 0.87008077}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -13.675842, y: -6.8032303}
-        - {x: -13.675842, y: -27.80323}
-        - {x: -2.6758423, y: -34.80323}
-        - {x: 29.324158, y: -34.80323}
-        - {x: 31.324158, y: -33.80323}
-        - {x: 33.324158, y: -29.80323}
-        - {x: 33.324158, y: -11.80323}
-        - {x: 27.324158, y: -6.8032303}
-    - name: marco-explosion_death_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_7
       rect:
         serializedVersion: 2
         x: 295
@@ -193,18 +173,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.20982106, y: 0.91209555}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 32.92859, y: -6.483822}
-        - {x: 26.928589, y: -6.483822}
-        - {x: 10.928589, y: -10.483822}
-        - {x: -10.071411, y: -16.483822}
-        - {x: -10.071411, y: -35.48382}
-        - {x: -9.071411, y: -36.48382}
-        - {x: 26.928589, y: -36.48382}
-        - {x: 37.92859, y: -33.48382}
-        - {x: 37.92859, y: -16.483822}
-        - {x: 35.92859, y: -7.483822}
-    - name: marco-explosion_death_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_8
       rect:
         serializedVersion: 2
         x: 346
@@ -214,16 +186,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.21783374, y: 0.93121254}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 2.8509827, y: -3.2485008}
-        - {x: -8.149017, y: -11.248501}
-        - {x: -9.149017, y: -17.2485}
-        - {x: -9.149017, y: -36.2485}
-        - {x: -5.1490173, y: -37.2485}
-        - {x: 17.850983, y: -37.2485}
-        - {x: 32.850983, y: -22.2485}
-        - {x: 32.850983, y: -3.2485008}
-    - name: marco-explosion_death_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_9
       rect:
         serializedVersion: 2
         x: 391
@@ -233,15 +199,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.20812225, y: 0.9711858}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0.3400879, y: 1.1525688}
-        - {x: -6.659912, y: -17.847431}
-        - {x: -6.659912, y: -35.84743}
-        - {x: -2.659912, y: -38.84743}
-        - {x: 22.340088, y: -38.84743}
-        - {x: 25.340088, y: -37.84743}
-        - {x: 25.340088, y: 1.1525688}
-    - name: marco-explosion_death_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_10
       rect:
         serializedVersion: 2
         x: 426
@@ -252,7 +213,9 @@ TextureImporter:
       pivot: {x: 0.2804792, y: 0.93996114}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-explosion_death_11
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_11
       rect:
         serializedVersion: 2
         x: 460
@@ -260,19 +223,12 @@ TextureImporter:
         width: 38
         height: 40
       alignment: 9
-      pivot: {x: 0.30667275, y: 0.9680783}
+      pivot: {x: 0.39473686, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3.6535645, y: -4.723133}
-        - {x: -9.653564, y: -6.723133}
-        - {x: -11.653564, y: -10.723133}
-        - {x: -11.653564, y: -36.723133}
-        - {x: -5.6535645, y: -38.723133}
-        - {x: 23.346436, y: -38.723133}
-        - {x: 26.346436, y: -35.723133}
-        - {x: 26.346436, y: -19.723133}
-        - {x: 12.346436, y: -4.723133}
-    - name: marco-explosion_death_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_12
       rect:
         serializedVersion: 2
         x: 501
@@ -280,15 +236,12 @@ TextureImporter:
         width: 48
         height: 40
       alignment: 9
-      pivot: {x: 0.2685852, y: 0.9427463}
+      pivot: {x: 0.5416667, y: 0.95}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12.89209, y: -37.70985}
-        - {x: 25.10791, y: -37.70985}
-        - {x: 35.10791, y: -25.70985}
-        - {x: 35.10791, y: -8.70985}
-        - {x: -12.89209, y: -8.70985}
-    - name: marco-explosion_death_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_13
       rect:
         serializedVersion: 2
         x: 552
@@ -296,16 +249,12 @@ TextureImporter:
         width: 45
         height: 40
       alignment: 9
-      pivot: {x: 0.25390625, y: 0.97351056}
+      pivot: {x: 0.6666667, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5.4257812, y: -8.940422}
-        - {x: -11.425781, y: -16.940422}
-        - {x: -11.425781, y: -38.940422}
-        - {x: 27.574219, y: -38.940422}
-        - {x: 33.57422, y: -30.940422}
-        - {x: 33.57422, y: -8.940422}
-    - name: marco-explosion_death_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_14
       rect:
         serializedVersion: 2
         x: 600
@@ -313,17 +262,12 @@ TextureImporter:
         width: 47
         height: 40
       alignment: 9
-      pivot: {x: 0.2948881, y: 1}
+      pivot: {x: 0.7659575, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3.1402588, y: -13}
-        - {x: -13.859741, y: -24}
-        - {x: -13.859741, y: -36}
-        - {x: -7.859741, y: -40}
-        - {x: 29.140259, y: -40}
-        - {x: 33.14026, y: -38}
-        - {x: 33.14026, y: -13}
-    - name: marco-explosion_death_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_15
       rect:
         serializedVersion: 2
         x: 650
@@ -331,19 +275,12 @@ TextureImporter:
         width: 44
         height: 40
       alignment: 9
-      pivot: {x: 0.29029152, y: 1}
+      pivot: {x: 0.79545456, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 17.227173, y: -8}
-        - {x: 11.227173, y: -8}
-        - {x: -12.772827, y: -23}
-        - {x: -12.772827, y: -37}
-        - {x: -8.772827, y: -40}
-        - {x: 23.227173, y: -40}
-        - {x: 31.227173, y: -37}
-        - {x: 31.227173, y: -16}
-        - {x: 20.227173, y: -9}
-    - name: marco-explosion_death_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_16
       rect:
         serializedVersion: 2
         x: 697
@@ -351,18 +288,12 @@ TextureImporter:
         width: 45
         height: 40
       alignment: 9
-      pivot: {x: 0.29, y: 1}
+      pivot: {x: 0.7777778, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6.950012, y: -11}
-        - {x: -13.049988, y: -19}
-        - {x: -13.049988, y: -39}
-        - {x: -12.049988, y: -40}
-        - {x: 27.950012, y: -40}
-        - {x: 31.950012, y: -39}
-        - {x: 31.950012, y: -17}
-        - {x: 26.950012, y: -11}
-    - name: marco-explosion_death_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_17
       rect:
         serializedVersion: 2
         x: 745
@@ -370,18 +301,12 @@ TextureImporter:
         width: 48
         height: 40
       alignment: 9
-      pivot: {x: 0.3, y: 1}
+      pivot: {x: 0.7916667, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 24.599976, y: -16}
-        - {x: 13.599976, y: -16}
-        - {x: -14.400024, y: -22}
-        - {x: -14.400024, y: -40}
-        - {x: 30.599976, y: -40}
-        - {x: 33.599976, y: -37}
-        - {x: 33.599976, y: -20}
-        - {x: 32.599976, y: -18}
-    - name: marco-explosion_death_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_18
       rect:
         serializedVersion: 2
         x: 796
@@ -389,18 +314,10 @@ TextureImporter:
         width: 49
         height: 40
       alignment: 9
-      pivot: {x: 0.31, y: 1}
+      pivot: {x: 0.79591835, y: 0.975}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 29.809998, y: -18}
-        - {x: 5.8099976, y: -18}
-        - {x: -15.190002, y: -22}
-        - {x: -15.190002, y: -36}
-        - {x: -13.190002, y: -40}
-        - {x: 22.809998, y: -40}
-        - {x: 29.809998, y: -38}
-        - {x: 33.809998, y: -34}
-        - {x: 33.809998, y: -19}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

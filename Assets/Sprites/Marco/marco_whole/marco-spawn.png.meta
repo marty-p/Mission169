@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bbf962c25f9c98643aa28e4089083cd2
-timeCreated: 1464079677
+timeCreated: 1475183825
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -52,76 +52,90 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-spawn_0
+    - serializedVersion: 2
+      name: marco-spawn_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 29
         height: 240
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.15833333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-spawn_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-spawn_1
       rect:
         serializedVersion: 2
         x: 38
         y: 0
         width: 29
         height: 218
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.17431192}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-spawn_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-spawn_2
       rect:
         serializedVersion: 2
         x: 77
         y: 0
         width: 29
         height: 173
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.21387284}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-spawn_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-spawn_3
       rect:
         serializedVersion: 2
         x: 113
         y: 0
         width: 29
         height: 126
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.2777778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-spawn_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-spawn_4
       rect:
         serializedVersion: 2
         x: 146
         y: 0
         width: 29
         height: 88
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.42045453}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-spawn_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-spawn_5
       rect:
         serializedVersion: 2
         x: 177
         y: 0
         width: 29
         height: 65
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.31034482, y: 0.5846154}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
