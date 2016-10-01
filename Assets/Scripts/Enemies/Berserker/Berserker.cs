@@ -36,7 +36,7 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
 
     public void Update() {
         if (walkingMode) {
-            physic.MoveForward(2f);
+            physic.MoveForward(1.3f);
         }
     }
 
@@ -53,6 +53,9 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
     }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
+        if (!enabled) {
+            return;
+        }
         if (newHP < 1) {
             DesInit();
             bloodSplash.SetActive(true);
@@ -66,6 +69,7 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
     }
 
     private void DesInit() {
+        enabled = false;
         bottomBody.SetActive(false);
         topBody.SetActive(false);
         physic.enabled = false;
