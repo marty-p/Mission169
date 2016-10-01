@@ -26,9 +26,10 @@ public class SarubiaAttackManager : MonoBehaviour {
         }
     }
 
-
     public void PrimaryAttack() {
-        animManager.StartShootAnim(BadaBoom);
+        if (!animManager.IsMoving()) {
+            animManager.StartShootAnim(BadaBoom);
+        }
     }
 
     public void AEexplosion() {

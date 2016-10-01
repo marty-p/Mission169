@@ -15,21 +15,21 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
         if (newHP > 0) {
             flashRed.FlashSlugStyle();
             audioManager.PlaySound(0);
+            EventManager.TriggerEvent("add_points", 100);
             return;
         } else if (!dead) {
             dead = true;
             gameObject.tag = "World";
             animator.SetTrigger("explode");
+            audioManager.PlaySound(3);
             float startTime = Time.time;
-            float duration = 0.6f;
+            float duration = 0.7f;
             Bounds boundsForExplosions = collider.bounds;
-            timeUtils.RepeatEvery(0.085f, () => {
+            timeUtils.RepeatEvery(0.045f, () => {
                 // Visual 
                 Animator anim = SimpleAnimatorPool.GetPooledAnimator(explosion);
                 anim.transform.position = RandomPosWithin(boundsForExplosions);
                 anim.Play("1");
-                // Audio
-                audioManager.PlaySound(1);
                 if (Time.time > startTime + duration) {
                     return false;
                 } else {
@@ -45,11 +45,6 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
                 bounds.min.y + UnityEngine.Random.Range(0, bounds.size.y)
         );
     }
-
-	void Update () {
-        bool b = Input.GetKeyDown("b");
-        if (b) {GetComponent<SarubiaAttackManager>().PrimaryAttack();}
-	}
 
     void Awake() {
         animator = GetComponent<Animator>();
