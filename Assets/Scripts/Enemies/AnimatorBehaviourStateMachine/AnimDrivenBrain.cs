@@ -18,10 +18,15 @@ public class AnimDrivenBrain : MonoBehaviour {
     void Awake () {
         anim = GetComponent<Animator>();
         physic = GetComponent<SlugPhysics>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    void OnEnable() {
     }
 	
 	void Update () {
+        if (target == null) {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         UpdateDistanceToTarget();
     }
 
