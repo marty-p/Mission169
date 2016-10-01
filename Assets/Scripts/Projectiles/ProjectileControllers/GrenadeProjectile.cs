@@ -17,9 +17,11 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile {
     private bool linearPart;
     private float x_inc2;
     private float y_inc2;
+    private AreaOfEffectProjectile explosionWave;
 
     void Awake () {
-        ZRotationStepInitial = new Vector3(0, 0, -820*Time.fixedDeltaTime);
+        ZRotationStepInitial = new Vector3(0, 0, -350*Time.deltaTime);
+        explosionWave = GetComponent<AreaOfEffectProjectile>();
 	}
 
     public void OnTriggerEnter2D(Collider2D col) {
@@ -47,24 +49,28 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile {
     private void Explode(Collider2D col) {
         ProjectileUtils.ImpactAnimationAndSound(transform, col, properties);
         ProjectileUtils.NotifyCollider(col, properties);
+        explosionWave.CastAOE("enemy", transform.position);
         gameObject.SetActive(false);
     }
 
-    void FixedUpdate () {
+    void Update () {
         if (launched) {
             transform.Rotate(ZRotationStepCurrent);
             float a = 0.25f;
             float y = 0;
             if (!linearPart) {
                 float dist2 = 1.6f;
-                y = -(dist2 * x) * (dist2 * x);
-                x_inc2 -= 0.047f;
-                x += x_inc2*Time.fixedDeltaTime;
+                y = - Mathf.Abs((dist2 * x) * (dist2 * x));
+                x_inc2 -= Time.deltaTime * 5;
+                x_inc2 = Mathf.Clamp(x_inc2, 1f, 3.3f);
+                x += x_inc2*Time.deltaTime;
             } else if (x < 0.4f) {
-                x += x_inc2 * Time.fixedDeltaTime;
+                x += x_inc2 * Time.deltaTime;
                 x_inc2 -= 0.022f;
                 y = a * x;
+                print("Linear");
             } else if (linearPart) {
+                print(" switching to NON Linear");
                 linearPart = false;
                 y = 0;
                 xOffset = transform.position.x;
@@ -72,7 +78,7 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile {
                 x = 0;
                 float dist2 = 1.2f;
                 y = -(dist2 * x) * (dist2 * x);
-                x +=  x_inc2*Time.fixedDeltaTime;
+                x +=  x_inc2*Time.deltaTime;
             }
             transform.position = new Vector2(xOffset + x * dir, yOffset + y);
         }
@@ -88,7 +94,7 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile {
         xOffset = transform.position.x;
         yOffset = transform.position.y;
         linearPart = true;
-        x_inc2 = 2.3f;
+        x_inc2 = 3.3f;
 
         //FIXME not spinning in right sens when throwing to the left
         // Starting angle not correct when spinning to the left

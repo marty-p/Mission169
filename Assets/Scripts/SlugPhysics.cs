@@ -54,7 +54,7 @@ public class SlugPhysics : MonoBehaviour {
         }
     }
 
-    void FixedUpdate() {;
+    void Update() {;
         
         // 1 - Update velocities
         CalculateVelocity();
@@ -105,14 +105,14 @@ public class SlugPhysics : MonoBehaviour {
     Vector2 CalculateTranslation(Vector2 groundSlope) {
         Vector2 trans = new Vector2();
         if (inTheAir && groundSlope != Vector2.zero && absoluteVelocity.y < 0) { // sliding on a steep slope
-            trans.x = 1.8f * Time.fixedDeltaTime * Mathf.Abs(groundSlope.x);
-            trans.y = -1.8f * Time.fixedDeltaTime * Mathf.Abs(groundSlope.y) ;
+            trans.x = 1.8f * Time.deltaTime * Mathf.Abs(groundSlope.x);
+            trans.y = -1.8f * Time.deltaTime * Mathf.Abs(groundSlope.y) ;
         } else if (InTheAir) { // falling or ascending
-            trans.x = absoluteVelocity.x * movementFactor * Time.fixedDeltaTime;
-            trans.y = absoluteVelocity.y * Time.fixedDeltaTime;
+            trans.x = absoluteVelocity.x * movementFactor * Time.deltaTime;
+            trans.y = absoluteVelocity.y * Time.deltaTime;
         } else { // On the ground
-            trans.x = absoluteVelocity.x * movementFactor * Time.fixedDeltaTime * Mathf.Abs(groundSlope.x);
-            trans.y = Mathf.Abs(absoluteVelocity.x) * movementFactor * Time.fixedDeltaTime * groundSlope.y;
+            trans.x = absoluteVelocity.x * movementFactor * Time.deltaTime * Mathf.Abs(groundSlope.x);
+            trans.y = Mathf.Abs(absoluteVelocity.x) * movementFactor * Time.deltaTime * groundSlope.y;
         }
         return trans;
     }
@@ -178,7 +178,7 @@ public class SlugPhysics : MonoBehaviour {
     void CalculateVelocity() {
         if (inTheAir) {
             absoluteVelocity.x *= airDrag;
-            absoluteVelocity.y -= (verticalDrag * Time.fixedDeltaTime);
+            absoluteVelocity.y -= (verticalDrag * Time.deltaTime);
             Mathf.Clamp(absoluteVelocity.y, maxVerticalVelocity, initialJumpVelocity / 3);
         } else {
             absoluteVelocity.x =  absoluteVelocity.x * groundDrag + forceX;
@@ -208,24 +208,18 @@ public class SlugPhysics : MonoBehaviour {
     }
 
     public void SetVelocity(float velX, float velY) {
-        StartCoroutine(WaitForPhysUpdate( ()=> {
-            absoluteVelocity.x = velX * transform.right.x;
-            absoluteVelocity.y = velY * transform.up.y;
-        }));
+        absoluteVelocity.x = velX * transform.right.x;
+        absoluteVelocity.y = velY * transform.up.y;
     }
 
     public void SetVelocityX(float velX) {
-        StartCoroutine(WaitForPhysUpdate( ()=> {
-            absoluteVelocity.x = velX;
-        }));
+        absoluteVelocity.x = velX;
     }
 
     public void SetVelocityY(float velY) {
-        StartCoroutine(WaitForPhysUpdate( ()=> {
-            absoluteVelocity.y = velY;
-            //FIXME
-            inTheAir = true;
-        }));
+        absoluteVelocity.y = velY;
+        //FIXME
+        inTheAir = true;
     }
 
     public float GetVelocityX() {
@@ -246,8 +240,8 @@ public class SlugPhysics : MonoBehaviour {
         }
     }
 
-    public void MoveForward(float vel = 20) {
-        absoluteVelocity.x = transform.right.x*vel * Time.fixedDeltaTime;
+    public void MoveForward(float vel = 1) {
+        absoluteVelocity.x = transform.right.x*vel;
     }
 
     public void SetMovementFactor(float movementFactor) {

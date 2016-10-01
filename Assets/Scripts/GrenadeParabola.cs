@@ -14,14 +14,10 @@ public class GrenadeParabola : MonoBehaviour, IProjectile {
     private float xIncrement;
     private float dir;
 
-    void Awake () {
-        ZRotationStep = new Vector3(0, 0, -820*Time.fixedDeltaTime);
-	}
 
-    void FixedUpdate () {
+
+    void Update () {
         if (launched) {
-            transform.Rotate(ZRotationStep);
-
             float height = 0.8f;
             // +height^2 is added to make sure that f(0) is 0 and not height^2
             float y = -(dist*x - height) * (dist*x - height) + height*height;
@@ -40,8 +36,7 @@ public class GrenadeParabola : MonoBehaviour, IProjectile {
         dir = transform.right.x;
 
         float distWithTarget = Mathf.Abs(destination.x - transform.position.x);
-        xIncrement = (distWithTarget/1.3f)*Time.fixedDeltaTime;
-        
+        xIncrement = (distWithTarget/1.3f)*Time.deltaTime;
         // 1.5f est trouve de maniere empirique. Plus dir est grand plus la parabole est petite
         // just a way to get the grenade to land aproximately where the player is
         dist = 1.5f *( 1 / distWithTarget);

@@ -10,7 +10,6 @@ public class BlinkAtTheEnd : StateMachineBehaviour {
             blink = animator.GetComponent<Blink>();
         }
         if (stateInfo.normalizedTime > stateInfo.length && !blinking) {
-            Debug.Log("BLINK");
             blinking = true;
             blink.BlinkPlease(() => {
                 

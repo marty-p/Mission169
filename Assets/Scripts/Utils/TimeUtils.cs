@@ -7,7 +7,7 @@ public class TimeUtils : MonoBehaviour {
     Coroutine coroutine;
     Coroutine coroutine2;
 
-    public void FixedUpdateDelay(RetVoidTakeVoid cb) {
+    public void FrameDelay(RetVoidTakeVoid cb) {
         StartCoroutine(DelayByFrameCoroutine(cb));
     }
 

@@ -56,11 +56,11 @@ public class MovementManager : MonoBehaviour, IObserver {
         body = BodyPosture.Stand;
         if (Mathf.Abs(physics.GetVelocityX()) > 0) {
             if (physics.JumpHighVel()) {
-                timeUtils.FixedUpdateDelay(()=>animManager.StartHighVelJumpAnim());
+                timeUtils.FrameDelay(animManager.StartHighVelJumpAnim);
             }
         } else {
             if(physics.JumpLowVel()) {
-                timeUtils.FixedUpdateDelay(()=>animManager.StartLowVelJumpAnim());
+                timeUtils.FrameDelay(animManager.StartLowVelJumpAnim);
             }
         }
         AdaptColliderStanding();
@@ -97,7 +97,7 @@ public class MovementManager : MonoBehaviour, IObserver {
         lookingDirection = transform.right;
         animManager.StartCrouchAnim();
         physics.SetMovementFactor(crouchSpeedFactor);
-        timeUtils.FixedUpdateDelay(AdaptColliderCrouching);
+        AdaptColliderCrouching();
     }
 
     public void BlockMovement() {

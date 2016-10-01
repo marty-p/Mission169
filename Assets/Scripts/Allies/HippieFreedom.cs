@@ -23,8 +23,8 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
         animManager = GetComponent<HippieAnimationManager>();
         physic = GetComponent<SlugPhysics>();
         HippiesBrain = HippieTiedUp;
-        hippieSpeedWalkingFactor = 10;
-        hippieSpeedRunningFactor = 60;
+        hippieSpeedWalkingFactor = 0.25f;
+        hippieSpeedRunningFactor = 2;
 	}
 	
     void Update() {

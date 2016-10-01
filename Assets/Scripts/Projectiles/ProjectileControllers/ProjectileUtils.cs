@@ -27,13 +27,11 @@ public class ProjectileUtils {
         HealthManager healthManager = col.GetComponentInChildren<HealthManager>();
         if ( healthManager != null) {
             healthManager.OnHitByProjectile(projProp);
-        } else {
-            Debug.Log("Collider " + col.tag + " does not have a HealthManager");
         }
     }
 
     public static void UpdatePositionStraightLine(Transform proj, ProjectileProperties projProp) {
-        proj.Translate(Vector3.right * projProp.speedInUnityUnitPerSec * Time.fixedDeltaTime);
+        proj.Translate(Vector3.right * projProp.speedInUnityUnitPerSec * Time.deltaTime);
     }
 
     public static void ImpactAnimationAndSound(Transform proj, Collider2D col, ProjectileProperties projProp) {

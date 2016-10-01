@@ -4,7 +4,7 @@ using UnityEngine;
 public class ASBWalkToTarget : Room {
 
     private float distanceToStop;
-    public int walkingSpeed = 20;
+    public float walkingSpeed = 1;
 
     public override void Init() {
         Door toStill = new Door(() => animator.SetBool("walking", false),

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Slug;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 

@@ -37,7 +37,7 @@ public class ProjectileController : MonoBehaviour {
         anim.transform.position = (Vector2)transform.position + UnityEngine.Random.insideUnitCircle * 0.055f;
     }
 
-    void FixedUpdate() {
+    void Update() {
         if (projectileIsPhysic) {
             return;
         } else {
@@ -56,7 +56,7 @@ public class ProjectileController : MonoBehaviour {
 
     public void UpdatePosition() {
         transform.Translate(
-                Vector3.right * projectileProperties.speedInUnityUnitPerSec * Time.fixedDeltaTime);
+                Vector3.right * projectileProperties.speedInUnityUnitPerSec * Time.deltaTime);
     }
 
 }

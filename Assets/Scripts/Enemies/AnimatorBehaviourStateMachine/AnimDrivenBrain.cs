@@ -49,7 +49,7 @@ public class AnimDrivenBrain : MonoBehaviour {
         return absDistanceToTarget;
     }
 
-    public bool WalkToTarget(float stopDistance, int walkingSpeed) {
+    public bool WalkToTarget(float stopDistance, float walkingSpeed) {
         if (absDistanceToTarget < stopDistance) {
             print(" problem here");
             return true;
@@ -62,7 +62,7 @@ public class AnimDrivenBrain : MonoBehaviour {
         }
     }
 
-    public bool WalkToTarget(int walkingSpeed) {
+    public bool WalkToTarget(float walkingSpeed) {
         if (absDistanceToTarget < 0) {
             return true;
         } else if (!FacingTarget()) {
@@ -82,7 +82,7 @@ public class AnimDrivenBrain : MonoBehaviour {
             anim.SetBool("walking_away_from_target", false);
             return true;
         } else {
-            physic.MoveForward();
+            physic.MoveForward(1/20);
             return false;
         }
     }
@@ -117,7 +117,7 @@ public class CoolDown {
 
     public void Update() {
         if (elapsed < duration) {
-            elapsed += Time.fixedDeltaTime;
+            elapsed += Time.deltaTime;
         } else {
             Reset();
         }

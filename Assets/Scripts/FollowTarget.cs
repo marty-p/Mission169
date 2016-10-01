@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour {
         oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
     }
 	
-	void FixedUpdate () {
+	void LateUpdate () {
         targetViewPortPos = camera.WorldToViewportPoint(target.position);
         if (followActive) {
             Follow();
@@ -29,7 +29,9 @@ public class FollowTarget : MonoBehaviour {
     void Follow() {
         if (targetViewPortPos.x > 0.5F) {
             Vector3 dest = new Vector3(target.transform.position.x + 0.25f, transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, dest, 3 * Time.deltaTime);
+
+            Vector3 oldpos = transform.position;
+            transform.position = Vector3.Lerp(transform.position, dest, 3f * Time.deltaTime);
         }
     }
 

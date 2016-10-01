@@ -7,15 +7,16 @@ public struct BgLayer {
 }
 
 public class Parallax : MonoBehaviour {
-
     public BgLayer[] bgLayers;
     private Vector2 oldPos;
+    private Camera cam;
 
     void Start() {
         oldPos = transform.position;
+        cam = GetComponent<Camera>();
     }
 
-    void FixedUpdate () {
+    void Update () {
         Vector2 camTrans = (Vector2) transform.position - oldPos;
 
         if (camTrans != Vector2.zero) {

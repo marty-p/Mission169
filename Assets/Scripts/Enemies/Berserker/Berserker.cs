@@ -34,9 +34,9 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
         }
     }
 
-    public void FixedUpdate() {
+    public void Update() {
         if (walkingMode) {
-            physic.MoveForward(35);
+            physic.MoveForward(2f);
         }
     }
 

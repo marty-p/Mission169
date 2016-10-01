@@ -32,7 +32,7 @@ public class BasicProjectile : MonoBehaviour, IProjectile {
         launched = true;
     }
 
-    void FixedUpdate() {
+    void Update() {
         if (launched) {
             ProjectileUtils.UpdatePositionStraightLine(transform, properties);
         }

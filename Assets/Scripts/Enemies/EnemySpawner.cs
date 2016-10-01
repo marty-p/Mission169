@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour {
 
     private IEnumerator GoToCoroutine(float posX) {
         while (!Mathf.Approximately(enemy.transform.position.x, posX)) {
-            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.1f*Time.fixedDeltaTime);
+            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.4f*Time.deltaTime);
             enemy.transform.position = new Vector2(newPosX, enemy.transform.position.y);
             yield return new WaitForEndOfFrame();
         }
