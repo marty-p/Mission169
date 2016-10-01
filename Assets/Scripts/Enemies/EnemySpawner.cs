@@ -9,9 +9,10 @@ public class EnemySpawner : MonoBehaviour {
     public Transform posToGoAtSpawn;
     [Tooltip("When 0 only one enemy is spawned")]
     public float spawningInterval;
+    private HealthManager enemyHealthManager;
 
     public bool EnemyAlive() {
-        return enemy.active;
+        return enemyHealthManager.currentHP > 0;
     }
     public GameObject GetEnemy() {
         return enemy;
@@ -21,11 +22,12 @@ public class EnemySpawner : MonoBehaviour {
         collider = GetComponent<BoxCollider2D>();
         if (singleEnemyPrefab) {
             enemy = Instantiate(singleEnemyPrefab);
+            enemy.transform.parent = transform;
             enemy.SetActive(false);
         }
 	}
 
-    void OnEnable() {
+     void OnEnable() {
         InitEnemy();
         if (spawningInterval != 0) {
             StartCoroutine("SpawnEveryXsecondsCoroutine", spawningInterval);
@@ -49,6 +51,7 @@ public class EnemySpawner : MonoBehaviour {
             StartCoroutine("GoToCoroutine", posToGoAtSpawn.position.x);
         }
 
+        enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();
     }
 
     void OnTriggerEnter2D(Collider2D col) {
