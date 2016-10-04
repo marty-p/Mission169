@@ -16,14 +16,19 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         timeUtils = GetComponent<TimeUtils>();
 
         EventManager.StartListening("player_death", () => {
-            anim.SetTrigger("laugh");
+            if (anim.isInitialized) {
+                anim.SetTrigger("laugh");
+            }
         });
-        EventManager.StartListening("player_back_alive", () => {
-            anim.Play("enemy_still");
-            if (UnityEngine.Random.value < getScaredFactor) {
-                anim.SetTrigger("scared");
+        EventManager.StartListening("player_back_alive", () => 
+        {
+            if (anim.isInitialized) {
+                anim.Play("enemy_still");
                 if (UnityEngine.Random.value < getScaredFactor) {
-                    anim.SetTrigger("run_away");
+                    anim.SetTrigger("scared");
+                    if (UnityEngine.Random.value < getScaredFactor) {
+                        anim.SetTrigger("run_away");
+                    }
                 }
             }
         });

@@ -9,7 +9,7 @@ public class SoldierRunAwayBehaviour : Room {
     }
 
 	override public void Update() {
-        brain.Walk(2);
+        brain.Walk(1.6f);
 	}
 
 }
