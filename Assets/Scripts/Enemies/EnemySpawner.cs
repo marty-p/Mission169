@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class EnemySpawner : MonoBehaviour {
     private GameObject enemy;
     private new BoxCollider2D collider;
     public Transform posToGoAtSpawn;
+    public float goToSpeedFactor = 1;
     [Tooltip("When 0 only one enemy is spawned")]
     public float spawningInterval;
     private HealthManager enemyHealthManager;
@@ -61,10 +63,9 @@ public class EnemySpawner : MonoBehaviour {
         }
     }
 
-
     private IEnumerator GoToCoroutine(float posX) {
         while (!Mathf.Approximately(enemy.transform.position.x, posX)) {
-            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.4f*Time.deltaTime);
+            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.2f*Time.deltaTime*goToSpeedFactor);
             enemy.transform.position = new Vector2(newPosX, enemy.transform.position.y);
             yield return new WaitForEndOfFrame();
         }
