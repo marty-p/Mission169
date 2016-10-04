@@ -106,14 +106,18 @@ public class SlugPhysics : MonoBehaviour {
         Vector2 trans = new Vector2();
         if (inTheAir && groundSlope != Vector2.zero && absoluteVelocity.y < 0) { // sliding on a steep slope
             trans.x = 1.8f * Time.deltaTime * Mathf.Abs(groundSlope.x);
-            trans.y = -1.8f * Time.deltaTime * Mathf.Abs(groundSlope.y) ;
+            trans.y = -1.8f * Time.deltaTime * Mathf.Abs(groundSlope.y);
+            myPrint("??????");
         } else if (InTheAir) { // falling or ascending
             trans.x = absoluteVelocity.x * movementFactor * Time.deltaTime;
             trans.y = absoluteVelocity.y * Time.deltaTime;
+            myPrint("in the air");
         } else { // On the ground
             trans.x = absoluteVelocity.x * movementFactor * Time.deltaTime * Mathf.Abs(groundSlope.x);
             trans.y = Mathf.Abs(absoluteVelocity.x) * movementFactor * Time.deltaTime * groundSlope.y;
+            myPrint("ON THE GROUNd");
         }
+        myPrint(trans.x + " " + trans.y);
         return trans;
     }
 
@@ -166,6 +170,7 @@ public class SlugPhysics : MonoBehaviour {
         inTheAir = false;
         movementFactor = groundMovementFactor;
         absoluteVelocity.y = 0;
+        myPrint("STOP FALL WHY?");
         NotifyObservers(SlugEvents.HitGround);
     }
 
@@ -178,8 +183,11 @@ public class SlugPhysics : MonoBehaviour {
     void CalculateVelocity() {
         if (inTheAir) {
             absoluteVelocity.x *= airDrag;
+            myPrint("pre calculate " + absoluteVelocity.y);
             absoluteVelocity.y -= (verticalDrag * Time.deltaTime);
-            Mathf.Clamp(absoluteVelocity.y, maxVerticalVelocity, initialJumpVelocity / 3);
+
+            myPrint(  "calculate " + absoluteVelocity.y.ToString() + " " + Time.deltaTime + " " + verticalDrag);
+            //Mathf.Clamp(absoluteVelocity.y, maxVerticalVelocity, initialJumpVelocity / 3);
         } else {
             absoluteVelocity.x =  absoluteVelocity.x * groundDrag + forceX;
         }
@@ -193,6 +201,8 @@ public class SlugPhysics : MonoBehaviour {
 
         movementFactor = airLowVelocityMovementFactor;
         absoluteVelocity.y = initialJumpVelocity;
+
+        myPrint(" THIS IS CALLED TOO");
         return true;
     }
 
@@ -204,12 +214,15 @@ public class SlugPhysics : MonoBehaviour {
 
         movementFactor = airHighVelocityMovementFactor;
         absoluteVelocity.y = initialJumpVelocity;
+
+        myPrint(" THIS IS CALLED TOO");
         return true;
     }
 
     public void SetVelocity(float velX, float velY) {
         absoluteVelocity.x = velX * transform.right.x;
         absoluteVelocity.y = velY * transform.up.y;
+        myPrint(" THIS IS CALLED TOO");
     }
 
     public void SetVelocityX(float velX) {
@@ -217,9 +230,12 @@ public class SlugPhysics : MonoBehaviour {
     }
 
     public void SetVelocityY(float velY) {
-        absoluteVelocity.y = velY;
-        //FIXME
-        inTheAir = true;
+        //WaitForPhysUpdate(() => {
+            absoluteVelocity.y = velY;
+        myPrint("vel set to " + velY);
+            //FIXME
+            inTheAir = true;
+       // });
     }
 
     public float GetVelocityX() {
@@ -232,6 +248,8 @@ public class SlugPhysics : MonoBehaviour {
 
     public void SetForceX(float forceX) {
         this.forceX = forceX;
+
+        myPrint(" THIS IS CALLED TOO");
     }
 
     public void ChangeDirection(Vector3 newDir) {
@@ -242,6 +260,8 @@ public class SlugPhysics : MonoBehaviour {
 
     public void MoveForward(float vel = 1) {
         absoluteVelocity.x = transform.right.x*vel;
+
+        myPrint(" THIS IS CALLED TOO");
     }
 
     public void SetMovementFactor(float movementFactor) {

@@ -11,12 +11,12 @@ public class HealthManager : MonoBehaviour {
     public int maxHP = 1;
     public int currentHP;
     public int CurrentHP {get {return currentHP;}}
-    private IReceiveDamage[] componsInterestedInDamages;
+    private IReceiveDamage componInterestedInDamages;
     private bool ignoreDamages;
     public bool IgnoreDamages {get {return ignoreDamages;} set {ignoreDamages = value;}}
 
     void Start () {
-        componsInterestedInDamages = GetComponentsInChildren<IReceiveDamage>();
+        componInterestedInDamages = GetComponent<IReceiveDamage>();
         currentHP = maxHP;
 	}
 
@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour {
     }
 
     public void OnHitByProjectile(ProjectileProperties projectile) {
-        if (ignoreDamages) {
+        if (ignoreDamages || currentHP < 1) {
             return;
         } else {
             currentHP -= projectile.strength;
@@ -34,8 +34,6 @@ public class HealthManager : MonoBehaviour {
     }
 
     private void NotifyDamageWasTaken(ProjectileProperties proj) {
-        foreach (IReceiveDamage d in componsInterestedInDamages) {
-            d.OnDamageReceived(proj, currentHP);
-        }
+            componInterestedInDamages.OnDamageReceived(proj, currentHP);
     }
 }

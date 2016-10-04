@@ -2,8 +2,6 @@
 using System.Collections;
 using Utils;
 
-// TODO
-// Does BLink have to be a MonoBeahviour?
 
 public class Blink : MonoBehaviour {
 

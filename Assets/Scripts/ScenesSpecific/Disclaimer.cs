@@ -9,15 +9,23 @@ public class Disclaimer : MonoBehaviour {
     public Text pleaseHaveFunYo;
     public Text pressAnyKey;
     private TimeUtils timeUtils;
+    private AsyncOperation async;
+    private bool loading;
 
     void Awake() {
         timeUtils = GetComponent<TimeUtils>();
     }
 
     void Update() {
-        if(Input.anyKeyDown) {
-            print("yo");
-            SceneManager.LoadScene("MainScene");
+        if(Input.anyKeyDown && !loading) {
+            loading = true;
+            StartCoroutine(LoadScene("mainscene"));
+            disclaimer.enabled = false;
+            pleaseHaveFunYo.enabled = false;
+            pressAnyKey.text = "Loading ...";
+        }
+        if (async != null) {
+            print(async.progress);
         }
     }
 
@@ -42,4 +50,15 @@ public class Disclaimer : MonoBehaviour {
         }
     }
 
+    private IEnumerator LoadScene(string sceneName) {
+        async = SceneManager.LoadSceneAsync("howtoplay");
+        yield return async;
+    }
+    /*
+    void Update() {
+        if (async != null) {
+            print(async.progress);
+        }
+    }
+    */
 }

@@ -11,7 +11,7 @@ public class ObjectPoolScript : MonoBehaviour
 
     public List<GameObject> pooledObjects;
 
-    void Start()
+    void Awake()
     {
         pooledObjects = new List<GameObject>();
         for (int i = 0; i < pooledAmount; i++)

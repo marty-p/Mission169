@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class ComposedGameObjectDesactivator : MonoBehaviour {
 
+    public GameObject mainObj;
     public GameObject[] objs;
 
     void OnEnable() {
+        mainObj.SetActive(true);
         StartCoroutine("PeriodicCheck");
     }
 
@@ -19,7 +21,7 @@ public class ComposedGameObjectDesactivator : MonoBehaviour {
                 }
             }
 
-            if (!foundActiveObj) {
+            if (!foundActiveObj && !mainObj.activeSelf) {
                 gameObject.SetActive(false);
             }
 
