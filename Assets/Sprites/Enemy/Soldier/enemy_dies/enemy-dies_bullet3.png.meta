@@ -18,7 +18,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -57,11 +57,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-dies_bullet3_0
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -72,7 +75,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_1
       rect:
         serializedVersion: 2
         x: 31
@@ -83,7 +88,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_2
       rect:
         serializedVersion: 2
         x: 62
@@ -94,7 +101,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_3
       rect:
         serializedVersion: 2
         x: 93
@@ -105,7 +114,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_4
       rect:
         serializedVersion: 2
         x: 125
@@ -116,7 +127,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_5
       rect:
         serializedVersion: 2
         x: 165
@@ -127,7 +140,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_6
       rect:
         serializedVersion: 2
         x: 202
@@ -138,7 +153,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_7
       rect:
         serializedVersion: 2
         x: 240
@@ -149,7 +166,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_8
       rect:
         serializedVersion: 2
         x: 275
@@ -160,7 +179,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_9
       rect:
         serializedVersion: 2
         x: 310
@@ -171,7 +192,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_bullet3_10
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_bullet3_10
       rect:
         serializedVersion: 2
         x: 344
@@ -182,6 +205,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

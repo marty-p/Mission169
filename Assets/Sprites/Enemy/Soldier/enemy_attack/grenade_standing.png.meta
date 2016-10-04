@@ -21,7 +21,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -60,11 +60,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: grenade_standing_0
+    - serializedVersion: 2
+      name: grenade_standing_0
       rect:
         serializedVersion: 2
         x: 3
@@ -75,7 +78,9 @@ TextureImporter:
       pivot: {x: 0.48, y: 0.44480342}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: grenade_standing_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_1
       rect:
         serializedVersion: 2
         x: 37
@@ -86,7 +91,9 @@ TextureImporter:
       pivot: {x: 0.48, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: grenade_standing_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_2
       rect:
         serializedVersion: 2
         x: 73
@@ -97,7 +104,9 @@ TextureImporter:
       pivot: {x: 0.43, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: grenade_standing_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_3
       rect:
         serializedVersion: 2
         x: 105
@@ -107,16 +116,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: 20.318401}
-        - {x: -16, y: 14.318401}
-        - {x: -16, y: -10.681599}
-        - {x: -14, y: -18.681599}
-        - {x: 12, y: -18.681599}
-        - {x: 16, y: -6.6815987}
-        - {x: 16, y: 10.318401}
-        - {x: 4, y: 20.318401}
-    - name: grenade_standing_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_4
       rect:
         serializedVersion: 2
         x: 144
@@ -126,16 +129,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: 22.318401}
-        - {x: -18, y: 17.318401}
-        - {x: -18, y: 1.3184013}
-        - {x: -14, y: -18.681599}
-        - {x: 15, y: -18.681599}
-        - {x: 18, y: -12.681599}
-        - {x: 18, y: 9.318401}
-        - {x: 9, y: 22.318401}
-    - name: grenade_standing_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_5
       rect:
         serializedVersion: 2
         x: 189
@@ -145,16 +142,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 22.318401}
-        - {x: -2, y: 23.318401}
-        - {x: -23, y: 23.318401}
-        - {x: -23, y: 2.3184013}
-        - {x: -14, y: -18.681599}
-        - {x: 13, y: -18.681599}
-        - {x: 19, y: -3.6815987}
-        - {x: 19, y: 12.318401}
-    - name: grenade_standing_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_6
       rect:
         serializedVersion: 2
         x: 238
@@ -164,15 +155,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.53, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -22.910004, y: 22.318401}
-        - {x: -24.910004, y: 21.318401}
-        - {x: -24.910004, y: -11.681599}
-        - {x: -22.910004, y: -18.681599}
-        - {x: 14.089996, y: -18.681599}
-        - {x: 19.089996, y: -8.681599}
-        - {x: 19.089996, y: 22.318401}
-    - name: grenade_standing_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_7
       rect:
         serializedVersion: 2
         x: 285
@@ -182,14 +168,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.515, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -26.779999, y: 21.318401}
-        - {x: -26.779999, y: -9.681599}
-        - {x: -23.779999, y: -18.681599}
-        - {x: 17.220001, y: -18.681599}
-        - {x: 18.220001, y: -17.681599}
-        - {x: 18.220001, y: 21.318401}
-    - name: grenade_standing_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_8
       rect:
         serializedVersion: 2
         x: 337
@@ -199,13 +181,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: 23.318401}
-        - {x: -18, y: -18.681599}
-        - {x: 18, y: -18.681599}
-        - {x: 18, y: 18.318401}
-        - {x: 13, y: 23.318401}
-    - name: grenade_standing_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_9
       rect:
         serializedVersion: 2
         x: 378
@@ -215,17 +194,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 23.318401}
-        - {x: -12, y: 23.318401}
-        - {x: -15, y: -0.68159866}
-        - {x: -15, y: -15.681599}
-        - {x: -13, y: -18.681599}
-        - {x: 18, y: -18.681599}
-        - {x: 20, y: -8.681599}
-        - {x: 20, y: 11.318401}
-        - {x: 10, y: 21.318401}
-    - name: grenade_standing_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_10
       rect:
         serializedVersion: 2
         x: 418
@@ -235,20 +207,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.49, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9.890015, y: 18.318401}
-        - {x: 0.89001465, y: 18.318401}
-        - {x: -5.1099854, y: 17.318401}
-        - {x: -14.109985, y: 5.3184013}
-        - {x: -17.109985, y: -3.6815987}
-        - {x: -17.109985, y: -13.681599}
-        - {x: -15.109985, y: -16.681599}
-        - {x: -6.1099854, y: -18.681599}
-        - {x: 18.890015, y: -18.681599}
-        - {x: 19.890015, y: -15.681599}
-        - {x: 19.890015, y: 6.3184013}
-        - {x: 15.890015, y: 11.318401}
-    - name: grenade_standing_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_11
       rect:
         serializedVersion: 2
         x: 461
@@ -258,15 +220,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 17.318401}
-        - {x: -14, y: -0.68159866}
-        - {x: -14, y: -14.681599}
-        - {x: -9, y: -18.681599}
-        - {x: 19, y: -18.681599}
-        - {x: 19, y: 9.318401}
-        - {x: 15, y: 17.318401}
-    - name: grenade_standing_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_12
       rect:
         serializedVersion: 2
         x: 499
@@ -276,17 +233,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -1, y: 16.318401}
-        - {x: -2, y: 15.318401}
-        - {x: -13, y: 8.318401}
-        - {x: -13, y: -16.681599}
-        - {x: -4, y: -18.681599}
-        - {x: 18, y: -18.681599}
-        - {x: 19, y: -12.681599}
-        - {x: 19, y: 15.318401}
-        - {x: 16, y: 16.318401}
-    - name: grenade_standing_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grenade_standing_13
       rect:
         serializedVersion: 2
         x: 545
@@ -297,6 +247,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.4448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -12,7 +12,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -51,11 +51,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: hippie-freed_0
+    - serializedVersion: 2
+      name: hippie-freed_0
       rect:
         serializedVersion: 2
         x: 0
@@ -65,15 +68,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -19, y: 3}
-        - {x: -16, y: 0}
-        - {x: 19, y: 0}
-        - {x: 19, y: 22}
-        - {x: 14, y: 31}
-        - {x: -15, y: 31}
-        - {x: -19, y: 22}
-    - name: hippie-freed_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-freed_1
       rect:
         serializedVersion: 2
         x: 41
@@ -83,15 +81,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 33}
-        - {x: -20, y: 17}
-        - {x: -20, y: 4}
-        - {x: -13, y: 0}
-        - {x: 20, y: 0}
-        - {x: 20, y: 22}
-        - {x: 8, y: 33}
-    - name: hippie-freed_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-freed_2
       rect:
         serializedVersion: 2
         x: 84
@@ -101,15 +94,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: 35}
-        - {x: -21, y: 17}
-        - {x: -21, y: 5}
-        - {x: -16, y: 0}
-        - {x: 21, y: 0}
-        - {x: 21, y: 30}
-        - {x: 8, y: 35}
-    - name: hippie-freed_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-freed_4
       rect:
         serializedVersion: 2
         x: 129
@@ -119,20 +107,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 16.5, y: 17}
-        - {x: 13.5, y: 8}
-        - {x: 13.5, y: 11}
-        - {x: 19.5, y: 21}
-        - {x: 17.5, y: 27}
-        - {x: 14.5, y: 31}
-        - {x: 8.5, y: 35}
-        - {x: -11.5, y: 35}
-        - {x: -21.5, y: 25}
-        - {x: -21.5, y: 0}
-        - {x: 21.5, y: 0}
-        - {x: 21.5, y: 13}
-        - {x: 18.5, y: 16}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -11,7 +11,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -50,11 +50,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-still_mg_0
+    - serializedVersion: 2
+      name: marco-still_mg_0
       rect:
         serializedVersion: 2
         x: 0
@@ -65,7 +68,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-still_mg_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-still_mg_1
       rect:
         serializedVersion: 2
         x: 40
@@ -76,7 +81,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-still_mg_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-still_mg_2
       rect:
         serializedVersion: 2
         x: 81
@@ -87,7 +94,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-still_mg_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-still_mg_3
       rect:
         serializedVersion: 2
         x: 123
@@ -98,6 +107,7 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

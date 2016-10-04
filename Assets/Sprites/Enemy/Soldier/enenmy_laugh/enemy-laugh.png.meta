@@ -11,7 +11,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -50,11 +50,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-laugh_0
+    - serializedVersion: 2
+      name: enemy-laugh_0
       rect:
         serializedVersion: 2
         x: 0
@@ -64,21 +67,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12.5, y: 18}
-        - {x: -16.5, y: 18}
-        - {x: -17.5, y: 16}
-        - {x: -17.5, y: -19}
-        - {x: 5.5, y: -19}
-        - {x: 7.5, y: -16}
-        - {x: 13.5, y: -2}
-        - {x: 13.5, y: 16}
-      - - {x: 14.5, y: 0}
-        - {x: 16.5, y: -2}
-        - {x: 17.5, y: -2}
-        - {x: 17.5, y: 6}
-        - {x: 14.5, y: 5}
-    - name: enemy-laugh_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-laugh_1
       rect:
         serializedVersion: 2
         x: 34
@@ -88,30 +80,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7.5, y: 6.5}
-        - {x: 7.5, y: 11.5}
-        - {x: 5.5, y: 15.5}
-        - {x: -4.5, y: 18.5}
-        - {x: -16.5, y: 18.5}
-        - {x: -16.5, y: -18.5}
-        - {x: -1.5, y: -18.5}
-        - {x: -1.5, y: -16.5}
-        - {x: -3.5, y: -14.5}
-        - {x: -3.5, y: -6.5}
-      - - {x: 11.5, y: -15.5}
-        - {x: 11.5, y: -18.5}
-        - {x: 16.5, y: -18.5}
-        - {x: 16.5, y: -9.5}
-        - {x: 13.5, y: -10.5}
-      - - {x: 14.5, y: 17.5}
-        - {x: 9.5, y: 15.5}
-        - {x: 9.5, y: 1.5}
-        - {x: 11.5, y: -5.5}
-        - {x: 15.5, y: -7.5}
-        - {x: 16.5, y: -7.5}
-        - {x: 16.5, y: 17.5}
-    - name: enemy-laugh_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-laugh_2
       rect:
         serializedVersion: 2
         x: 71
@@ -121,13 +93,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16.5, y: 19}
-        - {x: -16.5, y: -19}
-        - {x: 12.5, y: -19}
-        - {x: 16.5, y: -14}
-        - {x: 16.5, y: 19}
-    - name: enemy-laugh_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-laugh_3
       rect:
         serializedVersion: 2
         x: 112
@@ -137,13 +106,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -17.5, y: 19}
-        - {x: -17.5, y: -19}
-        - {x: 10.5, y: -19}
-        - {x: 17.5, y: 0}
-        - {x: 17.5, y: 11}
-        - {x: 5.5, y: 19}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

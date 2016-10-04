@@ -18,7 +18,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -57,11 +57,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-dies_grenade-2_0
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_0
       rect:
         serializedVersion: 2
         x: 8
@@ -72,7 +75,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_1
       rect:
         serializedVersion: 2
         x: 39
@@ -83,7 +88,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_2
       rect:
         serializedVersion: 2
         x: 70
@@ -94,7 +101,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_3
       rect:
         serializedVersion: 2
         x: 101
@@ -105,7 +114,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_4
       rect:
         serializedVersion: 2
         x: 139
@@ -116,7 +127,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_5
       rect:
         serializedVersion: 2
         x: 177
@@ -127,7 +140,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_6
       rect:
         serializedVersion: 2
         x: 211
@@ -138,7 +153,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_7
       rect:
         serializedVersion: 2
         x: 248
@@ -149,7 +166,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_8
       rect:
         serializedVersion: 2
         x: 283
@@ -160,7 +179,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_9
       rect:
         serializedVersion: 2
         x: 318
@@ -171,7 +192,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-dies_grenade-2_10
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade-2_10
       rect:
         serializedVersion: 2
         x: 352
@@ -181,13 +204,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -13, y: 1.5}
-        - {x: -16, y: -1.5}
-        - {x: -16, y: -18.5}
-        - {x: 15, y: -18.5}
-        - {x: 15, y: -5.5}
-        - {x: 4, y: 1.5}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

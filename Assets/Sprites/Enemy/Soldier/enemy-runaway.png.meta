@@ -19,7 +19,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -58,11 +58,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-runaway_0
+    - serializedVersion: 2
+      name: enemy-runaway_0
       rect:
         serializedVersion: 2
         x: 0
@@ -73,7 +76,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_1
       rect:
         serializedVersion: 2
         x: 40
@@ -84,7 +89,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_2
       rect:
         serializedVersion: 2
         x: 77
@@ -95,7 +102,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_3
       rect:
         serializedVersion: 2
         x: 116
@@ -105,14 +114,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9.5, y: 19.5}
-        - {x: -16.5, y: 15.5}
-        - {x: -16.5, y: -19.5}
-        - {x: 8.5, y: -19.5}
-        - {x: 16.5, y: 2.5}
-        - {x: 16.5, y: 19.5}
-    - name: enemy-runaway_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_4
       rect:
         serializedVersion: 2
         x: 159
@@ -122,17 +127,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 15.5, y: 17.5}
-        - {x: 8.5, y: 19.5}
-        - {x: -9.5, y: 19.5}
-        - {x: -16.5, y: 9.5}
-        - {x: -16.5, y: -19.5}
-        - {x: 7.5, y: -19.5}
-        - {x: 9.5, y: -16.5}
-        - {x: 16.5, y: -2.5}
-        - {x: 16.5, y: 16.5}
-    - name: enemy-runaway_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_5
       rect:
         serializedVersion: 2
         x: 202
@@ -143,7 +141,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_6
       rect:
         serializedVersion: 2
         x: 243
@@ -154,7 +154,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_7
       rect:
         serializedVersion: 2
         x: 282
@@ -165,7 +167,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_8
       rect:
         serializedVersion: 2
         x: 321
@@ -176,7 +180,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy-runaway_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_9
       rect:
         serializedVersion: 2
         x: 360
@@ -186,14 +192,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 19.5}
-        - {x: -16, y: 15.5}
-        - {x: -16, y: -19.5}
-        - {x: 9, y: -19.5}
-        - {x: 16, y: 0.5}
-        - {x: 16, y: 19.5}
-    - name: enemy-runaway_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_10
       rect:
         serializedVersion: 2
         x: 403
@@ -203,16 +205,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 13, y: 19.5}
-        - {x: -13, y: 19.5}
-        - {x: -16, y: 18.5}
-        - {x: -16, y: -19.5}
-        - {x: 6, y: -19.5}
-        - {x: 10, y: -16.5}
-        - {x: 16, y: -2.5}
-        - {x: 16, y: 18.5}
-    - name: enemy-runaway_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-runaway_11
       rect:
         serializedVersion: 2
         x: 446
@@ -223,6 +219,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

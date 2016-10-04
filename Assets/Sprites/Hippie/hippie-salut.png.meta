@@ -21,7 +21,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -60,11 +60,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: hippie-salut_0
+    - serializedVersion: 2
+      name: hippie-salut_0
       rect:
         serializedVersion: 2
         x: 1
@@ -75,7 +78,9 @@ TextureImporter:
       pivot: {x: 0.56967896, y: 0.0016522116}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_1
       rect:
         serializedVersion: 2
         x: 25
@@ -86,7 +91,9 @@ TextureImporter:
       pivot: {x: 0.5890539, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_2
       rect:
         serializedVersion: 2
         x: 50
@@ -97,7 +104,9 @@ TextureImporter:
       pivot: {x: 0.58156204, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_3
       rect:
         serializedVersion: 2
         x: 77
@@ -108,7 +117,9 @@ TextureImporter:
       pivot: {x: 0.6426805, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_4
       rect:
         serializedVersion: 2
         x: 111
@@ -118,15 +129,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.6548176, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0.045837402, y: 39}
-        - {x: -9.954163, y: 36}
-        - {x: -20.954163, y: 27}
-        - {x: -20.954163, y: 4}
-        - {x: -15.954163, y: 0}
-        - {x: 11.045837, y: 0}
-        - {x: 11.045837, y: 39}
-    - name: hippie-salut_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_5
       rect:
         serializedVersion: 2
         x: 146
@@ -137,7 +143,9 @@ TextureImporter:
       pivot: {x: 0.64159995, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_6
       rect:
         serializedVersion: 2
         x: 177
@@ -148,7 +156,9 @@ TextureImporter:
       pivot: {x: 0.63241935, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_7
       rect:
         serializedVersion: 2
         x: 210
@@ -158,16 +168,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.6243992, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7.980774, y: 40}
-        - {x: -17.980774, y: 38}
-        - {x: -19.980774, y: 34}
-        - {x: -19.980774, y: 15}
-        - {x: -4.980774, y: 0}
-        - {x: 12.019226, y: 0}
-        - {x: 12.019226, y: 34}
-        - {x: 9.019226, y: 40}
-    - name: hippie-salut_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_8
       rect:
         serializedVersion: 2
         x: 245
@@ -177,19 +181,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5525882, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2.998352, y: 40}
-        - {x: -16.998352, y: 35}
-        - {x: -20.998352, y: 31}
-        - {x: -20.998352, y: 18}
-        - {x: -17.998352, y: 10}
-        - {x: -9.998352, y: 4}
-        - {x: -4.998352, y: 0}
-        - {x: 14.001648, y: 0}
-        - {x: 17.001648, y: 16}
-        - {x: 17.001648, y: 38}
-        - {x: 11.001648, y: 40}
-    - name: hippie-salut_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_11
       rect:
         serializedVersion: 2
         x: 286
@@ -200,7 +195,9 @@ TextureImporter:
       pivot: {x: 0.5275428, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_12
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_12
       rect:
         serializedVersion: 2
         x: 310
@@ -211,7 +208,9 @@ TextureImporter:
       pivot: {x: 0.5238967, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_13
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_13
       rect:
         serializedVersion: 2
         x: 334
@@ -222,7 +221,9 @@ TextureImporter:
       pivot: {x: 0.4237577, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_14
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_14
       rect:
         serializedVersion: 2
         x: 363
@@ -233,7 +234,9 @@ TextureImporter:
       pivot: {x: 0.35501787, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: hippie-salut_15
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-salut_15
       rect:
         serializedVersion: 2
         x: 397
@@ -244,6 +247,7 @@ TextureImporter:
       pivot: {x: 0.40029174, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -13,7 +13,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -52,11 +52,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: sarubia-stop_0
+    - serializedVersion: 2
+      name: sarubia-stop_0
       rect:
         serializedVersion: 2
         x: 0
@@ -66,14 +69,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -30, y: 95}
-        - {x: -36, y: 90}
-        - {x: -36, y: 0}
-        - {x: 36, y: 0}
-        - {x: 36, y: 69}
-        - {x: 9, y: 95}
-    - name: sarubia-stop_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia-stop_1
       rect:
         serializedVersion: 2
         x: 75
@@ -83,15 +82,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: 95}
-        - {x: -36, y: 95}
-        - {x: -36, y: 3}
-        - {x: -34, y: 0}
-        - {x: 36, y: 0}
-        - {x: 36, y: 63}
-        - {x: 33, y: 65}
-    - name: sarubia-stop_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia-stop_2
       rect:
         serializedVersion: 2
         x: 150
@@ -101,16 +95,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1, y: 95}
-        - {x: -36, y: 95}
-        - {x: -36, y: 2}
-        - {x: -34, y: 0}
-        - {x: 32, y: 0}
-        - {x: 36, y: 6}
-        - {x: 36, y: 67}
-        - {x: 35, y: 70}
-    - name: sarubia-stop_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia-stop_3
       rect:
         serializedVersion: 2
         x: 225
@@ -120,14 +108,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -27, y: 95}
-        - {x: -36, y: 90}
-        - {x: -36, y: 0}
-        - {x: 36, y: 0}
-        - {x: 36, y: 71}
-        - {x: 6, y: 95}
-    - name: sarubia-stop_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia-stop_4
       rect:
         serializedVersion: 2
         x: 300
@@ -137,13 +121,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -36, y: 95}
-        - {x: -36, y: 0}
-        - {x: 36, y: 0}
-        - {x: 36, y: 85}
-        - {x: 24, y: 95}
-    - name: sarubia-stop_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia-stop_5
       rect:
         serializedVersion: 2
         x: 375
@@ -153,13 +134,8 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 95}
-        - {x: -36, y: 84}
-        - {x: -36, y: 0}
-        - {x: 36, y: 0}
-        - {x: 36, y: 68}
-        - {x: 6, y: 95}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

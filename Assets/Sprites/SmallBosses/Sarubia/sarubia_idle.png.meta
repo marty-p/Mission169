@@ -9,7 +9,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -48,11 +48,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: sarubia_idle_0
+    - serializedVersion: 2
+      name: sarubia_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -62,21 +65,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.492, y: 0.000000012737321}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 31.576, y: 64}
-        - {x: 27.576, y: 59}
-        - {x: 27.576, y: 60}
-        - {x: 22.576, y: 95}
-        - {x: 16.576, y: 96}
-        - {x: -33.424, y: 96}
-        - {x: -35.424, y: 79}
-        - {x: -35.424, y: 1}
-        - {x: -32.424, y: 0}
-        - {x: 32.576, y: 0}
-        - {x: 36.576, y: 9}
-        - {x: 36.576, y: 63}
-        - {x: 34.576, y: 64}
-    - name: sarubia_idle_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sarubia_idle_1
       rect:
         serializedVersion: 2
         x: 74
@@ -86,14 +78,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.49146175, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -33.385246, y: 96}
-        - {x: -35.385246, y: 88}
-        - {x: -35.385246, y: 0}
-        - {x: 32.614754, y: 0}
-        - {x: 36.614754, y: 3}
-        - {x: 36.614754, y: 71}
-        - {x: 11.614754, y: 96}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

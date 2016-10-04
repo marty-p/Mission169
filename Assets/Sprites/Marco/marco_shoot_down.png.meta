@@ -14,7 +14,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -53,11 +53,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco_shoot_down_0
+    - serializedVersion: 2
+      name: marco_shoot_down_0
       rect:
         serializedVersion: 2
         x: 0
@@ -68,7 +71,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_1
       rect:
         serializedVersion: 2
         x: 23
@@ -79,7 +84,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_2
       rect:
         serializedVersion: 2
         x: 46
@@ -90,7 +97,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_3
       rect:
         serializedVersion: 2
         x: 69
@@ -101,7 +110,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_4
       rect:
         serializedVersion: 2
         x: 92
@@ -112,7 +123,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_5
       rect:
         serializedVersion: 2
         x: 118
@@ -123,7 +136,9 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco_shoot_down_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco_shoot_down_6
       rect:
         serializedVersion: 2
         x: 141
@@ -134,6 +149,7 @@ TextureImporter:
       pivot: {x: 0, y: 1.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

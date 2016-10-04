@@ -32,7 +32,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -71,11 +71,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: explosions-grenade_0
+    - serializedVersion: 2
+      name: explosions-grenade_0
       rect:
         serializedVersion: 2
         x: 3
@@ -86,7 +89,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosions-grenade_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_1
       rect:
         serializedVersion: 2
         x: 24
@@ -97,7 +102,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosions-grenade_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_2
       rect:
         serializedVersion: 2
         x: 51
@@ -108,7 +115,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosions-grenade_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_3
       rect:
         serializedVersion: 2
         x: 80
@@ -119,7 +128,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosions-grenade_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_4
       rect:
         serializedVersion: 2
         x: 113
@@ -130,7 +141,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosions-grenade_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_5
       rect:
         serializedVersion: 2
         x: 152
@@ -140,14 +153,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: 44}
-        - {x: -19, y: 27}
-        - {x: -19, y: 2}
-        - {x: -18, y: 0}
-        - {x: 19, y: 0}
-        - {x: 19, y: 44}
-    - name: explosions-grenade_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_6
       rect:
         serializedVersion: 2
         x: 193
@@ -157,17 +166,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 70}
-        - {x: -12, y: 70}
-        - {x: -17, y: 62}
-        - {x: -17, y: 2}
-        - {x: -16, y: 0}
-        - {x: 13, y: 0}
-        - {x: 17, y: 5}
-        - {x: 17, y: 58}
-        - {x: 16, y: 63}
-    - name: explosions-grenade_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_7
       rect:
         serializedVersion: 2
         x: 230
@@ -177,25 +179,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10.5, y: 82}
-        - {x: 10.5, y: 78}
-        - {x: 10.5, y: 90}
-        - {x: -20.5, y: 90}
-        - {x: -20.5, y: 1}
-        - {x: -17.5, y: 0}
-        - {x: 14.5, y: 0}
-        - {x: 20.5, y: 10}
-        - {x: 20.5, y: 74}
-        - {x: 13.5, y: 84}
-      - - {x: -9.5, y: 97}
-        - {x: -9.5, y: 94}
-        - {x: -5.5, y: 92}
-        - {x: -2.5, y: 92}
-        - {x: -0.5, y: 93}
-        - {x: -0.5, y: 96}
-        - {x: -2.5, y: 97}
-    - name: explosions-grenade_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_8
       rect:
         serializedVersion: 2
         x: 274
@@ -205,22 +192,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 11.5, y: 96}
-        - {x: 4.5, y: 95}
-        - {x: 3.5, y: 92}
-        - {x: -3.5, y: 92}
-        - {x: -1.5, y: 92}
-        - {x: 2.5, y: 95}
-        - {x: 2.5, y: 96}
-        - {x: -23.5, y: 96}
-        - {x: -23.5, y: 5}
-        - {x: -14.5, y: 0}
-        - {x: 15.5, y: 0}
-        - {x: 23.5, y: 13}
-        - {x: 23.5, y: 82}
-        - {x: 12.5, y: 96}
-    - name: explosions-grenade_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_9
       rect:
         serializedVersion: 2
         x: 324
@@ -230,20 +205,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -17.5, y: 96}
-        - {x: -23.5, y: 93}
-        - {x: -23.5, y: 30}
-        - {x: -16.5, y: 3}
-        - {x: -13.5, y: 0}
-        - {x: 23.5, y: 0}
-        - {x: 23.5, y: 96}
-      - - {x: -4.5, y: 97}
-        - {x: -3.5, y: 94}
-        - {x: 0.5, y: 94}
-        - {x: 2.5, y: 96}
-        - {x: 2.5, y: 97}
-    - name: explosions-grenade_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_10
       rect:
         serializedVersion: 2
         x: 374
@@ -253,14 +218,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21, y: 98}
-        - {x: -24, y: 95}
-        - {x: -24, y: 19}
-        - {x: -18, y: 0}
-        - {x: 24, y: 0}
-        - {x: 24, y: 98}
-    - name: explosions-grenade_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_11
       rect:
         serializedVersion: 2
         x: 425
@@ -270,18 +231,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: 98}
-        - {x: -24, y: 96}
-        - {x: -24, y: 38}
-        - {x: -23, y: 25}
-        - {x: -16, y: 2}
-        - {x: -10, y: 0}
-        - {x: 12, y: 0}
-        - {x: 24, y: 24}
-        - {x: 24, y: 94}
-        - {x: 19, y: 98}
-    - name: explosions-grenade_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_12
       rect:
         serializedVersion: 2
         x: 476
@@ -291,14 +244,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.5, y: 99}
-        - {x: -23.5, y: 30}
-        - {x: -16.5, y: 0}
-        - {x: 17.5, y: 0}
-        - {x: 23.5, y: 24}
-        - {x: 23.5, y: 99}
-    - name: explosions-grenade_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_13
       rect:
         serializedVersion: 2
         x: 526
@@ -308,16 +257,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 100}
-        - {x: -24, y: 96}
-        - {x: -24, y: 45}
-        - {x: -14, y: 7}
-        - {x: -11, y: 0}
-        - {x: 23, y: 0}
-        - {x: 24, y: 15}
-        - {x: 24, y: 100}
-    - name: explosions-grenade_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_14
       rect:
         serializedVersion: 2
         x: 3
@@ -327,15 +270,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.5, y: 101}
-        - {x: -23.5, y: 25}
-        - {x: -5.5, y: 0}
-        - {x: 3.5, y: 0}
-        - {x: 9.5, y: 4}
-        - {x: 23.5, y: 32}
-        - {x: 23.5, y: 101}
-    - name: explosions-grenade_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_15
       rect:
         serializedVersion: 2
         x: 53
@@ -345,15 +283,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.5, y: 102}
-        - {x: -23.5, y: 37}
-        - {x: -7.5, y: 1}
-        - {x: 4.5, y: 1}
-        - {x: 18.5, y: 23}
-        - {x: 23.5, y: 32}
-        - {x: 23.5, y: 102}
-    - name: explosions-grenade_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_16
       rect:
         serializedVersion: 2
         x: 103
@@ -363,18 +296,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -17, y: 102}
-        - {x: -20, y: 99}
-        - {x: -24, y: 92}
-        - {x: -24, y: 51}
-        - {x: -16, y: 16}
-        - {x: -3, y: 8}
-        - {x: 3, y: 8}
-        - {x: 11, y: 13}
-        - {x: 24, y: 41}
-        - {x: 24, y: 102}
-    - name: explosions-grenade_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_17
       rect:
         serializedVersion: 2
         x: 154
@@ -384,17 +309,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23, y: 103}
-        - {x: -24, y: 99}
-        - {x: -24, y: 51}
-        - {x: -14, y: 24}
-        - {x: -8, y: 15}
-        - {x: 8, y: 15}
-        - {x: 24, y: 29}
-        - {x: 24, y: 101}
-        - {x: 21, y: 103}
-    - name: explosions-grenade_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_18
       rect:
         serializedVersion: 2
         x: 205
@@ -404,15 +322,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 104}
-        - {x: -24, y: 56}
-        - {x: -15, y: 24}
-        - {x: -4, y: 21}
-        - {x: 15, y: 21}
-        - {x: 24, y: 58}
-        - {x: 24, y: 104}
-    - name: explosions-grenade_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_19
       rect:
         serializedVersion: 2
         x: 256
@@ -422,20 +335,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 104}
-        - {x: -24, y: 39}
-        - {x: -11, y: 26}
-        - {x: -4, y: 34}
-        - {x: -4, y: 35}
-        - {x: -4, y: 32}
-        - {x: -6, y: 30}
-        - {x: -7, y: 27}
-        - {x: -3, y: 20}
-        - {x: 22, y: 20}
-        - {x: 24, y: 30}
-        - {x: 24, y: 104}
-    - name: explosions-grenade_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_20
       rect:
         serializedVersion: 2
         x: 308
@@ -445,27 +348,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -0.5, y: 22}
-        - {x: 2.5, y: 23}
-        - {x: 2.5, y: 26}
-        - {x: -0.5, y: 27}
-        - {x: -2.5, y: 25}
-      - - {x: -23.5, y: 104}
-        - {x: -23.5, y: 38}
-        - {x: -22.5, y: 32}
-        - {x: -8.5, y: 32}
-        - {x: -4.5, y: 36}
-        - {x: -4.5, y: 37}
-        - {x: -3.5, y: 35}
-        - {x: -6.5, y: 32}
-        - {x: -6.5, y: 28}
-        - {x: 6.5, y: 28}
-        - {x: 14.5, y: 31}
-        - {x: 23.5, y: 58}
-        - {x: 23.5, y: 101}
-        - {x: 14.5, y: 104}
-    - name: explosions-grenade_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_21
       rect:
         serializedVersion: 2
         x: 358
@@ -475,25 +361,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 24, y: 104}
-        - {x: 20, y: 105}
-        - {x: -24, y: 105}
-        - {x: -24, y: 45}
-        - {x: -21, y: 28}
-        - {x: 3, y: 28}
-        - {x: 6, y: 34}
-        - {x: 19, y: 52}
-        - {x: 24, y: 62}
-      - - {x: -14, y: 40}
-        - {x: -9, y: 38}
-        - {x: -6, y: 38}
-        - {x: -4, y: 39}
-        - {x: -4, y: 41}
-        - {x: -6, y: 46}
-        - {x: -11, y: 46}
-        - {x: -14, y: 44}
-    - name: explosions-grenade_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_22
       rect:
         serializedVersion: 2
         x: 409
@@ -503,35 +374,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 58}
-        - {x: 12, y: 59}
-        - {x: 13, y: 58}
-        - {x: 11, y: 56}
-        - {x: 11, y: 54}
-        - {x: 17, y: 50}
-        - {x: 24, y: 63}
-        - {x: 24, y: 96}
-        - {x: 22, y: 102}
-        - {x: 14, y: 105}
-        - {x: -22, y: 105}
-        - {x: -24, y: 98}
-        - {x: -24, y: 60}
-        - {x: -15, y: 39}
-        - {x: 0, y: 37}
-        - {x: 1, y: 40}
-        - {x: -1, y: 43}
-        - {x: 1, y: 46}
-        - {x: 1, y: 38}
-        - {x: 0, y: 38}
-        - {x: -1, y: 35}
-        - {x: 0, y: 33}
-        - {x: 2, y: 33}
-        - {x: 7, y: 37}
-        - {x: 9, y: 42}
-        - {x: 12, y: 52}
-        - {x: 10, y: 56}
-    - name: explosions-grenade_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_24
       rect:
         serializedVersion: 2
         x: 460
@@ -541,38 +387,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 16, y: 75}
-        - {x: 24, y: 75}
-        - {x: 24, y: 100}
-        - {x: 21, y: 105}
-        - {x: -21, y: 105}
-        - {x: -24, y: 104}
-        - {x: -24, y: 63}
-        - {x: -17, y: 43}
-        - {x: -9, y: 38}
-        - {x: 8, y: 38}
-        - {x: 20, y: 57}
-        - {x: 21, y: 71}
-        - {x: 19, y: 74}
-      - - {x: -2, y: 42}
-        - {x: 1, y: 43}
-        - {x: 1, y: 46}
-        - {x: -2, y: 47}
-        - {x: -4, y: 45}
-      - - {x: -16, y: 53}
-        - {x: -16, y: 52}
-        - {x: -14, y: 50}
-        - {x: -13, y: 50}
-        - {x: -9, y: 54}
-        - {x: -9, y: 56}
-        - {x: -12, y: 57}
-      - - {x: -13, y: 63}
-        - {x: -10, y: 64}
-        - {x: -10, y: 67}
-        - {x: -13, y: 68}
-        - {x: -15, y: 66}
-    - name: explosions-grenade_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosions-grenade_29
       rect:
         serializedVersion: 2
         x: 511
@@ -582,61 +400,8 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1, y: 41}
-        - {x: 4, y: 42}
-        - {x: 4, y: 45}
-        - {x: 1, y: 46}
-        - {x: -1, y: 44}
-      - - {x: 5, y: 44}
-        - {x: 8, y: 45}
-        - {x: 8, y: 48}
-        - {x: 5, y: 49}
-        - {x: 3, y: 47}
-      - - {x: -10, y: 47}
-        - {x: -7, y: 48}
-        - {x: -7, y: 51}
-        - {x: -10, y: 52}
-        - {x: -12, y: 50}
-      - - {x: 9, y: 48}
-        - {x: 12, y: 49}
-        - {x: 12, y: 52}
-        - {x: 9, y: 53}
-        - {x: 7, y: 51}
-      - - {x: -16, y: 55}
-        - {x: -16, y: 54}
-        - {x: -14, y: 52}
-        - {x: -13, y: 52}
-        - {x: -9, y: 56}
-        - {x: -9, y: 58}
-        - {x: -12, y: 59}
-      - - {x: 3, y: 52}
-        - {x: 8, y: 52}
-        - {x: 15, y: 57}
-        - {x: 20, y: 61}
-        - {x: 19, y: 75}
-        - {x: 16, y: 76}
-        - {x: 24, y: 76}
-        - {x: 24, y: 102}
-        - {x: 22, y: 105}
-        - {x: -16, y: 105}
-        - {x: -24, y: 102}
-        - {x: -24, y: 72}
-        - {x: -3, y: 52}
-        - {x: 0, y: 54}
-        - {x: 1, y: 58}
-        - {x: 1, y: 59}
-        - {x: 1, y: 57}
-      - - {x: -10, y: 59}
-        - {x: -7, y: 60}
-        - {x: -7, y: 63}
-        - {x: -10, y: 64}
-        - {x: -12, y: 62}
-      - - {x: -13, y: 65}
-        - {x: -10, y: 66}
-        - {x: -10, y: 69}
-        - {x: -13, y: 70}
-        - {x: -15, y: 68}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -15,7 +15,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -54,11 +54,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Player1_0
+    - serializedVersion: 2
+      name: Player1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -69,7 +72,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_1
       rect:
         serializedVersion: 2
         x: 31
@@ -80,7 +85,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_2
       rect:
         serializedVersion: 2
         x: 62
@@ -91,7 +98,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_3
       rect:
         serializedVersion: 2
         x: 93
@@ -102,7 +111,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_4
       rect:
         serializedVersion: 2
         x: 124
@@ -113,7 +124,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_5
       rect:
         serializedVersion: 2
         x: 155
@@ -124,7 +137,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_6
       rect:
         serializedVersion: 2
         x: 186
@@ -135,7 +150,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player1_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Player1_7
       rect:
         serializedVersion: 2
         x: 217
@@ -146,6 +163,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

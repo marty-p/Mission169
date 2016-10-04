@@ -19,7 +19,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -58,11 +58,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-dies_slashed_0
+    - serializedVersion: 2
+      name: enemy-dies_slashed_0
       rect:
         serializedVersion: 2
         x: 1
@@ -72,18 +75,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 13, y: 15.799999}
-        - {x: 0, y: 20.8}
-        - {x: -7, y: 20.8}
-        - {x: -16, y: 13.799999}
-        - {x: -16, y: -1.2000008}
-        - {x: -10, y: -19.2}
-        - {x: 10, y: -19.2}
-        - {x: 15, y: -14.200001}
-        - {x: 16, y: -7.200001}
-        - {x: 16, y: 12.799999}
-    - name: enemy-dies_slashed_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_1
       rect:
         serializedVersion: 2
         x: 40
@@ -93,16 +88,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9, y: 22.8}
-        - {x: -18, y: 15.799999}
-        - {x: -18, y: 1.7999992}
-        - {x: -12, y: -19.2}
-        - {x: 11, y: -19.2}
-        - {x: 18, y: -3.2000008}
-        - {x: 18, y: 18.8}
-        - {x: 15, y: 22.8}
-    - name: enemy-dies_slashed_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_2
       rect:
         serializedVersion: 2
         x: 84
@@ -112,15 +101,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -17, y: 26.8}
-        - {x: -20, y: 22.8}
-        - {x: -20, y: -5.200001}
-        - {x: -15, y: -19.2}
-        - {x: 15, y: -19.2}
-        - {x: 20, y: -3.2000008}
-        - {x: 20, y: 26.8}
-    - name: enemy-dies_slashed_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_3
       rect:
         serializedVersion: 2
         x: 132
@@ -130,15 +114,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -19.5, y: 28.8}
-        - {x: -21.5, y: 23.8}
-        - {x: -21.5, y: -7.200001}
-        - {x: -8.5, y: -19.2}
-        - {x: 12.5, y: -19.2}
-        - {x: 21.5, y: -5.200001}
-        - {x: 21.5, y: 28.8}
-    - name: enemy-dies_slashed_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_4
       rect:
         serializedVersion: 2
         x: 183
@@ -148,23 +127,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 20.5, y: 7.799999}
-        - {x: 17.5, y: 6.799999}
-        - {x: 22.5, y: 9.799999}
-        - {x: 22.5, y: 22.8}
-        - {x: 15.5, y: 28.8}
-        - {x: -3.5, y: 28.8}
-        - {x: -5.5, y: 27.8}
-        - {x: -22.5, y: 14.799999}
-        - {x: -22.5, y: 0.79999924}
-        - {x: -13.5, y: -17.2}
-        - {x: -9.5, y: -19.2}
-        - {x: 13.5, y: -19.2}
-        - {x: 16.5, y: -18.2}
-        - {x: 22.5, y: 2.7999992}
-        - {x: 22.5, y: 6.799999}
-    - name: enemy-dies_slashed_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_5
       rect:
         serializedVersion: 2
         x: 236
@@ -174,15 +140,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9.5, y: 28.8}
-        - {x: -23.5, y: 17.8}
-        - {x: -23.5, y: -5.200001}
-        - {x: -15.5, y: -19.2}
-        - {x: 17.5, y: -19.2}
-        - {x: 23.5, y: -7.200001}
-        - {x: 23.5, y: 28.8}
-    - name: enemy-dies_slashed_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_6
       rect:
         serializedVersion: 2
         x: 293
@@ -192,12 +153,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23, y: 28.8}
-        - {x: -23, y: -19.2}
-        - {x: 23, y: -19.2}
-        - {x: 23, y: 28.8}
-    - name: enemy-dies_slashed_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_8
       rect:
         serializedVersion: 2
         x: 344
@@ -207,12 +166,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.5, y: 28.8}
-        - {x: -23.5, y: -19.2}
-        - {x: 23.5, y: -19.2}
-        - {x: 23.5, y: 28.8}
-    - name: enemy-dies_slashed_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_10
       rect:
         serializedVersion: 2
         x: 403
@@ -222,17 +179,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 28.8}
-        - {x: -18, y: 19.8}
-        - {x: -13, y: 14.799999}
-        - {x: -18, y: 16.8}
-        - {x: -23, y: 16.8}
-        - {x: -24, y: 12.799999}
-        - {x: -24, y: -19.2}
-        - {x: 24, y: -19.2}
-        - {x: 24, y: 28.8}
-    - name: enemy-dies_slashed_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_12
       rect:
         serializedVersion: 2
         x: 464
@@ -242,34 +192,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -19.2}
-        - {x: -15, y: -17.2}
-        - {x: -18, y: -16.2}
-        - {x: -20, y: -19.2}
-      - - {x: 12, y: 28.8}
-        - {x: 9, y: 27.8}
-        - {x: 9, y: 24.8}
-        - {x: 15, y: 22.8}
-        - {x: 17, y: 22.8}
-        - {x: 14, y: 20.8}
-        - {x: 8, y: 26.8}
-        - {x: 4, y: 28.8}
-        - {x: -17, y: 28.8}
-        - {x: -23, y: 21.8}
-        - {x: -23, y: -19.2}
-        - {x: 20, y: -19.2}
-        - {x: 23, y: -12.200001}
-        - {x: 23, y: 26.8}
-        - {x: 22, y: 28.8}
-      - - {x: 17, y: 4.799999}
-        - {x: 12, y: -2.2000008}
-        - {x: 12, y: -12.200001}
-        - {x: 14, y: -17.2}
-        - {x: 16, y: -17.2}
-        - {x: 23, y: -12.200001}
-        - {x: 23, y: 4.799999}
-    - name: enemy-dies_slashed_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_14
       rect:
         serializedVersion: 2
         x: 523
@@ -279,61 +205,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 25.8}
-        - {x: -12, y: 20.8}
-        - {x: -8, y: 6.799999}
-        - {x: -4, y: 6.799999}
-        - {x: 0, y: 11.799999}
-        - {x: 0, y: 12.799999}
-        - {x: -2, y: 14.799999}
-        - {x: 1, y: 16.8}
-        - {x: 1, y: 18.8}
-        - {x: 0, y: 12.799999}
-        - {x: 0, y: 4.799999}
-        - {x: -5, y: -1.2000008}
-        - {x: -20, y: 11.799999}
-        - {x: -24, y: 9.799999}
-        - {x: -24, y: -17.2}
-        - {x: -23, y: -19.2}
-        - {x: 2, y: -19.2}
-        - {x: 22, y: -17.2}
-        - {x: 24, y: -9.200001}
-        - {x: 24, y: 25.8}
-      - - {x: 12, y: -15.200001}
-        - {x: 13, y: -18.2}
-        - {x: 17, y: -18.2}
-        - {x: 22, y: -13.200001}
-        - {x: 24, y: -5.200001}
-        - {x: 21, y: -0.20000076}
-        - {x: 15, y: -0.20000076}
-        - {x: 12, y: -1.2000008}
-      - - {x: 20, y: 1.7999992}
-        - {x: 22, y: -1.2000008}
-        - {x: 24, y: -0.20000076}
-        - {x: 24, y: 2.7999992}
-        - {x: 22, y: 3.7999992}
-      - - {x: -9, y: 7.799999}
-        - {x: -13, y: 2.7999992}
-        - {x: -13, y: 0.79999924}
-        - {x: -12, y: -0.20000076}
-        - {x: -5, y: -0.20000076}
-        - {x: -1, y: 0.79999924}
-        - {x: 0, y: 0.79999924}
-        - {x: 0, y: 4.799999}
-        - {x: -3, y: 7.799999}
-      - - {x: 3, y: 22.8}
-        - {x: 5, y: 20.8}
-        - {x: 8, y: 21.8}
-        - {x: 9, y: 26.8}
-        - {x: 7, y: 28.8}
-        - {x: 4, y: 27.8}
-      - - {x: 11, y: 23.8}
-        - {x: 14, y: 24.8}
-        - {x: 14, y: 27.8}
-        - {x: 11, y: 28.8}
-        - {x: 9, y: 26.8}
-    - name: enemy-dies_slashed_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_slashed_16
       rect:
         serializedVersion: 2
         x: 585
@@ -343,113 +218,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: -19.2}
-        - {x: -12, y: -19.2}
-        - {x: -13, y: -16.2}
-        - {x: -17, y: -15.200001}
-        - {x: -19, y: -17.2}
-      - - {x: 14, y: -19.2}
-        - {x: 18, y: -19.2}
-        - {x: 18, y: -16.2}
-        - {x: 15, y: -15.200001}
-        - {x: 13, y: -17.2}
-      - - {x: 4, y: -9.200001}
-        - {x: 2, y: -12.200001}
-        - {x: 2, y: -16.2}
-        - {x: 4, y: -18.2}
-        - {x: 7, y: -16.2}
-        - {x: 9, y: -12.200001}
-        - {x: 9, y: -10.200001}
-        - {x: 7, y: -9.200001}
-      - - {x: 9, y: -18.2}
-        - {x: 12, y: -17.2}
-        - {x: 12, y: -14.200001}
-        - {x: 9, y: -13.200001}
-        - {x: 7, y: -15.200001}
-      - - {x: -23, y: -15.200001}
-        - {x: -22, y: -16.2}
-        - {x: -19, y: -15.200001}
-        - {x: -19, y: -12.200001}
-        - {x: -22, y: -11.200001}
-        - {x: -23, y: -12.200001}
-      - - {x: -12, y: -7.200001}
-        - {x: -15, y: -8.200001}
-        - {x: -16, y: -11.200001}
-        - {x: -13, y: -16.2}
-        - {x: -2, y: -16.2}
-        - {x: -2, y: -7.200001}
-      - - {x: 14, y: -2.2000008}
-        - {x: 12, y: -6.200001}
-        - {x: 12, y: -9.200001}
-        - {x: 13, y: -11.200001}
-        - {x: 18, y: -11.200001}
-        - {x: 23, y: -10.200001}
-        - {x: 23, y: -5.200001}
-        - {x: 17, y: -2.2000008}
-      - - {x: -20, y: -2.2000008}
-        - {x: -22, y: -5.200001}
-        - {x: -21, y: -8.200001}
-        - {x: -15, y: -8.200001}
-        - {x: -13, y: -7.200001}
-        - {x: -13, y: -2.2000008}
-      - - {x: 1, y: 19.8}
-        - {x: -1, y: 18.8}
-        - {x: -2, y: 17.8}
-        - {x: -2, y: -1.2000008}
-        - {x: 0, y: -6.200001}
-        - {x: 8, y: -6.200001}
-        - {x: 14, y: -3.2000008}
-        - {x: 18, y: 3.7999992}
-        - {x: 18, y: 15.799999}
-        - {x: 13, y: 19.8}
-      - - {x: -23, y: 8.799999}
-        - {x: -23, y: -4.200001}
-        - {x: -19, y: -3.2000008}
-        - {x: -16, y: 0.79999924}
-        - {x: -16, y: 6.799999}
-        - {x: -19, y: 8.799999}
-      - - {x: 20, y: -0.20000076}
-        - {x: 22, y: -2.2000008}
-        - {x: 23, y: -2.2000008}
-        - {x: 23, y: 2.7999992}
-        - {x: 21, y: 2.7999992}
-      - - {x: -3, y: -0.20000076}
-        - {x: 0, y: 0.79999924}
-        - {x: 0, y: 3.7999992}
-        - {x: -3, y: 4.799999}
-        - {x: -5, y: 2.7999992}
-      - - {x: 18, y: 0.79999924}
-        - {x: 21, y: 1.7999992}
-        - {x: 21, y: 4.799999}
-        - {x: 18, y: 5.799999}
-        - {x: 16, y: 3.7999992}
-      - - {x: -8, y: 6.799999}
-        - {x: -5, y: 7.799999}
-        - {x: -5, y: 10.799999}
-        - {x: -8, y: 11.799999}
-        - {x: -10, y: 9.799999}
-      - - {x: 18, y: 24.8}
-        - {x: 17, y: 22.8}
-        - {x: 17, y: 14.799999}
-        - {x: 20, y: 9.799999}
-        - {x: 23, y: 9.799999}
-        - {x: 23, y: 24.8}
-      - - {x: -6, y: 11.799999}
-        - {x: -3, y: 12.799999}
-        - {x: -3, y: 15.799999}
-        - {x: -6, y: 16.8}
-        - {x: -8, y: 14.799999}
-      - - {x: -1, y: 17.8}
-        - {x: 2, y: 18.8}
-        - {x: 2, y: 21.8}
-        - {x: -1, y: 22.8}
-        - {x: -3, y: 20.8}
-      - - {x: 5, y: 22.8}
-        - {x: 8, y: 23.8}
-        - {x: 8, y: 26.8}
-        - {x: 5, y: 27.8}
-        - {x: 3, y: 25.8}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

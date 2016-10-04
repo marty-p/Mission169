@@ -22,7 +22,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -61,11 +61,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: mummy-spawn_0
+    - serializedVersion: 2
+      name: mummy-spawn_0
       rect:
         serializedVersion: 2
         x: 0
@@ -76,7 +79,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_1
       rect:
         serializedVersion: 2
         x: 43
@@ -87,7 +92,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_3
       rect:
         serializedVersion: 2
         x: 84
@@ -98,7 +105,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_4
       rect:
         serializedVersion: 2
         x: 127
@@ -109,7 +118,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_5
       rect:
         serializedVersion: 2
         x: 173
@@ -120,7 +131,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_6
       rect:
         serializedVersion: 2
         x: 220
@@ -131,7 +144,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_7
       rect:
         serializedVersion: 2
         x: 262
@@ -142,7 +157,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_8
       rect:
         serializedVersion: 2
         x: 304
@@ -153,7 +170,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_9
       rect:
         serializedVersion: 2
         x: 347
@@ -164,7 +183,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_10
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_10
       rect:
         serializedVersion: 2
         x: 390
@@ -175,7 +196,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_11
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_11
       rect:
         serializedVersion: 2
         x: 431
@@ -186,7 +209,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_12
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_12
       rect:
         serializedVersion: 2
         x: 471
@@ -197,7 +222,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_13
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_13
       rect:
         serializedVersion: 2
         x: 507
@@ -208,7 +235,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_14
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_14
       rect:
         serializedVersion: 2
         x: 544
@@ -219,7 +248,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-spawn_15
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-spawn_15
       rect:
         serializedVersion: 2
         x: 582
@@ -230,6 +261,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

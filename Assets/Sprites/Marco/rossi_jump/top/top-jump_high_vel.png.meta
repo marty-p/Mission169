@@ -13,7 +13,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -52,11 +52,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: top-jump_high_vel_0
+    - serializedVersion: 2
+      name: top-jump_high_vel_0
       rect:
         serializedVersion: 2
         x: 0
@@ -67,7 +70,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: top-jump_high_vel_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: top-jump_high_vel_1
       rect:
         serializedVersion: 2
         x: 26
@@ -78,7 +83,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: top-jump_high_vel_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: top-jump_high_vel_2
       rect:
         serializedVersion: 2
         x: 55
@@ -88,15 +95,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.127, y: 0.99615514}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4.936001, y: 0.12303543}
-        - {x: -4.063999, y: -6.8769646}
-        - {x: -4.063999, y: -31.876965}
-        - {x: 6.936001, y: -31.876965}
-        - {x: 27.936, y: -16.876965}
-        - {x: 27.936, y: -1.8769646}
-        - {x: 26.936, y: 0.12303543}
-    - name: top-jump_high_vel_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: top-jump_high_vel_3
       rect:
         serializedVersion: 2
         x: 90
@@ -107,7 +109,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: top-jump_high_vel_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: top-jump_high_vel_4
       rect:
         serializedVersion: 2
         x: 120
@@ -118,7 +122,9 @@ TextureImporter:
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: top-jump_high_vel_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: top-jump_high_vel_5
       rect:
         serializedVersion: 2
         x: 147
@@ -129,6 +135,7 @@ TextureImporter:
       pivot: {x: -0.05, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

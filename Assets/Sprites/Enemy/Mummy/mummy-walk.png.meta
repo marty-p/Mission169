@@ -25,7 +25,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -64,11 +64,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: mummy-walk_0
+    - serializedVersion: 2
+      name: mummy-walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -79,7 +82,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_1
       rect:
         serializedVersion: 2
         x: 40
@@ -90,7 +95,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_2
       rect:
         serializedVersion: 2
         x: 80
@@ -101,7 +108,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_3
       rect:
         serializedVersion: 2
         x: 119
@@ -111,23 +120,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5.5, y: 45}
-        - {x: -16.5, y: 35}
-        - {x: -16.5, y: 27}
-        - {x: -13.5, y: 26}
-        - {x: -9.5, y: 26}
-        - {x: -8.5, y: 27}
-        - {x: -6.5, y: 27}
-        - {x: -10.5, y: 26}
-        - {x: -13.5, y: 22}
-        - {x: -15.5, y: 20}
-        - {x: -16.5, y: 11}
-        - {x: -16.5, y: 0}
-        - {x: 16.5, y: 0}
-        - {x: 16.5, y: 42}
-        - {x: 11.5, y: 45}
-    - name: mummy-walk_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_4
       rect:
         serializedVersion: 2
         x: 160
@@ -138,7 +134,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_5
       rect:
         serializedVersion: 2
         x: 199
@@ -149,7 +147,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_6
       rect:
         serializedVersion: 2
         x: 237
@@ -160,7 +160,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_7
       rect:
         serializedVersion: 2
         x: 276
@@ -171,7 +173,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_8
       rect:
         serializedVersion: 2
         x: 313
@@ -181,17 +185,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 45}
-        - {x: -16, y: 31}
-        - {x: -16, y: 16}
-        - {x: -10, y: 5}
-        - {x: -8, y: 0}
-        - {x: 14, y: 0}
-        - {x: 16, y: 6}
-        - {x: 16, y: 43}
-        - {x: 15, y: 45}
-    - name: mummy-walk_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_9
       rect:
         serializedVersion: 2
         x: 353
@@ -201,17 +198,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 45}
-        - {x: -8, y: 43}
-        - {x: -16, y: 36}
-        - {x: -16, y: 12}
-        - {x: -11, y: 0}
-        - {x: 14, y: 0}
-        - {x: 16, y: 6}
-        - {x: 16, y: 42}
-        - {x: 15, y: 45}
-    - name: mummy-walk_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_10
       rect:
         serializedVersion: 2
         x: 398
@@ -222,7 +212,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_11
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_11
       rect:
         serializedVersion: 2
         x: 443
@@ -233,7 +225,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_12
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_12
       rect:
         serializedVersion: 2
         x: 485
@@ -243,13 +237,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16.5, y: 0}
-        - {x: 16.5, y: 0}
-        - {x: 16.5, y: 44}
-        - {x: -5.5, y: 44}
-        - {x: -16.5, y: 26}
-    - name: mummy-walk_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_13
       rect:
         serializedVersion: 2
         x: 527
@@ -259,15 +250,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 13, y: 43}
-        - {x: -10, y: 43}
-        - {x: -18, y: 28}
-        - {x: -18, y: 14}
-        - {x: -15, y: 0}
-        - {x: 18, y: 0}
-        - {x: 18, y: 32}
-    - name: mummy-walk_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_14
       rect:
         serializedVersion: 2
         x: 572
@@ -277,16 +263,10 @@ TextureImporter:
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6.5, y: 44}
-        - {x: -9.5, y: 42}
-        - {x: -16.5, y: 28}
-        - {x: -16.5, y: 4}
-        - {x: -14.5, y: 0}
-        - {x: 16.5, y: 0}
-        - {x: 16.5, y: 41}
-        - {x: 15.5, y: 44}
-    - name: mummy-walk_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_15
       rect:
         serializedVersion: 2
         x: 610
@@ -297,7 +277,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_16
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_16
       rect:
         serializedVersion: 2
         x: 649
@@ -308,7 +290,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-walk_17
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-walk_17
       rect:
         serializedVersion: 2
         x: 688
@@ -319,6 +303,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

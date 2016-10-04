@@ -11,7 +11,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -50,11 +50,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: mummy-still_0
+    - serializedVersion: 2
+      name: mummy-still_0
       rect:
         serializedVersion: 2
         x: 1
@@ -65,7 +68,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-still_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-still_1
       rect:
         serializedVersion: 2
         x: 42
@@ -76,7 +81,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-still_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-still_2
       rect:
         serializedVersion: 2
         x: 79
@@ -87,7 +94,9 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-still_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-still_3
       rect:
         serializedVersion: 2
         x: 117
@@ -98,6 +107,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

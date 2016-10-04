@@ -13,7 +13,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -52,11 +52,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: marco-bottom-jump_speed_0
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_0
       rect:
         serializedVersion: 2
         x: 1
@@ -67,7 +70,9 @@ TextureImporter:
       pivot: {x: 0.4, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-bottom-jump_speed_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_1
       rect:
         serializedVersion: 2
         x: 31
@@ -78,7 +83,9 @@ TextureImporter:
       pivot: {x: 0.4450214, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-bottom-jump_speed_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_2
       rect:
         serializedVersion: 2
         x: 63
@@ -89,7 +96,9 @@ TextureImporter:
       pivot: {x: 0.41947567, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-bottom-jump_speed_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_3
       rect:
         serializedVersion: 2
         x: 99
@@ -100,7 +109,9 @@ TextureImporter:
       pivot: {x: 0.43799642, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-bottom-jump_speed_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_4
       rect:
         serializedVersion: 2
         x: 132
@@ -111,7 +122,9 @@ TextureImporter:
       pivot: {x: 0.48503366, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: marco-bottom-jump_speed_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-bottom-jump_speed_5
       rect:
         serializedVersion: 2
         x: 166
@@ -122,6 +135,7 @@ TextureImporter:
       pivot: {x: 0.48, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

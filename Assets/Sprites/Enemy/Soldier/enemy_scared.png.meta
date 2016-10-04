@@ -17,7 +17,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -56,11 +56,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy_scared_0
+    - serializedVersion: 2
+      name: enemy_scared_0
       rect:
         serializedVersion: 2
         x: 0
@@ -71,7 +74,9 @@ TextureImporter:
       pivot: {x: 0.2952677, y: 0.40681383}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: enemy_scared_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_1
       rect:
         serializedVersion: 2
         x: 34
@@ -81,21 +86,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.3822474, y: 0.38347587}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 22.563362, y: 26.510538}
-        - {x: -5.436638, y: 26.510538}
-        - {x: -9.436638, y: 23.510538}
-        - {x: -16.436638, y: -2.489462}
-        - {x: -16.436638, y: -13.489462}
-        - {x: -11.436638, y: -16.489462}
-        - {x: -8.436638, y: -16.489462}
-        - {x: -4.436638, y: -12.489462}
-        - {x: 0.5633621, y: -16.489462}
-        - {x: 9.563362, y: -16.489462}
-        - {x: 21.563362, y: 2.510538}
-        - {x: 26.563362, y: 16.510538}
-        - {x: 26.563362, y: 25.510538}
-    - name: enemy_scared_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_2
       rect:
         serializedVersion: 2
         x: 78
@@ -105,15 +99,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.4077638, y: 0.3843125}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12.533844, y: 26.474562}
-        - {x: -17.533844, y: 13.474562}
-        - {x: -17.533844, y: -15.525438}
-        - {x: -16.533844, y: -16.525438}
-        - {x: 12.466156, y: -16.525438}
-        - {x: 25.466156, y: 9.474562}
-        - {x: 25.466156, y: 26.474562}
-    - name: enemy_scared_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_3
       rect:
         serializedVersion: 2
         x: 127
@@ -123,16 +112,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.39013237, y: 0.38531503}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8.385559, y: 26.431454}
-        - {x: -16.38556, y: 9.431454}
-        - {x: -16.38556, y: -12.568546}
-        - {x: -11.385559, y: -16.568546}
-        - {x: 10.614441, y: -16.568546}
-        - {x: 25.61444, y: 9.431454}
-        - {x: 25.61444, y: 22.431454}
-        - {x: 22.61444, y: 26.431454}
-    - name: enemy_scared_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_4
       rect:
         serializedVersion: 2
         x: 170
@@ -142,17 +125,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.4044697, y: 0.38533196}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 22.607803, y: 26.430725}
-        - {x: -12.392197, y: 26.430725}
-        - {x: -17.392197, y: 13.430725}
-        - {x: -17.392197, y: -15.569275}
-        - {x: -16.392197, y: -16.569275}
-        - {x: 9.607803, y: -16.569275}
-        - {x: 19.607803, y: 1.4307251}
-        - {x: 25.607803, y: 14.430725}
-        - {x: 25.607803, y: 21.430725}
-    - name: enemy_scared_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_5
       rect:
         serializedVersion: 2
         x: 213
@@ -162,14 +138,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.40792954, y: 0.38447833}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12.54097, y: 26.467432}
-        - {x: -17.54097, y: 19.467432}
-        - {x: -17.54097, y: -16.532568}
-        - {x: 12.45903, y: -16.532568}
-        - {x: 25.45903, y: 10.467432}
-        - {x: 25.45903, y: 26.467432}
-    - name: enemy_scared_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_6
       rect:
         serializedVersion: 2
         x: 259
@@ -179,14 +151,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.3937901, y: 0.35935387}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12.539185, y: 27.547783}
-        - {x: -16.539185, y: 17.547783}
-        - {x: -16.539185, y: -15.452216}
-        - {x: 10.460815, y: -15.452216}
-        - {x: 25.460815, y: 12.547784}
-        - {x: 25.460815, y: 27.547783}
-    - name: enemy_scared_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_7
       rect:
         serializedVersion: 2
         x: 303
@@ -196,15 +164,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.4053068, y: 0.35840404}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10.428192, y: 27.588627}
-        - {x: -17.428192, y: 9.588626}
-        - {x: -17.428192, y: -15.411374}
-        - {x: 10.571808, y: -15.411374}
-        - {x: 25.571808, y: 13.588626}
-        - {x: 25.571808, y: 26.588627}
-        - {x: 23.571808, y: 27.588627}
-    - name: enemy_scared_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_8
       rect:
         serializedVersion: 2
         x: 347
@@ -214,17 +177,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.40039435, y: 0.35823822}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 18.583832, y: 27.595757}
-        - {x: -8.416168, y: 27.595757}
-        - {x: -16.416168, y: -2.4042435}
-        - {x: -16.416168, y: -11.404243}
-        - {x: -13.416168, y: -15.404243}
-        - {x: 9.583832, y: -15.404243}
-        - {x: 24.583832, y: 12.595757}
-        - {x: 24.583832, y: 22.595757}
-        - {x: 20.583832, y: 26.595757}
-    - name: enemy_scared_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy_scared_9
       rect:
         serializedVersion: 2
         x: 388
@@ -234,14 +190,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.4036851, y: 0.35840404}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11.358459, y: 27.588627}
-        - {x: -17.35846, y: 9.588626}
-        - {x: -17.35846, y: -15.411374}
-        - {x: 10.641541, y: -15.411374}
-        - {x: 25.64154, y: 12.588626}
-        - {x: 25.64154, y: 24.588627}
-        - {x: 24.64154, y: 27.588627}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

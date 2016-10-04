@@ -23,7 +23,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -62,11 +62,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: mummy-breath_0
+    - serializedVersion: 2
+      name: mummy-breath_0
       rect:
         serializedVersion: 2
         x: 0
@@ -77,7 +80,9 @@ TextureImporter:
       pivot: {x: 0.98356056, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_1
       rect:
         serializedVersion: 2
         x: 28
@@ -88,7 +93,9 @@ TextureImporter:
       pivot: {x: 0.98298556, y: 0.363825}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_2
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_2
       rect:
         serializedVersion: 2
         x: 63
@@ -99,7 +106,9 @@ TextureImporter:
       pivot: {x: 0.9845708, y: 0.37030953}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_3
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_3
       rect:
         serializedVersion: 2
         x: 102
@@ -110,7 +119,9 @@ TextureImporter:
       pivot: {x: 0.98731196, y: 0.23584113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_4
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_4
       rect:
         serializedVersion: 2
         x: 152
@@ -121,7 +132,9 @@ TextureImporter:
       pivot: {x: 0.984648, y: 0.22209184}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_5
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_5
       rect:
         serializedVersion: 2
         x: 205
@@ -132,7 +145,9 @@ TextureImporter:
       pivot: {x: 0.98675406, y: 0.20819668}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_6
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_6
       rect:
         serializedVersion: 2
         x: 261
@@ -143,7 +158,9 @@ TextureImporter:
       pivot: {x: 0.98877144, y: 0.11269708}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_7
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_7
       rect:
         serializedVersion: 2
         x: 320
@@ -154,7 +171,9 @@ TextureImporter:
       pivot: {x: 0.98178685, y: 0.18874298}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_8
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_8
       rect:
         serializedVersion: 2
         x: 377
@@ -165,7 +184,9 @@ TextureImporter:
       pivot: {x: 0.9883248, y: 0.20565918}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_9
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_9
       rect:
         serializedVersion: 2
         x: 435
@@ -176,7 +197,9 @@ TextureImporter:
       pivot: {x: 0.9874842, y: 0.07202135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_10
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_10
       rect:
         serializedVersion: 2
         x: 496
@@ -187,7 +210,9 @@ TextureImporter:
       pivot: {x: 0.9848433, y: 0.07555864}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_11
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_11
       rect:
         serializedVersion: 2
         x: 559
@@ -198,7 +223,9 @@ TextureImporter:
       pivot: {x: 0.9841783, y: 0.1657524}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_12
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_12
       rect:
         serializedVersion: 2
         x: 624
@@ -209,7 +236,9 @@ TextureImporter:
       pivot: {x: 0.9848433, y: 0.07980285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_13
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_13
       rect:
         serializedVersion: 2
         x: 687
@@ -220,7 +249,9 @@ TextureImporter:
       pivot: {x: 0.985196, y: 0.07980285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_14
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_14
       rect:
         serializedVersion: 2
         x: 748
@@ -231,7 +262,9 @@ TextureImporter:
       pivot: {x: 0.99066275, y: 0.045400668}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: mummy-breath_15
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mummy-breath_15
       rect:
         serializedVersion: 2
         x: 815
@@ -242,6 +275,7 @@ TextureImporter:
       pivot: {x: 0.99023193, y: 0.073966786}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

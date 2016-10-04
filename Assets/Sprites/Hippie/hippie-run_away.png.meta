@@ -15,7 +15,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -54,11 +54,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: hippie-run_away_0
+    - serializedVersion: 2
+      name: hippie-run_away_0
       rect:
         serializedVersion: 2
         x: 1
@@ -68,14 +71,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.73651546, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -29.460619, y: 41}
-        - {x: -29.460619, y: 7}
-        - {x: -15.460619, y: 0}
-        - {x: 9.539381, y: 0}
-        - {x: 10.539381, y: 7}
-        - {x: 10.539381, y: 41}
-    - name: hippie-run_away_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_1
       rect:
         serializedVersion: 2
         x: 41
@@ -85,14 +84,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.750011, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.50042, y: 42}
-        - {x: -28.50042, y: 5}
-        - {x: -20.50042, y: 0}
-        - {x: 2.4995804, y: 0}
-        - {x: 9.49958, y: 26}
-        - {x: 9.49958, y: 42}
-    - name: hippie-run_away_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_2
       rect:
         serializedVersion: 2
         x: 82
@@ -102,19 +97,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.7668133, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5.461975, y: 22}
-        - {x: 4.461975, y: 24}
-        - {x: 7.461975, y: 29}
-        - {x: 7.461975, y: 41}
-        - {x: 6.461975, y: 42}
-        - {x: -24.538025, y: 42}
-        - {x: -24.538025, y: 0}
-        - {x: -10.538025, y: 0}
-        - {x: -3.538025, y: 2}
-        - {x: 1.4619751, y: 10}
-        - {x: 5.461975, y: 14}
-    - name: hippie-run_away_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_3
       rect:
         serializedVersion: 2
         x: 117
@@ -124,13 +110,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.7489753, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.46106, y: 42}
-        - {x: -28.46106, y: 0}
-        - {x: 3.5389404, y: 0}
-        - {x: 9.53894, y: 1}
-        - {x: 9.53894, y: 42}
-    - name: hippie-run_away_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_4
       rect:
         serializedVersion: 2
         x: 158
@@ -140,15 +123,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.75090283, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -23.537918, y: 42}
-        - {x: -29.537918, y: 34}
-        - {x: -31.537918, y: 30}
-        - {x: -31.537918, y: 0}
-        - {x: 9.462082, y: 0}
-        - {x: 10.462082, y: 1}
-        - {x: 10.462082, y: 42}
-    - name: hippie-run_away_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_5
       rect:
         serializedVersion: 2
         x: 203
@@ -158,14 +136,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.73716736, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -26.538025, y: 42}
-        - {x: -26.538025, y: 3}
-        - {x: -22.538025, y: 0}
-        - {x: -4.538025, y: 0}
-        - {x: 9.461975, y: 23}
-        - {x: 9.461975, y: 42}
-    - name: hippie-run_away_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_6
       rect:
         serializedVersion: 2
         x: 242
@@ -175,13 +149,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.7895152, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.422546, y: 42}
-        - {x: -28.422546, y: 0}
-        - {x: -1.4225464, y: 0}
-        - {x: 7.5774536, y: 3}
-        - {x: 7.5774536, y: 42}
-    - name: hippie-run_away_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hippie-run_away_7
       rect:
         serializedVersion: 2
         x: 281
@@ -191,15 +162,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.76734066, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9.539032, y: 41}
-        - {x: -23.460968, y: 41}
-        - {x: -26.460968, y: 35}
-        - {x: -31.460968, y: 18}
-        - {x: -31.460968, y: 1}
-        - {x: 0.539032, y: 1}
-        - {x: 8.539032, y: 8}
-        - {x: 9.539032, y: 9}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

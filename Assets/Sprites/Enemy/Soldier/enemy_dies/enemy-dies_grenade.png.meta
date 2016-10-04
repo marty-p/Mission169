@@ -12,7 +12,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -51,11 +51,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: enemy-dies_grenade_0
+    - serializedVersion: 2
+      name: enemy-dies_grenade_0
       rect:
         serializedVersion: 2
         x: 2
@@ -65,15 +68,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.555763, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -13.007469, y: 17}
-        - {x: -20.00747, y: 16}
-        - {x: -20.00747, y: -24}
-        - {x: 12.992531, y: -24}
-        - {x: 15.992531, y: -13}
-        - {x: 15.992531, y: 14}
-        - {x: 12.992531, y: 17}
-    - name: enemy-dies_grenade_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade_1
       rect:
         serializedVersion: 2
         x: 46
@@ -83,13 +81,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.6153044, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20.92035, y: -24}
-        - {x: 13.079651, y: -24}
-        - {x: 13.079651, y: 18}
-        - {x: -9.920349, y: 18}
-        - {x: -20.92035, y: 16}
-    - name: enemy-dies_grenade_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade_2
       rect:
         serializedVersion: 2
         x: 87
@@ -99,26 +94,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.60428435, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6.9413834, y: 16.5}
-        - {x: -12.941383, y: 8.5}
-        - {x: -11.941383, y: 5.5}
-        - {x: -10.941383, y: 4.5}
-        - {x: -11.941383, y: 3.5}
-        - {x: -10.941383, y: 3.5}
-        - {x: -11.941383, y: 5.5}
-        - {x: -15.941383, y: 8.5}
-        - {x: -17.941383, y: 9.5}
-        - {x: -19.941383, y: 5.5}
-        - {x: -19.941383, y: -20.5}
-        - {x: -18.941383, y: -23.5}
-        - {x: 13.058617, y: -23.5}
-        - {x: 13.058617, y: 13.5}
-        - {x: 12.058617, y: 18.5}
-        - {x: 10.058617, y: 20.5}
-        - {x: 4.0586166, y: 20.5}
-        - {x: -0.94138336, y: 18.5}
-    - name: enemy-dies_grenade_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade_3
       rect:
         serializedVersion: 2
         x: 129
@@ -128,16 +107,10 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.60356015, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4.7281647, y: 19.5}
-        - {x: -17.728165, y: 12.5}
-        - {x: -21.728165, y: 2.5}
-        - {x: -21.728165, y: -9.5}
-        - {x: -7.7281647, y: -23.5}
-        - {x: 14.271835, y: -23.5}
-        - {x: 14.271835, y: 8.5}
-        - {x: 9.271835, y: 19.5}
-    - name: enemy-dies_grenade_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: enemy-dies_grenade_4
       rect:
         serializedVersion: 2
         x: 173
@@ -147,15 +120,8 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.58301586, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8.154602, y: 22}
-        - {x: -22.154602, y: -2}
-        - {x: -22.154602, y: -11}
-        - {x: -15.154602, y: -11}
-        - {x: -5.154602, y: -23}
-        - {x: 15.845398, y: -23}
-        - {x: 15.845398, y: 7}
-        - {x: 5.845398, y: 22}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
