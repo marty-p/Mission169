@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour {
     public Text bulletCountGUI;
     public Text grenadeCountGUI;
     public Text lifeCountGUI;
+    // TODO have a struct or class that contains all UI stuff so that
+    // I just need the HUD to be public and I'add access everythig through it
+    public GameObject HUD;
+
+    public Text pressAnyKey;
 
     public PlayerDeathManager player; // TODO the gameManager should instantiate the player
     // Keep it like it for now in order to always have a Player in the hierarchy even when not running
@@ -26,10 +31,12 @@ public class GameManager : MonoBehaviour {
     public EnemySpawner endEnemySpwaner;
     private HealthManager endEnemyHealth;
     private bool bossStarted;
+    private bool playing;
 
     void Awake() {
         timeUtils = GetComponent<TimeUtils>();
         EventManager.StartListening("player_death", OnplayerDeath);
+        EventManager.StartListening("boss_start", BossStart);
         EventManager.StartListening("mission_end", OnMissionEnd);
         EventManager.StartListening("add_points", UpdatePlayerPoints);
         EventManager.StartListening("bullet_shot", UpdatePlayerBulletCount);
@@ -41,21 +48,19 @@ public class GameManager : MonoBehaviour {
 
 	void Start () {
         endEnemyHealth = endEnemySpwaner.GetEnemy().GetComponent<HealthManager>();
-        OnMissionStart();
+        OnMissionLoaded();
 	}
 	
-    void Update() { 
-        if (endEnemyHealth.gameObject.activeSelf && !bossStarted) {
-            OnBossStart();
-        }
-
-        if (endEnemyHealth.currentHP < 1 && !missionEnded) {
-            OnMissionEnd();
+    void Update() {
+        if (Input.anyKeyDown && !playing) {
+            playing = true;
+            MissionStart();
         }
     }
 
     private void OnplayerDeath() {
         playerLifeCount--;
+        UpdatePlayerBulletCount(0);
         lifeCountGUI.text = playerLifeCount.ToString();
         if (playerLifeCount >= 0) {
             timeUtils.TimeDelay(waitTimeBeforeSpawn, () => {
@@ -67,12 +72,26 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void OnMissionStart() {
-        bgMusic = soundManager.PlaySound(0);
+    private void OnMissionLoaded() {
+        HUDSetActive(false);
         playerGameObject.transform.position = missionStartLocation.position;
+        playerGameObject.SetActive(false);
     }
 
-    private void OnBossStart() {
+    private void MissionStart() {
+        lifeCountGUI.text = playerLifeCount.ToString();
+        HUDSetActive(true);
+        pressAnyKey.enabled = false;
+        playerGameObject.SetActive(true);
+        timeUtils.TimeDelay(0.1f, () => {
+            bgMusic = soundManager.PlaySound(0);
+            while (!bgMusic.isPlaying) {
+                bgMusic = soundManager.PlaySound(0);
+            }
+        });
+    }
+
+    private void BossStart() {
         bossStarted = true;
         bgMusic.Stop();
         bgMusic = soundManager.PlaySound(1);
@@ -87,10 +106,14 @@ public class GameManager : MonoBehaviour {
         playerGameObject.GetComponent<InputManager>().enabled = false;
         playerGameObject.GetComponent<AnimationManager>().MissionCompleteAnim();
         playerGameObject.layer = (int) SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
+
+        timeUtils.TimeDelay(10, () => { SceneManager.LoadScene("mainscene"); });
     }
 
     private void GameOver() {
         bgMusic.Stop();
+        bgMusic = soundManager.PlaySound(4);
+        timeUtils.TimeDelay(5, () => { SceneManager.LoadScene("mainscene"); });
     }
 
     private void UpdatePlayerPoints(float pts) {
@@ -110,4 +133,7 @@ public class GameManager : MonoBehaviour {
         grenadeCountGUI.text = grenadeCount.ToString();
     }
 
+    private void HUDSetActive(bool active) {
+        HUD.SetActive(active);
+    }
 }
