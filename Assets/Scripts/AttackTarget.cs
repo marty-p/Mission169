@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class AttackTarget : MonoBehaviour, IAttack {
 
-    public GrenadeParabola grenade;
+    public GameObject grenade;
+    private GrenadeParabola grenadeParabola;
     public string victimsTag = "Player";
     private Animator animator;
     private Transform target;
@@ -14,6 +15,7 @@ public class AttackTarget : MonoBehaviour, IAttack {
 
     void Start() {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        grenadeParabola = grenade.GetComponentInChildren<GrenadeParabola>(true);
     }
 
     public void Execute(string victimTag, Vector3 dir = default(Vector3), Vector3 ProjectileInitalPos = default(Vector3)) {
@@ -22,9 +24,10 @@ public class AttackTarget : MonoBehaviour, IAttack {
 
     public void GrenadeAttack() {
         Vector2 projectileDestination = target.transform.position;
+        grenade.SetActive(false);
+        grenade.SetActive(true);
         grenade.transform.position = transform.position + new Vector3(0, 0.2f);
         grenade.transform.right = transform.right;
-        grenade.gameObject.SetActive(true);
-        grenade.Launch(victimsTag, projectileDestination);
+        grenadeParabola.Launch(victimsTag, projectileDestination);
     }
 }
