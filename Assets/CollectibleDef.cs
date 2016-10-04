@@ -9,15 +9,20 @@ public class CollectibleDef : MonoBehaviour {
     public int attackID;
     public int points;
     public AudioClip weaponNameAudio;
+    public string collectibleAnimationName;
 
     void Awake() {
         flash = GetComponent<FlashUsingMaterial>();
         animator = GetComponent<Animator>();
     }
 
+    public void OnEnable() {
+        animator.Play(collectibleAnimationName);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
-            flash.FlashOnce(() => animator.SetTrigger("picked_up"));
+            flash.FlashForOneFrame(() => animator.SetTrigger("picked_up"));
         }
     }
 }
