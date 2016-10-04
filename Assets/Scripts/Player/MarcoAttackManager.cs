@@ -64,6 +64,11 @@ public class MarcoAttackManager : MonoBehaviour {
         }
     }
 
+    public void RestoreGrenade() {
+        grenadeCount = 10;
+        EventManager.TriggerEvent("grenade_thrown", grenadeCount);
+    }
+
     public void UpdateBulletCount(int newBulletCount = 0) {
         if (newBulletCount == 0) {
             bulletCount--;

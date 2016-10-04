@@ -63,8 +63,10 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         animManager.ResetAnimators();
         attackManager.SetDefaultAttack();
+        attackManager.RestoreGrenade();
         animManager.PlaySpawnAnim();
         health.IgnoreDamages = true;
+        health.currentHP = health.maxHP;
         playerIndicator.SetVisible(true);
         flashBright.FlashForXSecs(ignoreDamagesDuration);
         timeUtils.TimeDelay(ignoreDamagesDuration,() => 
