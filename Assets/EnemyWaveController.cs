@@ -12,10 +12,13 @@ public class EnemyWaveController : MonoBehaviour {
     EnemySpawner[][] spawners;
     private const float updatePeriod = 0.1f;
     public bool missionEndWave;
+    private BoxCollider2D waveStartCollider;
 
 	void Awake () {
+        waveStartCollider = GetComponent<BoxCollider2D>();
         foreach (Transform child in transform) {
             waves.Add(child);
+            child.gameObject.SetActive(false);
         }
 
         spawners = new EnemySpawner[waves.Count][];
@@ -28,6 +31,7 @@ public class EnemyWaveController : MonoBehaviour {
 	
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Player") {
+            waveStartCollider.enabled = false;
             timeUtils = GetComponent<TimeUtils>();
 
             currentWaveIndex = 0;
@@ -70,7 +74,7 @@ public class EnemyWaveController : MonoBehaviour {
 
     private void AllWavesOver() {
         cam.followActive = true;
-        gameObject.SetActive(false);
+        enabled = false;
         EventManager.TriggerEvent("all_waves_over");
         if (missionEndWave) {
             EventManager.TriggerEvent("mission_end");
