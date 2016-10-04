@@ -5,6 +5,7 @@ public class AreaOfEffectProjectile : MonoBehaviour{
     public Vector2 boxSize = new Vector2(0.2f, 0.2f);
     public Vector2 boxOffset = new Vector2();
     public ProjectileProperties projectileProp;
+    public LayerMask layerMask;
 
     public void CastAOE(string victimsTag, Vector2 pos) {
         Vector2 center = new Vector2(pos.x - transform.right.x * (boxSize.x / 2) + boxOffset.x * transform.right.x,
@@ -17,16 +18,11 @@ public class AreaOfEffectProjectile : MonoBehaviour{
             new Vector2(center.x + boxSize.x * transform.right.x, center.y + boxSize.y), Color.cyan, duration);
 
         Vector2 centre = new Vector2(pos.x + boxOffset.x * transform.right.x, pos.y + boxOffset.y);
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(centre, boxSize, 0, transform.right, 0);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(centre, boxSize, 0, transform.right, 0, layerMask);
 
         for (int i=0; i<hits.Length; i++) {
             if (hits[i].collider.tag == victimsTag) {
-                HealthManager healthManager = hits[i].collider.GetComponentInChildren<HealthManager>();
-                if (healthManager == null) {
-                    print("victim " + victimsTag + " does not have a healthManager");
-                } else {
-                    healthManager.OnHitByProjectile(projectileProp);
-                }
+                ProjectileUtils.NotifyCollider(hits[i].collider, projectileProp);
             }
         }
     }
