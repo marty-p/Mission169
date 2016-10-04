@@ -87,7 +87,7 @@ public class AnimDrivenBrain : MonoBehaviour {
             anim.SetBool("walking_away_from_target", false);
             return true;
         } else {
-            physic.MoveForward(1/20);
+            physic.MoveForward();
             return false;
         }
     }
@@ -106,7 +106,7 @@ public class AnimDrivenBrain : MonoBehaviour {
         return Math.Sign(transform.right.x) != Math.Sign(distanceToTarget);
     }
 
-    public void Walk(int speed=0) {
+    public void Walk(float speed=0) {
         physic.MoveForward(speed);
     }
 }

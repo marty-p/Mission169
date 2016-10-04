@@ -5,7 +5,7 @@ public class ABSStill : Room {
 
     public override void Init() {
         Door toGrenade = new Door(()=>animator.SetTrigger("grenade_standing"),
-                ()=> brain.TargetDistBetween(0.6f, 2), 1.5f);
+                ()=> brain.TargetDistBetween(0.5f, 1.5f), 1.5f);
         AddExitDoor(toGrenade);
 
         Door toWalk = new Door(()=>OnGoingToWalk(), ()=>brain.TargetDistMoreThan(2));
@@ -25,7 +25,7 @@ public class ABSStill : Room {
 
     private void OnGoingToWalk(float distanceToStop = 0) {
         if (distanceToStop == 0) {
-            distanceToStop = UnityEngine.Random.Range(1, 1.9f);
+            distanceToStop = UnityEngine.Random.Range(1, 1.2f);
         }
         animator.SetBool("walking", true);
         brain.distanceStopWalking = distanceToStop;
