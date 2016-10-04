@@ -7,9 +7,9 @@ public class FlashUsingMaterial : MonoBehaviour {
     public SpriteRenderer[] spriteRenderers;
     private Material baseMaterial; // Assuming all sprite renderers use the same Material
     public Material material;
-    public float flashDuration = 1/24f;
+    public float flashDuration = 1/25f;
 
-	void Start () {
+	void Awake () {
         baseMaterial = spriteRenderers[0].material;
 	}
 
@@ -31,6 +31,11 @@ public class FlashUsingMaterial : MonoBehaviour {
         StartCoroutine("FlashForOneFrameCoroutine", cb);
     }
 
+    public void ResetMaterial() {
+       for (int i = 0; i < spriteRenderers.Length; i++) {
+            spriteRenderers[i].material = baseMaterial;
+        }
+    }
 
     private IEnumerator FlashForXSecsCoroutine(float u) {
         float elapsed = 0;
