@@ -17,9 +17,11 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
     private CollectibleDef collectible;
     public SpriteRenderer hideEnemy;
     public EnemySpawner enemySpawner;
-    public Berserker[] berserkersOnTheRoof;
+    public Transform[] berserkerOnTheRoofPos;
+    private Berserker[] berserkersOnTheRoof;
     private HealthManager healthManager;
     private Coroutine coroutine;
+    private ObjectPoolScript berserkerPool;
 
     void Awake() {
         animator = GetComponent<Animator>();
@@ -29,6 +31,8 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
         colliderWhenDestroyed = GetComponent<EdgeCollider2D>();
         collectible = GetComponentInChildren<CollectibleDef>(true);
         healthManager = GetComponent<HealthManager>();
+        berserkerPool = GetComponentInChildren<ObjectPoolScript>();
+        berserkersOnTheRoof = new Berserker[3];
     }
 
     public void OnBecameInvisible() {
@@ -36,6 +40,17 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
     }
 
     void Start() {
+        for (int i=0; i< berserkersOnTheRoof.Length; i++) {
+            GameObject berserkRoot = berserkerPool.GetPooledObject();
+            berserkRoot.transform.position = berserkerOnTheRoofPos[i].position;
+            berserkersOnTheRoof[i] = berserkRoot.GetComponentInChildren<Berserker>();
+            berserkersOnTheRoof[i].walkingMode = false;
+        }
+        gameObject.SetActive(false);
+        colliderRamp.enabled = false;
+    }
+
+    void OnEnable() {
         pastPos = transform.position;
         coroutine = StartCoroutine("CheckIfMoving");
         healthManager.IgnoreDamages = true;
@@ -53,7 +68,6 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
             explosions.SetActive(true);
             debris.SetActive(true);
             colliderWhenDestroyed.enabled = true;
-            colliderWhenIntact.enabled = false;
             gameObject.tag = "World";
             collectible.gameObject.SetActive(true);
             colliderRamp.enabled = false;
@@ -67,7 +81,9 @@ public class TruckManager : MonoBehaviour, IReceiveDamage {
         }
         timeUtils.TimeDelay(2, () => {
             if (!dead) {
+                colliderWhenIntact.enabled = false;
                 hideEnemy.enabled = true;
+                colliderRamp.enabled = true;
                 enemySpawner.gameObject.SetActive(true);
             }
         });
