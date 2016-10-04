@@ -25,10 +25,9 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
     void OnEnable() {
         bottomBody.SetActive(true);
         bloodSplash.SetActive(false);
-        limbs.SetActive(false);
         RepositionLimbs();
-        col.enabled = true;
-        physic.enabled = true;
+        limbs.SetActive(false);
+        transform.localPosition = Vector3.zero;
         if (!walkingMode) {
             bottomBodyAnimator.Play("berserker-sitting");
         }
@@ -49,7 +48,7 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
     private void Attack() {
         topBody.SetActive(true);
         bottomBodyAnimator.SetBool("attack", true);
-        knife.CastAOE("Player", transform.position); 
+        knife.CastAOE("Player", transform.position);
     }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
@@ -57,24 +56,19 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
             return;
         }
         if (newHP < 1) {
-            DesInit();
+            gameObject.SetActive(false);
             bloodSplash.SetActive(true);
-            limbs.SetActive(true);
+            bloodSplash.transform.position = topBody.transform.position;
+            limbs.transform.position = topBody.transform.position;
+            limbs.SetActiveRecursively(true);
         }
     }
 
     public void SetWalkingMode() {
         walkingMode = true;
-        bottomBodyAnimator.SetTrigger("walk");
-    }
-
-    private void DesInit() {
-        enabled = false;
-        bottomBody.SetActive(false);
-        topBody.SetActive(false);
-        physic.enabled = false;
-        col.enabled = false;
-        timeUtils.TimeDelay(2, () => { gameObject.SetActive(false); });
+        if (bottomBodyAnimator.isInitialized) {
+            bottomBodyAnimator.SetTrigger("walk");
+        }
     }
 
     private void RepositionLimbs() {
