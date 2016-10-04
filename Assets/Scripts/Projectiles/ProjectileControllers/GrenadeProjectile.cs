@@ -68,9 +68,7 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile {
                 x += x_inc2 * Time.deltaTime;
                 x_inc2 -= 0.022f;
                 y = a * x;
-                print("Linear");
             } else if (linearPart) {
-                print(" switching to NON Linear");
                 linearPart = false;
                 y = 0;
                 xOffset = transform.position.x;
