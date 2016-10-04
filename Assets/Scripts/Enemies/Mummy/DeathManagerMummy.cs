@@ -16,6 +16,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
             flashRed.FlashSlugStyle();
+            EventManager.TriggerEvent("add_points", 100);
         } else {
             Die(projectileProp);
         }
