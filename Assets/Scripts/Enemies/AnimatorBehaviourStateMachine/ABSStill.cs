@@ -4,8 +4,8 @@ using Slug.StateMachine;
 public class ABSStill : Room {
 
     public override void Init() {
-        Door toGrenade = new Door(()=>animator.SetTrigger("grenade_standing"),
-                ()=> brain.TargetDistBetween(0.5f, 1.5f), 1.5f);
+        Door toGrenade = new Door(() => animator.SetTrigger("grenade_standing"),
+                () => brain.TargetDistBetween(0.5f, 1.7f) && brain.visible, 1.5f);
         AddExitDoor(toGrenade);
 
         Door toWalk = new Door(()=>OnGoingToWalk(), ()=>brain.TargetDistMoreThan(2));

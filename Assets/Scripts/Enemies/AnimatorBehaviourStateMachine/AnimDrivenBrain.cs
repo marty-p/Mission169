@@ -10,6 +10,7 @@ public class AnimDrivenBrain : MonoBehaviour {
     private float distanceToTarget;
     private SlugPhysics physic;
     private float absDistanceToTarget;
+    public bool visible;
 
     public float getScaredFactor = 0.5f;
 
@@ -21,8 +22,17 @@ public class AnimDrivenBrain : MonoBehaviour {
     }
 
     void OnEnable() {
+        visible = false;
     }
-	
+
+    void OnBecameVisible() {
+        visible = true;
+    }
+
+	void OnBecameInvisible() {
+        visible = false;
+    }
+
 	void Update () {
         if (target == null) {
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -109,27 +119,4 @@ public class AnimDrivenBrain : MonoBehaviour {
     public void Walk(float speed=0) {
         physic.MoveForward(speed);
     }
-}
-
-public class CoolDown {
-    private float duration;
-    private float elapsed;
-    public bool enabled;
-
-    public CoolDown(float duration) {
-        this.duration = duration;
-    }
-
-    public void Update() {
-        if (elapsed < duration) {
-            elapsed += Time.deltaTime;
-        } else {
-            Reset();
-        }
-    }
-
-    public void Reset() {
-        elapsed = 0;
-        enabled = false;
-    } 
 }
