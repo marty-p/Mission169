@@ -39,13 +39,13 @@ public class MarcoAttackManager : MonoBehaviour {
 
     public void PrimaryAttack() {
         Vector3 unUsed = Vector3.zero;
-        if (InRangeForKnife()) {
-            if (!MeleeAttack.InProgress()) {
+        if (!MeleeAttack.InProgress()) {
+            if (InRangeForKnife()) {
                 MeleeAttack.Execute(victimsTag, Vector3.zero, Vector3.zero);
+            } else {
+                //TODO remove this projectileInitialPos parameter from Execute
+                currentFireArmAttack.Execute(victimsTag, unUsed, unUsed);
             }
-        } else {
-            //TODO remove this projectileInitialPos parameter from Execute
-            currentFireArmAttack.Execute(victimsTag, unUsed, unUsed);
         }
     }
 
