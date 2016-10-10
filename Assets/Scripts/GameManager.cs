@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour {
             playing = true;
             MissionStart();
         }
+
+        if (Input.GetButtonDown("Pause")) {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        }
     }
 
     private void OnplayerDeath() {
