@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GoRight : MonoBehaviour {
+public class GoRightIndicator : MonoBehaviour {
 
     private new AudioSource audio;
 

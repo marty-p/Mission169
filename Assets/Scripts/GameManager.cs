@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour {
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
     }
 
-	void Start () {
+    void Start () {
         endEnemyHealth = endEnemySpwaner.GetEnemy().GetComponent<HealthManager>();
         OnMissionLoaded();
-	}
+    }
 	
     void Update() {
         if (Input.anyKeyDown && !playing) {
