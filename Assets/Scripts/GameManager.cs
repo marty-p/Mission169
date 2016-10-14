@@ -8,15 +8,8 @@ public class GameManager : MonoBehaviour {
     public int playerLifeCount = 2;
     public int playerScore = 0;
 
-    public Text scoreGUI;
-    public Text bulletCountGUI;
-    public Text grenadeCountGUI;
-    public Text lifeCountGUI;
-    // TODO have a struct or class that contains all UI stuff so that
-    // I just need the HUD to be public and I'add access everythig through it
-    public GameObject HUD;
-
-    public Text pressAnyKey;
+    // TODO should the GameManager Instantiate UIManager, the player and so?
+    public UIManager uiManager;
 
     public PlayerDeathManager player; // TODO the gameManager should instantiate the player
     // Keep it like it for now in order to always have a Player in the hierarchy even when not running
@@ -39,9 +32,6 @@ public class GameManager : MonoBehaviour {
         EventManager.StartListening("boss_start", BossStart);
         EventManager.StartListening("mission_end", OnMissionEnd);
         EventManager.StartListening("add_points", UpdatePlayerPoints);
-        EventManager.StartListening("bullet_shot", UpdatePlayerBulletCount);
-        EventManager.StartListening("grenade_thrown", UpdatePlayerGrenadeCountUI);
-
         soundManager = GetComponentInChildren<SlugAudioManager>();
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
     }
@@ -58,14 +48,18 @@ public class GameManager : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Pause")) {
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            TogglePauseGame();
         }
+    }
+    
+    //TODO block user input too
+    public void TogglePauseGame() {
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
     }
 
     private void OnplayerDeath() {
         playerLifeCount--;
-        UpdatePlayerBulletCount(0);
-        lifeCountGUI.text = playerLifeCount.ToString();
+        uiManager.SetLifeCount(playerLifeCount);
         if (playerLifeCount >= 0) {
             timeUtils.TimeDelay(waitTimeBeforeSpawn, () => {
                 player.SpawnPlayer();
@@ -77,15 +71,15 @@ public class GameManager : MonoBehaviour {
     }
 
     private void OnMissionLoaded() {
-        HUDSetActive(false);
+        uiManager.SetHUDActive(false);
         playerGameObject.transform.position = missionStartLocation.position;
         playerGameObject.SetActive(false);
     }
 
     private void MissionStart() {
-        lifeCountGUI.text = playerLifeCount.ToString();
-        HUDSetActive(true);
-        pressAnyKey.enabled = false;
+        uiManager.SetLifeCount(playerLifeCount);
+        uiManager.SetHUDActive(true);
+        uiManager.SetMainMenuActive(false);
         playerGameObject.SetActive(true);
         timeUtils.TimeDelay(0.1f, () => {
             bgMusic = soundManager.PlaySound(0);
@@ -122,22 +116,7 @@ public class GameManager : MonoBehaviour {
 
     private void UpdatePlayerPoints(float pts) {
         playerScore = playerScore + (int) pts;
-        scoreGUI.text = playerScore.ToString();
+        uiManager.SetScore(playerScore);
     }
 
-    private void UpdatePlayerBulletCount(float bullet) {
-        if ( bullet > 0 ) {
-            bulletCountGUI.text = bullet.ToString();
-        } else {
-            bulletCountGUI.text = "∞";
-        }
-    }
-
-    private void UpdatePlayerGrenadeCountUI(float grenadeCount) {
-        grenadeCountGUI.text = grenadeCount.ToString();
-    }
-
-    private void HUDSetActive(bool active) {
-        HUD.SetActive(active);
-    }
 }
