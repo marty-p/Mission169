@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using Mission169;
 
 public class FollowTarget : MonoBehaviour {
 
@@ -13,6 +13,12 @@ public class FollowTarget : MonoBehaviour {
 
 
     void Start () {
+        if (target == null) {
+            // while this script is general and could be use to follow anything
+            // this one bit is very specific to Mission169
+            target = GameManager.Instance.GetPlayer().transform.GetChild(0);
+        }
+
         camera = GetComponent<Camera>();
         targetViewPortPos = new Vector2();
         oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
