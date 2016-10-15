@@ -1,19 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class HUDManager : MonoBehaviour {
 
     public Text scoreGUI;
     public Text bulletCountGUI;
     public Text grenadeCountGUI;
     public Text lifeCountGUI;
-    public GameObject HUD;
-    public GameObject MainMenu;
 
     void Awake() {
         EventManager.StartListening("bullet_shot", SetBulletCount);
         EventManager.StartListening("player_death", SetBulletCountToInfinity);
         EventManager.StartListening("grenade_thrown", SetGrenadeCount);
+    }
+
+    public void SetVisible(bool visible) {
+        if (visible) {
+            gameObject.SetActive(true);
+        } else {
+            gameObject.SetActive(false);
+        }
     }
 
     public void SetLifeCount(int lifeCount) {
@@ -38,14 +44,6 @@ public class UIManager : MonoBehaviour {
 
     void SetBulletCountToInfinity() {
         bulletCountGUI.text = "∞";
-    }
-
-    public void SetHUDActive(bool active) {
-        HUD.SetActive(active);
-    }
-
-    public void SetMainMenuActive(bool active) {
-        MainMenu.SetActive(active);
     }
 
 }
