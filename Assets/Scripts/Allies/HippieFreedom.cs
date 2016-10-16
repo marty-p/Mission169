@@ -81,7 +81,9 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     }
 
     void OnBecameInvisible() {
-        DestroyObject(gameObject);
+        if (itemOffered) {
+            DestroyObject(gameObject);
+        }
     }
 
     public void Observe(SlugEvents ev) {
