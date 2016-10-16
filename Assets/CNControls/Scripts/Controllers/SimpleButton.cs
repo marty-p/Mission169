@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace CnControls
@@ -15,6 +16,9 @@ namespace CnControls
         , IPointerUpHandler, IPointerDownHandler
 #endif
     {
+        private UnityEngine.UI.Image img;
+        private Sprite unpressedSprite;
+        public Sprite pressedSprite;
         /// <summary>
         /// The name of the button
         /// </summary>
@@ -42,6 +46,8 @@ namespace CnControls
         {
             _virtualButton = _virtualButton ?? new VirtualButton(ButtonName);
             CnInputManager.RegisterVirtualButton(_virtualButton);
+            img = GetComponent<Image>();
+            unpressedSprite = img.sprite;
         }
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace CnControls
         public void OnPointerUp(PointerEventData eventData)
         {
             _virtualButton.Release();
+            img.sprite = unpressedSprite;
         }
 
         /// <summary>
@@ -70,6 +77,7 @@ namespace CnControls
         public void OnPointerDown(PointerEventData eventData)
         {
             _virtualButton.Press();
+            img.sprite = pressedSprite;
         }
     }
 }
