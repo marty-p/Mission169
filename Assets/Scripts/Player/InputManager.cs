@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
     using CnControls;
 #endif
 
@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour {
         int horizontalKey = 0;
         int verticalKey = 0;
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
         jump = CnInputManager.GetButtonDown("Jump");
         fireKey = CnInputManager.GetButtonDown("Fire1");
         grenadeKey = CnInputManager.GetButtonDown("Fire2");
