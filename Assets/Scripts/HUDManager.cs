@@ -44,6 +44,10 @@ public class HUDManager : MonoBehaviour {
         }
     }
 
+    public void RemindPlayerGoRight() {
+        goRightReminder.SetActive(true);
+    }
+
     void SetBulletCountToInfinity() {
         bulletCountGUI.text = "∞";
     }

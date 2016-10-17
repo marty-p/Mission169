@@ -66,11 +66,20 @@ public class InputManager : MonoBehaviour {
             movementManager.Jump();
         }
 
+        if (Input.anyKeyDown) {
+            CancelInvoke();
+            InvokeRepeating("SendPlayerInactiveEvent", 5, 2);
+        }
+
     }
 
     void NotifyObservers(SlugEvents ev) {
         foreach(IObserver obs in observers) {
             obs.Observe(ev);
         }
+    }
+
+    void SendPlayerInactiveEvent() {
+        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerInactive);
     }
 }
