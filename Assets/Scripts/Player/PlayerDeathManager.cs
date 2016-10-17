@@ -53,7 +53,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
 
     private void NotifyDeath() {
         setPlayerVisible(false);
-        EventManager.TriggerEvent("player_death");
+        EventManager.Instance.TriggerEvent("player_death");
     }
 
     public void SpawnPlayer() {

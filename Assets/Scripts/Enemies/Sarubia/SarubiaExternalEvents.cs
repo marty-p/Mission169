@@ -15,7 +15,7 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
         if (newHP > 0) {
             flashRed.FlashSlugStyle();
             audioManager.PlaySound(0);
-            EventManager.TriggerEvent("add_points", 100);
+            EventManager.Instance.TriggerEvent("add_points", 100);
             return;
         } else if (!dead) {
             dead = true;

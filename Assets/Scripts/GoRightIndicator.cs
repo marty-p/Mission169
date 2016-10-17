@@ -6,7 +6,7 @@ public class GoRightIndicator : MonoBehaviour {
 
     void Awake() {
         audio = GetComponent<AudioSource>();
-        EventManager.StartListening("all_waves_over",
+        EventManager.Instance.StartListening("all_waves_over",
                 () => { gameObject.SetActive(true); });
         gameObject.SetActive(false);
 	}

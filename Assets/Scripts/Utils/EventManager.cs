@@ -8,126 +8,85 @@ public class TransformEvent : UnityEvent<Transform>{}
 [System.Serializable]
 public class FloatEvent : UnityEvent<float>{}
 
-
-public class EventManager : MonoBehaviour
-{
+// This class initially comes from a tutorial on Unity.com, not many lines from
+// the original version are still there though.
+public class EventManager : Singleton<EventManager>{
 
     private Dictionary<string, UnityEvent> eventDictionary;
     private Dictionary<string, TransformEvent> transformEventDictionary;
     private Dictionary<string, FloatEvent> floatEventDictionary;
 
-    private static EventManager eventManager;
-
-    public static EventManager instance
-    {
-        get
-        {
-            if (!eventManager)
-            {
-                eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
-
-                if (!eventManager)
-                {
-                    Debug.LogError("There needs to be one active EventManger script on a GameObject in your scene.");
-                }
-                else
-                {
-                    eventManager.Init();
-                }
-            }
-
-            return eventManager;
-        }
+    void Awake() {
+        DontDestroyOnLoad(this);
+        Init();
     }
 
-    void Init()
-    {
-        if (eventDictionary == null)
-        {
+    void Init() {
+        if (eventDictionary == null) {
             eventDictionary = new Dictionary<string, UnityEvent>();
             transformEventDictionary = new Dictionary<string, TransformEvent>();
             floatEventDictionary = new Dictionary<string, FloatEvent>();
         }
     }
 
-    public static void StartListening(string eventName, UnityAction listener)
+    public void StartListening(string eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.AddListener(listener);
-        }
-        else
-        {
+        } else {
             thisEvent = new UnityEvent();
             thisEvent.AddListener(listener);
-            instance.eventDictionary.Add(eventName, thisEvent);
+            eventDictionary.Add(eventName, thisEvent);
         }
     }
 
-    public static void StartListening(string eventName, UnityAction<Transform> listener)
-    {
+    public void StartListening(string eventName, UnityAction<Transform> listener) {
         TransformEvent thisEvent = null;
-        if (instance.transformEventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (transformEventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.AddListener(listener);
-        }
-        else
-        {
+        } else {
             thisEvent = new TransformEvent();
             thisEvent.AddListener(listener);
-            instance.transformEventDictionary.Add(eventName, thisEvent);
+            transformEventDictionary.Add(eventName, thisEvent);
         }
     }
 
-    public static void StartListening(string eventName, UnityAction<float> listener)
-    {
+    public void StartListening(string eventName, UnityAction<float> listener) {
         FloatEvent thisEvent = null;
-        if (instance.floatEventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (floatEventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.AddListener(listener);
-        }
-        else
-        {
+        } else {
             thisEvent = new FloatEvent();
             thisEvent.AddListener(listener);
-            instance.floatEventDictionary.Add(eventName, thisEvent);
+            floatEventDictionary.Add(eventName, thisEvent);
         }
     }
 
-    public static void StopListening(string eventName, UnityAction listener)
-    {
-        if (eventManager == null) return;
+    public void StopListening(string eventName, UnityAction listener) {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.RemoveListener(listener);
         }
     }
 
-    public static void TriggerEvent(string eventName)
-    {
+    public void TriggerEvent(string eventName) {
         UnityEvent thisEvent = null;
-        if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.Invoke();
         }
     }
 
-    public static void TriggerEvent(string eventName, Transform transform)
-    {
+    public void TriggerEvent(string eventName, Transform transform) {
         TransformEvent thisEvent = null;
-        if (instance.transformEventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (transformEventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.Invoke(transform);
         }
     }
 
-   public static void TriggerEvent(string eventName, float val)
-   {
+   public void TriggerEvent(string eventName, float val) {
         FloatEvent thisEvent = null;
-        if (instance.floatEventDictionary.TryGetValue(eventName, out thisEvent))
-        {
+        if (floatEventDictionary.TryGetValue(eventName, out thisEvent)) {
             thisEvent.Invoke(val);
         }
     }

@@ -52,7 +52,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void SecondaryAttack() {
         if (grenadeCount > 0) {
             grenadeCount--;
-            EventManager.TriggerEvent("grenade_thrown", grenadeCount);
+            EventManager.Instance.TriggerEvent("grenade_thrown", grenadeCount);
 
             Vector3 grenadeInitialPos;
             if (movementManager.body == BodyPosture.Crouch) {
@@ -66,7 +66,7 @@ public class MarcoAttackManager : MonoBehaviour {
 
     public void RestoreGrenade() {
         grenadeCount = 10;
-        EventManager.TriggerEvent("grenade_thrown", grenadeCount);
+        EventManager.Instance.TriggerEvent("grenade_thrown", grenadeCount);
     }
 
     public void UpdateBulletCount(int newBulletCount = 0) {
@@ -79,7 +79,7 @@ public class MarcoAttackManager : MonoBehaviour {
             SetDefaultAttack();
         }
         // way to update the UI
-        EventManager.TriggerEvent("bullet_shot", bulletCount);
+        EventManager.Instance.TriggerEvent("bullet_shot", bulletCount);
     }
 
     public void SetAttack(int attackID, RuntimeAnimatorController attackAnimController) {

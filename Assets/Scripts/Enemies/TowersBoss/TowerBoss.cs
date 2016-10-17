@@ -111,7 +111,7 @@ public class TowerBoss : MonoBehaviour {
     }
 
     void OpenTowers() {
-        EventManager.TriggerEvent("boss_start");
+        EventManager.Instance.TriggerEvent("boss_start");
         TR.OpenTower(()=> {
             sequencePhase1 = StartCoroutine("ProcessSequence");
         });

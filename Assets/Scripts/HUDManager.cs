@@ -9,9 +9,9 @@ public class HUDManager : MonoBehaviour {
     public Text lifeCountGUI;
 
     void Awake() {
-        EventManager.StartListening("bullet_shot", SetBulletCount);
-        EventManager.StartListening("player_death", SetBulletCountToInfinity);
-        EventManager.StartListening("grenade_thrown", SetGrenadeCount);
+        EventManager.Instance.StartListening("bullet_shot", SetBulletCount);
+        EventManager.Instance.StartListening("player_death", SetBulletCountToInfinity);
+        EventManager.Instance.StartListening("grenade_thrown", SetGrenadeCount);
     }
 
     public void SetVisible(bool visible) {

@@ -15,12 +15,12 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         blink = GetComponent<Blink>();
         timeUtils = GetComponent<TimeUtils>();
 
-        EventManager.StartListening("player_death", () => {
+        EventManager.Instance.StartListening("player_death", () => {
             if (anim.isInitialized) {
                 anim.SetTrigger("laugh");
             }
         });
-        EventManager.StartListening("player_back_alive", () => 
+        EventManager.Instance.StartListening("player_back_alive", () => 
         {
             if (anim.isInitialized) {
                 anim.Play("enemy_still");
@@ -47,7 +47,8 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
             //To ignore collision with projectiles during death anim but still be 'physic'
             gameObject.layer = 2;
             animManager.PlayDeathAnimation(projectileProp);
-            EventManager.TriggerEvent("add_points", 100);
+            EventManager.Instance.TriggerEvent("add_points", 100);
+            EventManager.Instance.TriggerEvent("soldier_death");
         }
     }
 

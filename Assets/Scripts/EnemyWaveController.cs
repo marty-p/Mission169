@@ -75,9 +75,9 @@ public class EnemyWaveController : MonoBehaviour {
     private void AllWavesOver() {
         cam.followActive = true;
         enabled = false;
-        EventManager.TriggerEvent("all_waves_over");
+        EventManager.Instance.TriggerEvent("all_waves_over");
         if (missionEndWave) {
-            EventManager.TriggerEvent("mission_end");
+            EventManager.Instance.TriggerEvent("mission_end");
         }
     }
 
