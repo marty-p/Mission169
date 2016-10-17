@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+namespace Mission169 {
+    /// <summary>
+    /// Really just a place holder for all the UI elements used in the game
+    /// so that anybody can show/hide them or set value of text
+    /// </summary>
+    public class UIManager : Singleton<UIManager> {
+
+        public HUDManager HUD { get { return hudManager;} }
+        public MainMenu MainMenuT { get { return mainMenu; } }
+        private HUDManager hudManager;
+        private MainMenu mainMenu;
+
+        void Awake() {
+            DontDestroyOnLoad(this);
+
+            EventSystem eventSystem = gameObject.AddComponent(typeof(EventSystem)) as EventSystem;
+            StandaloneInputModule inputModule = gameObject.AddComponent(typeof(StandaloneInputModule)) as StandaloneInputModule;
+
+            GameObject hudManagerGO = Instantiate(Resources.Load("HUD")) as GameObject;
+            hudManager = hudManagerGO.GetComponent<HUDManager>();
+            hudManager.transform.SetParent(transform);
+            hudManager.SetVisible(false);
+
+            GameObject mainMenuGO = Instantiate(Resources.Load("MainMenu")) as GameObject;
+            mainMenu = mainMenuGO.GetComponent<MainMenu>();
+            mainMenu.transform.SetParent(transform);
+            mainMenu.SetVisible(false);
+        }
+    }
+}
