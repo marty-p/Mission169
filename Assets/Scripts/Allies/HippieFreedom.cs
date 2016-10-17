@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using Slug;
-
+using SlugLib;
 
 //TODO this whole class could be rewritten ...
-
 public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
 
     private SlugPhysics physic;
@@ -37,7 +36,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         animManager.PlayFreeAnim(EndOfHippieFreedAnim);
         gameObject.layer = (int) SlugLayers.FreeMan;
-        EventManager.Instance.TriggerEvent("add_points", 100);
+        EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
     }
 
     private void EndOfHippieFreedAnim() {

@@ -2,6 +2,7 @@
 using Facebook.Unity;
 using System.Collections.Generic;
 using System;
+using SlugLib;
 
 public class FacebookManager : Singleton<FacebookManager> {
 
@@ -20,11 +21,11 @@ public class FacebookManager : Singleton<FacebookManager> {
             var perms = new List<string>() { "public_profile"};
             //FB.LogInWithReadPermissions(perms, AuthCallback);
             EventManager.Instance.StartListening(
-                    "mission_success",
+                    GlobalEvents.MissionSuccess,
                     () => FB.LogAppEvent(AppEventName.AchievedLevel));
            
             EventManager.Instance.StartListening(
-                    "player_death",
+                    GlobalEvents.PlayerDead,
                     () => FB.LogAppEvent("death"));
         } else {
             Debug.Log("Failed to Initialize the Facebook SDK");

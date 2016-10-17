@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SlugLib;
 using System.Collections;
 
 public class TowerBoss : MonoBehaviour {
@@ -84,7 +85,7 @@ public class TowerBoss : MonoBehaviour {
             }
 
             if (currentTowersDestroyed == towers.Length) {
-                EventManager.TriggerEvent("mission_end");
+                EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
                 bossAlive = false;
             }
 
@@ -111,7 +112,7 @@ public class TowerBoss : MonoBehaviour {
     }
 
     void OpenTowers() {
-        EventManager.Instance.TriggerEvent("boss_start");
+        EventManager.Instance.TriggerEvent(GlobalEvents.BossStart);
         TR.OpenTower(()=> {
             sequencePhase1 = StartCoroutine("ProcessSequence");
         });
@@ -120,4 +121,5 @@ public class TowerBoss : MonoBehaviour {
 
         StartCoroutine("CheckTowerHealth");
     }
+
 }

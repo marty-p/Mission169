@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SlugLib;
 
 public class GoRightIndicator : MonoBehaviour {
 
@@ -6,16 +7,17 @@ public class GoRightIndicator : MonoBehaviour {
 
     void Awake() {
         audio = GetComponent<AudioSource>();
-        EventManager.Instance.StartListening("all_waves_over",
-                () => { gameObject.SetActive(true); });
         gameObject.SetActive(false);
+        EventManager.Instance.StartListening(GlobalEvents.WaveEventEnd, ()=>SetActive(true));
+        EventManager.Instance.StartListening(GlobalEvents.PlayerInactive, ()=>SetActive(true));
 	}
 	
     public void PlaySound() {
         audio.Play();
     }
 
-    public void SetInactive() {
-        gameObject.SetActive(false);
+    private void SetActive(bool active) {
+        gameObject.SetActive(active);
     }
+
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Slug;
+using SlugLib;
 
 public class MarcoAttackManager : MonoBehaviour {
 
@@ -52,7 +52,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void SecondaryAttack() {
         if (grenadeCount > 0) {
             grenadeCount--;
-            EventManager.Instance.TriggerEvent("grenade_thrown", grenadeCount);
+            EventManager.Instance.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
 
             Vector3 grenadeInitialPos;
             if (movementManager.body == BodyPosture.Crouch) {
@@ -66,7 +66,8 @@ public class MarcoAttackManager : MonoBehaviour {
 
     public void RestoreGrenade() {
         grenadeCount = 10;
-        EventManager.Instance.TriggerEvent("grenade_thrown", grenadeCount);
+        // To refresh UI 
+        EventManager.Instance.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
     }
 
     public void UpdateBulletCount(int newBulletCount = 0) {
@@ -78,8 +79,8 @@ public class MarcoAttackManager : MonoBehaviour {
         if (bulletCount < 1) {
             SetDefaultAttack();
         }
-        // way to update the UI
-        EventManager.Instance.TriggerEvent("bullet_shot", bulletCount);
+        // To refresh UI
+        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
     }
 
     public void SetAttack(int attackID, RuntimeAnimatorController attackAnimController) {

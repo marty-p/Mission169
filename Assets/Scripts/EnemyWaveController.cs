@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using SlugLib;
 
 public class EnemyWaveController : MonoBehaviour {
 
@@ -11,7 +12,6 @@ public class EnemyWaveController : MonoBehaviour {
     private TimeUtils timeUtils;
     EnemySpawner[][] spawners;
     private const float updatePeriod = 0.1f;
-    public bool missionEndWave;
     private BoxCollider2D waveStartCollider;
 
 	void Awake () {
@@ -75,10 +75,7 @@ public class EnemyWaveController : MonoBehaviour {
     private void AllWavesOver() {
         cam.followActive = true;
         enabled = false;
-        EventManager.Instance.TriggerEvent("all_waves_over");
-        if (missionEndWave) {
-            EventManager.Instance.TriggerEvent("mission_end");
-        }
+        EventManager.Instance.TriggerEvent(GlobalEvents.WaveEventEnd);
     }
 
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using Mission169;
+using SlugLib;
 
 public class DebugButtonEvents : MonoBehaviour {
 
@@ -10,11 +11,11 @@ public class DebugButtonEvents : MonoBehaviour {
     }
 
     void OnGUI() {
-        if (GUI.Button(new Rect(10, 10, 100, 40), "mission_success"))
-            EventManager.Instance.TriggerEvent("mission_success");
+        if (GUI.Button(new Rect(10, 10, 150, 30), "Mission Success"))
+            EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
 
-        if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
-            EventManager.Instance.TriggerEvent("mission_success");
+        if (GUI.Button(new Rect(10, 40, 150, 30), "GameOver"))
+            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
 
     }
 

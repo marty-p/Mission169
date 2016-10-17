@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SlugLib;
+using UnityEngine;
 
 public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
 
@@ -53,7 +54,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
 
     private void NotifyDeath() {
         setPlayerVisible(false);
-        EventManager.Instance.TriggerEvent("player_death");
+        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerDead);
     }
 
     public void SpawnPlayer() {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SlugLib;
 using Slug;
 
 public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
@@ -15,7 +16,7 @@ public class SarubiaExternalEvents : MonoBehaviour, IReceiveDamage {
         if (newHP > 0) {
             flashRed.FlashSlugStyle();
             audioManager.PlaySound(0);
-            EventManager.Instance.TriggerEvent("add_points", 100);
+            EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
             return;
         } else if (!dead) {
             dead = true;

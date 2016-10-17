@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Slug;
+using SlugLib;
 
 public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
@@ -7,16 +8,16 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
     private Animator animator;
     private SlugAudioManager audioManager;
 
-	void Awake () {
+    void Awake() {
         flashRed = GetComponent<FlashUsingMaterial>();
         animator = GetComponent<Animator>();
         audioManager = GetComponent<SlugAudioManager>();
-	}
+    }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 0) {
             flashRed.FlashSlugStyle();
-            EventManager.Instance.TriggerEvent("add_points", 100);
+            EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
         } else {
             Die(projectileProp);
         }
@@ -24,7 +25,7 @@ public class DeathManagerMummy : MonoBehaviour, IReceiveDamage {
 
     private void Die(ProjectileProperties projProp) {
         animator.SetTrigger("death");
-        gameObject.layer =(int) SlugLayers.IgnoreRaycast;
+        gameObject.layer = (int)SlugLayers.IgnoreRaycast;
         audioManager.PlaySound(0);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Slug;
+using SlugLib;
 
 public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
 
@@ -15,13 +15,12 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         blink = GetComponent<Blink>();
         timeUtils = GetComponent<TimeUtils>();
 
-        EventManager.Instance.StartListening("player_death", () => {
+        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, () => {
             if (anim.isInitialized) {
                 anim.SetTrigger("laugh");
             }
         });
-        EventManager.Instance.StartListening("player_back_alive", () => 
-        {
+        EventManager.Instance.StartListening(GlobalEvents.PlayerSpawned, () => {
             if (anim.isInitialized) {
                 anim.Play("enemy_still");
                 if (UnityEngine.Random.value < getScaredFactor) {
@@ -47,8 +46,8 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
             //To ignore collision with projectiles during death anim but still be 'physic'
             gameObject.layer = 2;
             animManager.PlayDeathAnimation(projectileProp);
-            EventManager.Instance.TriggerEvent("add_points", 100);
-            EventManager.Instance.TriggerEvent("soldier_death");
+            EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
+            EventManager.Instance.TriggerEvent(GlobalEvents.SoldierDead);
         }
     }
 

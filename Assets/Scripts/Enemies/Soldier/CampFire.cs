@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SlugLib;
+using UnityEngine;
 
 public class CampFire : MonoBehaviour {
 
@@ -17,7 +18,6 @@ public class CampFire : MonoBehaviour {
             PlayerCrashesTheParty();
             boxCol.enabled = false;
         }
-
     }
    
     private void PlayerCrashesTheParty() {
@@ -25,9 +25,7 @@ public class CampFire : MonoBehaviour {
         soldier2.SetActive(false);
         spawn1.enabled = true;
         spawn2.enabled = true;
-        EventManager.Instance.TriggerEvent("player_back_alive");
+        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerSpawned);
     }
-
-
 
 }

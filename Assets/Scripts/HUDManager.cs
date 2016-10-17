@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using SlugLib;
 
 public class HUDManager : MonoBehaviour {
 
@@ -7,11 +8,12 @@ public class HUDManager : MonoBehaviour {
     public Text bulletCountGUI;
     public Text grenadeCountGUI;
     public Text lifeCountGUI;
+    public GameObject goRightReminder;
 
     void Awake() {
-        EventManager.Instance.StartListening("bullet_shot", SetBulletCount);
-        EventManager.Instance.StartListening("player_death", SetBulletCountToInfinity);
-        EventManager.Instance.StartListening("grenade_thrown", SetGrenadeCount);
+        EventManager.Instance.StartListening(GlobalEvents.GunUsed, SetBulletCount);
+        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
+        EventManager.Instance.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
     }
 
     public void SetVisible(bool visible) {

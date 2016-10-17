@@ -24,17 +24,19 @@ namespace Mission169 {
         private HUDManager hud;
         private MainMenu mainMenu;
 
+        public GameObject playerPrefab;
+
         void Awake() {
             DontDestroyOnLoad(this);
 
             timeUtils = gameObject.AddComponent<TimeUtils>();
-            EventManager.Instance.StartListening("player_death", OnplayerDeath);
-            EventManager.Instance.StartListening("boss_start", BossStart);
-            EventManager.Instance.StartListening("mission_end", OnMissionSuccess);
-            EventManager.Instance.StartListening("add_points", UpdatePlayerPoints);
+            EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
+            EventManager.Instance.StartListening(GlobalEvents.BossStart, OnBossStart);
+            EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
+            EventManager.Instance.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
             soundManager = GetComponentInChildren<SlugAudioManager>();
             // Player
-            playerGameObject = Instantiate(Resources.Load("Marco")) as GameObject;
+            playerGameObject = Instantiate(playerPrefab);
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
             playerGameObject.transform.parent = transform;
