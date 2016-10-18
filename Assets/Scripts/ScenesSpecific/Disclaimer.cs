@@ -14,12 +14,17 @@ public class Disclaimer : MonoBehaviour {
 
     void Awake() {
         timeUtils = GetComponent<TimeUtils>();
+#if UNITY_IOS || UNITY_ANDROID
+        pressAnyKey.text = "Tap screen to continue";
+#else
+        pressAnyKey.text = "Press any key to continue";
+#endif
     }
 
     void Update() {
         if(Input.anyKeyDown && !loading) {
             loading = true;
-            StartCoroutine(LoadScene("mainscene"));
+            StartCoroutine(LoadScene("main"));
             disclaimer.enabled = false;
             pleaseHaveFunYo.enabled = false;
             pressAnyKey.text = "Loading ...";
