@@ -14,8 +14,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MainMenu.unity
   - enabled: 1
+    path: Assets/Scenes/main.unity
+  - enabled: 1
+    path: Assets/Scenes/loading.unity
+  - enabled: 1
+    path: Assets/Scenes/mission1.unity
+  - enabled: 1
+    path: Assets/Scenes/mission2.unity
+  - enabled: 0
+    path: Assets/Scenes/init.unity
+  - enabled: 0
     path: Assets/Scenes/disclaimer.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/howtoplay.unity
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
