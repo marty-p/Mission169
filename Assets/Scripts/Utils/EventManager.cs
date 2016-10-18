@@ -19,6 +19,7 @@ namespace SlugLib {
         GrenadeUsed,
         WaveEventEnd,
         PlayerInactive,
+        MissionStart,
     }
 
     [System.Serializable]
