@@ -29,7 +29,7 @@ public class FollowTarget : MonoBehaviour {
         if (followActive) {
             Follow();
         }
-        KeepTargetInSight();
+        PreventTargetOutOfCamBounds();
     }
 
     void Follow() {
@@ -41,12 +41,17 @@ public class FollowTarget : MonoBehaviour {
         }
     }
 
-    void KeepTargetInSight() {
-        if (targetViewPortPos.x  < 0.03f ||  targetViewPortPos.x > 1 - 0.03f ) {
+    void PreventTargetOutOfCamBounds() {
+        float dx = oldTargetPosition.x - target.transform.position.x;
+        // We still want to be able to move the target manually without the cam preventing it to go out of bounds
+        // hence the dx check
+        if ((targetViewPortPos.x  < 0.03f ||  targetViewPortPos.x > 1 - 0.03f) && Mathf.Abs(dx) < 1 ) {
             target.transform.position = new Vector2(oldTargetPosition.x, target.transform.position.y);
         }
 
         oldTargetPosition = target.transform.position;
     }
 
+    void GetTarget() { 
+}
 }
