@@ -1,0 +1,12 @@
+﻿{
+     "achievements":
+     [
+         {
+           "name": "KillTenSoldiers",
+         },
+         {
+			"name" : "UseKnife",
+         },
+
+     ]
+}
