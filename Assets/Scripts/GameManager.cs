@@ -13,15 +13,12 @@ namespace Mission169 {
         private static int playerLifeCount = playerLifeStart;
         private int playerScore = 0;
         private bool missionEnded;
-        private bool bossStarted;
         private readonly float waitTimeBeforeSpawn = 1.5f;
         private int currentMissionID = 0;
         private string[] missionList = new[] { "mission1", "mission2" };
 
         private TimeUtils timeUtils;
-        private SlugAudioManager soundManager;
         private Transform missionStartPos;
-        private AudioSource bgMusic;
         private GameObject playerGameObject;
         private PlayerDeathManager playerDeathManager;
         private HUDManager hud;
@@ -32,13 +29,10 @@ namespace Mission169 {
         void Awake() {
             DontDestroyOnLoad(this);
 
-            timeUtils = gameObject.AddComponent<TimeUtils>();
             EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
-            EventManager.Instance.StartListening(GlobalEvents.BossStart, OnBossStart);
             EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
             EventManager.Instance.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
-            soundManager = GetComponentInChildren<SlugAudioManager>();
-            // Player
+            timeUtils = gameObject.AddComponent<TimeUtils>();
             playerGameObject = Instantiate(playerPrefab);
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
@@ -54,28 +48,23 @@ namespace Mission169 {
         public void MissionInit() {
             MissionDef missionDef = FindObjectOfType(typeof(MissionDef)) as MissionDef; ;
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
-            playerGameObject.layer = (int)SlugLayers.Player; //to ignore any potential projectile still going
+            playerGameObject.layer = (int)SlugLayers.Player;
             playerGameObject.transform.GetChild(0).transform.position = missionDef.startPos.position;
             playerGameObject.SetActive(false);
-            //Init music too
         }
 
         public void MissionStart() {
+            EventManager.Instance.TriggerEvent(GlobalEvents.MissionStart);
             playerGameObject.GetComponentInChildren<InputManager>().enabled = true;
             hud.SetLifeCount(playerLifeCount);
             hud.SetVisible(true);
             mainMenu.SetVisible(false);
             playerGameObject.SetActive(true);
-            //bgMusic = soundManager.PlaySound(0);
         }
 
         //TODO block user input too
         public void TogglePauseGame() {
             Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-        }
-
-        public void ShowMenu() {
-            mainMenu.SetVisible(true);
         }
 
         private void UpdatePlayerPoints(float pts) {
@@ -96,17 +85,8 @@ namespace Mission169 {
             }
         }
 
-        private void OnBossStart() {
-            bossStarted = true;
-            bgMusic.Stop();
-            bgMusic = soundManager.PlaySound(1);
-        }
-
         private void OnMissionSuccess() {
             missionEnded = true;
-            //soundManager.PlaySound(2);
-            //soundManager.PlaySound(3);
-            //bgMusic.Stop(); 
             //TODO These should be in one function in one component of the player
             playerGameObject.GetComponentInChildren<MovementManager>().StopMoving();
             playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
@@ -115,7 +95,7 @@ namespace Mission169 {
             MissionEnd();
             currentMissionID++;
             if (currentMissionID < missionList.Length) {
-                //TODO BEN create a dialog that offers to go the next level
+                //TODO create a dialog that offers to go the next level
                 //UIManager.Instance.CreateSuccessDialog()
                 MissionLoad();
                 MissionInit();
@@ -129,27 +109,28 @@ namespace Mission169 {
         }
 
         private void MissionLoad() {
+            hud.SetVisible(false);
             SceneManager.LoadScene(missionList[currentMissionID]);
             SceneManager.LoadScene("loading", LoadSceneMode.Additive);
-            timeUtils.TimeDelay(2, () => SceneManager.UnloadScene("loading"));
+            timeUtils.TimeDelay(2, () => {
+                SceneManager.UnloadScene("loading");
+                hud.SetVisible(true);
+            });
         }
 
         private void GameOver() {
-            //bgMusic.Stop();
-            //bgMusic = soundManager.PlaySound(4);
+            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
             MissionEnd();
             playerScore = 0;
             currentMissionID = 0;
             playerLifeCount = playerLifeStart;
-            //TODO BEN create a dialog that offers to retry or go to the main menu
+            hud.SetVisible(false);
+            //TODO create a dialog that offers to retry or go to the main menu
             //UIManager.Instance.CreateGameOverDialog()
         }
 
         private void MissionEnd() {
             AchievementManager.Instance.SaveAchievementsLocally();
-        }
-
-        void OnMissionLoaded(Scene scene, LoadSceneMode mode) {
         }
 
     }
