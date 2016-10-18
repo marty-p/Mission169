@@ -68,7 +68,7 @@ public class FacebookManager : Singleton<FacebookManager> {
 
     public void ShareLink() {
         FB.ShareLink(
-                new Uri("https://developers.facebook.com/"),
+                new Uri("https://github.com/pinkas/Mission169"),
                 callback: ShareCallback
         );
     }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using SlugLib;
 #if UNITY_ANDROID || UNITY_IOS
-    using CnControls;
+using CnControls;
 #endif
 
 public class InputManager : MonoBehaviour {

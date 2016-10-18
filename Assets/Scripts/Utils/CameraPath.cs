@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraPath : MonoBehaviour {
 
-        public GameObject[] wayPoints;
+    public GameObject[] wayPoints;
 
 	void LateUpdate () {
 	    for (int i=0; i < wayPoints.Length; i++){
