@@ -46,10 +46,10 @@ namespace Mission169 {
         }
 
         public void MissionInit() {
-            MissionDef missionDef = FindObjectOfType(typeof(MissionDef)) as MissionDef; ;
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
             playerGameObject.layer = (int)SlugLayers.Player;
-            playerGameObject.transform.GetChild(0).transform.position = missionDef.startPos.position;
+            GameObject startPos = GameObject.Find("StartLocation");
+            playerGameObject.transform.GetChild(0).transform.position = startPos.transform.position;
             playerGameObject.SetActive(false);
         }
 
