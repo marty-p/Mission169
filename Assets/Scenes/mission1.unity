@@ -165,11 +165,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010163925820, guid: 9e89b77d333074846b80bf0c489ff7bd, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -202,36 +197,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: adc0d61020af75e4c9829f72588848dd, type: 3}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 36ca51eacb452314398af6d693090fa0, type: 3}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 383435177d2120c4590eae9b31658e58, type: 3}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 04893d5f66fc88941ab03defdaf57b88, type: 3}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: acc0b5cc6e5dd9c4d906e79c275ad628, type: 3}
-    - target: {fileID: 114000010221526302, guid: 9e89b77d333074846b80bf0c489ff7bd,
-        type: 2}
-      propertyPath: audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3812870fe29242e40b7a5c578a2f6155, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e89b77d333074846b80bf0c489ff7bd, type: 2}
   m_IsPrefabParent: 0
@@ -1848,7 +1813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 476170919}
-  missionEndWave: 0
 --- !u!61 &1105207778
 BoxCollider2D:
   m_ObjectHideFlags: 0
