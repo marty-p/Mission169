@@ -92,7 +92,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 1
-  bundleIdentifier: com.ben.pinkas
+  bundleIdentifier: con.benpinkas.mission169
   bundleVersion: 1.0
   preloadedAssets:
   - {fileID: 102900000, guid: f025f58e1dcbdcf4397dafc848f0918b, type: 3}
