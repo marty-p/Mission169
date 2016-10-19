@@ -105,7 +105,7 @@ public static class AchievementFileOperation {
     private static string dirPath = Application.dataPath + "/Scripts/Achievement/";
     private static string achievementDirPath = dirPath + "AllAchievements/";
     private static string originalListpath = dirPath + "original_achievement_list.json";
-    private static string userListPath = Application.persistentDataPath + "user_achievement_list.json";
+    private static string userListPath = Application.persistentDataPath + "/user_achievement_list.json";
 
     public static bool UserFileExists() {
         //TODO catch exception
