@@ -25,7 +25,7 @@ namespace Mission169 {
             hudManager.transform.SetParent(transform);
             hudManager.SetVisible(false);
 
-            GameObject mainMenuGO = Instantiate(Resources.Load("MainMenu_noScaler")) as GameObject;
+            GameObject mainMenuGO = Instantiate(Resources.Load("MainMenu")) as GameObject;
             mainMenu = mainMenuGO.GetComponent<MainMenu>();
             mainMenu.transform.SetParent(transform);
             mainMenu.SetVisible(false);
