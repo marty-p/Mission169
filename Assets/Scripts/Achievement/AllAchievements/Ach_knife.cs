@@ -1,17 +1,18 @@
 ﻿using SlugLib;
 using UnityEngine;
 
-namespace AchievementsList {
-    public class UseKnife : Achievement {
-        int deadSoldier;
+    public class Ach_knife : Achievement {
+        readonly int soldierToKnife = 2;
 
         void Start() {
             EventManager.Instance.StartListening(GlobalEvents.KnifeUsed, IncrementDeadSolider);
         }
 
         private void IncrementDeadSolider() {
-            deadSoldier++;
+            progress += 100 / soldierToKnife;
+            if (progress >= 100) {
+                NotifyAchievementManager();
+            }
         }
 
-    }
 }
