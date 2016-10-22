@@ -30,7 +30,6 @@ Shader "Unlit/Grayscale Effect"
 			#include "UnityCG.cginc"
 
 			sampler2D _MainTex;
-			float4 _MainTex_ST;
 			
 			struct v2f {
 				float4  pos : SV_POSITION;
@@ -43,6 +42,7 @@ Shader "Unlit/Grayscale Effect"
 				float4 color    : COLOR;
 				float2 texcoord : TEXCOORD0;
 			};
+
 			v2f vert(appdata_t v)
 			{
 				v2f o;
