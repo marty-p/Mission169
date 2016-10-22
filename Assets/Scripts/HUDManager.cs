@@ -11,7 +11,8 @@ public class HUDManager : MonoBehaviour {
     public GameObject goRightReminder;
 
     private Gradient bulletCountGradient;
-    private Color bulletCountGradientColor;
+    private Color bulletCountGradientInitialColor;
+    private TimeUtils timeUtils;
 
     private readonly int armsFontSize = 47;
     // the "∞" looks much smaller than any other glyph in the font
@@ -22,6 +23,8 @@ public class HUDManager : MonoBehaviour {
         EventManager.Instance.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
         EventManager.Instance.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
+        bulletCountGradientInitialColor = bulletCountGradient.bottomColor;
+        timeUtils = GetComponent<TimeUtils>();
     }
 
     public void SetVisible(bool visible) {
@@ -46,6 +49,8 @@ public class HUDManager : MonoBehaviour {
 
     public void SetBulletCount(float bulletCount) {
         if (bulletCount > 0) {
+            bulletCountGradient.enabled = false;
+            timeUtils.TimeDelay(0.05f, () => { bulletCountGradient.enabled = true; });
             bulletCountGUI.fontSize = armsFontSize;
             bulletCountGUI.text = bulletCount.ToString();
         } else {
