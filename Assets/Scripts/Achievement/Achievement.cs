@@ -8,4 +8,5 @@ public abstract class Achievement : MonoBehaviour {
     public void NotifyAchievementManager() {
         AchievementManager.Instance.UpdateAchievementProgress(this);
     }
+
 }

@@ -26,8 +26,6 @@ public class AchievementManager : Singleton<AchievementManager> {
     void Awake() {
         DontDestroyOnLoad(this);
 
-        InstantiateAchievement("Ach_knife", 50);
-        InstantiateAchievement("Ach_kill_ten_soldiers", 50);
 #if UNITY_IOS
          gameCenter = gameObject.AddComponent<SlugGameCenter>();
 #elif UNITY_ANDROID
