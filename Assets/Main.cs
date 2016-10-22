@@ -7,6 +7,7 @@ public class Main : MonoBehaviour {
 
     public GameObject achievementManagerPrefab;
     public GameObject gameManagerPrefab;
+    private readonly string firstMission = "mission2";
 
 	void Awake () {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -20,11 +21,11 @@ public class Main : MonoBehaviour {
 #if UNITY_IOS || UNITY_ANDROID
         FacebookManager facebook = FacebookManager.Instance;
 #endif
-        SceneManager.LoadScene("mission1");
+        SceneManager.LoadScene(firstMission);
 	}
 	
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        if (scene.name == "mission1") {
+        if (scene.name == firstMission) {
             SceneManager.UnloadScene("loading");
             GameManager.Instance.MissionInit();
             UIManager.Instance.MainMenuT.SetVisible(true);
