@@ -8,71 +8,63 @@ public class AchievementManager : Singleton<AchievementManager> {
 
     protected AchievementManager() { }
 
-    private List<Achievement> achievements = new List<Achievement>();
-    private SlugGameCenter gameCenter;
-    //private SlugGooglePlay googlePlayGame;
-
-    // have a default list which is with the app (resources folder)
-    // have a dynamic list with everything (what's done what's not done)
-    // when it start if no dynamic we create it from default
-    // when it starts IF dynamic present we still go through default to check if there is no new achievement added if so we add them to dynamic
-
-
-    // check if a file exist
-    // add a json object to an existing list in a precise file
-    // create a file
-    // update precise field from pecise object in precise file
+    private IGameService gameService;
 
     void Awake() {
         DontDestroyOnLoad(this);
-
 #if UNITY_IOS
-         gameCenter = gameObject.AddComponent<SlugGameCenter>();
+        gameService = gameObject.AddComponent<SlugGameCenter>();
 #elif UNITY_ANDROID
-        
+        gameService = gameObject.AddComponent<SlugGooglePlayGames>();
 #else
+        gameService = gameObject.AddComponent<IGameService>();
 #endif
-    }
-
-/* void Awake() {
-        DontDestroyOnLoad(this);
-
-        InstantiateAllAchievements();
-
-        // Retrieving local achievements list
-        if (FirstGameLaunch()) {
-            AchievementFileOperation.CreateUserFile();
-            SaveAchievementsLocally();
-        } else {
-            ExtractLocalAchievements();
-        }
-#if UNITY_IOS
-#elif UNITY_ANDROID
-#else
-#endif
-    }
-    */
-
-    void Start() {
-    //    InvokeRepeating("CheckUngrantedAchievements", 1, 1);
-    //    InvokeRepeating("SyncWithServer", 1, 1);
     }
 
     public void UpdateAchievementProgress(Achievement ach) {
-        GameCenterManager.SubmitAchievement(ach.progress, ach.ID);
+        if (!ach.Granted){
+            Debug.Log (" -->  Updating achi " + ach.ID + " to " + ach.Progress);
+            gameService.UpdateAchievement(ach);
+            if (ach.Progress >= 100) {
+                ach.Granted = true;
+                DestroyAchievement(ach);
+                Debug.Log (" --> achi " + ach.ID + "was granted and removed");
+            }
+        }
     }
-
+	
+	// Matching Achievement's ID and the achievement Class Name, slightly dody
+	// but makes the process very easy
     public void InstantiateAchievement(string id, float progress) {
         Type type = Type.GetType(id);
         if (type == null) {
             Debug.LogWarning("Failed to instantiate achievement id: " + id);
         } else {
-            Achievement ach = gameObject.AddComponent(type) as Achievement;
-            ach.progress = progress;
-            achievements.Add(ach);
+			if (GetComponent(type) != null){
+				Debug.Log ("Trying to instantiate the same Achievement twice, problem here");
+			} else {   
+        	    Debug.Log("Instantiating achievement id: " + id + " with a progress of " + progress);
+                Achievement ach = gameObject.AddComponent(type) as Achievement;
+                ach.Init(id, progress);
+            }
         }
     }
 
+    public void ResetAchievements(){
+        DestroyAchievements();
+        gameService.Reset();
+    }
+
+    void DestroyAchievement(Achievement achievement){
+        Destroy(achievement);
+    }
+
+    void DestroyAchievements(){
+        Achievement[] achievements = GetComponents<Achievement>();
+        for (int i=0; i<achievements.Length; i++){
+            Destroy(achievements[i]);
+        }
+    }
 
 /*
     public bool SaveAchievementsLocally() {
