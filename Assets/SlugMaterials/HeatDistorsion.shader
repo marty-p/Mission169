@@ -1,3 +1,6 @@
+// Ported and adapted version of the original GLSL code that can be found here:
+// https://github.com/SFML/SFML/wiki/Source:-HeatHazeShader
+
 Shader "Custom/HeatDistortion"
 {
 	Properties
@@ -5,6 +8,7 @@ Shader "Custom/HeatDistortion"
 		_MainTex("Texture", 2D) = "white" {}
 		_HeatMap("Heat map", 2D) = "bump" {}
 		_Intensity("Intensity", Range(0,1)) = 0.03
+		_RiseFactor("Rise factor", Range(0, 2)) = 0.5
 	}
 
 	SubShader
@@ -24,6 +28,7 @@ Shader "Custom/HeatDistortion"
 			sampler2D _MainTex;
 			sampler2D _HeatMap;
 			float  _Intensity;
+			float  _RiseFactor;
 
 			struct v2f {
 				float4  pos : SV_POSITION;
@@ -48,11 +53,12 @@ Shader "Custom/HeatDistortion"
 			fixed4 frag(v2f i) : COLOR
 			{
 				float2 heatMapCoord = i.uv;
-				heatMapCoord.y -= _Time / 2;
+				heatMapCoord.y -= _Time * _RiseFactor;
 				heatMapCoord.y = frac(heatMapCoord.y);
 
 				float4 heatMapVal = tex2D(_HeatMap, heatMapCoord);
-
+				
+				//converting from [0, 1] to [-1, 1]
 				float2 heatPosOffset = heatMapVal.rg;
 				heatPosOffset -= float2(0.5, 0.5);
 				heatPosOffset *= 2;
