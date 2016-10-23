@@ -9,7 +9,7 @@ namespace Mission169 {
 
         protected GameManager() { }
 
-        private static readonly int playerLifeStart = 2;
+        private static readonly int playerLifeStart = 3;
         private static int playerLifeCount = playerLifeStart;
         private int playerScore = 0;
         private bool missionEnded;
@@ -23,6 +23,7 @@ namespace Mission169 {
         private PlayerDeathManager playerDeathManager;
         private HUDManager hud;
         private MainMenu mainMenu;
+        private DialogManager dialog;
 
         public GameObject playerPrefab;
 
@@ -39,10 +40,19 @@ namespace Mission169 {
             playerGameObject.transform.parent = transform;
             hud = UIManager.Instance.HUD;
             mainMenu = UIManager.Instance.MainMenuT;
+            dialog = UIManager.Instance.Dialog;
         }
 
         public GameObject GetPlayer() {
             return playerGameObject;
+        }
+
+        public void Home() {
+            ResetGameData();
+            MissionLoad();
+            MissionInit();
+            mainMenu.SetVisible(true);
+            hud.SetVisible(false);
         }
 
         public void MissionInit() {
@@ -62,9 +72,27 @@ namespace Mission169 {
             playerGameObject.SetActive(true);
         }
 
+        public void MissionRetry() {
+            MissionLoad();
+            MissionInit();
+            // Work around for some reason the music does not start again otherwise...
+            Invoke("MissionStart", 0.2f);
+        }
+
+        public void GoNextMission() {
+            currentMissionID++;
+            if (currentMissionID < missionList.Length) {
+                MissionLoad();
+                MissionInit();
+                MissionStart();
+            } else {
+                Home();
+            }
+        }
+
         //TODO block user input too
-        public void TogglePauseGame() {
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        public void PauseGame(bool paused) {
+            Time.timeScale = paused ? 0 : 1;
         }
 
         private void UpdatePlayerPoints(float pts) {
@@ -93,40 +121,27 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
             playerGameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
             MissionEnd();
-            currentMissionID++;
-            if (currentMissionID < missionList.Length) {
-                //TODO create a dialog that offers to go the next level
-                //UIManager.Instance.CreateSuccessDialog()
-                MissionLoad();
-                MissionInit();
-                Invoke("MissionStart", 5);
-            } else {
-                //UIManager.Instance.CreateGameBeatenDialogSuperSuccess()
-                currentMissionID = 0;
-                MissionLoad();
-                mainMenu.SetVisible(true);
-            }
+            dialog.Activate(DialogType.MissionSuccess);
         }
 
         private void MissionLoad() {
             hud.SetVisible(false);
             SceneManager.LoadScene(missionList[currentMissionID]);
-            SceneManager.LoadScene("loading", LoadSceneMode.Additive);
-            timeUtils.TimeDelay(2, () => {
-                SceneManager.UnloadScene("loading");
-                hud.SetVisible(true);
-            });
+            hud.SetVisible(true);
         }
 
         private void GameOver() {
             EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
             MissionEnd();
+            ResetGameData();
+            hud.SetVisible(false);
+            dialog.Activate(DialogType.GameOver);
+        }
+
+        private void ResetGameData() {
             playerScore = 0;
             currentMissionID = 0;
             playerLifeCount = playerLifeStart;
-            hud.SetVisible(false);
-            //TODO create a dialog that offers to retry or go to the main menu
-            //UIManager.Instance.CreateGameOverDialog()
         }
 
         private void MissionEnd() {
