@@ -19,6 +19,7 @@ namespace Mission169 {
         private TimeUtils timeUtils;
         private Transform missionStartPos;
         private GameObject playerGameObject;
+        private Transform playerTransform;
         private PlayerDeathManager playerDeathManager;
         private HUDManager hud;
         private MainMenu mainMenu;
@@ -37,6 +38,8 @@ namespace Mission169 {
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
             playerGameObject.transform.parent = transform;
+            //FIXME  you know what
+            playerTransform = playerGameObject.transform.GetChild(0).transform;
             hud = UIManager.Instance.HUD;
             mainMenu = UIManager.Instance.MainMenuT;
             dialog = UIManager.Instance.Dialog;
@@ -58,20 +61,21 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
             playerGameObject.layer = (int)SlugLayers.Player;
             GameObject startPos = GameObject.Find("StartLocation");
-            playerGameObject.transform.GetChild(0).transform.position = startPos.transform.position;
+            playerTransform.position = startPos.transform.position;
             playerGameObject.SetActive(false);
         }
 
         public void MissionStart() {
             EventManager.Instance.TriggerEvent(GlobalEvents.MissionStart);
-            playerGameObject.GetComponentInChildren<InputManager>().enabled = true;
+            playerGameObject.SetActive(true);
+            playerDeathManager.SpawnPlayer();
             hud.SetLifeCount(playerLifeCount);
             hud.SetVisible(true);
             mainMenu.SetVisible(false);
-            playerGameObject.SetActive(true);
         }
 
         public void MissionRetry() {
+            ResetGameData();
             MissionLoad();
             MissionInit();
             // Work around for some reason the music does not start again otherwise...
@@ -115,6 +119,7 @@ namespace Mission169 {
         private void OnMissionSuccess() {
             MissionEnd();
             dialog.Activate(DialogType.MissionSuccess);
+            EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
         }
 
         private void MissionLoad() {
@@ -135,6 +140,8 @@ namespace Mission169 {
             playerScore = 0;
             currentMissionID = 0;
             playerLifeCount = playerLifeStart;
+            hud.SetScore(playerScore);
+            hud.SetLifeCount(playerLifeCount);
         }
 
         private void MissionEnd() {
@@ -142,7 +149,7 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<MovementManager>().StopMoving();
             playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
             playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
-            playerGameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
+            playerTransform.gameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
            // AchievementManager.Instance.SaveAchievementsLocally();
         }
 
