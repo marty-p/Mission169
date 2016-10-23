@@ -95,7 +95,9 @@ public class TowerBoss : MonoBehaviour {
 
     void FirstTowerDestroyed() {
         enemySpwanerPhase2.SetActive(true);
-        StopCoroutine(sequencePhase1);
+        if (sequencePhase1 != null) {
+            StopCoroutine(sequencePhase1);
+        }
         for(int i=0; i<towers.Length; i++) {
             if (!towers[i].Dead) {
                 towers[i].EnableAgressiveMode();
