@@ -61,6 +61,7 @@ GameObject:
   - 114: {fileID: 114000010693918728}
   - 114: {fileID: 114000010537001752}
   - 114: {fileID: 114000011269086280}
+  - 95: {fileID: 95000012395473578}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -117,7 +118,7 @@ GameObject:
   - 114: {fileID: 114000012885469416}
   - 114: {fileID: 114000012531998544}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: gameService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +201,7 @@ GameObject:
   - 114: {fileID: 114000013549787288}
   - 114: {fileID: 114000010126948494}
   m_Layer: 0
-  m_Name: Button
+  m_Name: facebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,6 +314,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95000012395473578
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011343425354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3c165c8d373d0a449c1715172835eb5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010049730316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -485,7 +503,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7b021f35e7145ab4d86fc795c683676c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9359c388352b7a748b6aa47690fb506a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1049,7 +1067,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db4c0109147192e49bc77729d6d5564c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b7027887d6638a4fb73c544119ca2f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
