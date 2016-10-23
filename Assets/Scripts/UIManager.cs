@@ -11,8 +11,14 @@ namespace Mission169 {
 
         public HUDManager HUD { get { return hudManager;} }
         public MainMenu MainMenuT { get { return mainMenu; } }
+        public DialogManager Dialog { get { return dialogManager; } }
         private HUDManager hudManager;
         private MainMenu mainMenu;
+        private DialogManager dialogManager;
+
+        public GameObject HUDPrefab;
+        public GameObject maineMenuPrefab;
+        public GameObject dialogManagerPrefab;
 
         void Awake() {
             DontDestroyOnLoad(this);
@@ -20,15 +26,19 @@ namespace Mission169 {
             EventSystem eventSystem = gameObject.AddComponent(typeof(EventSystem)) as EventSystem;
             StandaloneInputModule inputModule = gameObject.AddComponent(typeof(StandaloneInputModule)) as StandaloneInputModule;
 
-            GameObject hudManagerGO = Instantiate(Resources.Load("HUD")) as GameObject;
+            GameObject hudManagerGO = Instantiate(HUDPrefab);
             hudManager = hudManagerGO.GetComponent<HUDManager>();
             hudManager.transform.SetParent(transform);
             hudManager.SetVisible(false);
 
-            GameObject mainMenuGO = Instantiate(Resources.Load("MainMenu")) as GameObject;
+            GameObject mainMenuGO = Instantiate(maineMenuPrefab);
             mainMenu = mainMenuGO.GetComponent<MainMenu>();
             mainMenu.transform.SetParent(transform);
-            mainMenu.SetVisible(false);
+
+            GameObject dialogManagerGO = Instantiate(dialogManagerPrefab);
+            dialogManager = dialogManagerGO.GetComponent<DialogManager>();
+            dialogManager.transform.SetParent(transform);
+            dialogManager.SetVisible(false);
         }
     }
 }
