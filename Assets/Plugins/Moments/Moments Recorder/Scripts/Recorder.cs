@@ -25,10 +25,9 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Reflection;
 using Moments.Encoder;
 using ThreadPriority = System.Threading.ThreadPriority;
+using System.IO;
 
 namespace Moments
 {
@@ -101,6 +100,8 @@ namespace Moments
 				return mem;
 			}
 		}
+
+        public string fileName = "gif_record";
 
 		#endregion
 
@@ -241,7 +242,7 @@ namespace Moments
 		/// </summary>
 		public void Save()
 		{
-			Save(GenerateFileName());
+			Save(fileName);
 		}
 
 		/// <summary>
@@ -342,11 +343,7 @@ namespace Moments
 			// Make sure the output folder is set or use the default one
 			if (string.IsNullOrEmpty(SaveFolder))
 			{
-				#if UNITY_EDITOR
-				SaveFolder = Application.dataPath; // Defaults to the asset folder in the editor for faster access to the gif file
-				#else
-				SaveFolder = Application.persistentDataPath;
-				#endif
+                SaveFolder = Application.persistentDataPath;
 			}
 		}
 

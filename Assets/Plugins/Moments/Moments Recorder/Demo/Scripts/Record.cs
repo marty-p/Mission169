@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using Moments;
 
-[RequireComponent(typeof(Recorder)), AddComponentMenu("")]
 public class Record : MonoBehaviour
 {
-	Recorder m_Recorder;
+	public static Recorder m_Recorder;
 	float m_Progress = 0f;
 	string m_LastFile = "";
 	bool m_IsSaving = false;
@@ -54,7 +53,7 @@ public class Record : MonoBehaviour
 
 		// Let's start recording again (note that we could do that as soon as pre-processing
 		// is done and actually save multiple gifs at once, see OnProcessingDone().
-		m_Recorder.Record();
+//		m_Recorder.Record();
 	}
 
 	void OnDestroy()
