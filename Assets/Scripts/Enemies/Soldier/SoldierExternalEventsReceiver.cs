@@ -31,6 +31,11 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
                 }
             }
         });
+        EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, () => {
+            if (anim.isInitialized) {
+                anim.SetTrigger("laugh");
+            }
+        });
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
