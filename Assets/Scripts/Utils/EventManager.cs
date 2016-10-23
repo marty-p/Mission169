@@ -7,10 +7,9 @@ namespace SlugLib {
     public enum GlobalEvents {
         PlayerDead,
         PlayerSpawned,
+        PlayerStabbed,
         BossStart,
         BossDead,
-        MissionSuccess,
-        GameOver,
         SoldierDead,
         BerserkerDead,
         PointsEarned,
@@ -20,6 +19,10 @@ namespace SlugLib {
         WaveEventEnd,
         PlayerInactive,
         MissionStart,
+        MissionEnd, // the end regardless of the success/failure
+        MissionSuccess, 
+        GameOver,
+        ItemPickedUp
     }
 
     [System.Serializable]

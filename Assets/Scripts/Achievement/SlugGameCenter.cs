@@ -20,6 +20,10 @@ public class SlugGameCenter : MonoBehaviour, IGameService {
         GameCenterManager.SubmitAchievement(ach.Progress, ach.ID, true);
 	}
 
+	public void RetrieveProgress(Achievement ach) {
+        ach.Progress = GameCenterManager.GetAchievementProgress(ach.ID);
+	}
+
 	public void ShowErrorDialog() {
 		IOSNativePopUpManager.showMessage("Game Center Error", "You don't seem to be connected to Game Center");		
 	}

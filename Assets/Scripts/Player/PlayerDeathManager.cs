@@ -43,6 +43,8 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
             if (projectileProp.type == ProjectileType.Grenade) {
                 physic.SetVelocityY(3);
                 physic.SetVelocityX(-transform.right.x/3);
+            } else if (projectileProp.type == ProjectileType.Knife) {
+                EventManager.Instance.TriggerEvent(GlobalEvents.PlayerStabbed);
             }
             audioManager.PlaySound(2);
         }

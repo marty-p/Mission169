@@ -12,7 +12,6 @@ namespace Mission169 {
         private static readonly int playerLifeStart = 3;
         private static int playerLifeCount = playerLifeStart;
         private int playerScore = 0;
-        private bool missionEnded;
         private readonly float waitTimeBeforeSpawn = 1.5f;
         private int currentMissionID = 0;
         private string[] missionList = new[] { "mission1", "mission2" };
@@ -31,7 +30,7 @@ namespace Mission169 {
             DontDestroyOnLoad(this);
 
             EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
-            EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
+            EventManager.Instance.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
             EventManager.Instance.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
             timeUtils = gameObject.AddComponent<TimeUtils>();
             playerGameObject = Instantiate(playerPrefab);
@@ -114,12 +113,6 @@ namespace Mission169 {
         }
 
         private void OnMissionSuccess() {
-            missionEnded = true;
-            //TODO These should be in one function in one component of the player
-            playerGameObject.GetComponentInChildren<MovementManager>().StopMoving();
-            playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
-            playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
-            playerGameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
             MissionEnd();
             dialog.Activate(DialogType.MissionSuccess);
         }
@@ -131,11 +124,11 @@ namespace Mission169 {
         }
 
         private void GameOver() {
-            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
             MissionEnd();
             ResetGameData();
             hud.SetVisible(false);
             dialog.Activate(DialogType.GameOver);
+            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
         }
 
         private void ResetGameData() {
@@ -145,6 +138,11 @@ namespace Mission169 {
         }
 
         private void MissionEnd() {
+            EventManager.Instance.TriggerEvent(GlobalEvents.MissionEnd);
+            playerGameObject.GetComponentInChildren<MovementManager>().StopMoving();
+            playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
+            playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
+            playerGameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
            // AchievementManager.Instance.SaveAchievementsLocally();
         }
 

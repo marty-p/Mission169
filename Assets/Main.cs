@@ -20,6 +20,9 @@ public class Main : MonoBehaviour {
 #if UNITY_IOS || UNITY_ANDROID
         FacebookManager facebook = FacebookManager.Instance;
 #endif
+#if UNITY_IOS
+        Application.targetFrameRate = 60;
+#endif
         SceneManager.LoadScene(firstMission);
 	}
 	

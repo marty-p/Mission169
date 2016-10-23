@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SlugLib;
 
 public class BasicGunAttack : MonoBehaviour, IAttack {
 
@@ -23,6 +24,7 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
         IProjectile bullet = bulletGameObject.GetComponent<IProjectile>();
         bullet.Launch(victimTag);
         audioManager.PlaySound(0);
+        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, 0);
     }
 
    private Vector3 GetProjPosInit() {

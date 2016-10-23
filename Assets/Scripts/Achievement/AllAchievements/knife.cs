@@ -1,19 +1,19 @@
 ﻿using SlugLib;
 using UnityEngine;
 
-    public class knife : Achievement {
-        readonly int soldierToKnife = 5;
+public class knife : Achievement {
+    readonly int soldierToKnife = 10;
 
-        void Start() {
-            EventManager.Instance.StartListening(GlobalEvents.KnifeUsed, IncrementDeadSolider);
-        }
+    void Start() {
+        EventManager.Instance.StartListening(GlobalEvents.KnifeUsed, IncrementDeadSolider);
+        EventManager.Instance.StartListening(GlobalEvents.MissionStart, ()=> {progress = 0;});
+    }
 
-        private void IncrementDeadSolider() {
-		Debug.Log (" ---------------> One SOldier sliced");
-            progress += 100 / soldierToKnife;
-            if (progress >= 100) {
-                NotifyAchievementManager();
-            }
+    private void IncrementDeadSolider() {
+        progress += 100 / soldierToKnife;
+        if (progress >= 100) {
+            NotifyAchievementManager();
         }
+    }
 
 }
