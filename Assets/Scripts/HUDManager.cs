@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using SlugLib;
+using Mission169;
 
 public class HUDManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class HUDManager : MonoBehaviour {
     public Text bulletCountGUI;
     public Text grenadeCountGUI;
     public Text lifeCountGUI;
+    public Button pauseButton;
     public GameObject goRightReminder;
 
     private Gradient bulletCountGradient;
@@ -25,14 +27,11 @@ public class HUDManager : MonoBehaviour {
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
         bulletCountGradientInitialColor = bulletCountGradient.bottomColor;
         timeUtils = GetComponent<TimeUtils>();
+        pauseButton.onClick.AddListener(OnPausePressed);
     }
 
     public void SetVisible(bool visible) {
-        if (visible) {
-            gameObject.SetActive(true);
-        } else {
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(visible);
     }
 
     public void SetLifeCount(int lifeCount) {
@@ -65,6 +64,10 @@ public class HUDManager : MonoBehaviour {
     void SetBulletCountToInfinity() {
         bulletCountGUI.text = "∞";
         bulletCountGUI.fontSize = armsFontSizeWhenGun;
+    }
+
+    void OnPausePressed() {
+        UIManager.Instance.Dialog.Activate(DialogType.Pause);
     }
 
 }
