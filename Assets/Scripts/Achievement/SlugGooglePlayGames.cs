@@ -10,4 +10,6 @@ public class SlugGooglePlayGames : MonoBehaviour, IGameService {
 	public void Reset(){
 	}
 
+	public void RetrieveProgress(Achievement ach){
+	}
 }

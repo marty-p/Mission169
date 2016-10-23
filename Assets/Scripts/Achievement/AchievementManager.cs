@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Newtonsoft.Json.Linq;
+//using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System;
@@ -32,7 +32,11 @@ public class AchievementManager : Singleton<AchievementManager> {
             }
         }
     }
-	
+
+    public void RetrieveAchievementProgress(Achievement ach){
+        gameService.RetrieveProgress(ach);
+    }
+
 	// Matching Achievement's ID and the achievement Class Name, slightly dody
 	// but makes the process very easy
     public void InstantiateAchievement(string id, float progress) {
@@ -120,7 +124,7 @@ public class AchievementManager : Singleton<AchievementManager> {
     */
 }
 
-
+/*
 public static class AchievementFileOperation {
     private static string dirPath = Application.dataPath + "/Scripts/Achievement/";
     private static string achievementDirPath = dirPath + "AllAchievements/";
@@ -185,3 +189,4 @@ public static class AchievementFileOperation {
 
 }
 
+*/

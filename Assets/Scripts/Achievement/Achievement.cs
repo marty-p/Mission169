@@ -14,6 +14,14 @@ public abstract class Achievement : MonoBehaviour {
         this.id = id;
         this.progress = progress;
     }
+    public void GrantAchievement(){
+        progress = 100;
+        NotifyAchievementManager();
+    }
+
+    public void GetProgressFromServer(){
+        AchievementManager.Instance.RetrieveAchievementProgress(this);
+    }
 
     public void NotifyAchievementManager() {
         AchievementManager.Instance.UpdateAchievementProgress(this);
