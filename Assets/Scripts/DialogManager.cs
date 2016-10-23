@@ -17,6 +17,8 @@ public class DialogManager : MonoBehaviour {
     public GameObject successButtons;
     public GameObject gameOverButtons;
 
+    private DialogType dialogType;
+
     void Awake() {
         pauseResumeButton.onClick.AddListener(OnResumePressed);
         pauseHomeButton.onClick.AddListener(OnHomePressed);
@@ -49,11 +51,11 @@ public class DialogManager : MonoBehaviour {
     }
 
     public void SetVisible(bool visible) {
-        //currentButtonGroup.SetActive(false);
         Transition(visible);
     }
 
     public void Activate(DialogType dialogType) {
+        this.dialogType = dialogType;
         gameObject.SetActive(true);
         if (replay != null) {
             replay.gameObject.SetActive(true);
@@ -71,11 +73,15 @@ public class DialogManager : MonoBehaviour {
     }
 
     public void AEtransitionInDone() {
-        GameManager.Instance.PauseGame(true);
+        if (dialogType == DialogType.Pause) {
+            GameManager.Instance.PauseGame(true);
+        }
     }
 
     public void AEtransitionOutDone() {
-        SetVisible(false);
+        if (currentButtonGroup != null) {
+            currentButtonGroup.SetActive(false);
+        }
         gameObject.SetActive(false);
     }
 
