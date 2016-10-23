@@ -10,31 +10,31 @@ public class MainMenu : MonoBehaviour {
     public Button facebook;
     public Button gameCenter;
 
-    private Graphic[] graphicComponents;
+    private Animator transitionAnimator;
     private TimeUtils timeUtils;
 
-    private readonly float timeToFade = 0.15f;
+    private readonly float timeToFade = 1.5f;
 
     void Awake() {
-        graphicComponents = GetComponentsInChildren<Graphic>();
+        transitionAnimator = GetComponent<Animator>();
         timeUtils = GetComponent<TimeUtils>();
     }
 
     void Start() {
         start.onClick.AddListener(GameManager.Instance.MissionStart);
-        facebook.onClick.AddListener(FacebookManager.Instance.ShareLink);
+        facebook.onClick.AddListener(OnFacebookPressed);
         gameCenter.onClick.AddListener(GameCenterManager.ShowAchievements);
     }    
 
     public void SetVisible(bool visible) {
-        float destAlpha = visible ? 1f : 0f;
-        float origin = visible ? 0 : 1;
-        for (int i=0;i<graphicComponents.Length; i++) {
-            graphicComponents[i].CrossFadeAlpha(destAlpha, timeToFade, false);
-        }
-        timeUtils.TimeDelay(timeToFade, () => gameObject.SetActive(visible));
+        transitionAnimator.ResetTrigger("on_screen");
+        transitionAnimator.ResetTrigger("off_screen");
+        string triggerName = visible ? "on_screen" : "off_screen";
+        transitionAnimator.SetTrigger(triggerName);
     }
 
-
+    private void OnFacebookPressed() {
+        Application.OpenURL("https://m.facebook.com/benoitpinkasfeld");
+    }
 
 }

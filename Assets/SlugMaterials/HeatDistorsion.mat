@@ -108,6 +108,9 @@ Material:
         name: _Glossiness
       second: 0.5
     - first:
+        name: _Intensity
+      second: 0.03
+    - first:
         name: _Magnitude
       second: 0.05
     - first:
@@ -122,6 +125,9 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _RiseFactor
+      second: 0.5
     - first:
         name: _Shininess
       second: 0.078125
