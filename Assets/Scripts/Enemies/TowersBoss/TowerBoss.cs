@@ -85,6 +85,7 @@ public class TowerBoss : MonoBehaviour {
             }
 
             if (currentTowersDestroyed == towers.Length) {
+                enemySpwanerPhase2.SetActive(false);
                 EventManager.Instance.TriggerEvent(GlobalEvents.BossDead);
                 bossAlive = false;
             }
