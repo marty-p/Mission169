@@ -72,7 +72,6 @@ namespace Moments
 		#endregion
 
 		#region Public fields
-        public string fileName = "gif_record";
 
 		/// <summary>
 		/// Current state of the recorder.
@@ -242,7 +241,7 @@ namespace Moments
 		/// </summary>
 		public void Save()
 		{
-			Save(fileName);
+			Save(GenerateFileName());
 		}
 
 		/// <summary>
