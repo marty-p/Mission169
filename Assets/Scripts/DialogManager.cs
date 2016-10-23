@@ -32,6 +32,7 @@ public class DialogManager : MonoBehaviour {
 
     public void OnHomePressed() {
         GameManager.Instance.Home();
+        GameManager.Instance.PauseGame(false);
         Transition(false);
     }
 
