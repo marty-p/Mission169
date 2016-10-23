@@ -85,7 +85,7 @@ public class TowerBoss : MonoBehaviour {
             }
 
             if (currentTowersDestroyed == towers.Length) {
-                EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
+                EventManager.Instance.TriggerEvent(GlobalEvents.BossDead);
                 bossAlive = false;
             }
 
