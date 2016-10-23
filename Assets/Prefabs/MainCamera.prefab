@@ -34,11 +34,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.51, y: -0, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011069019660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2056698
 Camera:
   m_ObjectHideFlags: 1
@@ -59,7 +59,7 @@ Camera:
   far clip plane: 10
   field of view: 71.8
   orthographic: 1
-  orthographic size: 1.0749999
+  orthographic size: 1.09
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -175,12 +175,12 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.095, y: 0.62, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011828127676}
   - {fileID: 4000012380962828}
   m_Father: {fileID: 430688}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000011828127676
 Transform:
   m_ObjectHideFlags: 1
@@ -190,10 +190,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.568, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000011069019660}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012380962828
 Transform:
   m_ObjectHideFlags: 1
@@ -203,10 +203,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.48, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000011069019660}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010203165810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,10 +299,10 @@ MonoBehaviour:
   showHUD: 0
   cameraSize: {x: 1.9116666, y: 1.0749999}
   contraintUsed: 0
-  cameraPixelsPerUnit: 300
-  ratio: 3
-  nativeAssetResolution: {x: 382.3333, y: 214.99998}
-  fovCoverage: 0.94298244
+  cameraPixelsPerUnit: 400
+  ratio: 4
+  nativeAssetResolution: {x: 482.00003, y: 218}
+  fovCoverage: 0.95614034
 --- !u!114 &114000013755511232
 MonoBehaviour:
   m_ObjectHideFlags: 1
