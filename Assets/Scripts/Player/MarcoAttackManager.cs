@@ -26,7 +26,7 @@ public class MarcoAttackManager : MonoBehaviour {
     private Vector3 dir;
     private MovementManager movementManager;
 
-    void Start() {
+    void Awake() {
         gunAnimController = topBodyAnimator.runtimeAnimatorController;
         MeleeAttack = GetComponentInChildren<AttackKnife>();
         FireArmAttacks = GetComponentsInChildren<IAttack>(true);
@@ -91,6 +91,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void SetDefaultAttack() {
         currentFireArmAttack = FireArmAttacks[1];
         topBodyAnimator.runtimeAnimatorController = gunAnimController;
+        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
     }
 
     private bool InRangeForKnife() {
