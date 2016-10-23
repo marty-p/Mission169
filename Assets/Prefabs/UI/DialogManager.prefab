@@ -722,7 +722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_originalWidth: 0
   m_originalHeight: 0
-  m_fixOnUpdate: 0
+  m_fixOnUpdate: 1
 --- !u!114 &114000011801563828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_pauseAnimation: 0
   m_loadOnStart: 0
   m_loadOnStartUrl: 
-  m_useCoroutineGetTexture: 0
+  m_useCoroutineGetTexture: 1
   m_rotateOnLoading: 0
   m_outputDebugLog: 0
 --- !u!114 &114000012156435572
@@ -1248,8 +1248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -170.2, y: -16.8}
-  m_SizeDelta: {x: -511.7, y: 0}
+  m_AnchoredPosition: {x: -131, y: -16}
+  m_SizeDelta: {x: -433, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000010360414974
 RectTransform:
