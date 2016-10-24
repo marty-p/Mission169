@@ -9,6 +9,8 @@ public class SarubiaAttackManager : MonoBehaviour {
     public Transform projectileInitialPos;
     public Animator explosionAnim;
 
+    private bool doneOnce;
+
     void Awake() {
         animManager = GetComponent<SarubiaAnimationManager>();
         projectilePool = GetComponent<ObjectPoolScript>();
@@ -16,13 +18,9 @@ public class SarubiaAttackManager : MonoBehaviour {
     }
 
     void OnBecameVisible() {
-        StartCoroutine(WaveUpdate());
-    }
-
-    private IEnumerator WaveUpdate() {
-        while (true) {
-            PrimaryAttack();
-            yield return new WaitForSeconds(4);
+        if (!doneOnce) {
+            doneOnce = true;
+            InvokeRepeating("PrimaryAttack", 3, 4);
         }
     }
 
