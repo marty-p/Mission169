@@ -75,7 +75,7 @@ public class Record : MonoBehaviour
 			m_Progress = 0f;
 		}
 	}
-
+/*
 	void OnGUI()
 	{
 		GUILayout.BeginHorizontal();
@@ -95,4 +95,5 @@ public class Record : MonoBehaviour
 			GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 	}
+    */
 }
