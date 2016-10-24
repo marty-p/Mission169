@@ -118,7 +118,7 @@ namespace Mission169 {
 
         private void OnMissionSuccess() {
             MissionEnd();
-            dialog.Activate(DialogType.MissionSuccess);
+            Invoke("ShowSuccessDialog", 3);
             EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
         }
 
@@ -151,6 +151,10 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
             playerTransform.gameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
            // AchievementManager.Instance.SaveAchievementsLocally();
+        }
+
+        private void ShowSuccessDialog() {
+            dialog.Activate(DialogType.MissionSuccess);
         }
 
     }
