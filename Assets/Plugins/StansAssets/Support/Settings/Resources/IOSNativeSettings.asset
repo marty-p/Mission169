@@ -11,13 +11,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d5c8dadb03c4328a428367673ec4b2, type: 3}
   m_Name: IOSNativeSettings
   m_EditorClassIdentifier: 
-  AppleId: XXXXXXXXX
-  ToolbarIndex: 0
+  AppleId: 1166852424
+  ToolbarIndex: 2
   SendFakeEventsInEditor: 1
   DefaultStoreProductsView: []
   InAppProducts: []
   Leaderboards: []
-  Achievements: []
+  Achievements:
+  - IsOpen: 0
+    Id: knife
+    Title: Me and My Knife
+    Description: 
+    _progress: 0
+    Texture: {fileID: 2800000, guid: 9c79bab2ab7c6db49a1401aed2c1e477, type: 3}
+  - IsOpen: 0
+    Id: very_first
+    Title: First Kill
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 0
+    Id: boss
+    Title: 
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 0
+    Id: stabbed
+    Title: New Achievement
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: fast
+    Title: finish mission 1 in less than 90
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: fire_5k_bullets
+    Title: 5k bullets fired
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: no_mg
+    Title: finish mission 1 with no mg
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: gun_only
+    Title: finish a mission without the knife
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: no_death
+    Title: finish mission 1 witjout dying
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
+  - IsOpen: 1
+    Id: die_before_truck
+    Title: New Achievement
+    Description: 
+    _progress: 0
+    Texture: {fileID: 0}
   checkInternetBeforeLoadRequest: 0
   ShowStoreKitProducts: 1
   ShowLeaderboards: 1
@@ -27,9 +87,9 @@ MonoBehaviour:
   ShowRPKParams: 0
   ExpandAPISettings: 1
   EnableGameCenterAPI: 1
-  EnableInAppsAPI: 1
-  EnableCameraAPI: 1
-  EnableSocialSharingAPI: 1
+  EnableInAppsAPI: 0
+  EnableCameraAPI: 0
+  EnableSocialSharingAPI: 0
   EnablePickerAPI: 0
   EnableMediaPlayerAPI: 0
   EnableReplayKit: 0
@@ -41,7 +101,7 @@ MonoBehaviour:
   EditorFillRate: 100
   IsEditorTestingEnabled: 1
   DisablePluginLogs: 0
-  UseGCRequestCaching: 0
+  UseGCRequestCaching: 1
   UsePPForAchievements: 0
   AutoLoadUsersSmallImages: 1
   AutoLoadUsersBigImages: 0
