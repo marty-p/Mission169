@@ -29,6 +29,7 @@ public class Main : MonoBehaviour {
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name == firstMission) {
             GameManager.Instance.Home();
+            SceneManager.LoadScene("loading", LoadSceneMode.Additive);
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }

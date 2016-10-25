@@ -48,7 +48,8 @@ public class TowerBoss : MonoBehaviour {
             new [] { TL, TR },
         };
 
-        masterCombi = new[] { combi, combi2, combi3 };
+        //masterCombi = new[] { combi, combi2, combi3 };
+        masterCombi = new[] { combi, combi3 };
         towers = new[] { TL, TR, TC};
     }
 
