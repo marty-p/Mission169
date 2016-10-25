@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012071459578
 GameObject:
   m_ObjectHideFlags: 1
@@ -220,7 +220,7 @@ GameObject:
   - 114: {fileID: 114000010168842688}
   - 114: {fileID: 114000012750241162}
   m_Layer: 5
-  m_Name: ButtonMuseum
+  m_Name: ButtonReset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +275,7 @@ GameObject:
   - 114: {fileID: 114000014068544628}
   - 114: {fileID: 114000013704740488}
   m_Layer: 5
-  m_Name: ButtonThanks
+  m_Name: ButtonGit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GitHub
+  m_Text: Check me out
 --- !u!114 &114000010693918728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -466,8 +466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 114000012576615056}
-  museum: {fileID: 114000010168842688}
-  thanks: {fileID: 114000014068544628}
+  reset: {fileID: 114000010168842688}
+  git: {fileID: 114000014068544628}
   facebook: {fileID: 114000013549787288}
   gameCenter: {fileID: 114000012885469416}
 --- !u!114 &114000010861938254
@@ -543,9 +543,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ABOUT
-
-'
+  m_Text: GITHUB
 --- !u!114 &114000011236505840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,7 +838,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MUSEUM
+  m_Text: RESET PROGRESS
 --- !u!114 &114000012710965632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,7 +1321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126, y: -5}
+  m_AnchoredPosition: {x: 533, y: 0.0000071526}
   m_SizeDelta: {x: 289, y: 39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000010922881490
@@ -1381,8 +1379,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: -0.0000015062}
-  m_SizeDelta: {x: 198.43, y: 74}
+  m_AnchoredPosition: {x: -14, y: 2}
+  m_SizeDelta: {x: 421, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011624769486
 RectTransform:
@@ -1417,8 +1415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -146, y: -0.00000047683716}
-  m_SizeDelta: {x: 90, y: 36}
+  m_AnchoredPosition: {x: -139, y: -6}
+  m_SizeDelta: {x: 170, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011719343500
 RectTransform:
