@@ -6,7 +6,7 @@ public class SlugGameCenter : MonoBehaviour, IGameService {
     void Start () {
         GameCenterManager.OnAuthFinished += OnAuthFinished;
         GameCenterManager.OnAchievementsLoaded += OnAchievementsLoaded;
-		GameCenterManager.OnAchievementsReset += OnAchievementsLoaded;
+        GameCenterManager.OnAchievementsReset += OnAchievementsReset;
 		GameCenterManager.OnAchievementsProgress += OnAchievementsProgress;
 
         GameCenterManager.Init();
@@ -46,9 +46,19 @@ public class SlugGameCenter : MonoBehaviour, IGameService {
 				}
 			}
 		} else {
-			Debug.Log ("FAILED TO LOAD ACHIEVEMENTS FROM GC");
-		}
+            IOSNativePopUpManager.showMessage("Game Center Error", "Couldn't load achievements");	
+        }
     }
+
+    void OnAchievementsReset(Result res) {
+        if (res.IsSucceeded) {
+            OnAchievementsLoaded(res);
+		    IOSNativePopUpManager.showMessage("Progress Reset", "All achievements back to 0%!");		
+        } else {
+		    IOSNativePopUpManager.showMessage("Progress Reset", "Couldn't reset achievements");		
+        }
+    }
+
 	void OnAchievementsProgress(Result res) {
 		Debug.Log("achievemnts progress");
 	}
