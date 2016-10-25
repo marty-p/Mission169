@@ -3284,13 +3284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5378998db5ba9488d08a4e3b80821a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Width: 266
-  m_Height: 150
-  m_AutoAspect: 0
-  m_FramePerSecond: 15
+  m_Width: 300
+  m_Height: 169
+  m_AutoAspect: 1
+  m_FramePerSecond: 1
   m_Repeat: 0
-  m_Quality: 100
-  m_BufferSize: 2
+  m_Quality: 50
+  m_BufferSize: 4
   WorkerPriority: 1
   fileName: gif_record
 --- !u!114 &1927846359

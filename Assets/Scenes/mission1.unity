@@ -278,89 +278,6 @@ Prefab:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_FramePerSecond
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: WorkerPriority
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_AutoAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_Width
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_Height
-      value: 169
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_BufferSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056698, guid: 2856204e327fa6141a1cc4a1bb7df5a9, type: 2}
-      propertyPath: orthographic size
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011069019660, guid: 2856204e327fa6141a1cc4a1bb7df5a9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: targetCameraHalfHeight
-      value: 1.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: fovCoverage
-      value: 1.0330578
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: cameraSize.x
-      value: 2.2233334
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: cameraSize.y
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: cameraPixelsPerUnit
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: ratio
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: nativeAssetResolution.x
-      value: 444.6667
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013692745496, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: nativeAssetResolution.y
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010203165810, guid: 2856204e327fa6141a1cc4a1bb7df5a9,
-        type: 2}
-      propertyPath: m_Quality
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2856204e327fa6141a1cc4a1bb7df5a9, type: 2}
   m_IsPrefabParent: 0
@@ -859,21 +776,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5,
     type: 2}
   m_PrefabInternal: {fileID: 1132358401}
---- !u!1 &344145970 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 150146, guid: 2856204e327fa6141a1cc4a1bb7df5a9, type: 2}
-  m_PrefabInternal: {fileID: 105093525}
---- !u!114 &344145971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 344145970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe562977f1fe29346bc0340d8a6002b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &395477122
 Prefab:
   m_ObjectHideFlags: 0
@@ -1480,7 +1382,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 882445387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.815, y: -0.03, z: 0}
+  m_LocalPosition: {x: -7.815, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 932127077}
