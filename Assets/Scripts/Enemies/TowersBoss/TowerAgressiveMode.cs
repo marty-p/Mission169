@@ -30,7 +30,8 @@ public class TowerAgressiveMode : MonoBehaviour {
 
     private IEnumerator AgressiveFire() {
         yield return new WaitForSeconds(secBeforeAgressiveFire);
-        tower.Fire(2);
+        //tower.Fire(2);
+        tower.Fire(1);
     }
 
 }
