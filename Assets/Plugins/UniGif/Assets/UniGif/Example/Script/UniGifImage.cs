@@ -240,7 +240,7 @@ public class UniGifImage : MonoBehaviour
                 m_rawImage.texture = m_gifTexList[i].m_texture2d;
                 // Delay
                 float timeSince =(float) startTime.Elapsed.TotalSeconds;
-                float delayedTime = timeSince + 1/18f;
+                float delayedTime = timeSince + 1/2f;
                 // can't use Unity time since I set the time scale to 0 ...
                 //float delayedTime = Time.time + m_gifTexList[i].m_delaySec;
 
