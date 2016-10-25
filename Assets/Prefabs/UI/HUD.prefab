@@ -793,6 +793,8 @@ MonoBehaviour:
   lifeCountGUI: {fileID: 114000010691387984}
   pauseButton: {fileID: 114000013046994422}
   goRightReminder: {fileID: 1000010456927592}
+  readyGoPrefab: {fileID: 1000013922563284, guid: 61ff8e03633e6c34883201ac2a25b084,
+    type: 2}
 --- !u!114 &114000012024958830
 MonoBehaviour:
   m_ObjectHideFlags: 1
