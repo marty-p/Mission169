@@ -26,6 +26,7 @@ namespace Mission169 {
         private DialogManager dialog;
 
         public GameObject playerPrefab;
+        public GameObject readyGOPrefab;
 
         void Awake() {
             DontDestroyOnLoad(this);
@@ -67,11 +68,14 @@ namespace Mission169 {
 
         public void MissionStart() {
             EventManager.Instance.TriggerEvent(GlobalEvents.MissionStart);
-            playerGameObject.SetActive(true);
-            playerDeathManager.SpawnPlayer();
+            mainMenu.SetVisible(false);
             hud.SetLifeCount(playerLifeCount);
             hud.SetVisible(true);
-            mainMenu.SetVisible(false);
+            hud.ShowReadyGo();
+            timeUtils.TimeDelay(1.8f, () => {
+                playerGameObject.SetActive(true);
+                playerDeathManager.SpawnPlayer();
+            });
         }
 
         public void MissionRetry() {

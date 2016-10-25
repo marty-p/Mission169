@@ -11,7 +11,9 @@ public class HUDManager : MonoBehaviour {
     public Text lifeCountGUI;
     public Button pauseButton;
     public GameObject goRightReminder;
+    public GameObject readyGoPrefab;
 
+    private GameObject readyGoInstance;
     private Gradient bulletCountGradient;
     private Color bulletCountGradientInitialColor;
     private TimeUtils timeUtils;
@@ -28,6 +30,8 @@ public class HUDManager : MonoBehaviour {
         bulletCountGradientInitialColor = bulletCountGradient.bottomColor;
         timeUtils = GetComponent<TimeUtils>();
         pauseButton.onClick.AddListener(OnPausePressed);
+        readyGoInstance = Instantiate(readyGoPrefab);
+        readyGoInstance.transform.parent = transform;
     }
 
     public void SetVisible(bool visible) {
@@ -59,6 +63,10 @@ public class HUDManager : MonoBehaviour {
 
     public void RemindPlayerGoRight() {
         goRightReminder.SetActive(true);
+    }
+
+    public void ShowReadyGo() {
+        readyGoPrefab.SetActive(true);
     }
 
     void SetBulletCountToInfinity() {
