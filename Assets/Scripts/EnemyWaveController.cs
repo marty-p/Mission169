@@ -13,6 +13,9 @@ public class EnemyWaveController : MonoBehaviour {
     EnemySpawner[][] spawners;
     private const float updatePeriod = 0.1f;
     private BoxCollider2D waveStartCollider;
+    // Killing the masterEnemy is enough to end the whole wave
+    public EnemySpawner masterEnemySpawner;
+    private HealthManager masterEnemyHealth;
 
 	void Awake () {
         waveStartCollider = GetComponent<BoxCollider2D>();
@@ -27,6 +30,7 @@ public class EnemyWaveController : MonoBehaviour {
             spawners[waveIndex] = child.GetComponentsInChildren<EnemySpawner>();
             waveIndex++;
         }
+
     }
 	
     private void OnTriggerEnter2D(Collider2D collider) {
@@ -42,6 +46,9 @@ public class EnemyWaveController : MonoBehaviour {
 
             if (cam != null) {
                 cam.followActive = false;
+            }
+            if (masterEnemySpawner != null) {
+                masterEnemyHealth = masterEnemySpawner.GetEnemy().GetComponent<HealthManager>();
             }
         }
     }
@@ -67,7 +74,9 @@ public class EnemyWaveController : MonoBehaviour {
                     }
                 }
             }
-
+            if (masterEnemyHealth != null && masterEnemyHealth.currentHP < 1) {
+                AllWavesOver();
+            }
             yield return new WaitForSeconds(updatePeriod);
         }
     }
@@ -76,6 +85,7 @@ public class EnemyWaveController : MonoBehaviour {
         cam.followActive = true;
         enabled = false;
         EventManager.Instance.TriggerEvent(GlobalEvents.WaveEventEnd);
+        StopAllCoroutines();
     }
 
 }
