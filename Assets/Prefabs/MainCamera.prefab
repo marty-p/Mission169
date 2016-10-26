@@ -18,6 +18,7 @@ GameObject:
   - 114: {fileID: 114000013692745496}
   - 114: {fileID: 114000010203165810}
   - 114: {fileID: 114000013755511232}
+  - 114: {fileID: 114000012091468402}
   m_Layer: 9
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -32,7 +33,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -0, z: -7}
+  m_LocalPosition: {x: 0.6, y: -0, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011069019660}
@@ -59,7 +60,7 @@ Camera:
   far clip plane: 10
   field of view: 71.8
   orthographic: 1
-  orthographic size: 1.0749999
+  orthographic size: 1.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -173,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013523924520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.095, y: 0.62, z: 10}
+  m_LocalPosition: {x: 10.095, y: 0.68, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011828127676}
@@ -218,15 +219,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5378998db5ba9488d08a4e3b80821a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Width: 266
-  m_Height: 150
-  m_AutoAspect: 0
-  m_FramePerSecond: 15
+  m_Width: 300
+  m_Height: 169
+  m_AutoAspect: 1
+  m_FramePerSecond: 1
   m_Repeat: 0
-  m_Quality: 100
-  m_BufferSize: 2
-  WorkerPriority: 2
+  m_Quality: 50
+  m_BufferSize: 4
+  WorkerPriority: 1
   fileName: gif_record
+--- !u!114 &114000012091468402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe562977f1fe29346bc0340d8a6002b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012229432308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,17 +304,17 @@ MonoBehaviour:
   maxCameraHalfHeight: 2
   targetDimension: 1
   targetCameraHalfWidth: 2.21
-  targetCameraHalfHeight: 1.14
+  targetCameraHalfHeight: 1.21
   pixelPerfect: 1
   retroSnap: 0
   assetsPixelsPerUnit: 100
   showHUD: 0
-  cameraSize: {x: 1.9116666, y: 1.0749999}
+  cameraSize: {x: 2.2233334, y: 1.25}
   contraintUsed: 0
   cameraPixelsPerUnit: 300
   ratio: 3
-  nativeAssetResolution: {x: 382.3333, y: 214.99998}
-  fovCoverage: 0.94298244
+  nativeAssetResolution: {x: 444.6667, y: 250}
+  fovCoverage: 1.0330578
 --- !u!114 &114000013755511232
 MonoBehaviour:
   m_ObjectHideFlags: 1
