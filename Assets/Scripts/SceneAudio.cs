@@ -21,7 +21,9 @@ namespace Mission169 {
         }
 
         void PlayBossMusic() {
-            music.Stop();
+            if (music!= null){
+                music.Stop();
+            }
             music = soundManager.PlaySound(1);
         }
 
