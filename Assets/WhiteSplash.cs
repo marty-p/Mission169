@@ -13,13 +13,13 @@ public class WhiteSplash : MonoBehaviour {
 	}
 
     void Start() {
-        Invoke("TransitionOut", 1.5f);
+        Invoke("TransitionOut", 3);
         UIManager.Instance.MainMenuT.SetVisible(false);
-        Invoke("DisplayMainMenu", 2);
+        Invoke("DisplayMainMenu", 3.5f);
     }
 
     void TransitionOut() {
-        whitePanel.CrossFadeAlpha(0, 0.25f, false);
+        whitePanel.CrossFadeAlpha(0, 0.15f, false);
     }
 
     void DisplayMainMenu() {
