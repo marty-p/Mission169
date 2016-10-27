@@ -6,10 +6,10 @@ PlayerSettings:
   serializedVersion: 8
   productGUID: e8383f22b6975db43a6190fe96846714
   AndroidProfiler: 0
-  defaultScreenOrientation: 3
+  defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
-  accelerometerFrequency: 60
+  accelerometerFrequency: 15
   companyName: DefaultCompany
   productName: Mslug169
   defaultCursor: {fileID: 0}
@@ -32,8 +32,8 @@ PlayerSettings:
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 0
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -121,7 +121,7 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 22
+  iPhoneTargetOSVersion: 24
   tvOSSdkVersion: 0
   tvOSTargetOSVersion: 900
   uIPrerenderedIcon: 0
@@ -210,6 +210,44 @@ PlayerSettings:
       m_Icon: {fileID: 0}
       m_Width: 36
       m_Height: 36
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 346a5b5fe2b147a48afd9cc01efbf304, type: 3}
+      m_Width: 180
+      m_Height: 180
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 167
+      m_Height: 167
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 152
+      m_Height: 152
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 114
+      m_Height: 114
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 76
+      m_Height: 76
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 57
+      m_Height: 57
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
