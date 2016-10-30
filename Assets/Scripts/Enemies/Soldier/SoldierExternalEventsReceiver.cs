@@ -9,12 +9,8 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
     private Blink blink;
     private TimeUtils timeUtils;
 
-    void Awake() {
-        anim = GetComponent<Animator>();
-        animManager = GetComponent<EnemyAnimationManager>();
-        blink = GetComponent<Blink>();
-        timeUtils = GetComponent<TimeUtils>();
 
+    void Awake() {
         EventManager.Instance.StartListening(GlobalEvents.PlayerDead, () => {
             if (anim.isInitialized) {
                 anim.SetTrigger("laugh");
@@ -38,6 +34,13 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         });
     }
 
+    void Start() {
+        anim = GetComponent<Animator>();
+        animManager = GetComponent<EnemyAnimationManager>();
+        blink = GetComponent<Blink>();
+        timeUtils = GetComponent<TimeUtils>();
+    }
+
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
             anim.SetTrigger("knife");
@@ -48,11 +51,7 @@ public class SoldierExternalEventsReceiver : MonoBehaviour, IReceiveDamage {
         if (newHP > 0) {
             return;
         } else {
-            //To ignore collision with projectiles during death anim but still be 'physic'
-            gameObject.layer = 2;
             animManager.PlayDeathAnimation(projectileProp);
-            EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
-            EventManager.Instance.TriggerEvent(GlobalEvents.SoldierDead);
         }
     }
 
