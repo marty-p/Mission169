@@ -24,6 +24,7 @@ GameObject:
   - 114: {fileID: 114000012697642790}
   - 114: {fileID: 114000013355132930}
   - 114: {fileID: 114000014241513866}
+  - 114: {fileID: 114000013756760588}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: enemy
@@ -675,6 +676,33 @@ MonoBehaviour:
   pooledAmount: 2
   willGrow: 0
   pooledObjects: []
+--- !u!114 &114000013756760588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: fa541e7205b6db44d94afe1e0fc0e0cb, type: 3}
+  - {fileID: 4900000, guid: 3d811220465275f43aaf9862bb6f5ba5, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 0
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!114 &114000014241513866
 MonoBehaviour:
   m_ObjectHideFlags: 1
