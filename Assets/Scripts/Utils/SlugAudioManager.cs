@@ -1,35 +1,31 @@
 ﻿using UnityEngine;
 
 public class SlugAudioManager : MonoBehaviour {
-
-    private ObjectPoolScript audioSourcePool;
+    
     public AudioClip[] audioClips;
 
     private AudioSource source;
 
-    void Awake() {
-        audioSourcePool = GetComponent<ObjectPoolScript>();
+    public void InitAudioClips(AudioClip[] audioClips) {
+        this.audioClips = audioClips;
     }
 
     public AudioSource PlaySound(int soundIndex) {
-        GameObject audioGameObject = audioSourcePool.GetPooledObject();
-        AudioSource audioSource = audioGameObject.GetComponent<AudioSource>();
+        AudioSource audioSource = GlobalAudioPool.Instance.GetAudioSource();
         audioSource.clip = audioClips[soundIndex];
         audioSource.Play();
         return audioSource;
     }
 
     public void PlaySoundByClip(AudioClip clip) {
-        GameObject audioGameObject = audioSourcePool.GetPooledObject();
-        AudioSource audioSource = audioGameObject.GetComponent<AudioSource>();
+        AudioSource audioSource = GlobalAudioPool.Instance.GetAudioSource();
         audioSource.clip = clip;
         audioSource.Play();
     }
 
     public void PlaySoundSameSource(int soundIndex) {
         if (source == null) {
-            GameObject audioGameObject = audioSourcePool.GetPooledObject();
-            source = audioGameObject.GetComponent<AudioSource>();
+            source = GlobalAudioPool.Instance.GetAudioSource();
             source.clip = audioClips[soundIndex];
         }
         source.Play();
