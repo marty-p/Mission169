@@ -21,7 +21,7 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
         GameObject bulletGameObject = bullettPool.GetPooledObject();
         bulletGameObject.transform.position = GetProjPosInit();
         bulletGameObject.transform.right = movementManager.lookingDirection;
-        IProjectile bullet = bulletGameObject.GetComponent<IProjectile>();
+        IProjectile bullet = bulletGameObject.GetComponentInChildren<IProjectile>();
         bullet.Launch(victimTag);
         audioManager.PlaySound(0);
         EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, 0);

@@ -3,11 +3,11 @@
 public class BasicProjectile : MonoBehaviour, IProjectile {
 
     public ProjectileProperties properties;
+    public Animator impactAnimator;
     private bool launched;
 
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == properties.victimTag || col.tag == "World") {
-            Animator impactAnimator = ProjectileUtils.GetImpactAnimator(transform, properties);
             ProjectileUtils.RandomizeImpactPosition(transform, impactAnimator.transform);
 
             if (col.tag == "World") {
@@ -28,6 +28,7 @@ public class BasicProjectile : MonoBehaviour, IProjectile {
     }
 
     public void Launch(string victimsTag, Vector2 unusedDestination) {
+        transform.localPosition = Vector3.zero;
         properties.victimTag = victimsTag;
         launched = true;
     }

@@ -419,6 +419,7 @@ Transform:
   - {fileID: 443612}
   - {fileID: 447058}
   - {fileID: 4000013194873468}
+  - {fileID: 4000011803974708}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1013,6 +1014,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011160824644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011803974708}
+  - 68: {fileID: 68000013577361938}
+  m_Layer: 9
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011379509458
 GameObject:
   m_ObjectHideFlags: 1
@@ -1069,7 +1086,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013194873468}
-  - 114: {fileID: 114000012809479774}
   - 114: {fileID: 114000013097697716}
   m_Layer: 8
   m_Name: SoundManager
@@ -1395,6 +1411,19 @@ Transform:
   m_Father: {fileID: 4000013829938758}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000011803974708
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011160824644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462962}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012180413124
 Transform:
   m_ObjectHideFlags: 1
@@ -1593,6 +1622,22 @@ BoxCollider2D:
   m_Offset: {x: 0.018684387, y: 0.015623182}
   serializedVersion: 2
   m_Size: {x: 0.15820608, y: 0.04114002}
+--- !u!68 &68000013577361938
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011160824644}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: -0.26007336, y: -0.46238595}
+  - {x: 3.4052222, y: -0.47590306}
 --- !u!114 &114000010064021178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1694,7 +1739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6dd6388ad40dd458e77dfe5956d259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 186680, guid: e117f0653c7b6604f8c14e680592dcef, type: 2}
+  pooledObject: {fileID: 1000010519439882, guid: 942cba89cc8fb0247a5d684266151eb6,
+    type: 2}
   pooledAmount: 8
   willGrow: 1
   pooledObjects: []
@@ -1709,22 +1755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562c9a96fc683f24a9160c496d2f2241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000012809479774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011790129406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee6dd6388ad40dd458e77dfe5956d259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1000012861763516, guid: 45ef65d9fb0db5a4b8714a2e421f4222,
-    type: 2}
-  pooledAmount: 10
-  willGrow: 1
-  pooledObjects: []
 --- !u!114 &114000012815699888
 MonoBehaviour:
   m_ObjectHideFlags: 1
