@@ -12,6 +12,7 @@ public class HUDManager : MonoBehaviour {
     public Button pauseButton;
     public GameObject goRightReminder;
     public GameObject readyGoPrefab;
+    public GameObject onScreenControl;
 
     private GameObject readyGoInstance;
     private Gradient bulletCountGradient;
@@ -32,6 +33,9 @@ public class HUDManager : MonoBehaviour {
         pauseButton.onClick.AddListener(OnPausePressed);
         readyGoInstance = Instantiate(readyGoPrefab);
         readyGoInstance.transform.parent = transform;
+#if UNITY_IOS || UNITY_ANDROID
+        onScreenControl.SetActive(true);
+#endif
     }
 
     public void SetVisible(bool visible) {
