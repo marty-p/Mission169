@@ -20,16 +20,16 @@ public class EnemySpawner : MonoBehaviour {
         return enemy;
     }
 
-    void Awake () {
+    void Awake() {
         collider = GetComponent<BoxCollider2D>();
         if (singleEnemyPrefab) {
             enemy = Instantiate(singleEnemyPrefab);
             enemy.transform.parent = transform;
             enemy.SetActive(false);
         }
-	}
+    }
 
-     void OnEnable() {
+    void OnEnable() {
         InitEnemy();
         if (spawningInterval != 0) {
             StartCoroutine("SpawnEveryXsecondsCoroutine", spawningInterval);
@@ -56,6 +56,11 @@ public class EnemySpawner : MonoBehaviour {
         enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();
     }
 
+    public void OnBecameVisible() {
+            InitEnemy();
+            collider.enabled = false;
+    }
+
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player") {
             InitEnemy();
@@ -65,7 +70,7 @@ public class EnemySpawner : MonoBehaviour {
 
     private IEnumerator GoToCoroutine(float posX) {
         while (!Mathf.Approximately(enemy.transform.position.x, posX)) {
-            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.2f*Time.deltaTime*goToSpeedFactor);
+            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.2f * Time.deltaTime * goToSpeedFactor);
             enemy.transform.position = new Vector2(newPosX, enemy.transform.position.y);
             yield return new WaitForEndOfFrame();
         }

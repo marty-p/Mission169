@@ -132,7 +132,14 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.8333333
-    functionName: OnKnifeIsOut
+    functionName: AEKnifeIsOut
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.8333334
+    functionName: AEKnifeIsDone
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
