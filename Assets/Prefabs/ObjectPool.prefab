@@ -40,9 +40,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6dd6388ad40dd458e77dfe5956d259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1000013409217630, guid: 765193d4e6faa8c4bbf55d650be4f6cd,
-    type: 2}
-  pooledAmount: 6
+  pooledObject: {fileID: 0}
+  pooledAmount: 2
   willGrow: 1
   pooledObjects: []
 --- !u!1001 &100100000

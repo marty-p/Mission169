@@ -21,8 +21,8 @@ GameObject:
   - 4: {fileID: 4000012372830552}
   - 114: {fileID: 114000010046116256}
   m_Layer: 0
-  m_Name: Bullet_root
-  m_TagString: Untagged
+  m_Name: Bullet
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 1000010519439882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010205902584}
   - {fileID: 4000011509861346}
@@ -132,9 +132,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0036262472, y: 0}
+  m_Offset: {x: 0.000039935112, y: -0.00021719933}
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.19}
+  m_Size: {x: 0.06993209, y: 0.02954802}
 --- !u!95 &95000010348345132
 Animator:
   serializedVersion: 3
@@ -213,7 +213,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5f113c15445cc554aac9b06f2c1eca97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
