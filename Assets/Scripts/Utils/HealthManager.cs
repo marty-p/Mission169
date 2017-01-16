@@ -11,12 +11,14 @@ public class HealthManager : MonoBehaviour {
     public int maxHP = 1;
     public int currentHP;
     public int CurrentHP {get {return currentHP;}}
-    private IReceiveDamage componInterestedInDamages;
+    private IReceiveDamage[] componInterestedInDamages;
+    public int interestedInDamagesCount = 0;
     private bool ignoreDamages;
     public bool IgnoreDamages {get {return ignoreDamages;} set {ignoreDamages = value;}}
 
     void Start () {
-        componInterestedInDamages = GetComponent<IReceiveDamage>();
+        componInterestedInDamages = GetComponents<IReceiveDamage>();
+        interestedInDamagesCount = componInterestedInDamages.Length;
         currentHP = maxHP;
 	}
 
@@ -34,6 +36,9 @@ public class HealthManager : MonoBehaviour {
     }
 
     private void NotifyDamageWasTaken(ProjectileProperties proj) {
-            componInterestedInDamages.OnDamageReceived(proj, currentHP);
+        for (int i=0; i< componInterestedInDamages.Length; i++) {
+            print(componInterestedInDamages[i]);
+            componInterestedInDamages[i].OnDamageReceived(proj, currentHP);
+        }
     }
 }

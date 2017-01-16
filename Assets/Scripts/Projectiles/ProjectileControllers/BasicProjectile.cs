@@ -9,7 +9,7 @@ public class BasicProjectile : MonoBehaviour, IProjectile {
     public void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == properties.victimTag || col.tag == "World") {
             ProjectileUtils.RandomizeImpactPosition(transform, impactAnimator.transform);
-
+            impactAnimator.gameObject.SetActive(true);
             if (col.tag == "World") {
                 impactAnimator.transform.right = transform.right;
                 impactAnimator.Play("2");

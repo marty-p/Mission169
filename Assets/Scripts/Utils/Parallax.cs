@@ -9,11 +9,9 @@ public struct BgLayer {
 public class Parallax : MonoBehaviour {
     public BgLayer[] bgLayers;
     private Vector2 oldPos;
-    private Camera cam;
 
     void Start() {
         oldPos = transform.position;
-        cam = GetComponent<Camera>();
     }
 
     void Update () {

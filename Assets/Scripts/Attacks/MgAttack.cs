@@ -43,7 +43,7 @@ public class MgAttack : MonoBehaviour, IAttack {
             withYoffset = true;
         }
 
-        IProjectile bullet = bulletGameObject.GetComponent<IProjectile>();
+        IProjectile bullet = bulletGameObject.GetComponentInChildren<IProjectile>();
         bullet.Launch(vicTag);
         attackManager.UpdateBulletCount();
     }

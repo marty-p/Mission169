@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class ObjectPoolScript : MonoBehaviour
 {
     public GameObject pooledObject;
-    public int pooledAmount = 10;
+    public int pooledAmount = 2;
     public bool willGrow = true;
 
     public List<GameObject> pooledObjects;
