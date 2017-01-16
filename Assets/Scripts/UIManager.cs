@@ -15,10 +15,12 @@ namespace Mission169 {
         private HUDManager hudManager;
         private MainMenu mainMenu;
         private DialogManager dialogManager;
+        public TransitionOverlay blackOverlay { get; set; }
 
         public GameObject HUDPrefab;
         public GameObject maineMenuPrefab;
         public GameObject dialogManagerPrefab;
+        public GameObject blackOverlayTransition;
 
         void Awake() {
             DontDestroyOnLoad(this);
@@ -34,11 +36,17 @@ namespace Mission169 {
             GameObject mainMenuGO = Instantiate(maineMenuPrefab);
             mainMenu = mainMenuGO.GetComponent<MainMenu>();
             mainMenu.transform.SetParent(transform);
+            mainMenu.SetVisible(false);
 
             GameObject dialogManagerGO = Instantiate(dialogManagerPrefab);
             dialogManager = dialogManagerGO.GetComponent<DialogManager>();
             dialogManager.transform.SetParent(transform);
             dialogManager.SetVisible(false);
+
+            GameObject blackOverlayGO = Instantiate(blackOverlayTransition);
+            blackOverlay = blackOverlayGO.GetComponent<TransitionOverlay>();
+            blackOverlay.transform.SetParent(transform);
+            blackOverlay.SetVisible(false);
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using Facebook.Unity;
 using System.Collections.Generic;
 using System;
 using SlugLib;
+using Utils;
 
 public class FacebookManager : Singleton<FacebookManager> {
+    public RetVoidTakeVoid OnFacebookInitSuccess;
 
     void Awake() {
         DontDestroyOnLoad(this);
@@ -15,11 +18,15 @@ public class FacebookManager : Singleton<FacebookManager> {
         }
     }
 
+    public void Login() {
+        var perms = new List<string>() {"email"};
+        FB.LogInWithReadPermissions(perms, AuthCallback);
+    }
+
     private void InitCallback() {
         if (FB.IsInitialized) {
             FB.ActivateApp();
-            var perms = new List<string>() { "public_profile"};
-            //FB.LogInWithReadPermissions(perms, AuthCallback);
+
             EventManager.Instance.StartListening(
                     GlobalEvents.MissionSuccess,
                     () => FB.LogAppEvent(AppEventName.AchievedLevel));
@@ -27,6 +34,9 @@ public class FacebookManager : Singleton<FacebookManager> {
             EventManager.Instance.StartListening(
                     GlobalEvents.PlayerDead,
                     () => FB.LogAppEvent("death"));
+            if (OnFacebookInitSuccess != null) {
+                OnFacebookInitSuccess();
+            }
         } else {
             Debug.Log("Failed to Initialize the Facebook SDK");
         }
@@ -46,10 +56,6 @@ public class FacebookManager : Singleton<FacebookManager> {
             var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
             // Print current access token's User ID
             Debug.Log(aToken.UserId);
-            // Print current access token's granted permissions
-            foreach (string perm in aToken.Permissions) {
-                Debug.Log(perm);
-            }
         } else {
             Debug.Log("User cancelled login");
         }

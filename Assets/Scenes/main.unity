@@ -99,6 +99,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1942657340}
   - 114: {fileID: 1942657339}
+  - 114: {fileID: 1942657341}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -123,6 +124,8 @@ MonoBehaviour:
     type: 2}
   uiManagerPrefab: {fileID: 1000010133106272, guid: 6d9176a1a9f8b04428e29ea09683b6f3,
     type: 2}
+  globalAudioPoolPrefab: {fileID: 1000014036249158, guid: 4b9d26f5a8f82cb4ab8e2e53de42fa1d,
+    type: 2}
   firstMission: mission1
 --- !u!4 &1942657340
 Transform:
@@ -137,3 +140,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942657341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942657338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5709c4c54348c344a89bc63c995380e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

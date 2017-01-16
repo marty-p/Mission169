@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 //using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Collections.Generic;
 using System;
 
 public class AchievementManager : Singleton<AchievementManager> {
@@ -17,7 +15,7 @@ public class AchievementManager : Singleton<AchievementManager> {
 #elif UNITY_ANDROID
         gameService = gameObject.AddComponent<SlugGooglePlayGames>();
 #else
-        gameService = gameObject.AddComponent<IGameService>();
+        gameService = gameObject.AddComponent<SlugGooglePlayGames>();
 #endif
     }
 
