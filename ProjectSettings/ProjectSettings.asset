@@ -4,7 +4,6 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  productGUID: e8383f22b6975db43a6190fe96846714
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -25,7 +24,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   m_ActiveColorSpace: 0
   m_MTRendering: 1
-  m_MobileMTRendering: 0
+  m_MobileMTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: 2
@@ -93,7 +92,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 1
-  bundleIdentifier: com.benpinkas.SLUG
+  bundleIdentifier: com.benpinkas.mission169
   bundleVersion: 1.0
   preloadedAssets:
   - {fileID: 102900000, guid: f025f58e1dcbdcf4397dafc848f0918b, type: 3}
@@ -102,6 +101,7 @@ PlayerSettings:
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
   protectGraphicsMemory: 0
+  productGUID: e8383f22b6975db43a6190fe96846714
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
@@ -181,7 +181,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 346a5b5fe2b147a48afd9cc01efbf304, type: 3}
       m_Width: 128
       m_Height: 128
   - m_BuildTarget: Android
@@ -354,7 +354,6 @@ PlayerSettings:
   ps4attribMoveSupport: 0
   ps4attrib3DSupport: 0
   ps4attribShareSupport: 0
-  ps4attribExclusiveVR: 0
   ps4disableAutoHideSplash: 0
   ps4IncludedModules: []
   monoEnv: 
