@@ -577,7 +577,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 248742328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0.95, z: 0}
+  m_LocalPosition: {x: -1.08, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -592,11 +592,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17.525
+      value: 17.554
       objectReference: {fileID: 0}
     - target: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.461
+      value: -0.542
       objectReference: {fileID: 0}
     - target: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -641,6 +641,11 @@ Prefab:
       propertyPath: m_Offset.x
       value: -0.96
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010660916356, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -3993051910640687065, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
   m_IsPrefabParent: 0
@@ -1737,7 +1742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.43
+      value: -0.555
       objectReference: {fileID: 0}
     - target: {fileID: 4000011565033890, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1782,6 +1787,11 @@ Prefab:
       propertyPath: m_Offset.x
       value: 0.86
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010660916356, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -3993051910640687065, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cac6c68fa30221b4f84ce2c06f82b8f5, type: 2}
   m_IsPrefabParent: 0

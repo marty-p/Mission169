@@ -21,9 +21,14 @@ public class MummyBrain : EnemyBrain {
     }
 
     void Start() {
-        baseTasks = gameObject.AddComponent<SoldierTasks>();
+        baseTasks = gameObject.AddComponent<EnemyBaseTasks>();
         baseTasks.Target = target;
         baseTasks.SpeedFactor = 0.3f;
+    }
+
+    public override void Pause() {
+        base.Pause();
+        baseTasks.StopAll();
     }
 
     void Update() {

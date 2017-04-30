@@ -37,7 +37,6 @@ public class HealthManager : MonoBehaviour {
 
     private void NotifyDamageWasTaken(ProjectileProperties proj) {
         for (int i=0; i< componInterestedInDamages.Length; i++) {
-            print(componInterestedInDamages[i]);
             componInterestedInDamages[i].OnDamageReceived(proj, currentHP);
         }
     }
