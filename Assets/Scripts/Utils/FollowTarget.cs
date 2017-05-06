@@ -12,19 +12,25 @@ public class FollowTarget : MonoBehaviour {
     private Vector2 oldTargetPosition;
 
 
-    void Start () {
+    void Start () { 
         if (target == null) {
             // while this script is general and could be use to follow anything
             // this one bit is very specific to Mission169
             target = GameManager.Instance.GetPlayer().transform.GetChild(0);
-        }
 
-        camera = GetComponent<Camera>();
-        targetViewPortPos = new Vector2();
-        oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
+            if (target != null) {
+                camera = GetComponent<Camera>();
+                targetViewPortPos = new Vector2();
+                oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
+            }
+        }
     }
 	
 	void LateUpdate () {
+        if (target == null) {
+            return;
+        }
+
         targetViewPortPos = camera.WorldToViewportPoint(target.position);
         if (followActive) {
             Follow();
@@ -51,7 +57,4 @@ public class FollowTarget : MonoBehaviour {
 
         oldTargetPosition = target.transform.position;
     }
-
-    void GetTarget() { 
-}
 }

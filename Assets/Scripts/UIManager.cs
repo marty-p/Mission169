@@ -28,22 +28,22 @@ namespace Mission169 {
             EventSystem eventSystem = gameObject.AddComponent(typeof(EventSystem)) as EventSystem;
             StandaloneInputModule inputModule = gameObject.AddComponent(typeof(StandaloneInputModule)) as StandaloneInputModule;
 
-            GameObject hudManagerGO = Instantiate(HUDPrefab);
+            GameObject hudManagerGO = Instantiate(Resources.Load<GameObject>("UI/HUD"));
             hudManager = hudManagerGO.GetComponent<HUDManager>();
             hudManager.transform.SetParent(transform);
             hudManager.SetVisible(false);
 
-            GameObject mainMenuGO = Instantiate(maineMenuPrefab);
+            GameObject mainMenuGO = Instantiate(Resources.Load<GameObject>("UI/MainMenu"));
             mainMenu = mainMenuGO.GetComponent<MainMenu>();
             mainMenu.transform.SetParent(transform);
             mainMenu.SetVisible(false);
 
-            GameObject dialogManagerGO = Instantiate(dialogManagerPrefab);
+            GameObject dialogManagerGO = Instantiate(Resources.Load<GameObject>("UI/DialogManager"));
             dialogManager = dialogManagerGO.GetComponent<DialogManager>();
             dialogManager.transform.SetParent(transform);
             dialogManager.SetVisible(false);
 
-            GameObject blackOverlayGO = Instantiate(blackOverlayTransition);
+            GameObject blackOverlayGO = Instantiate(Resources.Load<GameObject>("UI/BlackOverlay"));
             blackOverlay = blackOverlayGO.GetComponent<TransitionOverlay>();
             blackOverlay.transform.SetParent(transform);
             blackOverlay.SetVisible(false);

@@ -35,12 +35,14 @@ namespace Mission169 {
             EventManager.Instance.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
             EventManager.Instance.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
             timeUtils = gameObject.AddComponent<TimeUtils>();
-            playerGameObject = Instantiate(playerPrefab);
+            playerGameObject = Instantiate( Resources.Load("Player")) as GameObject;
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
             playerGameObject.transform.parent = transform;
+
             //FIXME  you know what
             playerTransform = playerGameObject.transform.GetChild(0).transform;
+
             hud = UIManager.Instance.HUD;
             mainMenu = UIManager.Instance.MainMenuT;
             dialog = UIManager.Instance.Dialog;

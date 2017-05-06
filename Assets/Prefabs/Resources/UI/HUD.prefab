@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010456927592
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +811,6 @@ MonoBehaviour:
   readyGoPrefab: {fileID: 1000013922563284, guid: 61ff8e03633e6c34883201ac2a25b084,
     type: 2}
   onScreenControl: {fileID: 1000010840995728}
-  blackTransitionOverlay: {fileID: 0}
 --- !u!114 &114000012024958830
 MonoBehaviour:
   m_ObjectHideFlags: 1

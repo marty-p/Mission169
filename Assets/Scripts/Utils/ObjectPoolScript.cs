@@ -14,9 +14,14 @@ public class ObjectPoolScript : MonoBehaviour
     void Awake()
     {
         pooledObjects = new List<GameObject>();
+
+        if (pooledObject == null) {
+            return;
+        }
+
         for (int i = 0; i < pooledAmount; i++)
         {
-            GameObject obj = (GameObject)Instantiate(pooledObject);
+            GameObject obj = Instantiate(pooledObject);
             obj.transform.parent = this.transform;
             obj.SetActive(false);
             pooledObjects.Add(obj);
@@ -29,7 +34,7 @@ public class ObjectPoolScript : MonoBehaviour
         {
             if (pooledObjects[i] == null)
             {
-                GameObject obj = (GameObject)Instantiate(pooledObject);
+                GameObject obj = Instantiate(pooledObject);
                 obj.transform.parent = this.transform;
                 obj.SetActive(false);
                 pooledObjects[i] = obj;

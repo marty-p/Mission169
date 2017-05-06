@@ -1,50 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using EnemyUtils;
 
 public class MummyBrain : EnemyBrain {
 
-    private EnemyBaseTasks baseTasks;
-    private Transform target;
-    private EnemyTargetDistance targetDistance;
     private MummyAnimationEvents animManager;
 
-    void Awake() {
-        GameObject playerWraper = Mission169.GameManager.Instance.GetPlayer();
-        if (playerWraper != null) {
-            target = playerWraper.transform.GetChild(0);
-        } else {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        targetDistance = gameObject.AddComponent<EnemyTargetDistance>();
-        targetDistance.Target = target;
+    protected override void Init() { 
         animManager = GetComponent<MummyAnimationEvents>();
-    }
-
-    void Start() {
-        baseTasks = gameObject.AddComponent<EnemyBaseTasks>();
-        baseTasks.Target = target;
-        baseTasks.SpeedFactor = 0.3f;
     }
 
     public override void Pause() {
         base.Pause();
-        baseTasks.StopAll();
+        //baseTasks.StopAll();
     }
 
-    void Update() {
+    protected override IEnumerator Think() {
+        while (enabled) {
 
-        if (targetDistance.LessThan(0.4f)) {
-            animManager.Attack();
-            return;
-        }        
+            if (targetDistance.LessThan(0.4f)) {
+                yield return StartCoroutine(Attack());
+            } else {
+                yield return StartCoroutine(WalkToTarget());
+            }
 
-        if (baseTasks.TaskRunning) {
-            return;
+            yield return new WaitForSeconds(0.1f);
         }
+    }
 
-        if (targetDistance.MoreThan(0.37f) && baseTasks.WalkToTarget(0.35f)) {
-            return;
+    IEnumerator WalkToTarget() {
+        EnemyMovement.FaceTarget(transform, targetDistance.Target);
+
+        while (targetDistance.MoreThan(0.39f)) {
+            physic.MoveForward(0.35f);
+            yield return 0;
         }
+    }
+
+    IEnumerator Attack() {
+        EnemyMovement.FaceTarget(transform, targetDistance.Target);
+
+        animManager.Attack();
+        yield return new WaitForSeconds(2f);
     }
 
 }
