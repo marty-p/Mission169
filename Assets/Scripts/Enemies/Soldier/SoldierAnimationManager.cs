@@ -90,7 +90,6 @@ public class SoldierAnimationManager : MonoBehaviour, IObserver {
        if (UnityEngine.Random.value < chance) {
             anim.SetTrigger("scared");
         }
-
        //TODO have AnimEvent at the end of scared that does:
 //                   if (UnityEngine.Random.value < getScaredFactor) {
 //                        anim.SetTrigger("run_away");
@@ -102,18 +101,27 @@ public class SoldierAnimationManager : MonoBehaviour, IObserver {
     }
 
     void FixedUpdate() {
-        // Stop/Start Walking
-        if (Math.Truncate(pastXpos*100)/100 == Math.Truncate(transform.position.x*100)/100) {
-            anim.SetBool("walking", false);
+        float currentPos = (float) Math.Truncate(transform.position.x * 1000) / 1000;
+        float dx = currentPos - pastXpos;
+        bool isInMotion = Mathf.Abs(dx) > 0;
+        bool goForward = (dx < 0 && transform.right == Vector3.left) || (dx > 0 && transform.right == Vector3.right);
+
+        if (isInMotion) {
+            if (goForward) {
+                anim.SetBool("walking", true);
+            } else {
+                anim.SetBool("walking_backward", true);
+            }
         } else {
-            anim.SetBool("walking", true);
+            anim.SetBool("walking", false);
+            anim.SetBool("walking_backward", false);
         }
         // Turn Around Anim when needed
         if (transform.right != pastDir) {
                 anim.SetTrigger("turn_around");
         }
 
-        pastXpos = transform.position.x;
+        pastXpos = currentPos;
         pastDir = transform.right;
     }
 }

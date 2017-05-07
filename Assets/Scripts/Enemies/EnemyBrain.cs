@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public abstract class EnemyBrain : MonoBehaviour {
 
     protected Transform target;
+    [SerializeField]
     protected SlugPhysics physic;
     protected EnemyTargetDistance targetDistance;
+
+    [SerializeField]
+    protected Collider2D[] areaColliders;
 
     void Start() {
         AssignTarget();
         targetDistance = new EnemyTargetDistance(transform, target);
-
-        physic = GetComponent<SlugPhysics>();
 
         Init();
 
@@ -45,6 +48,10 @@ public abstract class EnemyBrain : MonoBehaviour {
 
     public void OnDisable() {
         StopAllCoroutines();
+    }
+
+    public bool TargetInArea(Bounds bounds) {
+        return bounds.max.x > target.position.x && bounds.min.x < target.position.x;
     }
 
     protected abstract void Init();

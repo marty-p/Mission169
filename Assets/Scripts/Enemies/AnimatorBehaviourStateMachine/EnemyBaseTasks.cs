@@ -26,10 +26,6 @@ public class EnemyBaseTasks : MonoBehaviour {
         return true;
     }
 
-    public void SetWalkingSpeed(float speedFactor) {
-
-    }
-
     public void StopAll() {
         StopAllCoroutines();
         TaskRunning = false;
