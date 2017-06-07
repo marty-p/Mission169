@@ -11,7 +11,7 @@ namespace Mission169 {
 
         private static readonly int playerLifeStart = 3;
         private static int playerLifeCount = playerLifeStart;
-        private int playerScore = 0;
+        private static int playerScore = 0;
         private readonly float waitTimeBeforeSpawn = 1.5f;
         private int currentMissionID = 0;
         private string[] missionList = new[] { "mission1", "mission2" };
@@ -21,9 +21,11 @@ namespace Mission169 {
         private GameObject playerGameObject;
         private Transform playerTransform;
         private PlayerDeathManager playerDeathManager;
-        private HUDManager hud;
         private MainMenu mainMenu;
         private DialogManager dialog;
+
+        public static int PlayerLifeCount { get {return playerLifeCount;} }
+        public static int PlayerScore { get { return playerScore; } }
 
         public GameObject playerPrefab;
         public GameObject readyGOPrefab;
@@ -43,7 +45,6 @@ namespace Mission169 {
             //FIXME  you know what
             playerTransform = playerGameObject.transform.GetChild(0).transform;
 
-            hud = UIManager.Instance.HUD;
             mainMenu = UIManager.Instance.MainMenuT;
             dialog = UIManager.Instance.Dialog;
         }
@@ -57,7 +58,8 @@ namespace Mission169 {
             MissionLoad();
             MissionInit();
             mainMenu.SetVisible(true);
-            hud.SetVisible(false);
+
+            EventManager.Instance.TriggerEvent(GlobalEvents.Home);
         }
 
         public void MissionInit() {
@@ -71,9 +73,7 @@ namespace Mission169 {
         public void MissionStart() {
             EventManager.Instance.TriggerEvent(GlobalEvents.MissionStart);
             mainMenu.SetVisible(false);
-            hud.SetLifeCount(playerLifeCount);
-            hud.SetVisible(true);
-            hud.ShowReadyGo();
+
             timeUtils.TimeDelay(1.8f, () => {
                 playerGameObject.SetActive(true);
                 playerDeathManager.SpawnPlayer();
@@ -106,12 +106,10 @@ namespace Mission169 {
 
         private void UpdatePlayerPoints(float pts) {
             playerScore = playerScore + (int)pts;
-            hud.SetScore(playerScore);
         }
 
         private void OnplayerDeath() {
             playerLifeCount--;
-            hud.SetLifeCount(playerLifeCount);
             if (playerLifeCount >= 0) {
                 timeUtils.TimeDelay(waitTimeBeforeSpawn, () => {
                     playerDeathManager.SpawnPlayer();
@@ -129,15 +127,14 @@ namespace Mission169 {
         }
 
         private void MissionLoad() {
-            hud.SetVisible(false);
+            // TODO show loading indicator
             SceneManager.LoadScene(missionList[currentMissionID]);
-            hud.SetVisible(true);
+            // TODO hide loading indicator
         }
 
         private void GameOver() {
             MissionEnd();
             ResetGameData();
-            hud.SetVisible(false);
             dialog.Activate(DialogType.GameOver);
             EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
         }
@@ -146,8 +143,6 @@ namespace Mission169 {
             playerScore = 0;
             currentMissionID = 0;
             playerLifeCount = playerLifeStart;
-            hud.SetScore(playerScore);
-            hud.SetLifeCount(playerLifeCount);
         }
 
         private void MissionEnd() {

@@ -22,7 +22,8 @@ namespace SlugLib {
         MissionEnd, // the end regardless of the success/failure
         MissionSuccess, 
         GameOver,
-        ItemPickedUp
+        ItemPickedUp,
+        Home
     }
 
     [System.Serializable]

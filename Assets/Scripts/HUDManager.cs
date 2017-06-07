@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using SlugLib;
 using Mission169;
+using DG.Tweening;
 
 public class HUDManager : MonoBehaviour {
 
@@ -27,6 +28,13 @@ public class HUDManager : MonoBehaviour {
         EventManager.Instance.StartListening(GlobalEvents.GunUsed, SetBulletCount);
         EventManager.Instance.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
         EventManager.Instance.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
+
+        EventManager.Instance.StartListening(GlobalEvents.MissionStart, OnMissionStart);
+        EventManager.Instance.StartListening(GlobalEvents.PointsEarned, OnPlayerPointsChanged);
+        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
+        EventManager.Instance.StartListening(GlobalEvents.GameOver, ()=> SetVisible(false) );
+        EventManager.Instance.StartListening(GlobalEvents.Home, ()=> SetVisible(false) );
+
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
         bulletCountGradientInitialColor = bulletCountGradient.bottomColor;
         timeUtils = GetComponent<TimeUtils>();
@@ -80,6 +88,21 @@ public class HUDManager : MonoBehaviour {
 
     void OnPausePressed() {
         UIManager.Instance.Dialog.Activate(DialogType.Pause);
+    }
+
+    void OnMissionStart() {
+        SetVisible(true);
+        ShowReadyGo();
+        SetLifeCount(GameManager.PlayerLifeCount);
+        SetScore(GameManager.PlayerScore);
+    }
+
+    void OnPlayerPointsChanged() {
+        DOVirtual.DelayedCall(0.1f, ()=> SetScore(GameManager.PlayerScore) );
+    }
+
+    void OnPlayerDeath() {
+        DOVirtual.DelayedCall(0.1f, () => SetLifeCount(GameManager.PlayerLifeCount) );
     }
 
 }
