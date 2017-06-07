@@ -5,19 +5,19 @@ using EnemyUtils;
 
 public class SoldierBrainGeneral : EnemyBrain {
 
-    EnemyKnifeAttack knifeAttack;
-    AttackTarget grenadeAttack;
+    private EnemyKnifeAttack knifeAttack;
+    private AttackTarget grenadeAttack;
 
-    Cooldown grenadeAttackCooldown = new Cooldown(1f);
-    Cooldown knifeCooldown = new Cooldown(2f);
-    Cooldown walkBackCooldown = new Cooldown(3f);
+    private Cooldown grenadeAttackCooldown = new Cooldown(1f);
+    private Cooldown knifeCooldown = new Cooldown(2f);
+    private Cooldown walkBackCooldown = new Cooldown(3f);
 
-    private Collider2D proximityCollider;
-    private Collider2D midRangeCollider;
+    private Collider2D colliderProximity;
+    private Collider2D colliderMidRange;
 
     protected override void Init() {
-        proximityCollider = areaColliders[0];
-        midRangeCollider = areaColliders[1];
+        colliderProximity = areaColliders[0];
+        colliderMidRange = areaColliders[1];
 
         knifeAttack = GetComponent<EnemyKnifeAttack>();
         grenadeAttack = GetComponent<AttackTarget>();
@@ -26,37 +26,34 @@ public class SoldierBrainGeneral : EnemyBrain {
     protected override IEnumerator Think() {
         while (enabled) {
 
-            if (!TargetInArea(midRangeCollider.bounds)) {
-                yield return StartCoroutine( WalkTo(midRangeCollider) );
-            } 
-
-            while (TargetInArea( midRangeCollider.bounds ))
+            while (TargetInArea( colliderMidRange.bounds ))
             {
                 float randomValue = UnityEngine.Random.value;
 
-                if (randomValue > 0.35 && grenadeAttackCooldown.IsReady()) {
+                if (randomValue > 0.35f && grenadeAttackCooldown.IsReady()) {
                     yield return StartCoroutine( AttackGrenade() );
                 } else if (walkBackCooldown.IsReady()) {
                     yield return StartCoroutine( WalkBackATinyBit() );
                 } else {
-                    yield return StartCoroutine( WalkTo(proximityCollider) );
+                    yield return StartCoroutine( WalkTo( colliderProximity ) );
                 }
-
-                yield return new WaitForSeconds(0.2f);
+                yield return 0;
             }
 
-            while (TargetInArea( proximityCollider.bounds ))
+            while (TargetInArea( colliderProximity.bounds ))
             {
                 float randomValue = UnityEngine.Random.value;
 
                 if (randomValue > 0.3f) {
-
                     yield return StartCoroutine( AttackKnife() );
                 } else {
                     yield return StartCoroutine( WalkAway() );
                 }
+                yield return 0;
+            }
 
-                yield return new WaitForSeconds(0.5f);
+            if (!TargetInArea( colliderMidRange.bounds ) && !TargetInArea(colliderProximity.bounds)) {
+                yield return StartCoroutine( WalkToPlayer() );
             }
 
             yield return new WaitForSeconds(0.1f);
@@ -69,31 +66,46 @@ public class SoldierBrainGeneral : EnemyBrain {
 
         yield return new WaitForSeconds(1.5f);
     }
-    //TODO !! FACE AREA
-    IEnumerator WalkTo(Collider2D area) {
-        print("start waling to " + area);
 
-        //FIXME here should have a FaceArea function rather than faceTarger!!
-        while (!TargetInArea(area.bounds)) {
+    IEnumerator WalkTo(Collider2D area) {
+        const float walkMaxDuration = 3f;
+        float startTime = Time.realtimeSinceStartup; 
+
+        while (!TargetInArea(area.bounds) && Time.realtimeSinceStartup < startTime + walkMaxDuration) {
             EnemyMovement.FaceTarget(transform, targetDistance.Target);
             physic.MoveForward(0.7f);
 
             yield return new WaitForEndOfFrame();
         }
 
-        print("finished walking to " + area);
+        //LEAVE TIME FOR SLOWING DOWN ANIM
+        yield return new WaitForSeconds(0.5f);
 
-        //FIXME - this is to leave time to the animation to finish
-        //yield return new WaitForSeconds(0.5f);
+    }
+
+    bool TimeIsUp(float startTime, float duration) {
+        return Time.realtimeSinceStartup > startTime + duration;
+    }
+
+    IEnumerator WalkToPlayer() {
+        EnemyMovement.FaceTarget(transform, targetDistance.Target);
+        float startTime = Time.realtimeSinceStartup;
+
+        while (targetDistance.MoreThan(0.3f) && !TimeIsUp(startTime, 2f)) {
+            physic.MoveForward(0.7f);
+            yield return new WaitForEndOfFrame();
+        }
+
+        //LEAVE TIME FOR SLOWING DOWN ANIM
+        yield return new WaitForSeconds(0.5f);
     }
 
     IEnumerator WalkAway() {
         EnemyMovement.TurnBackToTarget(transform, targetDistance.Target);
-
         float startTime = Time.realtimeSinceStartup;
 
-        while ( Time.realtimeSinceStartup < startTime + 2.5f) {
-            physic.MoveForward(0.7f);
+        while (!TimeIsUp(startTime, 2f)) {
+            physic.MoveForward(0.85f);
             yield return new WaitForEndOfFrame();
         }
     }
@@ -103,7 +115,6 @@ public class SoldierBrainGeneral : EnemyBrain {
         float startTime = Time.realtimeSinceStartup;
 
         while (Time.realtimeSinceStartup < startTime + 24f/30f) {
-            //TODO hmmm, moveForward but it goes backward with negative vel
             physic.MoveForward(-0.1f);
             yield return new WaitForEndOfFrame();
         }

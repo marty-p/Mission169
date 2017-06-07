@@ -50,6 +50,13 @@ public abstract class EnemyBrain : MonoBehaviour {
         StopAllCoroutines();
     }
 
+    public void OnEnable() {
+        StopAllCoroutines();
+        if (target != null) {
+                StartCoroutine(Think());
+        }
+    }
+
     public bool TargetInArea(Bounds bounds) {
         return bounds.max.x > target.position.x && bounds.min.x < target.position.x;
     }

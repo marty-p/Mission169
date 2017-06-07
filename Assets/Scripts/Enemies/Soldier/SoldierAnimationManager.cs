@@ -100,7 +100,7 @@ public class SoldierAnimationManager : MonoBehaviour, IObserver {
         anim.Rebind();
     }
 
-    void FixedUpdate() {
+    void Update() {
         float currentPos = (float) Math.Truncate(transform.position.x * 1000) / 1000;
         float dx = currentPos - pastXpos;
         bool isInMotion = Mathf.Abs(dx) > 0;
@@ -109,6 +109,7 @@ public class SoldierAnimationManager : MonoBehaviour, IObserver {
         if (isInMotion) {
             if (goForward) {
                 anim.SetBool("walking", true);
+                anim.SetBool("walking_backward", false);
             } else {
                 anim.SetBool("walking_backward", true);
             }
