@@ -6,8 +6,8 @@ public class fast : Achievement {
     float startTime;
 
     void Start() {
-        EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
-        EventManager.Instance.StartListening(GlobalEvents.MissionStart, ()=> {startTime = Time.time;});
+        EventManager.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
+        EventManager.StartListening(GlobalEvents.MissionStart, ()=> {startTime = Time.time;});
     }
 
     private void OnMissionSuccess() {

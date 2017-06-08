@@ -20,7 +20,7 @@ public class AttackKnife : MonoBehaviour, IAttack {
         attackSwitch = !attackSwitch;
 
         knife.CastAOE(victimTag, transform.position);
-        EventManager.Instance.TriggerEvent(GlobalEvents.KnifeUsed);
+        EventManager.TriggerEvent(GlobalEvents.KnifeUsed);
         timeUtils.TimeDelay(0.3f, () => { anim.SetBool("knifeing", false); });
     }
 

@@ -8,19 +8,24 @@ namespace SlugLib {
         PlayerDead,
         PlayerSpawned,
         PlayerStabbed,
+        PlayerInactive,
+
         BossStart,
         BossDead,
         SoldierDead,
         BerserkerDead,
+
         PointsEarned,
         KnifeUsed,
         GunUsed,
         GrenadeUsed,
         WaveEventEnd,
-        PlayerInactive,
+
+        MissionStartRequest,
         MissionStart,
         MissionEnd, // the end regardless of the success/failure
-        MissionSuccess, 
+        MissionSuccess,
+
         GameOver,
         ItemPickedUp,
         Home
@@ -32,26 +37,13 @@ namespace SlugLib {
     public class FloatEvent : UnityEvent<float> { }
 
     // This class initially comes from a tutorial on Unity.com but heavily adapted
-    public class EventManager : Singleton<EventManager> {
+    public class EventManager {
 
-        private Dictionary<GlobalEvents, UnityEvent> eventDictionary;
-        private Dictionary<GlobalEvents, TransformEvent> transformEventDictionary;
-        private Dictionary<GlobalEvents, FloatEvent> floatEventDictionary;
+        private static Dictionary<GlobalEvents, UnityEvent> eventDictionary = new Dictionary<GlobalEvents, UnityEvent>();
+        private static Dictionary<GlobalEvents, TransformEvent> transformEventDictionary = new Dictionary<GlobalEvents, TransformEvent>();
+        private static Dictionary<GlobalEvents, FloatEvent> floatEventDictionary = new Dictionary<GlobalEvents, FloatEvent>();
 
-        void Awake() {
-            DontDestroyOnLoad(this);
-            Init();
-        }
-
-        void Init() {
-            if (eventDictionary == null) {
-                eventDictionary = new Dictionary<GlobalEvents, UnityEvent>();
-                transformEventDictionary = new Dictionary<GlobalEvents, TransformEvent>();
-                floatEventDictionary = new Dictionary<GlobalEvents, FloatEvent>();
-            }
-        }
-
-        public void StartListening(GlobalEvents eventName, UnityAction listener) {
+        public static void StartListening(GlobalEvents eventName, UnityAction listener) {
             UnityEvent thisEvent = null;
             if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.AddListener(listener);
@@ -62,7 +54,7 @@ namespace SlugLib {
             }
         }
 
-        public void StartListening(GlobalEvents eventName, UnityAction<Transform> listener) {
+        public static void StartListening(GlobalEvents eventName, UnityAction<Transform> listener) {
             TransformEvent thisEvent = null;
             if (transformEventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.AddListener(listener);
@@ -73,7 +65,7 @@ namespace SlugLib {
             }
         }
 
-        public void StartListening(GlobalEvents eventName, UnityAction<float> listener) {
+        public static void StartListening(GlobalEvents eventName, UnityAction<float> listener) {
             FloatEvent thisEvent = null;
             if (floatEventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.AddListener(listener);
@@ -84,28 +76,28 @@ namespace SlugLib {
             }
         }
 
-        public void StopListening(GlobalEvents eventName, UnityAction listener) {
+        public static void StopListening(GlobalEvents eventName, UnityAction listener) {
             UnityEvent thisEvent = null;
             if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.RemoveListener(listener);
             }
         }
 
-        public void TriggerEvent(GlobalEvents eventName) {
+        public static void TriggerEvent(GlobalEvents eventName) {
             UnityEvent thisEvent = null;
             if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.Invoke();
             }
         }
 
-        public void TriggerEvent(GlobalEvents eventName, Transform transform) {
+        public static void TriggerEvent(GlobalEvents eventName, Transform transform) {
             TransformEvent thisEvent = null;
             if (transformEventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.Invoke(transform);
             }
         }
 
-        public void TriggerEvent(GlobalEvents eventName, float val) {
+        public static void TriggerEvent(GlobalEvents eventName, float val) {
             FloatEvent thisEvent = null;
             if (floatEventDictionary.TryGetValue(eventName, out thisEvent)) {
                 thisEvent.Invoke(val);

@@ -27,11 +27,11 @@ public class FacebookManager : Singleton<FacebookManager> {
         if (FB.IsInitialized) {
             FB.ActivateApp();
 
-            EventManager.Instance.StartListening(
+            EventManager.StartListening(
                     GlobalEvents.MissionSuccess,
                     () => FB.LogAppEvent(AppEventName.AchievedLevel));
            
-            EventManager.Instance.StartListening(
+            EventManager.StartListening(
                     GlobalEvents.PlayerDead,
                     () => FB.LogAppEvent("death"));
             if (OnFacebookInitSuccess != null) {

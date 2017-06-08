@@ -52,7 +52,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void SecondaryAttack() {
         if (grenadeCount > 0) {
             grenadeCount--;
-            EventManager.Instance.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
+            EventManager.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
 
             Vector3 grenadeInitialPos;
             if (movementManager.body == BodyPosture.Crouch) {
@@ -67,7 +67,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void RestoreGrenade() {
         grenadeCount = 10;
         // To refresh UI 
-        EventManager.Instance.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
+        EventManager.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
     }
 
     public void UpdateBulletCount(int newBulletCount = 0) {
@@ -80,7 +80,7 @@ public class MarcoAttackManager : MonoBehaviour {
             SetDefaultAttack();
         }
         // To refresh UI
-        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
+        EventManager.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
     }
 
     public void SetAttack(int attackID, RuntimeAnimatorController attackAnimController) {
@@ -91,7 +91,7 @@ public class MarcoAttackManager : MonoBehaviour {
     public void SetDefaultAttack() {
         currentFireArmAttack = FireArmAttacks[1];
         topBodyAnimator.runtimeAnimatorController = gunAnimController;
-        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
+        EventManager.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
     }
 
     private bool InRangeForKnife() {

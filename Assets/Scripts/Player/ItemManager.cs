@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour {
 
     private void PickUpItem(CollectibleDef item) {
         if (item.attackID > 0) {
-            EventManager.Instance.TriggerEvent(GlobalEvents.ItemPickedUp);
+            EventManager.TriggerEvent(GlobalEvents.ItemPickedUp);
             attackManager.SetAttack(item.attackID, item.animController);
             attackManager.UpdateBulletCount(item.bulletCount);
         }

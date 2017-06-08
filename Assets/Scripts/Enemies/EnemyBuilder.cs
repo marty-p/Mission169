@@ -38,8 +38,8 @@ namespace Mission169 {
                 enemyEvents.OnDead(projectileProp);
                 //To ignore collision with projectiles during death anim but still be 'physic'
                 gameObject.layer = 2;
-                EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, pointsValue);
-                EventManager.Instance.TriggerEvent(GlobalEvents.SoldierDead);
+                EventManager.TriggerEvent(GlobalEvents.PointsEarned, pointsValue);
+                EventManager.TriggerEvent(GlobalEvents.SoldierDead);
             }
         }
     }

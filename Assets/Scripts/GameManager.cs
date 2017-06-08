@@ -2,6 +2,7 @@
 using Slug;
 using UnityEngine.SceneManagement;
 using SlugLib;
+using DG.Tweening;
 
 namespace Mission169 {
 
@@ -21,21 +22,20 @@ namespace Mission169 {
         private GameObject playerGameObject;
         private Transform playerTransform;
         private PlayerDeathManager playerDeathManager;
-        private MainMenu mainMenu;
         private DialogManager dialog;
 
         public static int PlayerLifeCount { get {return playerLifeCount;} }
         public static int PlayerScore { get { return playerScore; } }
 
         public GameObject playerPrefab;
-        public GameObject readyGOPrefab;
 
         void Awake() {
             DontDestroyOnLoad(this);
 
-            EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
-            EventManager.Instance.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
-            EventManager.Instance.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
+            EventManager.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
+            EventManager.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
+            EventManager.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
+            EventManager.StartListening(GlobalEvents.MissionStartRequest, MissionStart);
             timeUtils = gameObject.AddComponent<TimeUtils>();
             playerGameObject = Instantiate( Resources.Load("Player")) as GameObject;
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
@@ -45,7 +45,6 @@ namespace Mission169 {
             //FIXME  you know what
             playerTransform = playerGameObject.transform.GetChild(0).transform;
 
-            mainMenu = UIManager.Instance.MainMenuT;
             dialog = UIManager.Instance.Dialog;
         }
 
@@ -56,13 +55,12 @@ namespace Mission169 {
         public void Home() {
             ResetGameData();
             MissionLoad();
-            MissionInit();
-            mainMenu.SetVisible(true);
+            InitPlayer();
 
-            EventManager.Instance.TriggerEvent(GlobalEvents.Home);
+            EventManager.TriggerEvent(GlobalEvents.Home);
         }
 
-        public void MissionInit() {
+        private void InitPlayer() {
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
             playerGameObject.layer = (int)SlugLayers.Player;
             GameObject startPos = GameObject.Find("StartLocation");
@@ -70,11 +68,11 @@ namespace Mission169 {
             playerGameObject.SetActive(false);
         }
 
-        public void MissionStart() {
-            EventManager.Instance.TriggerEvent(GlobalEvents.MissionStart);
-            mainMenu.SetVisible(false);
+        private void MissionStart() {
+            InitPlayer();
+            EventManager.TriggerEvent(GlobalEvents.MissionStart);
 
-            timeUtils.TimeDelay(1.8f, () => {
+            DOVirtual.DelayedCall(1.8f, () => {
                 playerGameObject.SetActive(true);
                 playerDeathManager.SpawnPlayer();
             });
@@ -83,16 +81,15 @@ namespace Mission169 {
         public void MissionRetry() {
             ResetGameData();
             MissionLoad();
-            MissionInit();
+            InitPlayer();
             // Work around for some reason the music does not start again otherwise...
-            Invoke("MissionStart", 0.2f);
+            DOVirtual.DelayedCall(0.2f, ()=> MissionStart());
         }
 
         public void GoNextMission() {
             currentMissionID++;
             if (currentMissionID < missionList.Length) {
                 MissionLoad();
-                MissionInit();
                 MissionStart();
             } else {
                 Home();
@@ -111,9 +108,9 @@ namespace Mission169 {
         private void OnplayerDeath() {
             playerLifeCount--;
             if (playerLifeCount >= 0) {
-                timeUtils.TimeDelay(waitTimeBeforeSpawn, () => {
+                DOVirtual.DelayedCall(waitTimeBeforeSpawn, () => {
                     playerDeathManager.SpawnPlayer();
-                    EventManager.Instance.TriggerEvent(GlobalEvents.PlayerSpawned);
+                    EventManager.TriggerEvent(GlobalEvents.PlayerSpawned);
                 });
             } else {
                 GameOver();
@@ -123,7 +120,7 @@ namespace Mission169 {
         private void OnMissionSuccess() {
             MissionEnd();
             Invoke("ShowSuccessDialog", 3);
-            EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
+            EventManager.TriggerEvent(GlobalEvents.MissionSuccess);
         }
 
         private void MissionLoad() {
@@ -136,7 +133,7 @@ namespace Mission169 {
             MissionEnd();
             ResetGameData();
             dialog.Activate(DialogType.GameOver);
-            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
+            EventManager.TriggerEvent(GlobalEvents.GameOver);
         }
 
         private void ResetGameData() {
@@ -146,7 +143,7 @@ namespace Mission169 {
         }
 
         private void MissionEnd() {
-            EventManager.Instance.TriggerEvent(GlobalEvents.MissionEnd);
+            EventManager.TriggerEvent(GlobalEvents.MissionEnd);
             playerGameObject.GetComponentInChildren<MovementManager>().StopMoving();
             playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
             playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();

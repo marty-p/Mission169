@@ -87,7 +87,7 @@ public class TowerBoss : MonoBehaviour {
 
             if (currentTowersDestroyed == towers.Length) {
                 enemySpwanerPhase2.SetActive(false);
-                EventManager.Instance.TriggerEvent(GlobalEvents.BossDead);
+                EventManager.TriggerEvent(GlobalEvents.BossDead);
                 bossAlive = false;
             }
 
@@ -116,7 +116,7 @@ public class TowerBoss : MonoBehaviour {
     }
 
     void OpenTowers() {
-        EventManager.Instance.TriggerEvent(GlobalEvents.BossStart);
+        EventManager.TriggerEvent(GlobalEvents.BossStart);
         TR.OpenTower(()=> {
             sequencePhase1 = StartCoroutine("ProcessSequence");
         });

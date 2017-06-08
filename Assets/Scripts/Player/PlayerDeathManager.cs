@@ -44,7 +44,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
                 physic.SetVelocityY(3);
                 physic.SetVelocityX(-transform.right.x/3);
             } else if (projectileProp.type == ProjectileType.Knife) {
-                EventManager.Instance.TriggerEvent(GlobalEvents.PlayerStabbed);
+                EventManager.TriggerEvent(GlobalEvents.PlayerStabbed);
             }
             audioManager.PlaySound(2);
         }
@@ -56,7 +56,7 @@ public class PlayerDeathManager : MonoBehaviour, IReceiveDamage {
 
     private void NotifyDeath() {
         setPlayerVisible(false);
-        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerDead);
+        EventManager.TriggerEvent(GlobalEvents.PlayerDead);
     }
 
     public void SpawnPlayer() {

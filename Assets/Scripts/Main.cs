@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using Mission169;
 using SlugLib;
-using System.Collections;
+using DG.Tweening;
 
 public class Main : MonoBehaviour {
 
@@ -11,17 +11,14 @@ public class Main : MonoBehaviour {
     public GameObject uiManagerPrefab;
     public GameObject globalAudioPoolPrefab;
     public string firstMission = "mission1";
-    private TimeUtils timeUtils;
 
 	void Awake () {
-        timeUtils = GetComponent<TimeUtils>();
 
 #if UNITY_IOS
         Application.targetFrameRate = 60;
 #endif
 
         // Creating singletons (in the right order is better)
-        EventManager eventManager = EventManager.Instance;
         Instantiate(uiManagerPrefab);
         Instantiate(achievementManagerPrefab);
         Instantiate(gameManagerPrefab);
@@ -35,7 +32,7 @@ public class Main : MonoBehaviour {
             // Facebook init is done we can load the scene in the background 
             SceneManager.LoadScene(firstMission, LoadSceneMode.Additive);
 
-            timeUtils.TimeDelay(1, () => {
+            DOVirtual.DelayedCall(1, () => {
                 GameManager.Instance.Home();
                 UIManager.Instance.blackOverlay.FadeOut();
             });

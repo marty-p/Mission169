@@ -3,7 +3,7 @@
 public class very_first : Achievement {
 
     void Start() {
-        EventManager.Instance.StartListening(GlobalEvents.SoldierDead, OnSoldierDead);
+        EventManager.StartListening(GlobalEvents.SoldierDead, OnSoldierDead);
     }
 
     private void OnSoldierDead() {

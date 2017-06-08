@@ -55,7 +55,7 @@ public class Tower : MonoBehaviour, IReceiveDamage {
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         if (newHP > 1) {
             flashRed.FlashSlugStyle();
-            EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
+            EventManager.TriggerEvent(GlobalEvents.PointsEarned, 100);
             audioManager.PlaySound(0);
         } else {
             Die();

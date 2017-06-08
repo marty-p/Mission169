@@ -25,15 +25,15 @@ public class HUDManager : MonoBehaviour {
     private readonly int armsFontSizeWhenGun = 70; 
 
     void Awake() {
-        EventManager.Instance.StartListening(GlobalEvents.GunUsed, SetBulletCount);
-        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
-        EventManager.Instance.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
+        EventManager.StartListening(GlobalEvents.GunUsed, SetBulletCount);
+        EventManager.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
+        EventManager.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
 
-        EventManager.Instance.StartListening(GlobalEvents.MissionStart, OnMissionStart);
-        EventManager.Instance.StartListening(GlobalEvents.PointsEarned, OnPlayerPointsChanged);
-        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
-        EventManager.Instance.StartListening(GlobalEvents.GameOver, ()=> SetVisible(false) );
-        EventManager.Instance.StartListening(GlobalEvents.Home, ()=> SetVisible(false) );
+        EventManager.StartListening(GlobalEvents.MissionStart, OnMissionStart);
+        EventManager.StartListening(GlobalEvents.PointsEarned, OnPlayerPointsChanged);
+        EventManager.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
+        EventManager.StartListening(GlobalEvents.GameOver, ()=> SetVisible(false) );
+        EventManager.StartListening(GlobalEvents.Home, ()=> SetVisible(false) );
 
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
         bulletCountGradientInitialColor = bulletCountGradient.bottomColor;

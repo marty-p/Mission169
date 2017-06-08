@@ -81,6 +81,6 @@ public class InputManager : MonoBehaviour {
     }
 
     void SendPlayerInactiveEvent() {
-        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerInactive);
+        EventManager.TriggerEvent(GlobalEvents.PlayerInactive);
     }
 }

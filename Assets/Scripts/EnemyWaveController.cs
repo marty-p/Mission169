@@ -84,7 +84,7 @@ public class EnemyWaveController : MonoBehaviour {
     private void AllWavesOver() {
         cam.followActive = true;
         enabled = false;
-        EventManager.Instance.TriggerEvent(GlobalEvents.WaveEventEnd);
+        EventManager.TriggerEvent(GlobalEvents.WaveEventEnd);
         StopAllCoroutines();
     }
 

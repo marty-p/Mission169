@@ -6,9 +6,9 @@ public class no_mg : Achievement {
     bool pickedUpWeapon;
 
     void Start() {
-        EventManager.Instance.StartListening(GlobalEvents.MissionStart, ()=> { pickedUpWeapon = false;} );
-        EventManager.Instance.StartListening(GlobalEvents.ItemPickedUp, ()=> { pickedUpWeapon = true;} );
-        EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
+        EventManager.StartListening(GlobalEvents.MissionStart, ()=> { pickedUpWeapon = false;} );
+        EventManager.StartListening(GlobalEvents.ItemPickedUp, ()=> { pickedUpWeapon = true;} );
+        EventManager.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
     }
 
     private void OnMissionSuccess() {

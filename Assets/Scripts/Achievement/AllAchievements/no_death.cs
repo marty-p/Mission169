@@ -6,9 +6,9 @@ public class no_death : Achievement {
     bool died;
 
     void Start() {
-        EventManager.Instance.StartListening(GlobalEvents.MissionStart, ()=> { died = false;} );
-        EventManager.Instance.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
-        EventManager.Instance.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
+        EventManager.StartListening(GlobalEvents.MissionStart, ()=> { died = false;} );
+        EventManager.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
+        EventManager.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
     }
 
     private void OnPlayerDeath() {

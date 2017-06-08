@@ -10,10 +10,10 @@ namespace Mission169 {
 
         void Awake() {
             soundManager = GetComponent<SlugAudioManager>();
-            EventManager.Instance.StartListening(GlobalEvents.MissionStart, PlayMainMusic);
-            EventManager.Instance.StartListening(GlobalEvents.BossStart, PlayBossMusic);
-            EventManager.Instance.StartListening(GlobalEvents.BossDead, PlaySuccess);
-            EventManager.Instance.StartListening(GlobalEvents.GameOver, PlayGameOver);
+            EventManager.StartListening(GlobalEvents.MissionStart, PlayMainMusic);
+            EventManager.StartListening(GlobalEvents.BossStart, PlayBossMusic);
+            EventManager.StartListening(GlobalEvents.BossDead, PlaySuccess);
+            EventManager.StartListening(GlobalEvents.GameOver, PlayGameOver);
         }
 
         void PlayMainMusic() {

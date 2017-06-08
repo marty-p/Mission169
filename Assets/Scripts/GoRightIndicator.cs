@@ -8,8 +8,8 @@ public class GoRightIndicator : MonoBehaviour {
     void Awake() {
         audio = GetComponent<AudioSource>();
         gameObject.SetActive(false);
-        EventManager.Instance.StartListening(GlobalEvents.WaveEventEnd, ()=>SetActive(true));
-        EventManager.Instance.StartListening(GlobalEvents.PlayerInactive, ()=>SetActive(true));
+        EventManager.StartListening(GlobalEvents.WaveEventEnd, ()=>SetActive(true));
+        EventManager.StartListening(GlobalEvents.PlayerInactive, ()=>SetActive(true));
 	}
 	
     public void PlaySound() {

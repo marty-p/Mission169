@@ -12,10 +12,10 @@ public class DebugButtonEvents : MonoBehaviour {
 
     void OnGUI() {
         if (GUI.Button(new Rect(10, 10, 150, 30), "Mission Success"))
-            EventManager.Instance.TriggerEvent(GlobalEvents.MissionSuccess);
+            EventManager.TriggerEvent(GlobalEvents.MissionSuccess);
 
         if (GUI.Button(new Rect(10, 40, 150, 30), "GameOver"))
-            EventManager.Instance.TriggerEvent(GlobalEvents.GameOver);
+            EventManager.TriggerEvent(GlobalEvents.GameOver);
 
     }
 

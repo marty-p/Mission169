@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Mission169;
+using SlugLib;
 
 public class MainMenu : MonoBehaviour {
-    public Button start;
-    public Button reset;
-    public Button git;
+    public Button startButton;
+    public Button resetButton;
+    public Button gitButton;
 
-    public Button facebook;
-    public Button gameCenter;
+    public Button facebookButton;
+    public Button gameCenterButton;
 
     private Animator transitionAnimator;
 
@@ -19,14 +19,19 @@ public class MainMenu : MonoBehaviour {
     }
 
     void Start() {
-        start.onClick.AddListener(()=> {
-            GameManager.Instance.MissionInit();
-            GameManager.Instance.MissionStart();
+        startButton.onClick.AddListener(()=> {
+            EventManager.TriggerEvent(GlobalEvents.MissionStartRequest);
+            SetVisible(false);
         });
-        facebook.onClick.AddListener(OnFacebookPressed);
-        gameCenter.onClick.AddListener(GameCenterManager.ShowAchievements);
-        git.onClick.AddListener(OnGitHubPressed);
-        reset.onClick.AddListener(AchievementManager.Instance.ResetAchievements);
+
+        EventManager.StartListening(GlobalEvents.Home, () => {
+            SetVisible(true);
+        });
+
+        facebookButton.onClick.AddListener(OnFacebookPressed);
+        gameCenterButton.onClick.AddListener(GameCenterManager.ShowAchievements);
+        gitButton.onClick.AddListener(OnGitHubPressed);
+        resetButton.onClick.AddListener(AchievementManager.Instance.ResetAchievements);
     }    
 
     public void SetVisible(bool visible) {

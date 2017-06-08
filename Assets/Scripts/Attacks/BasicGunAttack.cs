@@ -24,7 +24,7 @@ public class BasicGunAttack : MonoBehaviour, IAttack {
         IProjectile bullet = bulletGameObject.GetComponentInChildren<IProjectile>();
         bullet.Launch(victimTag);
         audioManager.PlaySound(0);
-        EventManager.Instance.TriggerEvent(GlobalEvents.GunUsed, 0);
+        EventManager.TriggerEvent(GlobalEvents.GunUsed, 0);
     }
 
    private Vector3 GetProjPosInit() {

@@ -6,9 +6,9 @@ public class fire_5k_bullets : Achievement {
     int bulletFiredToDate;
 
     void Start() {
-        EventManager.Instance.StartListening(GlobalEvents.MissionStart, GetProgressFromServer);
-        EventManager.Instance.StartListening(GlobalEvents.MissionEnd, NotifyAchievementManager);
-        EventManager.Instance.StartListening(GlobalEvents.GunUsed, IncrementBulletCount);
+        EventManager.StartListening(GlobalEvents.MissionStart, GetProgressFromServer);
+        EventManager.StartListening(GlobalEvents.MissionEnd, NotifyAchievementManager);
+        EventManager.StartListening(GlobalEvents.GunUsed, IncrementBulletCount);
     }
 
     void IncrementBulletCount(float bullet){

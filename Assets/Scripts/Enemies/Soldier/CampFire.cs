@@ -25,7 +25,7 @@ public class CampFire : MonoBehaviour {
         soldier2.SetActive(false);
         spawn1.enabled = true;
         spawn2.enabled = true;
-        EventManager.Instance.TriggerEvent(GlobalEvents.PlayerSpawned);
+        EventManager.TriggerEvent(GlobalEvents.PlayerSpawned);
     }
 
 }

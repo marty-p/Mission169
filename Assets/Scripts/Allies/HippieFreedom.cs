@@ -36,7 +36,7 @@ public class HippieFreedom : MonoBehaviour, IReceiveDamage, IObserver {
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP) {
         animManager.PlayFreeAnim(EndOfHippieFreedAnim);
         gameObject.layer = (int) SlugLayers.FreeMan;
-        EventManager.Instance.TriggerEvent(GlobalEvents.PointsEarned, 100);
+        EventManager.TriggerEvent(GlobalEvents.PointsEarned, 100);
     }
 
     private void EndOfHippieFreedAnim() {
