@@ -17,7 +17,6 @@ namespace Mission169 {
         private int currentMissionID = 0;
         private string[] missionList = new[] { "mission1", "mission2" };
 
-        private TimeUtils timeUtils;
         private Transform missionStartPos;
         private GameObject playerGameObject;
         private Transform playerTransform;
@@ -36,7 +35,6 @@ namespace Mission169 {
             EventManager.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
             EventManager.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
             EventManager.StartListening(GlobalEvents.MissionStartRequest, MissionStart);
-            timeUtils = gameObject.AddComponent<TimeUtils>();
             playerGameObject = Instantiate( Resources.Load("Player")) as GameObject;
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
@@ -119,7 +117,7 @@ namespace Mission169 {
 
         private void OnMissionSuccess() {
             MissionEnd();
-            Invoke("ShowSuccessDialog", 3);
+            DOVirtual.DelayedCall(3, ShowSuccessDialog);
             EventManager.TriggerEvent(GlobalEvents.MissionSuccess);
         }
 
@@ -148,7 +146,6 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<InputManager>().enabled = false;
             playerGameObject.GetComponentInChildren<AnimationManager>().MissionCompleteAnim();
             playerTransform.gameObject.layer = (int)SlugLayers.IgnoreRaycast; //to ignore any potential projectile still going
-           // AchievementManager.Instance.SaveAchievementsLocally();
         }
 
         private void ShowSuccessDialog() {

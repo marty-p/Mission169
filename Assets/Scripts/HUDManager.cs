@@ -17,7 +17,6 @@ public class HUDManager : MonoBehaviour {
 
     private GameObject readyGoInstance;
     private Gradient bulletCountGradient;
-    private Color bulletCountGradientInitialColor;
     private TimeUtils timeUtils;
 
     private readonly int armsFontSize = 47;
@@ -36,7 +35,6 @@ public class HUDManager : MonoBehaviour {
         EventManager.StartListening(GlobalEvents.Home, ()=> SetVisible(false) );
 
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
-        bulletCountGradientInitialColor = bulletCountGradient.bottomColor;
         timeUtils = GetComponent<TimeUtils>();
         pauseButton.onClick.AddListener(OnPausePressed);
         readyGoInstance = Instantiate(readyGoPrefab);
