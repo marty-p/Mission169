@@ -1,36 +1,37 @@
 ﻿using UnityEngine;
-using SA.Common.Models;
 
 public class SlugGameCenter : MonoBehaviour, IGameService {
 
     void Start () {
+        /*
         GameCenterManager.OnAuthFinished += OnAuthFinished;
         GameCenterManager.OnAchievementsLoaded += OnAchievementsLoaded;
         GameCenterManager.OnAchievementsReset += OnAchievementsReset;
 		GameCenterManager.OnAchievementsProgress += OnAchievementsProgress;
 
         GameCenterManager.Init();
+        */
     }
 
 	public void Reset(){
-		GameCenterManager.ResetAchievements();
+		//GameCenterManager.ResetAchievements();
 	}
 
 	public void UpdateAchievement(Achievement ach){
-        GameCenterManager.SubmitAchievement(ach.Progress, ach.ID, true);
+        //GameCenterManager.SubmitAchievement(ach.Progress, ach.ID, true);
 	}
 
 	public void RetrieveProgress(Achievement ach) {
-        ach.Progress = GameCenterManager.GetAchievementProgress(ach.ID);
+        //ach.Progress = GameCenterManager.GetAchievementProgress(ach.ID);
 	}
 
 	public void ShowErrorDialog() {
-		IOSNativePopUpManager.showMessage("Game Center Error", "You don't seem to be connected to Game Center");		
+		//IOSNativePopUpManager.showMessage("Game Center Error", "You don't seem to be connected to Game Center");		
 	}
-
+/*
     void OnAuthFinished(Result res) {
         if (res.IsSucceeded) {
-			GameCenterManager.LoadAchievements();
+			//GameCenterManager.LoadAchievements();
         } else {
             Debug.LogWarning("Failed to connect to GameCenter");
         }
@@ -62,5 +63,5 @@ public class SlugGameCenter : MonoBehaviour, IGameService {
 	void OnAchievementsProgress(Result res) {
 		Debug.Log("achievemnts progress");
 	}
-
+*/
 }

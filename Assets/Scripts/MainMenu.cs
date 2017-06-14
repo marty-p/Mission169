@@ -29,7 +29,8 @@ public class MainMenu : MonoBehaviour {
         });
 
         facebookButton.onClick.AddListener(OnFacebookPressed);
-        gameCenterButton.onClick.AddListener(GameCenterManager.ShowAchievements);
+        //gameCenterButton.onClick.AddListener(GameCenterManager.ShowAchievements);
+
         gitButton.onClick.AddListener(OnGitHubPressed);
         resetButton.onClick.AddListener(AchievementManager.Instance.ResetAchievements);
     }    
