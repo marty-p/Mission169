@@ -9,92 +9,73 @@ namespace SlugLib
     public class RecorderMaster : MonoBehaviour
     {
         //FIXME this is not going to work on ios/android
-        public static string recordingFilePath = "C:\\Users\\Ben\\Desktop\\MSLUG\\Mission169\\Assets\\" ;
-
-        bool recording;
-
+        public static string recordingFilePath = "C:\\Users\\Ben\\Desktop\\MSLUG\\Mission169\\Assets\\";
+        public string recordingFileName = "game_play_recording";
         public float recordingFrameRate = 1f / 30f;
 
-        RecordedGameObject rgos;
-
-        GameObject go; // the parent of everything created when playing a recording
-
+        private bool recording;
         private SpriteRenderer[] spriteRenderers;
-        private RecordedGameObject recordedGameObject = new RecordedGameObject();
+        private RecordedSpriteRendererList recordedGameObject = new RecordedSpriteRendererList();
 
         List<SpriteRenderer> srs = new List<SpriteRenderer>();
 
-        void StartRecording()
+        public void StartRecording()
         {
             StartCoroutine((RecordingCoroutine()));
         }
 
-        void StopRecording()
+        public void StopRecording()
         {
             recording = false;
         }
 
-
-        void StartPlayback()
+        public void StartPlayback(string recordingFilePath)
         {
-            string[] files = Directory.GetFiles(recordingFilePath);
+            string jsonString = File.ReadAllText(recordingFilePath);
+            RecordedSpriteRendererList rsrl = JsonUtility.FromJson<RecordedSpriteRendererList>(jsonString);
 
-            for (int i = 0; i < files.Length; i++)
+            foreach (Transform child in transform)
             {
-                if (files[i].IndexOf("recording") == -1 || files[i].IndexOf("meta") != -1)
-                {
-                    continue;
-                }
-
-                string jsonString = File.ReadAllText(files[i]);
-                rgos = JsonUtility.FromJson<RecordedGameObject>(jsonString);
+                Destroy(child);
             }
 
-            if (go != null)
+            for (int i = 0; i < rsrl.recordedSpriteRenderer.Count; i++)
             {
-                Destroy(go);
-            }
-
-            go = new GameObject("masta masta");
-            go.transform.SetParent(transform);
-
-            for (int j = 0; j < rgos.recordedElements.Count; j++)
-            {
-                GameObject goo = new GameObject(rgos.recordedElements[j].name);
-                goo.transform.SetParent(go.transform);
-
+                // Create a game object for each sprite renderer recorded 
+                GameObject goo = new GameObject(rsrl.recordedSpriteRenderer[i].name);
+                goo.transform.SetParent(transform);
+                // Add the sprite renderer component to our list of recorded data
                 SpriteRenderer s = goo.AddComponent<SpriteRenderer>();
-                rgos.recordedElements[j].AddSr(s);
+                rsrl.recordedSpriteRenderer[i].sr = s;
             }
 
-            StartCoroutine(PlaybackCoroutine());
+            StartCoroutine(PlaybackCoroutine(rsrl));
         }
 
-        IEnumerator PlaybackCoroutine()
+        public void StopPlayback() {}
+
+        IEnumerator PlaybackCoroutine(RecordedSpriteRendererList rsrl)
         {
             int frameIndex = 0;
             while (true)
             {
-
-                for (int j = 0; j < rgos.recordedElements.Count; j++)
+                for (int i = 0; i < rsrl.recordedSpriteRenderer.Count; i++)
                 {
-                    if (!rgos.recordedElements[j].ExistAtThisFrame((frameIndex)))
+                    if (!rsrl.recordedSpriteRenderer[i].ExistAtThisFrame((frameIndex)))
                     {
-                        rgos.recordedElements[j].GetSr().gameObject.SetActive(false);
+                        rsrl.recordedSpriteRenderer[i].sr.gameObject.SetActive(false);
                         continue;
                     }
 
-                    SpriteRenderer s = rgos.recordedElements[j].GetSr();
-                    //s.sprite = Resources.Load<Sprite>(rgos.recordedElements[j].spritePath[rgos.recordedElements[j].cpt]);
+                    RecordedSpriteRenderer rsr = rsrl.recordedSpriteRenderer[i];
+                    rsr.cpt++;
 
-                    s.sprite = rgos.recordedElements[j].sprite[rgos.recordedElements[j].cpt];
-                    s.material.mainTextureOffset = rgos.recordedElements[j].uvs[rgos.recordedElements[j].cpt];
-                    s.transform.position = rgos.recordedElements[j].pos[rgos.recordedElements[j].cpt];
-                    s.transform.eulerAngles = rgos.recordedElements[j].angle[rgos.recordedElements[j].cpt];
-                    s.flipX = rgos.recordedElements[j].isFLiped;
-                    s.sortingOrder = rgos.recordedElements[j].layer;
-
-                    rgos.recordedElements[j].cpt++;
+                    rsr.sr.sprite = rsr.sprite[rsr.cpt];
+                    rsr.sr.material.mainTextureOffset = rsr.uv[rsr.cpt];
+                    rsr.sr.transform.position = rsr.pos[rsr.cpt];
+                    rsr.sr.transform.eulerAngles = rsr.angle[rsr.cpt];
+                    rsr.sr.flipX = rsr.flipped;
+                    rsr.sr.sortingOrder = rsr.layer;
 
                     //	if (rgos[i].name == "Camera")
                     //	{
@@ -102,7 +83,6 @@ namespace SlugLib
                     //		Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -1.55f);
                     //		Camera.main.GetComponent<FollowTarget>().enabled = false;
                     //		}
-
                 }
 
                 frameIndex++;
@@ -112,14 +92,13 @@ namespace SlugLib
 
         IEnumerator RecordingCoroutine()
         {
-            Init();
+            InitRecording();
 
             Debug.Log("recording started!");
             recording = true;
             int frameIndex = 0;
             while (recording)
             {
-
                 //TODO SUrely this is wrong!!!!
                 if (gameObject.activeSelf)
                 {
@@ -134,29 +113,28 @@ namespace SlugLib
             print("end of recording");
         }
 
-        public void Init()
+        void InitRecording()
         {
             spriteRenderers = FindObjectsOfType<SpriteRenderer>();
 
             for (int i = 0; i < spriteRenderers.Length; i++)
             {
-                recordedGameObject.AddSpriteRender(new RecordedElement());
-                recordedGameObject.recordedElements[i].name = spriteRenderers[i].gameObject.name;
+                recordedGameObject.AddSpriteRender(new RecordedSpriteRenderer());
+                recordedGameObject.recordedSpriteRenderer[i].name = spriteRenderers[i].gameObject.name;
             }
 
             recordingFilePath += gameObject.GetInstanceID() + gameObject.name + "recording";
         }
 
-        public void CaptureFrame(int frameIndex)
+        void CaptureFrame(int frameIndex)
         {
             for (int i = 0; i < spriteRenderers.Length; i++)
             {
                 SpriteRenderer sr = spriteRenderers[i];
 
-
                 if (sr.GetComponent<Camera>() != null)
                 {
-                    recordedGameObject.recordedElements[i].pos.Add(sr.transform.position);
+                    recordedGameObject.recordedSpriteRenderer[i].pos.Add(sr.transform.position);
                     continue;
                 }
 
@@ -166,52 +144,42 @@ namespace SlugLib
                 {
                     continue;
                 }
-                //print(sr.gameObject.name + " " + assetPath);
 
-                // remove everything up to Resources
-                //assetPath = assetPath.Substring(assetPath.LastIndexOf("Resources/"));
-                // remove "Resources/"
-                //assetPath = assetPath.Replace("Resources/", "");
-                // remove extension
-                //assetPath = assetPath.Substring(0, assetPath.LastIndexOf('.'));
-                //recordedGameObject.recordedElements[i].spritePath.Add(assetPath);
-
-                recordedGameObject.recordedElements[i].sprite.Add(sr.sprite);
+                recordedGameObject.recordedSpriteRenderer[i].sprite.Add(sr.sprite);
 
                 // texture offset because spritesheets
                 float textOffsetX = sr.sprite.uv[0].x;
                 float textOffsetY = sr.sprite.uv[1].y - sr.sprite.uv[1].y;
-                recordedGameObject.recordedElements[i].uvs.Add(new Vector2(textOffsetX, textOffsetY));
+                recordedGameObject.recordedSpriteRenderer[i].uv.Add(new Vector2(textOffsetX, textOffsetY));
                 // texture width/height
                 float w = sr.sprite.uv[1].x - sr.sprite.uv[0].x;
                 float h = sr.sprite.uv[1].y - sr.sprite.uv[2].y;
-                recordedGameObject.recordedElements[i].wh.Add(new Vector2(w, h));
+                recordedGameObject.recordedSpriteRenderer[i].wh.Add(new Vector2(w, h));
                 // position
-                recordedGameObject.recordedElements[i].pos.Add(sr.transform.position);
+                recordedGameObject.recordedSpriteRenderer[i].pos.Add(sr.transform.position);
                 // angles
-                recordedGameObject.recordedElements[i].angle.Add(sr.transform.eulerAngles);
+                recordedGameObject.recordedSpriteRenderer[i].angle.Add(sr.transform.eulerAngles);
                 // flipped
-                recordedGameObject.recordedElements[i].isFLiped = sr.flipX;
+                recordedGameObject.recordedSpriteRenderer[i].flipped = sr.flipX;
                 // layer
-                recordedGameObject.recordedElements[i].layer = sr.sortingOrder;
+                recordedGameObject.recordedSpriteRenderer[i].layer = sr.sortingOrder;
 
-
-                recordedGameObject.recordedElements[i].frameIndex.Add(frameIndex);
+                recordedGameObject.recordedSpriteRenderer[i].frame.Add(frameIndex);
             }
         }
 
-        public void SaveToFile()
+        void SaveToFile()
         {
             recordedGameObject.name = gameObject.name;
 
             string jsonSting = JsonUtility.ToJson(recordedGameObject);
-            File.WriteAllText(recordingFilePath, jsonSting);
+            File.WriteAllText(recordingFilePath + recordingFileName, jsonSting);
         }
 
-        public void ReadFromFile(string filePath)
+        void ReadFromFile(string filePath)
         {
             string jsonString = File.ReadAllText(filePath);
-            JsonUtility.FromJson<RecordedElement[]>(jsonString);
+            JsonUtility.FromJson<RecordedSpriteRenderer[]>(jsonString);
         }
 
         void Update()
@@ -226,9 +194,8 @@ namespace SlugLib
             }
             else if (Input.GetKeyDown("d"))
             {
-                StartPlayback();
+                StartPlayback(recordingFilePath + recordingFileName);
             }
         }
-
     }
 }

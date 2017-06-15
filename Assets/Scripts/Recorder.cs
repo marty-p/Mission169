@@ -3,54 +3,41 @@ using System.Collections.Generic;
 
 namespace SlugLib
 {
-
     [System.Serializable]
-    public class RecordedGameObject
+    public class RecordedSpriteRendererList
     {
         public string name = "";
 
-        public List<RecordedElement> recordedElements = new List<RecordedElement>();
+        public List<RecordedSpriteRenderer> recordedSpriteRenderer = new List<RecordedSpriteRenderer>();
 
-        public void AddSpriteRender(RecordedElement re)
+        public void AddSpriteRender(RecordedSpriteRenderer rsr)
         {
-            recordedElements.Add(re);
+            recordedSpriteRenderer.Add(rsr);
         }
     }
 
     [System.Serializable]
-    public class RecordedElement
+    public class RecordedSpriteRenderer
     {
         public string name;
-        public bool isFLiped;
+        public bool flipped;
         public int layer;
-        public List<int> frameIndex = new List<int>();
-        //public List<string> spritePath = new List<string>();
-
+        public List<int> frame = new List<int>();
         public List<Sprite> sprite = new List<Sprite>();
-        public List<Vector2> uvs = new List<Vector2>();
+        public List<Vector2> uv = new List<Vector2>();
         public List<Vector2> wh = new List<Vector2>();
         public List<Vector2> pos = new List<Vector2>();
         public List<Vector2> angle = new List<Vector2>();
 
         public int cpt;
 
-        private SpriteRenderer sr;
-
-        public void AddSr(SpriteRenderer sr)
-        {
-            this.sr = sr;
-        }
-
-        public SpriteRenderer GetSr()
-        {
-            return this.sr;
-        }
+        public SpriteRenderer sr;
 
         public bool ExistAtThisFrame(int frameIndex)
         {
-            for (int i = 0; i < this.frameIndex.Count; i++)
+            for (int i = 0; i < frame.Count; i++)
             {
-                if (this.frameIndex[i] == frameIndex)
+                if (frame[i] == frameIndex)
                 {
                     return true;
                 }
