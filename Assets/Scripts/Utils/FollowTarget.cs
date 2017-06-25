@@ -13,13 +13,14 @@ public class FollowTarget : MonoBehaviour {
 
 
     void Start () { 
+        camera = GetComponent<Camera>();
+
         if (target == null) {
             // while this script is general and could be use to follow anything
             // this one bit is very specific to Mission169
             target = GameManager.Instance.GetPlayer().transform.GetChild(0);
 
             if (target != null) {
-                camera = GetComponent<Camera>();
                 targetViewPortPos = new Vector2();
                 oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
             }

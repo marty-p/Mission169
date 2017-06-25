@@ -67,6 +67,8 @@ namespace Mission169 {
         }
 
         private void MissionStart() {
+            MissionLoad();
+
             InitPlayer();
             EventManager.TriggerEvent(GlobalEvents.MissionStart);
 

@@ -115,7 +115,7 @@ public class SoldierAnimationManager : MonoBehaviour, IObserver {
             }
         } else {
             anim.SetBool("walking", false);
-            anim.SetBool("walking_backward", false);
+          //  anim.SetBool("walking_backward", false);
         }
         // Turn Around Anim when needed
         if (transform.right != pastDir) {

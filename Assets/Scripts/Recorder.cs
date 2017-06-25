@@ -10,39 +10,52 @@ namespace SlugLib
 
         public List<RecordedSpriteRenderer> recordedSpriteRenderer = new List<RecordedSpriteRenderer>();
 
-        public void AddSpriteRender(RecordedSpriteRenderer rsr)
+        public List<Vector3> cameraPosition = new List<Vector3>();
+
+        public void Add(RecordedSpriteRenderer rsr, string name)
         {
             recordedSpriteRenderer.Add(rsr);
+            rsr.name = name;
         }
     }
 
     [System.Serializable]
     public class RecordedSpriteRenderer
     {
+        public SpriteRenderer sr;
+
+        public List<SpriteRendererFrame> frames = new List<SpriteRendererFrame>();
+
         public string name;
         public bool flipped;
         public int layer;
-        public List<int> frame = new List<int>();
-        public List<Sprite> sprite = new List<Sprite>();
-        public List<Vector2> uv = new List<Vector2>();
-        public List<Vector2> wh = new List<Vector2>();
-        public List<Vector2> pos = new List<Vector2>();
-        public List<Vector2> angle = new List<Vector2>();
-
-        public int cpt;
-
-        public SpriteRenderer sr;
-
-        public bool ExistAtThisFrame(int frameIndex)
-        {
-            for (int i = 0; i < frame.Count; i++)
-            {
-                if (frame[i] == frameIndex)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
+
+
+
+
+    [System.Serializable]
+    public class GamePlayRecording
+    {
+        public List<Frame> frames = new List<Frame>();
+        public List<Vector3> cameraPosition = new List<Vector3>();
+    }
+    [System.Serializable]
+    public class Frame
+    {
+        public List<SpriteRendererFrame> spriteRenderers = new List<SpriteRendererFrame>();
+    }
+
+    // TODO make that a struct
+    [System.Serializable]
+    public class SpriteRendererFrame
+    {
+        public Sprite sprite;
+        public Vector2 uv;
+        public Vector2 wh;
+        public Vector2 pos;
+        public Vector2 angleYZ;
+        public int layer;
+    }
+
 }

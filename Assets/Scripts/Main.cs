@@ -23,20 +23,27 @@ public class Main : MonoBehaviour {
         Instantiate(achievementManagerPrefab);
         Instantiate(gameManagerPrefab);
         Instantiate(globalAudioPoolPrefab);
-        FacebookManager facebookManager = FacebookManager.Instance;
 
-        UIManager.Instance.blackOverlay.SetVisible(true);
+
+        SceneManager.LoadScene("AutoGame", LoadSceneMode.Additive);
+
+        //FacebookManager facebookManager = FacebookManager.Instance;
+
+       // UIManager.Instance.blackOverlay.SetVisible(true);
+
+        /*
 
         FacebookManager.Instance.OnFacebookInitSuccess = () => {
         //SceneManager.LoadScene("login", LoadSceneMode.Additive);
             // Facebook init is done we can load the scene in the background 
-            SceneManager.LoadScene(firstMission, LoadSceneMode.Additive);
+            SceneManager.LoadScene("AutoGame", LoadSceneMode.Additive);
 
             DOVirtual.DelayedCall(1, () => {
                 GameManager.Instance.Home();
                 UIManager.Instance.blackOverlay.FadeOut();
             });
         };
+        */
 	}
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
