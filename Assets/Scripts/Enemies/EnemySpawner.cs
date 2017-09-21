@@ -85,7 +85,6 @@ namespace Mission169
                 {
                     spawnCoroutine = StartCoroutine(RespawnUponDeathCoroutine());
                 }
-                print("spawn here!");
             }
 
             enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();

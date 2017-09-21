@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Collections;
 using SlugLib;
 using DG.Tweening;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace Mission169
 {
@@ -40,27 +37,6 @@ namespace Mission169
             }
 
             StartCoroutine(CheckForCameraPosition());
-
-#if UNITY_EDITOR
-            Selection.selectionChanged = () =>
-            {
-                if (Application.isPlaying)
-                {
-                    return;
-                }
-
-                if (Selection.activeTransform == null)
-                {
-                    return;
-                }
-
-                if (Selection.activeTransform.GetComponent<EnemyWaveController>() != null)
-                {
-                    cam.transform.position = Selection.activeTransform.position;
-                    CameraUtils.DrawCameraEdgesAt(Selection.activeTransform.position);
-                }
-            };
-#endif
         }
 
         private IEnumerator CheckForCameraPosition()
