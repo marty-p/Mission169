@@ -28,7 +28,9 @@ namespace SlugLib {
 
         GameOver,
         ItemPickedUp,
-        Home
+        Home,
+
+        ShowRecordingUI
     }
 
     [System.Serializable]

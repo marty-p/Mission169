@@ -33,6 +33,11 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
         }
     }
 
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void Update() {
         if (walkingMode) {
             physic.MoveForward(1.3f);
@@ -64,10 +69,17 @@ public class Berserker : MonoBehaviour, IReceiveDamage {
         }
     }
 
-    public void SetWalkingMode() {
-        walkingMode = true;
+    public void SetWalkingMode(bool walking) {
+        walkingMode = walking;
         if (bottomBodyAnimator.isInitialized) {
-            bottomBodyAnimator.SetTrigger("walk");
+            if (walking)
+            {
+                bottomBodyAnimator.SetTrigger("walk");
+            }
+            else
+            {
+                bottomBodyAnimator.Play("berserker-sitting");
+            }
         }
     }
 

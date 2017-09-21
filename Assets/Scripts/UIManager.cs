@@ -17,11 +17,6 @@ namespace Mission169 {
         private DialogManager dialogManager;
         public TransitionOverlay blackOverlay { get; set; }
 
-        public GameObject HUDPrefab;
-        public GameObject maineMenuPrefab;
-        public GameObject dialogManagerPrefab;
-        public GameObject blackOverlayTransition;
-
         void Awake() {
             DontDestroyOnLoad(this);
 

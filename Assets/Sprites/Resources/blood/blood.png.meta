@@ -1,0 +1,323 @@
+fileFormatVersion: 2
+guid: 2a2d0db506f53e74db03f62235596e15
+timeCreated: 1457304205
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: blood_0
+    21300002: blood_2
+    21300004: blood_4
+    21300006: blood_7
+    21300008: blood_9
+    21300010: blood_10
+    21300012: blood_11
+    21300014: blood_12
+    21300016: blood_13
+    21300018: blood_14
+    21300020: blood_15
+    21300022: blood_18
+    21300024: blood_19
+    21300026: blood_31
+    21300028: blood_32
+    21300030: blood_35
+    21300032: blood_40
+    21300034: blood_41
+    21300036: blood_42
+    21300038: blood_43
+    21300040: blood_44
+    21300042: blood_45
+    21300044: blood_46
+    21300046: blood_47
+    21300048: blood_48
+    21300050: blood_49
+    21300052: blood_50
+    21300054: blood_51
+    21300056: blood_52
+    21300058: blood_53
+    21300060: blood_54
+    21300062: blood_55
+    21300064: blood_56
+    21300066: blood_57
+    21300068: blood_58
+    21300070: blood_59
+    21300072: blood_60
+    21300074: blood_61
+    21300076: blood_62
+    21300078: blood_63
+    21300080: blood_64
+    21300082: blood_65
+    21300084: blood_66
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 372
+        width: 42
+        height: 31
+      alignment: 9
+      pivot: {x: -0.01219704, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 370
+        width: 41
+        height: 35
+      alignment: 9
+      pivot: {x: -0.007003412, y: 0.54834247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 370
+        width: 38
+        height: 35
+      alignment: 9
+      pivot: {x: -0.002504449, y: 0.5414359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_7
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 368
+        width: 34
+        height: 39
+      alignment: 9
+      pivot: {x: 0.0094685275, y: 0.54338425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_9
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 366
+        width: 33
+        height: 41
+      alignment: 9
+      pivot: {x: 0.0092533, y: 0.55998564}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_10
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 333
+        width: 20
+        height: 22
+      alignment: 9
+      pivot: {x: -0.0075927735, y: 0.26927602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_11
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 331
+        width: 23
+        height: 28
+      alignment: 9
+      pivot: {x: 0.01657768, y: 0.2841862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_12
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 330
+        width: 27
+        height: 31
+      alignment: 9
+      pivot: {x: 0.0076254387, y: 0.2816802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_13
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 328
+        width: 30
+        height: 29
+      alignment: 9
+      pivot: {x: -0.0075927735, y: 0.3833113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_14
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 326
+        width: 31
+        height: 30
+      alignment: 9
+      pivot: {x: -0.0068132957, y: 0.42748615}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_15
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 323
+        width: 33
+        height: 33
+      alignment: 9
+      pivot: {x: -0.0053960625, y: 0.49267486}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_18
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 321
+        width: 38
+        height: 37
+      alignment: 9
+      pivot: {x: -0.008865356, y: 0.48040193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_19
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 333
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: -0.0006866455, y: 0.3151622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_31
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 366
+        width: 37
+        height: 41
+      alignment: 9
+      pivot: {x: 0.010045232, y: 0.56484914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_32
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 366
+        width: 33
+        height: 41
+      alignment: 9
+      pivot: {x: -0.012720281, y: 0.558954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_35
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 366
+        width: 35
+        height: 41
+      alignment: 9
+      pivot: {x: -0.017952183, y: 0.56484914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_60
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 49
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

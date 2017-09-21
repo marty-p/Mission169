@@ -25,8 +25,10 @@ public class Main : MonoBehaviour {
         Instantiate(globalAudioPoolPrefab);
 
 
-        SceneManager.LoadScene("AutoGame", LoadSceneMode.Additive);
+         SceneManager.LoadScene("AutoGame", LoadSceneMode.Additive);
 
+        // EventManager.TriggerEvent(GlobalEvents.MissionStartRequest);
+        
         //FacebookManager facebookManager = FacebookManager.Instance;
 
        // UIManager.Instance.blackOverlay.SetVisible(true);

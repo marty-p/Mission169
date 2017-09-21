@@ -1,48 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SlugLib
 {
     [System.Serializable]
-    public class RecordedSpriteRendererList
+    public class GamePlayRecording
     {
-        public string name = "";
+        public string FileNameWithPath{ get; private set; }
+        public string path;
 
-        public List<RecordedSpriteRenderer> recordedSpriteRenderer = new List<RecordedSpriteRenderer>();
+        public string FileName { get { return Path.GetFileName(FileNameWithPath); } }
 
-        public List<Vector3> cameraPosition = new List<Vector3>();
+        public List<Frame> frames = new List<Frame>();
 
-        public void Add(RecordedSpriteRenderer rsr, string name)
+        public GamePlayRecording(string fileNameWithPath)
         {
-            recordedSpriteRenderer.Add(rsr);
-            rsr.name = name;
+            FileNameWithPath = fileNameWithPath;
         }
     }
 
     [System.Serializable]
-    public class RecordedSpriteRenderer
-    {
-        public SpriteRenderer sr;
-
-        public List<SpriteRendererFrame> frames = new List<SpriteRendererFrame>();
-
-        public string name;
-        public bool flipped;
-        public int layer;
-    }
-
-
-
-
-    [System.Serializable]
-    public class GamePlayRecording
-    {
-        public List<Frame> frames = new List<Frame>();
-        public List<Vector3> cameraPosition = new List<Vector3>();
-    }
-    [System.Serializable]
     public class Frame
     {
+        public Vector2 cameraPosition;
+        public float time;
         public List<SpriteRendererFrame> spriteRenderers = new List<SpriteRendererFrame>();
     }
 
@@ -50,12 +32,16 @@ namespace SlugLib
     [System.Serializable]
     public class SpriteRendererFrame
     {
-        public Sprite sprite;
-        public Vector2 uv;
-        public Vector2 wh;
+        public string spriteName;
         public Vector2 pos;
         public Vector2 angleYZ;
         public int layer;
     }
 
+    [System.Serializable]
+    public class SlugSprite
+    {
+        public Sprite sprite;
+        public string name;
+    }
 }

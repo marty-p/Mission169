@@ -3,117 +3,87 @@ using System.Collections;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
+using System;
+using System.Text.RegularExpressions;
 
 namespace SlugLib
 {
-    public class RecorderMaster : MonoBehaviour
+    public class RecorderMaster : Singleton<RecorderMaster>
     {
-        //FIXME this is not going to work on ios/android
-        public static string recordingFilePath = "C:\\Users\\Ben\\Desktop\\MSLUG\\Mission169\\Assets\\";
-        public string recordingFileName = "game_play_recording";
-        public float recordingFrameRate = 1f / 30f;
+        public static string recordingFilePath;
+        private const string recordingFileNamePrefix = "Mslug_rec-";
+        public const float recordingFrameRate = 1f / 60f;
 
         private bool recording;
         private SpriteRenderer[] srBeingRecorded;
         private SpriteRenderer[] srPlayback;
-        private RecordedSpriteRendererList recordedSpriteRendererList = new RecordedSpriteRendererList();
-
-        List<SpriteRenderer> srs = new List<SpriteRenderer>();
 
         GamePlayRecording gameplayRecording;
 
+        void Awake()
+        {
+            recordingFilePath = Application.persistentDataPath + "/";
+            print(recordingFilePath);
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown("a"))
+            {
+                StartRecording();
+            }
+            else if (Input.GetKeyDown(("s")))
+            {
+                StopRecording();
+            }
+            else if (Input.GetKeyDown("d"))
+            {
+                StartPlayback(recordingFileNamePrefix);
+
+            }
+            else if (Input.GetKeyDown("f"))
+            {
+                print(FindAllRecordings());
+            }
+        }
+
         public void StartRecording()
         {
-            //InitRecording();
+            gameplayRecording = new GamePlayRecording( recordingFilePath + CreateFileName() );
+            Debug.Log("recording started!");
 
-            InitVer2();
-
-            //StartCoroutine((RecordingCoroutine()));
+            recording = true;
             StartCoroutine((RecordingCoroutine()));
         }
 
         public void StopRecording()
         {
+            if (!recording)
+            {
+                return;
+            }
+            StopAllCoroutines();
             recording = false;
+            SaveToFile2();
+            SpriteDatabase.Save();
         }
 
-        public void StartPlayback(string recordingFilePath)
+        public void StartPlayback(string filePath, bool looping = true)
         {
-            RecordedSpriteRendererList rsrl = ReadFromFile(recordingFilePath);
-
-            foreach (Transform child in transform)
-            {
-                Destroy(child);
-            }
-
-            for (int i = 0; i < rsrl.recordedSpriteRenderer.Count; i++)
-            {
-                // Create a game object for each sprite renderer recorded 
-                GameObject goo = new GameObject(rsrl.recordedSpriteRenderer[i].name);
-                goo.transform.SetParent(transform);
-                // Add the sprite renderer component to our list of recorded data
-                SpriteRenderer s = goo.AddComponent<SpriteRenderer>();
-                rsrl.recordedSpriteRenderer[i].sr = s;
-            }
-
-            StartCoroutine(PlaybackCoroutine(rsrl));
+            InitPlayback(filePath);
+            StartCoroutine(PlaybackCoroutine(looping));
         }
 
-        public void StartPlaybackV2(string filePath)
+        public void StartPlayback(GamePlayRecording recording, bool looping = true)
         {
-            InitPlaybackV2(filePath);
-            StartCoroutine(PlaybackCoroutineV2());
+            StartPlayback(recording.path, looping);
         }
 
         public void StopPlayback() {}
 
-        IEnumerator PlaybackCoroutine(RecordedSpriteRendererList srList)
+        public void InitPlayback(string filePath)
         {
-            int frameIndex = 0;
-
-            //need a frameMax so that I quite the wile loop when lastfRame is reeached
-
-            while (true)
-            {
-                for (int i = 0; i < srList.recordedSpriteRenderer.Count; i++)
-                {
-                    RecordedSpriteRenderer rsr = srList.recordedSpriteRenderer[i];
-
-                    if (rsr.frames[frameIndex] == null)
-                    {
-                        rsr.sr.gameObject.SetActive(false);
-                        continue;
-                    }
-                    else
-                    {
-                        rsr.sr.gameObject.SetActive(true);
-                    }
-
-                    rsr.sr.sprite = rsr.frames[frameIndex].sprite;
-                    rsr.sr.material.mainTextureOffset = rsr.frames[frameIndex].uv;
-                    rsr.sr.transform.position = rsr.frames[frameIndex].pos;
-                    //rsr.sr.transform.eulerAngles = rsr.frames[frameIndex].angle;
-                    rsr.sr.flipX = rsr.flipped;
-                    rsr.sr.sortingOrder = rsr.layer;
-                }
-
-                Camera.main.transform.position = srList.cameraPosition[frameIndex];
-
-                frameIndex++;
-
-                if (frameIndex >= srList.cameraPosition.Count)
-                {
-                    frameIndex = 0;
-                }
-
-                yield return new WaitForSeconds(recordingFrameRate);
-            }
-        }
-
-
-        public void InitPlaybackV2(string filePath)
-        {
-            gameplayRecording = ReadFromFileResourcesV2(filePath);
+            gameplayRecording = ParseRecordingV2(filePath);
 
             //Hiding all the exisiting objects
             foreach (Transform child in transform)
@@ -163,12 +133,12 @@ namespace SlugLib
                 srPlayback[i]  = go.AddComponent<SpriteRenderer>();
                 srPlayback[i].gameObject.SetActive(false);
             }
-            print("created " + srPlayback.Length + " sr for playback");
         }
 
-        IEnumerator PlaybackCoroutineV2()
+        IEnumerator PlaybackCoroutine(bool looping)
         {
-            print("starting playback");
+        START:
+            float prevTime = 0;
 
             for (int i=0; i < gameplayRecording.frames.Count; i++ )
             {
@@ -184,84 +154,57 @@ namespace SlugLib
                     SpriteRendererFrame srf = currentFrame.spriteRenderers[j];
 
                     srPlayback[j].gameObject.SetActive(true);
-                    srPlayback[j].sprite = srf.sprite;
-                    srPlayback[j].material.mainTextureOffset = srf.uv;
+
+                    srPlayback[j].sprite = SpriteDatabase.FindSpriteByName(srf.spriteName);
                     srPlayback[j].transform.position = srf.pos;
                     srPlayback[j].transform.eulerAngles = new Vector3(0, srf.angleYZ.x, srf.angleYZ.y);
                     srPlayback[j].sortingOrder = srf.layer;
-                    //rsr.sr.flipX = srf.flipped;
 
-                    Camera.main.transform.position = gameplayRecording.cameraPosition[i];
+                    Camera.main.transform.position =  currentFrame.cameraPosition;
                 }
-                               
-                yield return new WaitForSeconds(recordingFrameRate);
-                print("next frame");
+
+                float timeToWait = prevTime == 0 ? 0.1f : currentFrame.time - prevTime;
+                yield return new WaitForSeconds(timeToWait);
+
+                prevTime = currentFrame.time;
             }
 
+            if (looping)
+            {
+                goto START; // ZOMGBBQ goto
+            }
         }
 
         IEnumerator RecordingCoroutine()
         {
-            Debug.Log("recording started!");
-            recording = true;
             while (recording)
             {
-                //CaptureFrame();
-                CaptureFrameVer2();
-
-                yield return new WaitForSeconds(recordingFrameRate);
+                CaptureFrame();
+                yield return new WaitForSecondsRealtime(recordingFrameRate);
             }
-            SaveToFile();
-            //SaveToFileV2();
-            print("end of recording");
         }
 
-        void InitRecording()
-        {
-            srBeingRecorded = GetComponentsInChildren<SpriteRenderer>(true);
-
-            for (int i = 0; i < srBeingRecorded.Length; i++)
-            {
-                recordedSpriteRendererList.Add(new RecordedSpriteRenderer(), srBeingRecorded[i].gameObject.name);
-
-                recordedSpriteRendererList.recordedSpriteRenderer[i].flipped = srBeingRecorded[i].flipX;
-                recordedSpriteRendererList.recordedSpriteRenderer[i].layer = srBeingRecorded[i].sortingOrder;
-            }
-
-            recordingFilePath += gameObject.GetInstanceID() + gameObject.name;
-        }
-
-        void InitVer2()
-        {
-            gameplayRecording = new GamePlayRecording();
-        }
-
-        void CaptureFrameVer2()
+        void CaptureFrame()
         {
             Frame frame = new Frame();
             gameplayRecording.frames.Add( frame );
-            gameplayRecording.cameraPosition.Add(Camera.main.transform.position);
+
+            frame.cameraPosition = Camera.main.transform.position;
+            frame.time = Time.time;
 
             SpriteRenderer[] sr = GetComponentsInChildren<SpriteRenderer>();
             for (int i = 0; i < sr.Length; i++)
             {
-                if (sr[i].sprite == null)
+                if (sr[i].sprite == null || !sr[i].isVisible)
                 {
                     continue;
                 }
 
                 SpriteRendererFrame srFrame = new SpriteRendererFrame();
+
                 frame.spriteRenderers.Add(srFrame);
 
-                srFrame.sprite = sr[i].sprite;
-
-                float textOffsetX = sr[i].sprite.uv[0].x;
-                float textOffsetY = sr[i].sprite.uv[1].y - sr[i].sprite.uv[1].y;
-                srFrame.uv = new Vector2(textOffsetX, textOffsetY);
-
-                float w = sr[i].sprite.uv[1].x - sr[i].sprite.uv[0].x;
-                float h = sr[i].sprite.uv[1].y - sr[i].sprite.uv[2].y;
-                srFrame.wh = new Vector2(w, h);
+                srFrame.spriteName = sr[i].sprite.name;
 
                 srFrame.pos = sr[i].transform.position;
 
@@ -269,103 +212,212 @@ namespace SlugLib
                 srFrame.angleYZ.y = sr[i].transform.eulerAngles.z;
 
                 srFrame.layer = sr[i].sortingOrder;
+
+                //populating database
+                if (SpriteDatabase.FindSpriteByName(srFrame.spriteName) == null)
+                {
+                    SpriteDatabase.AddSprite(sr[i].sprite, sr[i].sprite.name);
+                }
             }
         }
 
-        void CaptureFrame()
+        void SaveToFile(bool compress = true)
         {
-            for (int i = 0; i < srBeingRecorded.Length; i++)
+            // to json string
+            string jsonString = JsonUtility.ToJson(gameplayRecording);
+            // string to byteArray
+            byte[] stringBytes = Encoding.ASCII.GetBytes(jsonString);
+            // to compressed byteArray
+            if (compress)
             {
-                SpriteRenderer sr = srBeingRecorded[i];
-                RecordedSpriteRenderer recordedSr = recordedSpriteRendererList.recordedSpriteRenderer[i];
+                stringBytes = Zip.Compress(stringBytes);
+            }
+            // byteArray to file
+            File.WriteAllBytes(gameplayRecording.FileNameWithPath, stringBytes);
 
-                if (sr!=null && sr.gameObject != null && sr.sprite == null || !sr.gameObject.activeSelf)
+            Debug.Log("Recording saved to: " + gameplayRecording.FileNameWithPath);
+        }
+
+        void SaveToFile2()
+        {
+            List<Frame> frames = gameplayRecording.frames;
+            StreamWriter stream = new StreamWriter(gameplayRecording.FileNameWithPath , true);
+            List<byte> bytes = new List<byte>();
+
+            for (int i = 0; i < frames.Count; i++)
+            {
+                string oneFrame = "";
+
+                oneFrame = frames[i].cameraPosition.x.ToString("0.000");
+                oneFrame += "," + frames[i].cameraPosition.y.ToString("0.000");
+                oneFrame += "," + frames[i].time.ToString("0.0000");
+
+                // add time elapsed since last frame and other frame specific info
+                for (int j = 0; j<frames[i].spriteRenderers.Count; j++)
                 {
-                    // It's actually extremely inefficient to do that (size wise) but oh well it gets compressed anyway
-                    recordedSr.frames.Add(null);
-                    continue;
+                    oneFrame += "," + frames[i].spriteRenderers[j].spriteName;
+                    oneFrame += "," + ToStringMemoryEfficient(frames[i].spriteRenderers[j].pos.x);
+                    oneFrame += "," + ToStringMemoryEfficient(frames[i].spriteRenderers[j].pos.y);
+                    oneFrame += "," + ToStringMemoryEfficient(frames[i].spriteRenderers[j].angleYZ.x);
+                    oneFrame += "," + ToStringMemoryEfficient(frames[i].spriteRenderers[j].angleYZ.y);
+                    oneFrame += "," +  frames[i].spriteRenderers[j].layer;
+
+                    oneFrame += " ";
                 }
 
-                SpriteRendererFrame srFrame = new SpriteRendererFrame();
-                srFrame.sprite = sr.sprite;
+                //bytes.Add(Encoding.ASCII.GetBytes(oneFrame).);
 
-                float textOffsetX = sr.sprite.uv[0].x;
-                float textOffsetY = sr.sprite.uv[1].y - sr.sprite.uv[1].y;
-                srFrame.uv = new Vector2(textOffsetX, textOffsetY);
-
-                float w = sr.sprite.uv[1].x - sr.sprite.uv[0].x;
-                float h = sr.sprite.uv[1].y - sr.sprite.uv[2].y;
-                srFrame.wh = new Vector2(w, h);
-
-                srFrame.pos = sr.transform.position;
-
-                //srFrame.angle = sr.transform.eulerAngles;
-
-                recordedSr.frames.Add(srFrame);
+                stream.WriteLine(oneFrame);
             }
 
-            recordedSpriteRendererList.cameraPosition.Add(Camera.main.transform.position);
+            stream.Dispose();
         }
 
-        void SaveToFile()
+        GamePlayRecording ReadFromFileResources(string fileName)
         {
-            string jsonString = JsonUtility.ToJson(gameplayRecording);
+            // removing file extension
+            int index = fileName.LastIndexOf('.');
+            if (index >= 0)
+            {
+                fileName = fileName.Substring(0, index);
+            }
 
-            //string to byteArray
-            byte[] stringBytes = Encoding.ASCII.GetBytes(jsonString);
-            //compress byteArray
-            byte[] compressedStringBytes = Zip.Compress(stringBytes);
-            //byteArray to file
-
-            File.WriteAllBytes(recordingFilePath + recordingFileName, compressedStringBytes);
-        }
-
-        void SaveToFileV2()
-        {
-            print( JsonUtility.ToJson(gameplayRecording) );
-        }
-
-        RecordedSpriteRendererList ReadFromFile(string filePath)
-        {
-            byte[] compressedStringBytes = File.ReadAllBytes(filePath);
-            byte[] stringBytes = Zip.Decompress(compressedStringBytes);
-            string jsonString = Encoding.ASCII.GetString(stringBytes);
-
-            return JsonUtility.FromJson<RecordedSpriteRendererList>(jsonString);
-        }
-
-        GamePlayRecording ReadFromFileResourcesV2(string fileName)
-        {
             TextAsset t = Resources.Load(fileName, typeof(TextAsset))as TextAsset;
 
             byte[] compressedStringBytes = t.bytes;
-            print("compressed sting byyte: " + compressedStringBytes.Length);
             byte[] stringBytes = Zip.Decompress(compressedStringBytes);
-
-            print("uncompressed byyte: " + stringBytes.Length);
             string jsonString = Encoding.ASCII.GetString(stringBytes);
-
-            print(jsonString.Length);
 
             return JsonUtility.FromJson<GamePlayRecording>(jsonString);
         }
 
-        void Update()
+        public static GamePlayRecording[] FindAllRecordings()
         {
-            if (Input.GetKeyDown("a"))
-            {
-                StartRecording();
-            }
-            else if (Input.GetKeyDown(("s")))
-            {
-                StopRecording();
-            }
-            else if (Input.GetKeyDown("d"))
-            {
-                //StartPlayback(recordingFilePath + recordingFileName);
-                StartPlaybackV2(recordingFileName);
+            string[] files = Directory.GetFiles(recordingFilePath);
+            GamePlayRecording[] recordings = new GamePlayRecording[files.Length];
 
+            //TODO here should be able to tell if it is compressed or not and then do magic accordingly
+            for (int i=0; i < files.Length; i++)
+            {
+                recordings[i] = ParseRecordingV2(files[i]);
+            }
+            return recordings;
+        }
+
+        private static GamePlayRecording ParseRecordingV2(string fileNameWithPath)
+        {
+            GamePlayRecording recording = new GamePlayRecording(fileNameWithPath);
+            recording.path = fileNameWithPath;
+
+
+            string[] lines = null;
+            try
+            {
+                // StreamReader stream = new StreamReader(fileNameWithPath);
+                lines = File.ReadAllLines("a.txt");
+            }
+            catch(FileNotFoundException e)
+            {
+                print("looking for " + fileNameWithPath);
+                TextAsset t = Resources.Load(fileNameWithPath, typeof(TextAsset)) as TextAsset;
+
+                if (t == null)
+                    print("NOT FOUND");
+
+                lines = Regex.Split(t.text, "\n|\r|\r\n");
+            }
+
+            string line;
+            //while((line = stream.ReadLine()) != null)
+            for (int lineNumber=0; lineNumber < lines.Length; lineNumber++)
+            {
+                line = lines[lineNumber];
+
+                string[] values = line.Split(',');
+
+                Frame frame = new Frame();
+
+                try
+                {
+                    frame.cameraPosition.x = float.Parse(values[0]);
+                    frame.cameraPosition.y = float.Parse(values[1]);
+                    frame.time = float.Parse(values[2]);
+
+                    for (int i = 3; i < values.Length; i = i + 6)
+                    {
+                        SpriteRendererFrame srFrame = new SpriteRendererFrame();
+
+                        srFrame.spriteName = values[i];
+                        srFrame.pos.x = float.Parse(values[i + 1]);
+                        srFrame.pos.y = float.Parse(values[i + 2]);
+                        srFrame.angleYZ.x = float.Parse(values[i + 3]);
+                        srFrame.angleYZ.y = float.Parse(values[i + 4]);
+                        srFrame.layer = int.Parse(values[i + 5]);
+
+                        frame.spriteRenderers.Add(srFrame);
+                    }
+                    recording.frames.Add(frame);
+                }
+                catch(Exception e)
+                {
+                    print(e);
+                }
+            }
+            return recording;
+        }
+
+        private static GamePlayRecording ParseRecording(string filepath)
+        {
+            // removing file extension
+            //int index = filepath.LastIndexOf('.');
+            //if (index >= 0)
+            //{
+            //    filepath = filepath.Substring(0, index);
+            //}
+
+            byte[] compressedStringBytes = File.ReadAllBytes(filepath);
+            byte[] stringBytes = Zip.Decompress(compressedStringBytes);
+            string jsonString = Encoding.ASCII.GetString(stringBytes);
+
+            return JsonUtility.FromJson<GamePlayRecording>(jsonString);
+        }
+
+        //TODO use string format
+        string CreateFileName()
+        {
+            System.DateTime now = System.DateTime.Now;
+            return recordingFileNamePrefix + now.Day + now.Month + now.Year + "-" + now.Hour + now.Minute + now.Second;
+        }
+
+        string ToStringMemoryEfficient(float val, string precision = "0.000")
+        {
+            if (val == 0f)
+            {
+                return "0";
+            }
+            else
+            {
+                return val.ToString(precision);
             }
         }
+
+        // for SLugLIB:
+        string RemoveFileExtension(string filepath)
+        {
+            // just doing that should work too
+            //assetPath = assetPath.Substring(0, assetPath.LastIndexOf('.'));
+
+            // removing file extension
+            int index = filepath.LastIndexOf('.');
+            if (index >= 0)
+            {
+                  return filepath.Substring(0, index);
+            }
+            else
+            {
+                return "";
+            }
+        }
+
     }
 }

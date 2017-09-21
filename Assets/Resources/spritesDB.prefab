@@ -1,0 +1,1294 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000013988946690}
+  m_IsPrefabParent: 1
+--- !u!1 &1000013988946690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013793295512}
+  - 114: {fileID: 114000011802751058}
+  m_Layer: 0
+  m_Name: spritesDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000013793295512
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013988946690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011802751058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013988946690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5617af2c57fd268459afce9b900dd213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - sprite: {fileID: 21300000, guid: ead0d69cad19cba44894f43516dff9d4, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: d3b4493ab2fe31e4b86828467b440d88, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 1800150650706b749b91aa0f59257211, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: d9c850df63a7feb42bc9ffca7d2d2b1d, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 2ce01d698798c2c438e47aea980c03cd, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 87211c4aeb2a2de4183c5c54b7b71675, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: d0f7520a7eb601b49aa95d5626879289, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 4eddb44d0ff39804b84b847e01e69cbd, type: 3}
+    name: 
+  - sprite: {fileID: 21300006, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 24cebc737d20a7042a15fdf7b092e2cc, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 83e26fbc396ac4140ae84e236e240cdf, type: 3}
+    name: 
+  - sprite: {fileID: 21300002, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300020, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 889cd7eb60ac9b4448d0b1db11ee2335, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: 
+  - sprite: {fileID: 21300084, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: 
+  - sprite: {fileID: 21300042, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: 
+  - sprite: {fileID: 21300004, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 8813ca94276581549acc1700c81f652c, type: 3}
+    name: 
+  - sprite: {fileID: 21300022, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: d8c32eae219a5d942a1057e8f8c03a46, type: 3}
+    name: 
+  - sprite: {fileID: 21300004, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300002, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 01a8ef172fae11949b43c3340c29facd, type: 3}
+    name: 
+  - sprite: {fileID: 21300006, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300026, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 8e71e51ee7a37164c84a19e9d5f2fd31, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: e237767ab0f350d48993566f622518b4, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300028, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: f47f46056d7ae3343b1aa3fb1aaa8286, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: bc8cfba80dff0d240832d8a3877334b1, type: 3}
+    name: 
+  - sprite: {fileID: 21300002, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 1ecdc3b4da77b0f4d9fbdcc1fc03a967, type: 3}
+    name: 
+  - sprite: {fileID: 21300012, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 9a4ff64da556df74fb979110bec813f9, type: 3}
+    name: 
+  - sprite: {fileID: 21300014, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300016, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300008, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: 
+  - sprite: {fileID: 21300018, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 509958dce6da0ac409d6f1c7a7dcd4f8, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: dfbcb3a2f04317343bb03cc625dde1b7, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 875cb4865da511d448b261bf891f05f3, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: bf1559c9738f6ed489eb274e4f2ab332, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 634ebce57aac37847a4e7a4eadc13a9d, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: dd4447a16afd6b64bbfc3dcc8158969e, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: 450f406b1c320e1499e260ac0723acf4, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300002, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300004, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300006, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300008, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300010, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300012, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: 
+  - sprite: {fileID: 21300004, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: 
+  - sprite: {fileID: 21300006, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: 
+  - sprite: {fileID: 21300000, guid: ead0d69cad19cba44894f43516dff9d4, type: 3}
+    name: clouds
+  - sprite: {fileID: 21300000, guid: d3b4493ab2fe31e4b86828467b440d88, type: 3}
+    name: lvl1_foreground
+  - sprite: {fileID: 21300000, guid: 1800150650706b749b91aa0f59257211, type: 3}
+    name: lvl1_bg1
+  - sprite: {fileID: 21300000, guid: d9c850df63a7feb42bc9ffca7d2d2b1d, type: 3}
+    name: brouette
+  - sprite: {fileID: 21300000, guid: 2ce01d698798c2c438e47aea980c03cd, type: 3}
+    name: far_mountains
+  - sprite: {fileID: 21300000, guid: 87211c4aeb2a2de4183c5c54b7b71675, type: 3}
+    name: weird2
+  - sprite: {fileID: 21300000, guid: d0f7520a7eb601b49aa95d5626879289, type: 3}
+    name: weird1
+  - sprite: {fileID: 21300000, guid: 4eddb44d0ff39804b84b847e01e69cbd, type: 3}
+    name: billboard
+  - sprite: {fileID: 21300002, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: hippie-tied_up_1
+  - sprite: {fileID: 21300000, guid: 1ecdc3b4da77b0f4d9fbdcc1fc03a967, type: 3}
+    name: enemy_walk6
+  - sprite: {fileID: 21300000, guid: 24cebc737d20a7042a15fdf7b092e2cc, type: 3}
+    name: enemy_walk7
+  - sprite: {fileID: 21300006, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_3
+  - sprite: {fileID: 21300026, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_13
+  - sprite: {fileID: 21300000, guid: 889cd7eb60ac9b4448d0b1db11ee2335, type: 3}
+    name: MissileTowersBase_0
+  - sprite: {fileID: 21300000, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: MSX_MissleTowers_0
+  - sprite: {fileID: 21300084, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: MSX_MissleTowers_42
+  - sprite: {fileID: 21300042, guid: b68fb3f1a3f009d42b456a97c4e0ee47, type: 3}
+    name: MSX_MissleTowers_21
+  - sprite: {fileID: 21300000, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: hippie-tied_up_0
+  - sprite: {fileID: 21300000, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_0
+  - sprite: {fileID: 21300000, guid: 83e26fbc396ac4140ae84e236e240cdf, type: 3}
+    name: enemy_walk8
+  - sprite: {fileID: 21300028, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_14
+  - sprite: {fileID: 21300000, guid: 8813ca94276581549acc1700c81f652c, type: 3}
+    name: enemy_walk9
+  - sprite: {fileID: 21300002, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_1
+  - sprite: {fileID: 21300000, guid: d8c32eae219a5d942a1057e8f8c03a46, type: 3}
+    name: enemy_walk10
+  - sprite: {fileID: 21300004, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_2
+  - sprite: {fileID: 21300012, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_6
+  - sprite: {fileID: 21300000, guid: 01a8ef172fae11949b43c3340c29facd, type: 3}
+    name: enemy_walk11
+  - sprite: {fileID: 21300004, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: hippie-tied_up_2
+  - sprite: {fileID: 21300000, guid: 8e71e51ee7a37164c84a19e9d5f2fd31, type: 3}
+    name: enemy_walk12
+  - sprite: {fileID: 21300000, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: enemy_soldier-falls_0
+  - sprite: {fileID: 21300014, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_7
+  - sprite: {fileID: 21300000, guid: e237767ab0f350d48993566f622518b4, type: 3}
+    name: enemy_walk3
+  - sprite: {fileID: 21300006, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: hippie-tied_up_3
+  - sprite: {fileID: 21300000, guid: f47f46056d7ae3343b1aa3fb1aaa8286, type: 3}
+    name: enemy_walk4
+  - sprite: {fileID: 21300002, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: enemy_soldier-falls_1
+  - sprite: {fileID: 21300016, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_8
+  - sprite: {fileID: 21300000, guid: bc8cfba80dff0d240832d8a3877334b1, type: 3}
+    name: enemy_walk5
+  - sprite: {fileID: 21300004, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: enemy_soldier-falls_2
+  - sprite: {fileID: 21300008, guid: 040e652dde19a504bac360ccf1290a56, type: 3}
+    name: hippie-tied_up_4
+  - sprite: {fileID: 21300018, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_9
+  - sprite: {fileID: 21300020, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_10
+  - sprite: {fileID: 21300000, guid: 509958dce6da0ac409d6f1c7a7dcd4f8, type: 3}
+    name: enemy_walk13
+  - sprite: {fileID: 21300022, guid: c67c9c0b01219f6419ed7138e86a3619, type: 3}
+    name: campfire_11
+  - sprite: {fileID: 21300000, guid: dfbcb3a2f04317343bb03cc625dde1b7, type: 3}
+    name: enemy_walk14
+  - sprite: {fileID: 21300000, guid: 875cb4865da511d448b261bf891f05f3, type: 3}
+    name: enemy_walk15
+  - sprite: {fileID: 21300000, guid: bf1559c9738f6ed489eb274e4f2ab332, type: 3}
+    name: enemy_walk16
+  - sprite: {fileID: 21300000, guid: 9a4ff64da556df74fb979110bec813f9, type: 3}
+    name: enemy_still1
+  - sprite: {fileID: 21300000, guid: 634ebce57aac37847a4e7a4eadc13a9d, type: 3}
+    name: enemy_still2
+  - sprite: {fileID: 21300000, guid: dd4447a16afd6b64bbfc3dcc8158969e, type: 3}
+    name: enemy_still3
+  - sprite: {fileID: 21300000, guid: 450f406b1c320e1499e260ac0723acf4, type: 3}
+    name: enemy_still4
+  - sprite: {fileID: 21300000, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_0
+  - sprite: {fileID: 21300002, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_1
+  - sprite: {fileID: 21300004, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_2
+  - sprite: {fileID: 21300006, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_3
+  - sprite: {fileID: 21300008, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_4
+  - sprite: {fileID: 21300010, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_5
+  - sprite: {fileID: 21300012, guid: f5b065a20317c534fbeac49f5ecf2b9b, type: 3}
+    name: enemy_change_direction_6
+  - sprite: {fileID: 21300006, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: enemy_soldier-falls_3
+  - sprite: {fileID: 21300008, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_4
+  - sprite: {fileID: 21300010, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_5
+  - sprite: {fileID: 21300012, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_6
+  - sprite: {fileID: 21300014, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_7
+  - sprite: {fileID: 21300016, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_8
+  - sprite: {fileID: 21300018, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_9
+  - sprite: {fileID: 21300020, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_10
+  - sprite: {fileID: 21300000, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_0
+  - sprite: {fileID: 21300002, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_1
+  - sprite: {fileID: 21300022, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_11
+  - sprite: {fileID: 21300004, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_2
+  - sprite: {fileID: 21300024, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_12
+  - sprite: {fileID: 21300006, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_3
+  - sprite: {fileID: 21300008, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_4
+  - sprite: {fileID: 21300010, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_5
+  - sprite: {fileID: 21300012, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_6
+  - sprite: {fileID: 21300014, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_7
+  - sprite: {fileID: 21300000, guid: f096abe5d8d2d554c96047b7934f7852, type: 3}
+    name: enemy-grenade_standing_end_0
+  - sprite: {fileID: 21300016, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_8
+  - sprite: {fileID: 21300018, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_9
+  - sprite: {fileID: 21300002, guid: f096abe5d8d2d554c96047b7934f7852, type: 3}
+    name: enemy-grenade_standing_end_1
+  - sprite: {fileID: 21300020, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_10
+  - sprite: {fileID: 21300004, guid: f096abe5d8d2d554c96047b7934f7852, type: 3}
+    name: enemy-grenade_standing_end_2
+  - sprite: {fileID: 21300022, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_11
+  - sprite: {fileID: 21300024, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_12
+  - sprite: {fileID: 21300026, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_13
+  - sprite: {fileID: 21300028, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_14
+  - sprite: {fileID: 21300030, guid: e2e4973f1066b4f469baa81fc2724956, type: 3}
+    name: enemy_grenade_15
+  - sprite: {fileID: 21300000, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_0
+  - sprite: {fileID: 21300002, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_1
+  - sprite: {fileID: 21300004, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_2
+  - sprite: {fileID: 21300006, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_3
+  - sprite: {fileID: 21300008, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_4
+  - sprite: {fileID: 21300010, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_5
+  - sprite: {fileID: 21300012, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_6
+  - sprite: {fileID: 21300014, guid: 0fcd81c3a4dc18f4cae49344a5d65c62, type: 3}
+    name: explosion-enemy_grenade_7
+  - sprite: {fileID: 21300000, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_0
+  - sprite: {fileID: 21300002, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_1
+  - sprite: {fileID: 21300004, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_2
+  - sprite: {fileID: 21300006, guid: d098919ff305ca44290da779d344ce56, type: 3}
+    name: grenade_standing_3
+  - sprite: {fileID: 21300000, guid: 03e3e3d68cf9b0943bba0d31f4172e20, type: 3}
+    name: truck-idle
+  - sprite: {fileID: 21300000, guid: b8e4f649115e3ea499e00572dff1e30e, type: 3}
+    name: truck-hide_enemy
+  - sprite: {fileID: 21300000, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_0
+  - sprite: {fileID: 21300002, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_1
+  - sprite: {fileID: 21300008, guid: 705b74caa139cfc4dae3d2a1ea867787, type: 3}
+    name: enemy_soldier-falls_4
+  - sprite: {fileID: 21300000, guid: cdbb4f6818ba0204bb73503b8dc7c4d7, type: 3}
+    name: truck-driving_0
+  - sprite: {fileID: 21300002, guid: cdbb4f6818ba0204bb73503b8dc7c4d7, type: 3}
+    name: truck-driving_1
+  - sprite: {fileID: 21300004, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_2
+  - sprite: {fileID: 21300004, guid: cdbb4f6818ba0204bb73503b8dc7c4d7, type: 3}
+    name: truck-driving_2
+  - sprite: {fileID: 21300006, guid: cdbb4f6818ba0204bb73503b8dc7c4d7, type: 3}
+    name: truck-driving_3
+  - sprite: {fileID: 21300006, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_3
+  - sprite: {fileID: 21300052, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_26
+  - sprite: {fileID: 21300054, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_27
+  - sprite: {fileID: 21300056, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_28
+  - sprite: {fileID: 21300058, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_29
+  - sprite: {fileID: 21300060, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_30
+  - sprite: {fileID: 21300062, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_31
+  - sprite: {fileID: 21300000, guid: 0b8916a8f5d40634bbaac5ad1128cac5, type: 3}
+    name: enemy_grenade
+  - sprite: {fileID: 21300000, guid: 2bcc79b2006ed9344be26b034d69a01b, type: 3}
+    name: enemy_knife2
+  - sprite: {fileID: 21300000, guid: 57edebc8ccc84e541a5c08426100219d, type: 3}
+    name: enemy_knife3
+  - sprite: {fileID: 21300000, guid: a1d1225514cbdbb408b755359f9f529a, type: 3}
+    name: enemy_knife4
+  - sprite: {fileID: 21300000, guid: 66f2342788044b24cbbdbd99d0cd0ff5, type: 3}
+    name: enemy_knife5
+  - sprite: {fileID: 21300000, guid: 843ff8e559d145244927a23671414b38, type: 3}
+    name: enemy_knife6
+  - sprite: {fileID: 21300000, guid: e3ded0a48b0a430479b707aafac229dc, type: 3}
+    name: enemy_knife7
+  - sprite: {fileID: 21300000, guid: b0b86768c35ba2b4e94daa24ad1aa8b7, type: 3}
+    name: enemy_knife8
+  - sprite: {fileID: 21300000, guid: 4c9dab110346aeb4481c16dc26749f88, type: 3}
+    name: enemy_knife9
+  - sprite: {fileID: 21300000, guid: 642e90bb12f8b4740a1b66a63091c539, type: 3}
+    name: enemy_knife10
+  - sprite: {fileID: 21300000, guid: fa6c3e1aac568d444869bd46ab9b8f58, type: 3}
+    name: enemy_knife11
+  - sprite: {fileID: 21300000, guid: fa4cbf795c5ba7149ac5850d8bff414d, type: 3}
+    name: enemy_knife12
+  - sprite: {fileID: 21300000, guid: 9df9bb367a5a18f439217c59c3585cbd, type: 3}
+    name: enemy_knife1
+  - sprite: {fileID: 21300010, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_5
+  - sprite: {fileID: 21300000, guid: 6aac5e3440f943540af5fe454c9d3af5, type: 3}
+    name: rossi-still3
+  - sprite: {fileID: 21300000, guid: d02aeca7fa6b89442a15f5d045e2f74c, type: 3}
+    name: rossi-legs_0
+  - sprite: {fileID: 21300012, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_6
+  - sprite: {fileID: 21300000, guid: 1e312ad5081b6294eb7864d96f20dd1c, type: 3}
+    name: rossi-still4
+  - sprite: {fileID: 21300014, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_7
+  - sprite: {fileID: 21300000, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_0
+  - sprite: {fileID: 21300002, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_1
+  - sprite: {fileID: 21300004, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_2
+  - sprite: {fileID: 21300000, guid: ea43f2bea2999af4fb4ed5ca461a6e1b, type: 3}
+    name: rossi-still2
+  - sprite: {fileID: 21300006, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_3
+  - sprite: {fileID: 21300008, guid: 2f5809934de39a246ba0156f7eb9b8ad, type: 3}
+    name: Player1_4
+  - sprite: {fileID: 21300000, guid: ed0ac59562c024d4fbbef086e5d6e15e, type: 3}
+    name: rossi-still1
+  - sprite: {fileID: 21300000, guid: 3c089ae897c452e41817fac6ee5099d7, type: 3}
+    name: rossi-walk1
+  - sprite: {fileID: 21300000, guid: b2b0f648f681c1c4aa9fb90fd0d64e6c, type: 3}
+    name: bottom-walk_start1
+  - sprite: {fileID: 21300000, guid: 670c33808e1bcc74c8a561a73153db4d, type: 3}
+    name: bottom-walk_start2
+  - sprite: {fileID: 21300000, guid: a044472db7bb78c4bbe52d150c196931, type: 3}
+    name: rossi-walk2
+  - sprite: {fileID: 21300000, guid: 9c764ebde6363224a93dd34fbc3949e3, type: 3}
+    name: bottom-walk_start3
+  - sprite: {fileID: 21300000, guid: 5b09d1463d0f9904eb876f38d8feac9f, type: 3}
+    name: rossi-walk3
+  - sprite: {fileID: 21300000, guid: 6d53c347189c9ad4cb7f6e7d91d22e04, type: 3}
+    name: bottom-walk_start4
+  - sprite: {fileID: 21300000, guid: 2a5099686a8fd3b46a07c28a590e9f1b, type: 3}
+    name: rossi-walk4
+  - sprite: {fileID: 21300000, guid: 4058a7f68d37c6e40b01eb5e04080997, type: 3}
+    name: rossi-legs-run1
+  - sprite: {fileID: 21300000, guid: d74b5ae2886edc44db17e0f13c816e59, type: 3}
+    name: rossi-legs-run2
+  - sprite: {fileID: 21300000, guid: ac7b5c9bfb070de4693a000ca523bf95, type: 3}
+    name: rossi-legs-run3
+  - sprite: {fileID: 21300000, guid: 24a6442822c8f874e9a32e92f2515b06, type: 3}
+    name: rossi-legs-run4
+  - sprite: {fileID: 21300000, guid: 6cbbd658366085842bb6cd40a22a00c6, type: 3}
+    name: rossi-legs-run5
+  - sprite: {fileID: 21300000, guid: 40c0c9544d91eca498ea381bee493652, type: 3}
+    name: rossi-walk5
+  - sprite: {fileID: 21300000, guid: e813e562b4589094a83b8451cb5e29a7, type: 3}
+    name: rossi-legs-run6
+  - sprite: {fileID: 21300000, guid: 05529b67fad358f42aa2b64c8982a0d7, type: 3}
+    name: rossi-walk6
+  - sprite: {fileID: 21300000, guid: 53c281a8a2579c944b1d633a686d8661, type: 3}
+    name: rossi-legs-run7
+  - sprite: {fileID: 21300010, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_5
+  - sprite: {fileID: 21300000, guid: f3abf4114b2b82f4faf9da4dd69fb5bf, type: 3}
+    name: rossi-walk7
+  - sprite: {fileID: 21300000, guid: f344bf9b083233940a36d75a970e43f5, type: 3}
+    name: rossi-legs-run8
+  - sprite: {fileID: 21300000, guid: 0889dd03186a0aa4e9f5087cdce38f7e, type: 3}
+    name: rossi-walk8
+  - sprite: {fileID: 21300008, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_4
+  - sprite: {fileID: 21300000, guid: 9936d495676abab439bf3e9d5356167c, type: 3}
+    name: rossi-legs-run9
+  - sprite: {fileID: 21300000, guid: 944b58c0586774b4ca8e82a927cbef35, type: 3}
+    name: rossi-walk9
+  - sprite: {fileID: 21300000, guid: 9d1bf99adff5a344cb8c32393a92307c, type: 3}
+    name: rossi-legs-run10
+  - sprite: {fileID: 21300000, guid: dc92735c627a5544f8678e991ecd11fb, type: 3}
+    name: rossi_stop_running1_0
+  - sprite: {fileID: 21300006, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_3
+  - sprite: {fileID: 21300000, guid: 65e223b057cfbe542a3b17ebef9bb393, type: 3}
+    name: whole_turn1
+  - sprite: {fileID: 21300004, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_2
+  - sprite: {fileID: 21300000, guid: d00cb5d2c8a983447949b2ceff4b9417, type: 3}
+    name: whole_turn2
+  - sprite: {fileID: 21300002, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_1
+  - sprite: {fileID: 21300000, guid: d5ca3f06a6605dd4fb6ac0c95d61893a, type: 3}
+    name: enemy_soldier-walk_backward_0
+  - sprite: {fileID: 21300000, guid: 2fd14145dc9dd5641977ac205af3bcd6, type: 3}
+    name: rossi-walk10
+  - sprite: {fileID: 21300000, guid: c9a1c3609eed61b499dd3f577332d3e3, type: 3}
+    name: rossi-walk11
+  - sprite: {fileID: 21300000, guid: 4d32eb773f569be44ac0c9fc0f316382, type: 3}
+    name: rossi-walk12
+  - sprite: {fileID: 21300000, guid: d5f009f8a4ae1fe46a1c81b91b17a17b, type: 3}
+    name: rossi-legs-run11
+  - sprite: {fileID: 21300000, guid: 9e0ae264a85b0fa48aee2616fbe56f4b, type: 3}
+    name: rossi-legs-run12
+  - sprite: {fileID: 21300000, guid: 89766f9d6f4132d408f52a2b377805ee, type: 3}
+    name: top-jump1
+  - sprite: {fileID: 21300000, guid: 1e719b0807db4fa4190bbc53df9b516f, type: 3}
+    name: rossi-bottom-jump1
+  - sprite: {fileID: 21300000, guid: fe1a008d2fcb816429b6072474fa3e2c, type: 3}
+    name: top-jump2
+  - sprite: {fileID: 21300000, guid: 450b477bcdf32684780028cc15d38cb1, type: 3}
+    name: rossi-bottom-jump2
+  - sprite: {fileID: 21300000, guid: 2b24ef895ff62f04895ce1d3e3b16f54, type: 3}
+    name: top-jump3
+  - sprite: {fileID: 21300000, guid: 18505b02c9eb1834b9d3fe78d2bb18c7, type: 3}
+    name: rossi-bottom-jump3
+  - sprite: {fileID: 21300000, guid: 7771a2bd126c06f4eba8ac6878c8a855, type: 3}
+    name: top-jump4
+  - sprite: {fileID: 21300000, guid: 6cd3d7b7c73d39a4390916043e972a20, type: 3}
+    name: rossi-bottom-jump4
+  - sprite: {fileID: 21300000, guid: 20240cd6f22b67a42b61324e70596838, type: 3}
+    name: top-jump5
+  - sprite: {fileID: 21300000, guid: 78634cfea23942a429ea42f6cd66f306, type: 3}
+    name: rossi-bottom-jump5
+  - sprite: {fileID: 21300000, guid: 928bdb580ea68a74f8d6446357fb2259, type: 3}
+    name: top-jump6
+  - sprite: {fileID: 21300000, guid: 20b393b685a68e84bbcfb26066ec1092, type: 3}
+    name: rossi-bottom-jump6
+  - sprite: {fileID: 21300000, guid: 4eea22d736ef4504dada31011fef5d1a, type: 3}
+    name: rossi_stop_running2_0
+  - sprite: {fileID: 21300000, guid: c67ccfcffff9eb342b7b1c85fa1c180d, type: 3}
+    name: rossi_stop_running3_0
+  - sprite: {fileID: 21300000, guid: 429aa4319de513743a671892d4d40b01, type: 3}
+    name: rossi_stop_running4_0
+  - sprite: {fileID: 21300000, guid: 136610e1547acb046bea450962216a3d, type: 3}
+    name: lvl2_foreground
+  - sprite: {fileID: 21300000, guid: e92c0c102ca796f43b333078f836e751, type: 3}
+    name: lvl2_bg1
+  - sprite: {fileID: 21300000, guid: de743149cf151ae43a8b55b6a6be849d, type: 3}
+    name: lvl2-far_mountains
+  - sprite: {fileID: 21300000, guid: cd18e0c6ca1bb6f47af5c908b34dd41e, type: 3}
+    name: lvl2-leafy_ledge
+  - sprite: {fileID: 21300000, guid: 9462a3b643cf63d4fb0461e6fe69d82d, type: 3}
+    name: lvl2-brouette
+  - sprite: {fileID: 21300000, guid: be0c89b39a4da1548a124fcd928465c6, type: 3}
+    name: lvl2-billboard
+  - sprite: {fileID: 21300000, guid: 4aad512d7710c3843842e0f4a587a329, type: 3}
+    name: lvl2_clouds
+  - sprite: {fileID: 21300036, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_18
+  - sprite: {fileID: 21300000, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_0
+  - sprite: {fileID: 21300000, guid: e1de334d7bd022f49b658a1e25033eec, type: 3}
+    name: rossi-knif1
+  - sprite: {fileID: 21300002, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_1
+  - sprite: {fileID: 21300000, guid: d7bf1b56813fe8249b6b0c4d3e34570e, type: 3}
+    name: rossi-knif2
+  - sprite: {fileID: 21300004, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_2
+  - sprite: {fileID: 21300000, guid: f39b92886ff052549a3d07264f2d2fd5, type: 3}
+    name: rossi-knif3
+  - sprite: {fileID: 21300006, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_3
+  - sprite: {fileID: 21300000, guid: a81c1812f3156bf488e127ba9b543a4d, type: 3}
+    name: rossi-knif4
+  - sprite: {fileID: 21300008, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_4
+  - sprite: {fileID: 21300000, guid: 6060e7d6373dd4c4cace19e7a5699640, type: 3}
+    name: rossi-knif5
+  - sprite: {fileID: 21300010, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_5
+  - sprite: {fileID: 21300000, guid: f12ee260b8b5f2d4fbb925179437b196, type: 3}
+    name: rossi-knif6
+  - sprite: {fileID: 21300012, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_6
+  - sprite: {fileID: 21300014, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_8
+  - sprite: {fileID: 21300016, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_10
+  - sprite: {fileID: 21300018, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_12
+  - sprite: {fileID: 21300020, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_14
+  - sprite: {fileID: 21300022, guid: 65af905754b38594f8496a9ca9e438a4, type: 3}
+    name: enemy-dies_slashed_16
+  - sprite: {fileID: 21300000, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_0
+  - sprite: {fileID: 21300002, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_1
+  - sprite: {fileID: 21300004, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_2
+  - sprite: {fileID: 21300006, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_3
+  - sprite: {fileID: 21300008, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_4
+  - sprite: {fileID: 21300010, guid: e6189f097ba5e9b439dfa8743df8fa58, type: 3}
+    name: marco-knife2_5
+  - sprite: {fileID: 21300000, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_0
+  - sprite: {fileID: 21300000, guid: c6ff11d9ba4c36f4f957d7acd1082591, type: 3}
+    name: top-jump_high_vel_0
+  - sprite: {fileID: 21300002, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_1
+  - sprite: {fileID: 21300002, guid: c6ff11d9ba4c36f4f957d7acd1082591, type: 3}
+    name: top-jump_high_vel_1
+  - sprite: {fileID: 21300004, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_2
+  - sprite: {fileID: 21300004, guid: c6ff11d9ba4c36f4f957d7acd1082591, type: 3}
+    name: top-jump_high_vel_2
+  - sprite: {fileID: 21300006, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_3
+  - sprite: {fileID: 21300006, guid: c6ff11d9ba4c36f4f957d7acd1082591, type: 3}
+    name: top-jump_high_vel_3
+  - sprite: {fileID: 21300008, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_4
+  - sprite: {fileID: 21300008, guid: c6ff11d9ba4c36f4f957d7acd1082591, type: 3}
+    name: top-jump_high_vel_4
+  - sprite: {fileID: 21300000, guid: 62c4bde685aca24438689e00e19b4c5e, type: 3}
+    name: rossi-fire1
+  - sprite: {fileID: 21300010, guid: a2122681eb2aa90469f30b6131c6ad8f, type: 3}
+    name: marco-bottom-jump_speed_5
+  - sprite: {fileID: 21300000, guid: 75fbef4586488fe4d88fbc5e168cf329, type: 3}
+    name: rossi-fire2
+  - sprite: {fileID: 21300000, guid: 864849759ce6f9d43b4b16d9f864b139, type: 3}
+    name: hippie-freed_0
+  - sprite: {fileID: 21300002, guid: 864849759ce6f9d43b4b16d9f864b139, type: 3}
+    name: hippie-freed_1
+  - sprite: {fileID: 21300004, guid: 864849759ce6f9d43b4b16d9f864b139, type: 3}
+    name: hippie-freed_2
+  - sprite: {fileID: 21300008, guid: 864849759ce6f9d43b4b16d9f864b139, type: 3}
+    name: hippie-freed_4
+  - sprite: {fileID: 21300000, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_0
+  - sprite: {fileID: 21300002, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_1
+  - sprite: {fileID: 21300004, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_2
+  - sprite: {fileID: 21300006, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_3
+  - sprite: {fileID: 21300008, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_4
+  - sprite: {fileID: 21300010, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_5
+  - sprite: {fileID: 21300012, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_6
+  - sprite: {fileID: 21300000, guid: 4fa7148be26398343a64a91f1aae83f0, type: 3}
+    name: hippie-falls_0
+  - sprite: {fileID: 21300002, guid: 4fa7148be26398343a64a91f1aae83f0, type: 3}
+    name: hippie-falls_1
+  - sprite: {fileID: 21300004, guid: 4fa7148be26398343a64a91f1aae83f0, type: 3}
+    name: hippie-falls_2
+  - sprite: {fileID: 21300006, guid: 4fa7148be26398343a64a91f1aae83f0, type: 3}
+    name: hippie-falls_4
+  - sprite: {fileID: 21300000, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_0
+  - sprite: {fileID: 21300002, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_1
+  - sprite: {fileID: 21300004, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_2
+  - sprite: {fileID: 21300006, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_3
+  - sprite: {fileID: 21300008, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_4
+  - sprite: {fileID: 21300010, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_5
+  - sprite: {fileID: 21300012, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_6
+  - sprite: {fileID: 21300014, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_7
+  - sprite: {fileID: 21300016, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_8
+  - sprite: {fileID: 21300018, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_9
+  - sprite: {fileID: 21300020, guid: c06d6fa1b647234418e9e1bcda27fb52, type: 3}
+    name: hippie-gift_10
+  - sprite: {fileID: 21300000, guid: e1f2d344f5654cb4bab7e6d5a5878b75, type: 3}
+    name: weapons_0
+  - sprite: {fileID: 21300000, guid: 298188b0bf9f34f429f9209939b1cd81, type: 3}
+    name: marco-still_mg_0
+  - sprite: {fileID: 21300008, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_0
+  - sprite: {fileID: 21300010, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_1
+  - sprite: {fileID: 21300000, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_2
+  - sprite: {fileID: 21300002, guid: 298188b0bf9f34f429f9209939b1cd81, type: 3}
+    name: marco-still_mg_1
+  - sprite: {fileID: 21300002, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_3
+  - sprite: {fileID: 21300006, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_4
+  - sprite: {fileID: 21300000, guid: 2f352f4b344ee3b4382dd414e7ab3228, type: 3}
+    name: marco_mg-turn1
+  - sprite: {fileID: 21300004, guid: 9a18b98d8f335b147934a5d27608695a, type: 3}
+    name: picked_up_aura_5
+  - sprite: {fileID: 21300000, guid: 3f680b5a84cc0234ba226e82aad9ca42, type: 3}
+    name: marco_mg-turn2
+  - sprite: {fileID: 21300000, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_0
+  - sprite: {fileID: 21300000, guid: f7cfe70928824bf4cadaf5b81c9f2544, type: 3}
+    name: marco_mg-shoot_mg_style_0
+  - sprite: {fileID: 21300002, guid: f7cfe70928824bf4cadaf5b81c9f2544, type: 3}
+    name: marco_mg-shoot_mg_style_1
+  - sprite: {fileID: 21300004, guid: f7cfe70928824bf4cadaf5b81c9f2544, type: 3}
+    name: marco_mg-shoot_mg_style_3
+  - sprite: {fileID: 21300006, guid: f7cfe70928824bf4cadaf5b81c9f2544, type: 3}
+    name: marco_mg-shoot_mg_style_4
+  - sprite: {fileID: 21300000, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_0
+  - sprite: {fileID: 21300000, guid: 9c79bab2ab7c6db49a1401aed2c1e477, type: 3}
+    name: enemy_dies_1-1
+  - sprite: {fileID: 21300024, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_19
+  - sprite: {fileID: 21300002, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_1
+  - sprite: {fileID: 21300010, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_10
+  - sprite: {fileID: 21300000, guid: d41b81d5e846da0469a84456c55135a8, type: 3}
+    name: enemy_dies_1-2
+  - sprite: {fileID: 21300000, guid: aa691b5fcbcf68842ae3bd2fd0beed9d, type: 3}
+    name: marco_mg-shoot_diag_up_mg_style_0
+  - sprite: {fileID: 21300012, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_11
+  - sprite: {fileID: 21300004, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_2
+  - sprite: {fileID: 21300000, guid: 71275e760d14dd8419ae5bf3009154ce, type: 3}
+    name: enemy_dies_1-3
+  - sprite: {fileID: 21300014, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_12
+  - sprite: {fileID: 21300002, guid: aa691b5fcbcf68842ae3bd2fd0beed9d, type: 3}
+    name: marco_mg-shoot_diag_up_mg_style_1
+  - sprite: {fileID: 21300000, guid: 17b3f3a7cbb106948bd80fb72645bc70, type: 3}
+    name: enemy_dies_1-4
+  - sprite: {fileID: 21300016, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_13
+  - sprite: {fileID: 21300006, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_3
+  - sprite: {fileID: 21300006, guid: a1c8a274d6741504da2d19a38f7fbd2a, type: 3}
+    name: marco_mg-shoot_up_mg_style_4
+  - sprite: {fileID: 21300000, guid: a71d7af2e05a5754bb0ae41543298b22, type: 3}
+    name: enemy_dies_1-5
+  - sprite: {fileID: 21300018, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_14
+  - sprite: {fileID: 21300000, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_0
+  - sprite: {fileID: 21300000, guid: a1c8a274d6741504da2d19a38f7fbd2a, type: 3}
+    name: marco_mg-shoot_up_mg_style_0
+  - sprite: {fileID: 21300008, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_4
+  - sprite: {fileID: 21300020, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_15
+  - sprite: {fileID: 21300000, guid: 825c0dca8297658478a65ede24216a99, type: 3}
+    name: enemy_dies_1-6
+  - sprite: {fileID: 21300002, guid: a1c8a274d6741504da2d19a38f7fbd2a, type: 3}
+    name: marco_mg-shoot_up_mg_style_1
+  - sprite: {fileID: 21300000, guid: d5b5b7a1fbd7ab643b2c9e4d976ffc15, type: 3}
+    name: marco_mg-shoot_diag_up2_mg_style_0
+  - sprite: {fileID: 21300022, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_18
+  - sprite: {fileID: 21300002, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_1
+  - sprite: {fileID: 21300000, guid: 5474b7d74447a9c4e846982b2cbd389c, type: 3}
+    name: enemy_dies_1-7
+  - sprite: {fileID: 21300010, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_5
+  - sprite: {fileID: 21300000, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_0
+  - sprite: {fileID: 21300002, guid: d5b5b7a1fbd7ab643b2c9e4d976ffc15, type: 3}
+    name: marco_mg-shoot_diag_up2_mg_style_1
+  - sprite: {fileID: 21300000, guid: 05bf12ed20017fc47bf22567aa3511cc, type: 3}
+    name: enemy_dies_1-8
+  - sprite: {fileID: 21300002, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_2
+  - sprite: {fileID: 21300012, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_6
+  - sprite: {fileID: 21300004, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_2
+  - sprite: {fileID: 21300000, guid: 5244fbafc16beb1409cc5d3df8629930, type: 3}
+    name: enemy_dies_1-9
+  - sprite: {fileID: 21300004, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_4
+  - sprite: {fileID: 21300006, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_7
+  - sprite: {fileID: 21300014, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_7
+  - sprite: {fileID: 21300008, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_9
+  - sprite: {fileID: 21300006, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_3
+  - sprite: {fileID: 21300016, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_8
+  - sprite: {fileID: 21300030, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_35
+  - sprite: {fileID: 21300028, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_32
+  - sprite: {fileID: 21300008, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_4
+  - sprite: {fileID: 21300018, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_11
+  - sprite: {fileID: 21300026, guid: 2a2d0db506f53e74db03f62235596e15, type: 3}
+    name: blood_31
+  - sprite: {fileID: 21300020, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_12
+  - sprite: {fileID: 21300010, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_5
+  - sprite: {fileID: 21300012, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_6
+  - sprite: {fileID: 21300022, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_13
+  - sprite: {fileID: 21300000, guid: 71434011ce9d82d489ec6de3c64daad6, type: 3}
+    name: marco_mg-jump_high_vel_0
+  - sprite: {fileID: 21300024, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_14
+  - sprite: {fileID: 21300014, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_7
+  - sprite: {fileID: 21300026, guid: 5c02dab561404794092a2c04082985db, type: 3}
+    name: hippie-salut_15
+  - sprite: {fileID: 21300016, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_8
+  - sprite: {fileID: 21300002, guid: 71434011ce9d82d489ec6de3c64daad6, type: 3}
+    name: marco_mg-jump_high_vel_1
+  - sprite: {fileID: 21300000, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_0
+  - sprite: {fileID: 21300018, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_9
+  - sprite: {fileID: 21300002, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_1
+  - sprite: {fileID: 21300020, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_10
+  - sprite: {fileID: 21300028, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_14
+  - sprite: {fileID: 21300004, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_2
+  - sprite: {fileID: 21300022, guid: cb2e2521e1dfd0c49a03c1ffd9aebc31, type: 3}
+    name: hippie-walk_11
+  - sprite: {fileID: 21300030, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_15
+  - sprite: {fileID: 21300032, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_16
+  - sprite: {fileID: 21300034, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_17
+  - sprite: {fileID: 21300036, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_18
+  - sprite: {fileID: 21300000, guid: 642cda04e2b9d834ebf3e29fe5fde8f9, type: 3}
+    name: marco_mg-stopping_0
+  - sprite: {fileID: 21300002, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_1
+  - sprite: {fileID: 21300038, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_19
+  - sprite: {fileID: 21300004, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_2
+  - sprite: {fileID: 21300040, guid: d4f772363893bd64489d5426afd2ccb3, type: 3}
+    name: enemy_soldier-dies_fall_20
+  - sprite: {fileID: 21300000, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_0
+  - sprite: {fileID: 21300002, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_1
+  - sprite: {fileID: 21300004, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_2
+  - sprite: {fileID: 21300006, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_3
+  - sprite: {fileID: 21300008, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_4
+  - sprite: {fileID: 21300010, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_5
+  - sprite: {fileID: 21300012, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_6
+  - sprite: {fileID: 21300014, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_7
+  - sprite: {fileID: 21300016, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_8
+  - sprite: {fileID: 21300018, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_9
+  - sprite: {fileID: 21300020, guid: cc666cd9b8c7c3c489c3b58d4d780c73, type: 3}
+    name: enemy-dies_bullet4_10
+  - sprite: {fileID: 21300000, guid: 9a3c5253268d0d84baccd25337cb654e, type: 3}
+    name: marco_mg-jump_low_vel_0
+  - sprite: {fileID: 21300006, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_3
+  - sprite: {fileID: 21300008, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_4
+  - sprite: {fileID: 21300010, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_5
+  - sprite: {fileID: 21300012, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_6
+  - sprite: {fileID: 21300014, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_7
+  - sprite: {fileID: 21300016, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_8
+  - sprite: {fileID: 21300018, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_9
+  - sprite: {fileID: 21300020, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_10
+  - sprite: {fileID: 21300022, guid: 46dc6f8c06cb44845a76e386c26f54e9, type: 3}
+    name: marco_mg-running_11
+  - sprite: {fileID: 21300002, guid: 642cda04e2b9d834ebf3e29fe5fde8f9, type: 3}
+    name: marco_mg-stopping_1
+  - sprite: {fileID: 21300004, guid: 642cda04e2b9d834ebf3e29fe5fde8f9, type: 3}
+    name: marco_mg-stopping_2
+  - sprite: {fileID: 21300002, guid: 9a3c5253268d0d84baccd25337cb654e, type: 3}
+    name: marco_mg-jump_low_vel_1
+  - sprite: {fileID: 21300120, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_60
+  - sprite: {fileID: 21300096, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_48
+  - sprite: {fileID: 21300140, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_70
+  - sprite: {fileID: 21300178, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_89
+  - sprite: {fileID: 21300166, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_83
+  - sprite: {fileID: 21300190, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_95
+  - sprite: {fileID: 21300200, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_116
+  - sprite: {fileID: 21300218, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_113
+  - sprite: {fileID: 21300220, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_114
+  - sprite: {fileID: 21300222, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_115
+  - sprite: {fileID: 21300206, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_117
+  - sprite: {fileID: 21300212, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_118
+  - sprite: {fileID: 21300216, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_119
+  - sprite: {fileID: 21300336, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_120
+  - sprite: {fileID: 21300338, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_121
+  - sprite: {fileID: 21300000, guid: b21dc30fc52eb644e8071e8da832d5f1, type: 3}
+    name: one_transparent_pixel
+  - sprite: {fileID: 21300000, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_0
+  - sprite: {fileID: 21300002, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_1
+  - sprite: {fileID: 21300004, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_2
+  - sprite: {fileID: 21300006, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_3
+  - sprite: {fileID: 21300008, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_4
+  - sprite: {fileID: 21300010, guid: 021769efbe3fd7e4bb96170ad0677ff4, type: 3}
+    name: marco_bg-knife1_standing_5
+  - sprite: {fileID: 21300000, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_0
+  - sprite: {fileID: 21300002, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_1
+  - sprite: {fileID: 21300004, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_2
+  - sprite: {fileID: 21300006, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_3
+  - sprite: {fileID: 21300008, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_4
+  - sprite: {fileID: 21300010, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_5
+  - sprite: {fileID: 21300012, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_6
+  - sprite: {fileID: 21300014, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_7
+  - sprite: {fileID: 21300016, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_8
+  - sprite: {fileID: 21300018, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_9
+  - sprite: {fileID: 21300020, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_10
+  - sprite: {fileID: 21300022, guid: 82442649ca52a014ba26bd38c3c094fa, type: 3}
+    name: truck-deploying_11
+  - sprite: {fileID: 21300006, guid: 642cda04e2b9d834ebf3e29fe5fde8f9, type: 3}
+    name: marco_mg-stopping_3
+  - sprite: {fileID: 21300028, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_14
+  - sprite: {fileID: 21300030, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_15
+  - sprite: {fileID: 21300032, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_16
+  - sprite: {fileID: 21300034, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_17
+  - sprite: {fileID: 21300004, guid: 298188b0bf9f34f429f9209939b1cd81, type: 3}
+    name: marco-still_mg_2
+  - sprite: {fileID: 21300038, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_19
+  - sprite: {fileID: 21300006, guid: 298188b0bf9f34f429f9209939b1cd81, type: 3}
+    name: marco-still_mg_3
+  - sprite: {fileID: 21300040, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_20
+  - sprite: {fileID: 21300000, guid: 41716e9e1a7dd324892110ef1a8a65a1, type: 3}
+    name: rossi_dies_from_knife1_0
+  - sprite: {fileID: 21300000, guid: d5799576916039d42be365cc1a06c713, type: 3}
+    name: rossi_dies_from_knife2_0
+  - sprite: {fileID: 21300042, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_21
+  - sprite: {fileID: 21300000, guid: 664e918babd20ae43b35426bc71be0cc, type: 3}
+    name: rossi_dies_from_knife3_0
+  - sprite: {fileID: 21300044, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_22
+  - sprite: {fileID: 21300000, guid: 701669b01a5e2bb42b55eefd9c4defe2, type: 3}
+    name: rossi_dies_from_knife4_0
+  - sprite: {fileID: 21300046, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_23
+  - sprite: {fileID: 21300000, guid: bd3466246eefd93488aea9978daec702, type: 3}
+    name: rossi_dies_from_knife5_0
+  - sprite: {fileID: 21300048, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_24
+  - sprite: {fileID: 21300000, guid: 0064be841c6923046ab711ffbdf722c0, type: 3}
+    name: rossi_dies_from_knife6_0
+  - sprite: {fileID: 21300000, guid: 539a2a1d9ede03a4f8ea8c7edfec2b7c, type: 3}
+    name: rossi_dies_from_knife7_0
+  - sprite: {fileID: 21300050, guid: 613971aa481ccb64a96ee4b7b1b12e6b, type: 3}
+    name: berserker-complete-ss_25
+  - sprite: {fileID: 21300000, guid: 3e505401dbd7cbe45bfd35cb4471b25b, type: 3}
+    name: rossi_dies_from_knife8_0
+  - sprite: {fileID: 21300000, guid: 1a156cdf58a456f498a8c8262c6ffa9e, type: 3}
+    name: rossi_dies_from_knife9_0
+  - sprite: {fileID: 21300000, guid: f7e85923c2c3904478d3a120ee945035, type: 3}
+    name: rossi_dies_from_knife10_0
+  - sprite: {fileID: 21300000, guid: 216fa372758f3c6459423cad26b59998, type: 3}
+    name: rossi_dies_from_knife11_0
+  - sprite: {fileID: 21300000, guid: 702a6492439eadc4397c1af98f6aa9d0, type: 3}
+    name: rossi_dies_from_knife12_0
+  - sprite: {fileID: 21300000, guid: d31b5959685792547b5de5dc46ec77f7, type: 3}
+    name: rossi_dies_from_knife13_0
+  - sprite: {fileID: 21300000, guid: db0e2518162c44149b85fd3099331d6e, type: 3}
+    name: rossi_dies_from_knife14_0
+  - sprite: {fileID: 21300000, guid: 89659e1e059d7b14da1267a6e2ef737d, type: 3}
+    name: rossi_dies_from_knife15_0
+  - sprite: {fileID: 21300000, guid: bbeda82bc8bddbd44868314772d1c446, type: 3}
+    name: rossi_dies_from_knife16_0
+  - sprite: {fileID: 21300000, guid: 36d528838c43956449ac64d9c6047610, type: 3}
+    name: rossi_dies_from_knife17_0
+  - sprite: {fileID: 21300000, guid: afacad0f406d0794282c61f4f75d0edd, type: 3}
+    name: rossi_dies_from_knife18_0
+  - sprite: {fileID: 21300000, guid: 3f80693976e2bcb4bae61a2bb87f09ed, type: 3}
+    name: rossi_dies_from_knife19_0
+  - sprite: {fileID: 21300000, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_0
+  - sprite: {fileID: 21300002, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_1
+  - sprite: {fileID: 21300004, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_2
+  - sprite: {fileID: 21300006, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_3
+  - sprite: {fileID: 21300008, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_4
+  - sprite: {fileID: 21300010, guid: bbf962c25f9c98643aa28e4089083cd2, type: 3}
+    name: marco-spawn_5
+  - sprite: {fileID: 21300000, guid: 5f113c15445cc554aac9b06f2c1eca97, type: 3}
+    name: bullet
+  - sprite: {fileID: 21300000, guid: 68d76b29442460f46b11429ef1e94479, type: 3}
+    name: gun-impact1
+  - sprite: {fileID: 21300000, guid: f7dfd5fc0b6931f4290ae9c24705806b, type: 3}
+    name: gun-impact2
+  - sprite: {fileID: 21300000, guid: c9025a1fe20b0034d84faa1f8a3123d8, type: 3}
+    name: gun-impact3
+  - sprite: {fileID: 21300000, guid: a096b190cd77ed84db4e313a8a3d2f80, type: 3}
+    name: rossi-fire3
+  - sprite: {fileID: 21300000, guid: 586bd15a5ac6bd147b9aca87b6960f9c, type: 3}
+    name: gun-impact4
+  - sprite: {fileID: 21300000, guid: b554cf9e412a4ab44a517bf2151366ba, type: 3}
+    name: rossi-fire4
+  - sprite: {fileID: 21300000, guid: 82d4e5ce2c64be346b0db5554761e373, type: 3}
+    name: gun-impact5
+  - sprite: {fileID: 21300000, guid: ffc9c10d8be244347be0065f2dd041b0, type: 3}
+    name: gun-impact6
+  - sprite: {fileID: 21300000, guid: 36f81251410371c4588dabc60069e5d4, type: 3}
+    name: rossi-fire5
+  - sprite: {fileID: 21300000, guid: 082224398ca90f2428368db241d4a5f0, type: 3}
+    name: gun-impact7
+  - sprite: {fileID: 21300000, guid: c7ae5b702db32e34ea6b3f8f4bdfb287, type: 3}
+    name: rossi-fire6
+  - sprite: {fileID: 21300000, guid: 9322bb8b4c229cc4faad7f6c33f35038, type: 3}
+    name: gun-impact8
+  - sprite: {fileID: 21300000, guid: 4f9c471c66d1e474baaf73bc1248707e, type: 3}
+    name: gun-impact10
+  - sprite: {fileID: 21300000, guid: c70d384a9ae25684487e965bbdfa6230, type: 3}
+    name: rossi-fire7
+  - sprite: {fileID: 21300000, guid: 06c800813a97bf14b9ad809ce3d3634a, type: 3}
+    name: rossi-fire8
+  - sprite: {fileID: 21300000, guid: 418b1efb9f8c54e4e97b08738d3e37a6, type: 3}
+    name: rossi-fire9
+  - sprite: {fileID: 21300000, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_0
+  - sprite: {fileID: 21300002, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_1
+  - sprite: {fileID: 21300004, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_2
+  - sprite: {fileID: 21300006, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_3
+  - sprite: {fileID: 21300008, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_4
+  - sprite: {fileID: 21300010, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_5
+  - sprite: {fileID: 21300000, guid: 32395c89d9d9646479338a389e56a31c, type: 3}
+    name: rossi-fire10
+  - sprite: {fileID: 21300012, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_6
+  - sprite: {fileID: 21300014, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_7
+  - sprite: {fileID: 21300016, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_8
+  - sprite: {fileID: 21300018, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_9
+  - sprite: {fileID: 21300020, guid: 8380a39a88dc76f4f99aa3a2a7457aeb, type: 3}
+    name: enemy-dies_grenade-2_10
+  - sprite: {fileID: 21300008, guid: 5b095b77e97c8104b8a0f049c71d2683, type: 3}
+    name: marco_shoot_down_4
+  - sprite: {fileID: 21300000, guid: 02857e4f5bf56134884f565afde62c39, type: 3}
+    name: marco-sit_0
+  - sprite: {fileID: 21300000, guid: f37dfd932beae35459dc7bac52abbac7, type: 3}
+    name: whole-sit1_0
+  - sprite: {fileID: 21300000, guid: 69751980f09649940953ca9a6cde86c5, type: 3}
+    name: whole-sit2_0
+  - sprite: {fileID: 21300000, guid: a4c0bd8fea3ef1449921267ec59f6bf9, type: 3}
+    name: whole-sit3_0
+  - sprite: {fileID: 21300002, guid: 02857e4f5bf56134884f565afde62c39, type: 3}
+    name: marco-sit_1
+  - sprite: {fileID: 21300004, guid: 02857e4f5bf56134884f565afde62c39, type: 3}
+    name: marco-sit_2
+  - sprite: {fileID: 21300002, guid: 604749a18d68d9442af69572ad01b042, type: 3}
+    name: marco-turn_sitting_1
+  - sprite: {fileID: 21300000, guid: 604749a18d68d9442af69572ad01b042, type: 3}
+    name: marco-turn_sitting_0
+  - sprite: {fileID: 21300000, guid: 87a14319b1f47b947919527e91252365, type: 3}
+    name: bullet_mg
+  - sprite: {fileID: 21300004, guid: a1c8a274d6741504da2d19a38f7fbd2a, type: 3}
+    name: marco_mg-shoot_up_mg_style_2
+  - sprite: {fileID: 21300006, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_3
+  - sprite: {fileID: 21300008, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_4
+  - sprite: {fileID: 21300010, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_5
+  - sprite: {fileID: 21300012, guid: d10836dc09d4acb43bb5eb47bcc7859f, type: 3}
+    name: hippie-run_away_6
+  - sprite: {fileID: 21300004, guid: 9a3c5253268d0d84baccd25337cb654e, type: 3}
+    name: marco_mg-jump_low_vel_2
+  - sprite: {fileID: 21300006, guid: 9a3c5253268d0d84baccd25337cb654e, type: 3}
+    name: marco_mg-jump_low_vel_3
+  - sprite: {fileID: 21300008, guid: 9a3c5253268d0d84baccd25337cb654e, type: 3}
+    name: marco_mg-jump_low_vel_4
+  - sprite: {fileID: 21300002, guid: e1f2d344f5654cb4bab7e6d5a5878b75, type: 3}
+    name: weapons_1
+  - sprite: {fileID: 21300004, guid: e1f2d344f5654cb4bab7e6d5a5878b75, type: 3}
+    name: weapons_2
+  - sprite: {fileID: 21300000, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_0
+  - sprite: {fileID: 21300006, guid: e1f2d344f5654cb4bab7e6d5a5878b75, type: 3}
+    name: weapons_3
+  - sprite: {fileID: 21300002, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_1
+  - sprite: {fileID: 21300004, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_2
+  - sprite: {fileID: 21300006, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_3
+  - sprite: {fileID: 21300008, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_4
+  - sprite: {fileID: 21300010, guid: ad2d106f896c66846813373976d31d13, type: 3}
+    name: marco_bg-knife2_standing_5
+  - sprite: {fileID: 21300000, guid: c9b648d4664f8954199cbc68818e9c1c, type: 3}
+    name: marco_mg-shoot_up_to_rest_up_0
+  - sprite: {fileID: 21300002, guid: c9b648d4664f8954199cbc68818e9c1c, type: 3}
+    name: marco_mg-shoot_up_to_rest_up_1
+  - sprite: {fileID: 21300000, guid: f5c4bf4276c574542b32a1a07381c24e, type: 3}
+    name: marco_mg-look_up2_0
+  - sprite: {fileID: 21300002, guid: f5c4bf4276c574542b32a1a07381c24e, type: 3}
+    name: marco_mg-look_up2_1
+  - sprite: {fileID: 21300002, guid: 7c1597260f724ed43b1b016de2a4b145, type: 3}
+    name: marco_mg-look_up_1
+  - sprite: {fileID: 21300000, guid: 7c1597260f724ed43b1b016de2a4b145, type: 3}
+    name: marco_mg-look_up_0
+  - sprite: {fileID: 21300004, guid: 71434011ce9d82d489ec6de3c64daad6, type: 3}
+    name: marco_mg-jump_high_vel_2
+  - sprite: {fileID: 21300006, guid: 71434011ce9d82d489ec6de3c64daad6, type: 3}
+    name: marco_mg-jump_high_vel_3
+  - sprite: {fileID: 21300008, guid: 71434011ce9d82d489ec6de3c64daad6, type: 3}
+    name: marco_mg-jump_high_vel_4
+  - sprite: {fileID: 21300000, guid: 048a434e061d613478eeeaa3cf22171f, type: 3}
+    name: marco_mg-sit_0
+  - sprite: {fileID: 21300024, guid: 9fead52e43c94604faceeec5b67a5311, type: 3}
+    name: marco_mg-sit2_12
+  - sprite: {fileID: 21300026, guid: 9fead52e43c94604faceeec5b67a5311, type: 3}
+    name: marco_mg-sit2_13
+  - sprite: {fileID: 21300030, guid: 9fead52e43c94604faceeec5b67a5311, type: 3}
+    name: marco_mg-sit2_15
+  - sprite: {fileID: 21300032, guid: 9fead52e43c94604faceeec5b67a5311, type: 3}
+    name: marco_mg-sit2_16
+  - sprite: {fileID: 21300004, guid: 048a434e061d613478eeeaa3cf22171f, type: 3}
+    name: marco_mg-sit_2
+  - sprite: {fileID: 21300002, guid: 048a434e061d613478eeeaa3cf22171f, type: 3}
+    name: marco_mg-sit_1
+  - sprite: {fileID: 21300000, guid: 5dded0d1c073a93459d2be8ac9288290, type: 3}
+    name: marco-sit_walk_0
+  - sprite: {fileID: 21300002, guid: 3d05f0b77bf8362458f23e5a3cc64031, type: 3}
+    name: marco-sit_shoot_1
+  - sprite: {fileID: 21300004, guid: 3d05f0b77bf8362458f23e5a3cc64031, type: 3}
+    name: marco-sit_shoot_2
+  - sprite: {fileID: 21300006, guid: 3d05f0b77bf8362458f23e5a3cc64031, type: 3}
+    name: marco-sit_shoot_3
+  - sprite: {fileID: 21300012, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground0
+  - sprite: {fileID: 21300014, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground1
+  - sprite: {fileID: 21300000, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground2
+  - sprite: {fileID: 21300004, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground3
+  - sprite: {fileID: 21300006, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground4
+  - sprite: {fileID: 21300008, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground5
+  - sprite: {fileID: 21300010, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground6
+  - sprite: {fileID: 21300016, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground7
+  - sprite: {fileID: 21300018, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground8
+  - sprite: {fileID: 21300020, guid: b5963ca3b0cf5854bae73e3c0386e431, type: 3}
+    name: gun_impact-ground9
+  - sprite: {fileID: 21300000, guid: da23989dfd23d6244a76a2550b8bdc63, type: 3}
+    name: marco-look_up1
+  - sprite: {fileID: 21300000, guid: 8750bdcd19df25548b6b034302e623fe, type: 3}
+    name: marco-look_up2
+  - sprite: {fileID: 21300000, guid: 5f9cc07234c7c554e96fb095e8b86e28, type: 3}
+    name: marco-look_up_fire1
+  - sprite: {fileID: 21300000, guid: 900f93e7d1bcfdd4f8f2785c246375f1, type: 3}
+    name: marco-look_up_fire2
+  - sprite: {fileID: 21300000, guid: 61aa3bad7a9e34d47a3d080ff5dc046d, type: 3}
+    name: marco-look_up_fire3
+  - sprite: {fileID: 21300000, guid: b292f3b925f6ff64188aee0f8950b25d, type: 3}
+    name: marco-look_up_fire4
+  - sprite: {fileID: 21300000, guid: 17631ba2c51eab5488571fedb69815e1, type: 3}
+    name: marco-look_up5
+  - sprite: {fileID: 21300004, guid: 4cdede70c6afd684288c95ef776d550e, type: 3}
+    name: enemy-laugh_2
+  - sprite: {fileID: 21300006, guid: 4cdede70c6afd684288c95ef776d550e, type: 3}
+    name: enemy-laugh_3
+  - sprite: {fileID: 21300000, guid: fa27b81910ff4e0498f43919d7be5c29, type: 3}
+    name: marco-sit_knife2_0
+  - sprite: {fileID: 21300002, guid: fa27b81910ff4e0498f43919d7be5c29, type: 3}
+    name: marco-sit_knife2_1
+  - sprite: {fileID: 21300004, guid: fa27b81910ff4e0498f43919d7be5c29, type: 3}
+    name: marco-sit_knife2_3
+  - sprite: {fileID: 21300006, guid: fa27b81910ff4e0498f43919d7be5c29, type: 3}
+    name: marco-sit_knife2_4
+  - sprite: {fileID: 21300002, guid: 4cdede70c6afd684288c95ef776d550e, type: 3}
+    name: enemy-laugh_1
+  - sprite: {fileID: 21300000, guid: 4cdede70c6afd684288c95ef776d550e, type: 3}
+    name: enemy-laugh_0
+  - sprite: {fileID: 21300000, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_0
+  - sprite: {fileID: 21300002, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_1
+  - sprite: {fileID: 21300004, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_2
+  - sprite: {fileID: 21300006, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_3
+  - sprite: {fileID: 21300008, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_4
+  - sprite: {fileID: 21300010, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_5
+  - sprite: {fileID: 21300012, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_6
+  - sprite: {fileID: 21300014, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_7
+  - sprite: {fileID: 21300016, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_8
+  - sprite: {fileID: 21300018, guid: 6a427270532e6c343aa3f6fb66ea35e4, type: 3}
+    name: enemy_scared_9
+  - sprite: {fileID: 21300000, guid: c46aec247529a574f93e75d4938958ea, type: 3}
+    name: marco_mg-sit_turn0_0

@@ -1,87 +1,181 @@
 ﻿using System.Collections;
 using UnityEngine;
+using SlugLib;
 
-public class EnemySpawner : MonoBehaviour {
+namespace Mission169
+{
+    public enum SpawnerType
+    {
+        CameraBased,
+        CameraBlocker,
+        Manual,
+    } 
 
-    public ObjectPoolScript enemyPool;
-    public GameObject singleEnemyPrefab;
-    private GameObject enemy;
-    private new BoxCollider2D collider;
-    public Transform posToGoAtSpawn;
-    public float goToSpeedFactor = 1;
-    [Tooltip("When 0 only one enemy is spawned")]
-    public float spawningInterval;
-    private HealthManager enemyHealthManager;
+    public class EnemySpawner : MonoBehaviour
+    {
+        [SerializeField] SpawnerType spawnerType = SpawnerType.CameraBased;
 
-    public bool EnemyAlive() {
-        return enemyHealthManager.currentHP > 0;
-    }
-    public GameObject GetEnemy() {
-        return enemy;
-    }
+        public ObjectPoolScript enemyPool;
+        public GameObject singleEnemyPrefab;
+        public Transform posToGoAtSpawn;
+        public float goToSpeedFactor = 1;
 
-    void Awake() {
-        collider = GetComponent<BoxCollider2D>();
-        if (singleEnemyPrefab) {
+        [Header("Manual parameters")]
+        [SerializeField] bool spawnAgainAtDeath;
+        [Tooltip("When 0 only one enemy is spawned")]
+        [SerializeField] float spawningInterval;
+
+        private HealthManager enemyHealthManager;
+        private GameObject enemy;
+        private Coroutine spawnCoroutine;
+
+        #region Unity callbacks
+
+        void Start()
+        {
+            if (singleEnemyPrefab && enemy == null)
+            {
+                InstantiateSingleEnemyPrefab();
+            }
+
+            // when debuggin and stating with the camera not from the beginning you don't want all the spawners to spawn their mobs
+            if (spawnerType == SpawnerType.CameraBased && IsCameraEdgePastSpawner())
+            {
+                enabled = false;
+            }
+        }
+
+        private void Update()
+        {
+            if (spawnerType != SpawnerType.CameraBased)
+            {
+                enabled = false;
+                return;
+            }
+
+            if (IsCameraEdgePastSpawner())
+            {
+                Spawn();
+                enabled = false;
+            }
+        }
+
+        #endregion
+
+        #region Public methods
+
+        public void Spawn()
+        {
+            if (singleEnemyPrefab != null)
+            {
+                if (enemy == null)
+                {
+                    InstantiateSingleEnemyPrefab();
+                }
+
+                enemy.SetActive(true);
+                enemy.transform.position = transform.position;
+            }
+            else if (enemyPool != null)
+            {
+                enemy = enemyPool.GetPooledObject();
+                enemy.transform.position = transform.position;
+
+                if (spawnerType == SpawnerType.Manual && spawnAgainAtDeath)
+                {
+                    spawnCoroutine = StartCoroutine(RespawnUponDeathCoroutine());
+                }
+                print("spawn here!");
+            }
+
+            enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();
+
+            if (spawnerType == SpawnerType.CameraBlocker)
+            {
+                CameraUtils.EnableFollow(false);
+                StartCoroutine(AllowCameraFollowCoroutine());
+            }
+
+            if (posToGoAtSpawn != null)
+            {
+                StartCoroutine(GoToCoroutine(posToGoAtSpawn.position.x));
+            }
+        }
+
+        public void StartPeriodicSpawning()
+        {
+            spawnCoroutine = StartCoroutine(SpawnEveryXsecondsCoroutine(spawningInterval));
+        }
+
+        public void StopSpawning()
+        {
+            if (spawnCoroutine != null)
+            {
+                StopCoroutine(spawnCoroutine);
+            }
+        }
+
+        public bool IsEnemyAlive()
+        {
+            return enemyHealthManager.currentHP > 0;
+        }
+
+        public GameObject GetEnemy()
+        {
+            return enemy;
+        }
+
+        #endregion Private Methods
+
+        private bool IsCameraEdgePastSpawner()
+        {
+            return CameraUtils.GetRightEdgeWorldPosition() + 0.2f >= transform.position.x;
+        }
+
+        private IEnumerator GoToCoroutine(float posX)
+        {
+            while (!Mathf.Approximately(enemy.transform.position.x, posX))
+            {
+                float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.2f * Time.deltaTime * goToSpeedFactor);
+                enemy.transform.position = new Vector2(newPosX, enemy.transform.position.y);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        private IEnumerator SpawnEveryXsecondsCoroutine(float interval)
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(interval);
+                Spawn();
+            }
+        }
+
+        private IEnumerator RespawnUponDeathCoroutine()
+        {
+            while (IsEnemyAlive())
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            Spawn();
+        }
+
+        private IEnumerator AllowCameraFollowCoroutine()
+        {
+            while (IsEnemyAlive())
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            CameraUtils.EnableFollow(true);
+        }
+
+        private void InstantiateSingleEnemyPrefab()
+        {
             enemy = Instantiate(singleEnemyPrefab);
             enemy.transform.parent = transform;
             enemy.SetActive(false);
         }
     }
-
-    void OnEnable() {
-        InitEnemy();
-        if (spawningInterval != 0) {
-            StartCoroutine("SpawnEveryXsecondsCoroutine", spawningInterval);
-        }
-    }
-
-    void InitEnemy() {
-        if (singleEnemyPrefab != null) {
-            enemy.SetActive(true);
-            enemy.transform.position = transform.position;
-            if (spawningInterval != 0) {
-                print("Can't use spawning interval and single enemy spawn. Use pool spawning");
-            }
-        } else if (enemyPool != null) {
-            enemy = enemyPool.GetPooledObject();
-            enemy.transform.position = transform.position;
-        } else {
-        }
-
-        if (posToGoAtSpawn != null) {
-            StartCoroutine("GoToCoroutine", posToGoAtSpawn.position.x);
-        }
-
-        enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();
-    }
-
-    public void OnBecameVisible() {
-            InitEnemy();
-            collider.enabled = false;
-    }
-
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player") {
-            InitEnemy();
-            collider.enabled = false;
-        }
-    }
-
-    private IEnumerator GoToCoroutine(float posX) {
-        while (!Mathf.Approximately(enemy.transform.position.x, posX)) {
-            float newPosX = Mathf.MoveTowards(enemy.transform.position.x, posX, 0.2f * Time.deltaTime * goToSpeedFactor);
-            enemy.transform.position = new Vector2(newPosX, enemy.transform.position.y);
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-    private IEnumerator SpawnEveryXsecondsCoroutine(float interval) {
-        while (this.enabled) {
-            yield return new WaitForSeconds(interval);
-            InitEnemy();
-        }
-    }
 }
-
-

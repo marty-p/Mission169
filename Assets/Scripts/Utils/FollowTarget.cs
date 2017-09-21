@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour {
         if (target == null) {
             // while this script is general and could be use to follow anything
             // this one bit is very specific to Mission169
-            target = GameManager.Instance.GetPlayer().transform.GetChild(0);
+            target = GameObject.Find("Player").transform.GetChild(0) ?? GameManager.Instance.GetPlayer().transform.GetChild(0);
 
             if (target != null) {
                 targetViewPortPos = new Vector2();

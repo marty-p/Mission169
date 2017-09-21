@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: cfc662d295b642b468298fca5a247f77
+timeCreated: 1475055089
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: marco-explosion_death_0
+    21300002: marco-explosion_death_1
+    21300004: marco-explosion_death_2
+    21300006: marco-explosion_death_3
+    21300008: marco-explosion_death_4
+    21300010: marco-explosion_death_5
+    21300012: marco-explosion_death_6
+    21300014: marco-explosion_death_7
+    21300016: marco-explosion_death_8
+    21300018: marco-explosion_death_9
+    21300020: marco-explosion_death_10
+    21300022: marco-explosion_death_11
+    21300024: marco-explosion_death_12
+    21300026: marco-explosion_death_13
+    21300028: marco-explosion_death_14
+    21300030: marco-explosion_death_15
+    21300032: marco-explosion_death_16
+    21300034: marco-explosion_death_17
+    21300036: marco-explosion_death_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: marco-explosion_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 26
+        height: 40
+      alignment: 9
+      pivot: {x: 0.18599017, y: 0.8811323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 31
+        height: 40
+      alignment: 9
+      pivot: {x: 0.24860775, y: 0.90291077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 40
+      alignment: 9
+      pivot: {x: 0.2829976, y: 0.9148258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 42
+        height: 40
+      alignment: 9
+      pivot: {x: 0.38922447, y: 0.9084171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.38972732, y: 0.91183376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_5
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 48
+        height: 40
+      alignment: 9
+      pivot: {x: 0.31325307, y: 0.91533643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_6
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 0
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.29097536, y: 0.87008077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 48
+        height: 40
+      alignment: 9
+      pivot: {x: 0.20982106, y: 0.91209555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_8
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 0
+        width: 42
+        height: 40
+      alignment: 9
+      pivot: {x: 0.21783374, y: 0.93121254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_9
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 32
+        height: 40
+      alignment: 9
+      pivot: {x: 0.20812225, y: 0.9711858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 0
+        width: 31
+        height: 40
+      alignment: 9
+      pivot: {x: 0.2804792, y: 0.93996114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 38
+        height: 40
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_12
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 48
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.95}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_13
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 45
+        height: 40
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.7659575, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_15
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 44
+        height: 40
+      alignment: 9
+      pivot: {x: 0.79545456, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_16
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 0
+        width: 45
+        height: 40
+      alignment: 9
+      pivot: {x: 0.7777778, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_17
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 0
+        width: 48
+        height: 40
+      alignment: 9
+      pivot: {x: 0.7916667, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: marco-explosion_death_18
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 0
+        width: 49
+        height: 40
+      alignment: 9
+      pivot: {x: 0.79591835, y: 0.975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

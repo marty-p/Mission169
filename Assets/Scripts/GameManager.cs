@@ -42,6 +42,10 @@ namespace Mission169 {
 
             //FIXME  you know what
             playerTransform = playerGameObject.transform.GetChild(0).transform;
+            if (!playerTransform)
+            {
+                print("FAIL");
+            }
 
             dialog = UIManager.Instance.Dialog;
         }
@@ -62,17 +66,23 @@ namespace Mission169 {
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
             playerGameObject.layer = (int)SlugLayers.Player;
             GameObject startPos = GameObject.Find("StartLocation");
-            playerTransform.position = startPos.transform.position;
+            if (startPos != null)
+            {
+                playerTransform.position = startPos.transform.position;
+
+                playerGameObject.transform.SetParent(startPos.transform, true);
+                Camera.main.transform.position = startPos.transform.position;
+            }
             playerGameObject.SetActive(false);
         }
 
         private void MissionStart() {
             MissionLoad();
 
-            InitPlayer();
             EventManager.TriggerEvent(GlobalEvents.MissionStart);
 
             DOVirtual.DelayedCall(1.8f, () => {
+                InitPlayer();
                 playerGameObject.SetActive(true);
                 playerDeathManager.SpawnPlayer();
             });
