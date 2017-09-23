@@ -21,6 +21,11 @@ namespace Mission169
 
         void Awake()
         {
+            if (CameraReachedTheEncounter(true))
+            {
+                return;
+            }
+
             // getting a reference of all the waves in the event
             foreach (Transform child in transform)
             {
@@ -41,7 +46,7 @@ namespace Mission169
 
         private IEnumerator CheckForCameraPosition()
         {
-            while (CameraUtils.GetRightEdgeWorldPosition() < transform.position.x)
+            while (!CameraReachedTheEncounter())
             {
                 yield return new WaitForSeconds(1f);
             }
@@ -54,7 +59,6 @@ namespace Mission169
             currentWaveIndex = 0;
             currentWaveGameObject = waves[currentWaveIndex].gameObject;
 
-
             if (cam != null)
             {
                 cam.followActive = false;
@@ -62,6 +66,7 @@ namespace Mission169
             if (masterEnemySpawner != null)
             {
                 masterEnemyHealth = masterEnemySpawner.GetEnemy().GetComponent<HealthManager>();
+                masterEnemySpawner.Spawn();
             }
 
             enabled = true;
@@ -130,6 +135,15 @@ namespace Mission169
             {
                 return masterEnemyHealth.currentHP > 1;
             }
+        }
+
+        private bool CameraReachedTheEncounter(bool atStartup = false)
+        {
+            // in order to init 
+            CameraUtils.GetRightEdgeWorldPosition();
+
+            float offset = atStartup ? CameraUtils.CamWorldSize.x / 2f : 0f;
+            return CameraUtils.GetRightEdgeWorldPosition() - offset > transform.position.x;
         }
     }
 }

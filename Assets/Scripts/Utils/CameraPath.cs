@@ -17,7 +17,7 @@ public class CameraPath : MonoBehaviour {
                         float b = wayPoints[i].transform.position.y - a*wayPoints[i].transform.position.x;
                         
                         float yToGoForThisX = a*transform.position.x + b;
-                        Vector3 fixedPos = new Vector3( transform.position.x, yToGoForThisX, -10 );
+                        Vector3 fixedPos = new Vector3( transform.position.x, yToGoForThisX, 0 );
                         transform.position = fixedPos;
                     }
                     break;

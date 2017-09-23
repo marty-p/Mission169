@@ -21,6 +21,7 @@ public class FollowTarget : MonoBehaviour {
             target = GameObject.Find("Player").transform.GetChild(0) ?? GameManager.Instance.GetPlayer().transform.GetChild(0);
 
             if (target != null) {
+                target.position = transform.position;
                 targetViewPortPos = new Vector2();
                 oldTargetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
             }

@@ -80,14 +80,14 @@ namespace Mission169
             {
                 enemy = enemyPool.GetPooledObject();
                 enemy.transform.position = transform.position;
-
-                if (spawnerType == SpawnerType.Manual && spawnAgainAtDeath)
-                {
-                    spawnCoroutine = StartCoroutine(RespawnUponDeathCoroutine());
-                }
             }
 
             enemyHealthManager = enemy.GetComponentInChildren<HealthManager>();
+
+            if (spawnerType == SpawnerType.Manual && spawnAgainAtDeath)
+            {
+                spawnCoroutine = StartCoroutine(RespawnUponDeathCoroutine());
+            }
 
             if (spawnerType == SpawnerType.CameraBlocker)
             {
