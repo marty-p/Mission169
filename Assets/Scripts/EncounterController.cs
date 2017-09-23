@@ -7,7 +7,7 @@ using DG.Tweening;
 namespace Mission169
 {
    [ExecuteInEditMode]
-    public class EnemyWaveController : MonoBehaviour
+    public class EncounterController : MonoBehaviour
     {
         public FollowTarget cam;
         private List<Transform> waves = new List<Transform>();

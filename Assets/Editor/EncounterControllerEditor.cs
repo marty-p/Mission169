@@ -3,7 +3,7 @@ using UnityEditor;
 using Mission169;
 using SlugLib;
 
-[CustomEditor(typeof(EnemyWaveController))]
+[CustomEditor(typeof(EncounterController))]
 public class EncounterControllerEditor : Editor
 {
 
@@ -11,7 +11,7 @@ public class EncounterControllerEditor : Editor
     {
         DrawDefaultInspector();
 
-        EnemyWaveController myScript = (EnemyWaveController)target;
+        EncounterController myScript = (EncounterController)target;
         if (GUILayout.Button("Snap camera to event"))
         {
             Camera.main.transform.position = myScript.transform.position;
