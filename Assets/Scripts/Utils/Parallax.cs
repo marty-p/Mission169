@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct BgLayer {
+public struct BgParallax {
     public GameObject go;
     public float scrollingRatioToForeground;
 }
 
 public class Parallax : MonoBehaviour
 {
-    public BgLayer[] bgLayers;
+    public BgParallax[] bgLayers;
     private Vector2 oldPos;
 
     void Start()

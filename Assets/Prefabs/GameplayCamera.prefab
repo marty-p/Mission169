@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010672378938}
   - 20: {fileID: 20000011421026654}
-  - 81: {fileID: 81000012685694230}
+  - 114: {fileID: 114000014248081248}
   - 114: {fileID: 114000013578923500}
+  - 114: {fileID: 114000010978540734}
   - 114: {fileID: 114000012426361466}
   - 114: {fileID: 114000011344431740}
   - 114: {fileID: 114000012760201284}
@@ -147,13 +148,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014057848332}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!81 &81000012685694230
-AudioListener:
+--- !u!114 &114000010978540734
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011678888826}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abd3467c3cc10c42bbb6f992f329b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints: []
 --- !u!114 &114000011344431740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,11 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e512740fabb6361438c2e794085f87ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgLayers:
-  - go: {fileID: 0}
-    scrollingRatioToForeground: 0.7
-  - go: {fileID: 0}
-    scrollingRatioToForeground: 0.35
+  bgLayers: []
 --- !u!114 &114000012758366524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,3 +236,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   followActive: 1
+--- !u!114 &114000014248081248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011678888826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dc4d734ee8f0a4e8c28b4efa3d0883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 114000013578923500}
+  followPath: {fileID: 114000010978540734}
+  parallax: {fileID: 114000012426361466}

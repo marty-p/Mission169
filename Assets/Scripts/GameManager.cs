@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using SlugLib;
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Mission169 {
 
@@ -11,7 +12,8 @@ namespace Mission169 {
 
         protected GameManager() { }
 
-        [SerializeField] Camera gameplayCamera;
+        [SerializeField] SlugCamera gameplayCameraPrefab;
+        private SlugCamera gameplayCamera;
 
         private static readonly int playerLifeStart = 3;
         private static int playerLifeCount = playerLifeStart;
@@ -20,7 +22,7 @@ namespace Mission169 {
         private int currentMissionID = 0;
         private string[] missionList = new[] { "mission1", "mission2" };
 
-        private Transform missionStartPos;
+        private LevelData currentLevelData;
         private GameObject playerGameObject;
         private Transform playerTransform;
         private PlayerDeathManager playerDeathManager;
@@ -43,7 +45,10 @@ namespace Mission169 {
             playerGameObject = Instantiate( Resources.Load("Player")) as GameObject;
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
-            playerGameObject.transform.parent = transform;
+            playerGameObject.transform.SetParent(transform);
+
+            gameplayCamera = Instantiate(gameplayCameraPrefab);
+            gameplayCamera.transform.SetParent(transform);
 
             //FIXME  you know what
             playerTransform = playerGameObject.transform.GetChild(0).transform;
@@ -100,6 +105,8 @@ namespace Mission169 {
 
             yield return null;
 
+            currentLevelData = GameObject.Find("LevelData").GetComponent<LevelData>();
+
             EventManager.TriggerEvent(GlobalEvents.MissionStart);
 
             InitPlayer();
@@ -112,33 +119,40 @@ namespace Mission169 {
         private void InitPlayer() {
             playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
             playerGameObject.layer = (int)SlugLayers.Player;
-            GameObject startPos = GameObject.Find("StartLocation");
+            playerGameObject.SetActive(false);
+            playerTransform.localPosition = Vector3.zero;
+            // todo set parachute mode
+
+            Transform startPos = currentLevelData.StartLocation;
+            //TODO startPos null check should be done in leveldata
             if (startPos != null)
             {
-                playerTransform.localPosition = Vector3.zero;
-                playerGameObject.transform.position = startPos.transform.position;
+                playerGameObject.transform.position = startPos.position;
             }
             else
             {
-                Debug.LogError("Could not find a starting location in the level");
+                Debug.LogError("Could not find a starting location in the level player put in 0,0");
+                playerGameObject.transform.position = Vector2.zero;
             }
-            playerGameObject.SetActive(false);
         }
 
         private void InitCamera()
         {
-            GameObject cameraPath = GameObject.Find("CameraPath");
-            if (cameraPath != null)
-            {
-                cameraPath.GetComponent<CameraPath>().SetCamera(gameplayCamera);
-                cameraPath.GetComponent<CameraPath>().PositionCameraAtNode(0);
+            Transform[] wayPoints = currentLevelData.CameraWayPoints;
 
-                gameplayCamera.GetComponent<FollowTarget>().InitTarget(playerTransform);
+            //TODO waypoints null check should be done in leveldata 
+            if (wayPoints != null)
+            {
+                gameplayCamera.SetWayPoints(wayPoints);
+                gameplayCamera.PositionAtWayPoint(0);
             }
             else
             {
-                Debug.LogError("no camera path in the level!");
+                Debug.LogError("no camera path in the level! the cam will just go straight line to the right");
             }
+
+            gameplayCamera.SetTargetToFollow(playerTransform);
+            gameplayCamera.SetParallaxBgs(currentLevelData.ParallaxBgs);
         }
 
         private void UpdatePlayerPoints(float pts) {
