@@ -4,18 +4,17 @@ using SlugLib;
 using Mission169;
 using DG.Tweening;
 
-public class HUDManager : MonoBehaviour {
-
+public class HUDManager : MonoBehaviour
+{
     public Text scoreGUI;
     public Text bulletCountGUI;
     public Text grenadeCountGUI;
     public Text lifeCountGUI;
     public Button pauseButton;
     public GameObject goRightReminder;
-    public GameObject readyGoPrefab;
+    public MissionStartLettersAnimation missionLetters;
     public GameObject onScreenControl;
 
-    private GameObject readyGoInstance;
     private Gradient bulletCountGradient;
     private TimeUtils timeUtils;
 
@@ -23,12 +22,14 @@ public class HUDManager : MonoBehaviour {
     // the "∞" looks much smaller than any other glyph in the font
     private readonly int armsFontSizeWhenGun = 70; 
 
-    void Awake() {
+    void Awake()
+    {
         EventManager.StartListening(GlobalEvents.GunUsed, SetBulletCount);
         EventManager.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
         EventManager.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
 
         EventManager.StartListening(GlobalEvents.MissionStart, OnMissionStart);
+        EventManager.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
         EventManager.StartListening(GlobalEvents.PointsEarned, OnPlayerPointsChanged);
         EventManager.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
         EventManager.StartListening(GlobalEvents.GameOver, ()=> SetVisible(false) );
@@ -37,8 +38,7 @@ public class HUDManager : MonoBehaviour {
         bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
         timeUtils = GetComponent<TimeUtils>();
         pauseButton.onClick.AddListener(OnPausePressed);
-        readyGoInstance = Instantiate(readyGoPrefab);
-        readyGoInstance.transform.parent = transform;
+
 #if UNITY_IOS || UNITY_ANDROID
         onScreenControl.SetActive(true);
 #endif
@@ -75,8 +75,9 @@ public class HUDManager : MonoBehaviour {
         goRightReminder.SetActive(true);
     }
 
-    public void ShowReadyGo() {
-        readyGoPrefab.SetActive(true);
+    public void ShowMissionStartAnimation() {
+        missionLetters.SetStart();
+        missionLetters.StartAnim();
     }
 
     void SetBulletCountToInfinity() {
@@ -90,9 +91,15 @@ public class HUDManager : MonoBehaviour {
 
     void OnMissionStart() {
         SetVisible(true);
-        ShowReadyGo();
+        ShowMissionStartAnimation();
         SetLifeCount(GameManager.PlayerLifeCount);
         SetScore(GameManager.PlayerScore);
+    }
+
+    void OnMissionSuccess()
+    {
+        missionLetters.SetComplete();
+        missionLetters.StartAnim();
     }
 
     void OnPlayerPointsChanged() {

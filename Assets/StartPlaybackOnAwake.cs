@@ -4,7 +4,7 @@ using SlugLib;
 public class StartPlaybackOnAwake : MonoBehaviour {
 
 	void Start () {
-        GetComponent<RecorderMaster>().StartPlayback("rec");
+    //    GetComponent<RecorderMaster>().StartPlayback("rec");
 	}
 
     void Update()

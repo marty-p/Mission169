@@ -219,7 +219,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1157075158
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ RectTransform:
   - {fileID: 407328633}
   - {fileID: 1455897458}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -488,7 +488,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1911521518}
-  - 114: {fileID: 1911521517}
   - 114: {fileID: 1911521519}
   m_Layer: 0
   m_Name: GameAutoDemo
@@ -497,17 +496,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1911521517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1911521516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8249d6d537f504bbf6ba3a1cc99080, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1911521518
 Transform:
   m_ObjectHideFlags: 0
@@ -518,10 +506,9 @@ Transform:
   m_LocalPosition: {x: 4.861776, y: 0.11242279, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1989892483}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1911521519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,11 +548,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1989892482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.311776, y: -0.21242282, z: -7}
+  m_LocalPosition: {x: 0.5499997, y: -0.10000003, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 1911521518}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &1989892484
 MonoBehaviour:
@@ -601,12 +588,12 @@ MonoBehaviour:
   retroSnap: 0
   assetsPixelsPerUnit: 100
   showHUD: 0
-  cameraSize: {x: 1.965, y: 1.105}
+  cameraSize: {x: 1.97, y: 1.1075}
   contraintUsed: 0
   cameraPixelsPerUnit: 200
   ratio: 2
-  nativeAssetResolution: {x: 393, y: 221}
-  fovCoverage: 0.91322315
+  nativeAssetResolution: {x: 394, y: 221.49998}
+  fovCoverage: 0.9152893
 --- !u!81 &1989892488
 AudioListener:
   m_ObjectHideFlags: 0
@@ -652,7 +639,7 @@ Camera:
   far clip plane: 10
   field of view: 71.8
   orthographic: 1
-  orthographic size: 1.105
+  orthographic size: 1.1075
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

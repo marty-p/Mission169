@@ -60,6 +60,28 @@ public class SoldierBrainGeneral : EnemyBrain {
         }
     }
 
+    IEnumerator Test()
+    {
+        while (TargetInArea(colliderMidRange.bounds))
+        {
+            float randomValue = UnityEngine.Random.value;
+
+            if (randomValue > 0.35f && grenadeAttackCooldown.IsReady())
+            {
+                yield return StartCoroutine(AttackGrenade());
+            }
+            else if (walkBackCooldown.IsReady())
+            {
+                yield return StartCoroutine(WalkBackATinyBit());
+            }
+            else
+            {
+                yield return StartCoroutine(WalkTo(colliderProximity));
+            }
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
     IEnumerator AttackKnife() {
         EnemyMovement.FaceTarget(transform, targetDistance.Target);
         knifeAttack.Execute("Player");

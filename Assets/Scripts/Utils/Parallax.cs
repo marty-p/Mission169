@@ -6,19 +6,29 @@ public struct BgLayer {
     public float scrollingRatioToForeground;
 }
 
-public class Parallax : MonoBehaviour {
+public class Parallax : MonoBehaviour
+{
     public BgLayer[] bgLayers;
     private Vector2 oldPos;
 
-    void Start() {
+    void Start()
+    {
         oldPos = transform.position;
     }
 
-    void Update () {
+    void Update ()
+    {
         Vector2 camTrans = (Vector2) transform.position - oldPos;
 
-        if (camTrans != Vector2.zero) {
-            for (int i=0; i<bgLayers.Length; i++){
+        if (camTrans != Vector2.zero)
+        {
+            for (int i=0; i<bgLayers.Length; i++)
+            {
+                if (bgLayers[i].go == null)
+                {
+                    return;
+                }
+
                 bgLayers[i].go.transform.Translate(
                         (1-bgLayers[i].scrollingRatioToForeground)*camTrans);
             }

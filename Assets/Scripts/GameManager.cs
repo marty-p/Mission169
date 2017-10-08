@@ -3,12 +3,15 @@ using Slug;
 using UnityEngine.SceneManagement;
 using SlugLib;
 using DG.Tweening;
+using System.Collections;
 
 namespace Mission169 {
 
     public class GameManager : Singleton<GameManager> {
 
         protected GameManager() { }
+
+        [SerializeField] Camera gameplayCamera;
 
         private static readonly int playerLifeStart = 3;
         private static int playerLifeCount = playerLifeStart;
@@ -28,13 +31,15 @@ namespace Mission169 {
 
         public GameObject playerPrefab;
 
-        void Awake() {
+        void Awake()
+        {
             DontDestroyOnLoad(this);
 
             EventManager.StartListening(GlobalEvents.PlayerDead, OnplayerDeath);
             EventManager.StartListening(GlobalEvents.BossDead, OnMissionSuccess);
             EventManager.StartListening(GlobalEvents.PointsEarned, UpdatePlayerPoints);
-            EventManager.StartListening(GlobalEvents.MissionStartRequest, MissionStart);
+            EventManager.StartListening(GlobalEvents.MissionStartRequest, StartMission);
+
             playerGameObject = Instantiate( Resources.Load("Player")) as GameObject;
             playerDeathManager = playerGameObject.GetComponentInChildren<PlayerDeathManager>();
             playerGameObject.SetActive(false);
@@ -51,6 +56,7 @@ namespace Mission169 {
         }
 
         public GameObject GetPlayer() {
+            //TODO if playerGameObject null we should instantiate one ... probably
             return playerGameObject;
         }
 
@@ -62,45 +68,18 @@ namespace Mission169 {
             EventManager.TriggerEvent(GlobalEvents.Home);
         }
 
-        private void InitPlayer() {
-            playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
-            playerGameObject.layer = (int)SlugLayers.Player;
-            GameObject startPos = GameObject.Find("StartLocation");
-            if (startPos != null)
-            {
-                playerTransform.position = startPos.transform.position;
-
-                playerGameObject.transform.SetParent(startPos.transform, true);
-                Camera.main.transform.position = startPos.transform.position;
-            }
-            playerGameObject.SetActive(false);
-        }
-
-        private void MissionStart() {
-            MissionLoad();
-
-            EventManager.TriggerEvent(GlobalEvents.MissionStart);
-
-            DOVirtual.DelayedCall(1.8f, () => {
-                InitPlayer();
-                playerGameObject.SetActive(true);
-                playerDeathManager.SpawnPlayer();
-            });
-        }
-
         public void MissionRetry() {
             ResetGameData();
             MissionLoad();
             InitPlayer();
             // Work around for some reason the music does not start again otherwise...
-            DOVirtual.DelayedCall(0.2f, ()=> MissionStart());
+            DOVirtual.DelayedCall(0.2f, ()=> StartMission());
         }
 
         public void GoNextMission() {
             currentMissionID++;
             if (currentMissionID < missionList.Length) {
-                MissionLoad();
-                MissionStart();
+                StartMission();
             } else {
                 Home();
             }
@@ -109,6 +88,57 @@ namespace Mission169 {
         //TODO block user input too
         public void PauseGame(bool paused) {
             Time.timeScale = paused ? 0 : 1;
+        }
+
+        public void StartMission()
+        {
+            StartCoroutine(MissionStartCoroutine());
+        }
+
+        public IEnumerator MissionStartCoroutine() {
+            MissionLoad();
+
+            yield return null;
+
+            EventManager.TriggerEvent(GlobalEvents.MissionStart);
+
+            InitPlayer();
+            InitCamera();
+
+            playerGameObject.SetActive(true);
+            playerDeathManager.SpawnPlayer();
+        }
+
+        private void InitPlayer() {
+            playerGameObject.GetComponentInChildren<AnimationManager>().ResetAnimators();
+            playerGameObject.layer = (int)SlugLayers.Player;
+            GameObject startPos = GameObject.Find("StartLocation");
+            if (startPos != null)
+            {
+                playerTransform.localPosition = Vector3.zero;
+                playerGameObject.transform.position = startPos.transform.position;
+            }
+            else
+            {
+                Debug.LogError("Could not find a starting location in the level");
+            }
+            playerGameObject.SetActive(false);
+        }
+
+        private void InitCamera()
+        {
+            GameObject cameraPath = GameObject.Find("CameraPath");
+            if (cameraPath != null)
+            {
+                cameraPath.GetComponent<CameraPath>().SetCamera(gameplayCamera);
+                cameraPath.GetComponent<CameraPath>().PositionCameraAtNode(0);
+
+                gameplayCamera.GetComponent<FollowTarget>().InitTarget(playerTransform);
+            }
+            else
+            {
+                Debug.LogError("no camera path in the level!");
+            }
         }
 
         private void UpdatePlayerPoints(float pts) {
