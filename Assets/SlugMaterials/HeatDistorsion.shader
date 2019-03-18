@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Ported and adapted version of the original GLSL code that can be found here:
 // https://github.com/SFML/SFML/wiki/Source:-HeatHazeShader
 
@@ -44,7 +46,7 @@ Shader "Custom/HeatDistortion"
 			v2f vert(appdata_t v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.color = v.color;
 				o.uv = v.texcoord;
 				return o;
